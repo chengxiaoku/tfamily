@@ -1,0 +1,299 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-solid">
+                    <!-- form start -->
+                    <form role="form" id="form" method="post" action="admin.php?m=Admin&c=category&a=DoAddLink&do=add">
+                        <div class="box-body">
+
+                            <div class="form-group " id="CategoryError">
+                                <label>选择父栏目</label>
+                                <div>
+                                    <select id="category" name="parentid" class="form-control wp50 inline-block">
+                                        <volist name="category" id="data">
+                                            <option value="{$data['id']}">{$data['name']}</option>
+                                        </volist>
+                                    </select>
+                                    <label for="inputError" class="control-label hidden"><i
+                                            class="fa fa-times-circle-o"></i>请选择栏目！</label>
+                                    <em class="help-block hide" id="CategoryTip">请选择栏目！</em>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="NameError">
+                                <label for="">链接名称 <span class="required">*</span></label>
+                                <div>
+                                    <input id="name" name="name" type="text" class="form-control wp50 inline-block"
+                                           placeholder="输入链接名称 ...">
+                                    <label for="inputError" class="control-label hidden"><i
+                                            class="fa fa-times-circle-o"></i>请输入链接名称</label>
+                                    <em class="help-block hide" id="NameTip">请输入链接名称</em>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" id="ThumbError">
+                                <label for="">链接缩略图</label>
+                                <div>
+                                    <div class="input-group wp50">
+                                        <input name="thumb" readonly class=" form-control" placeholder="上传缩略图 ..." id="uiFileUploadInput1" type="text" data-thumb="">
+                                        <div class="input-group-btn">
+                                            <button onclick="upload()" type="button" class="btn btn-success btn-flat"><i class="fa fw fa-plus-circle"></i></button>
+                                        </div>
+                                    </div>
+                                    <label for="inputError" class="control-label hidden"><i class="fa fa-times-circle-o"></i>请选择一张图片！</label>
+                                    <em class="help-block hide" id="ThumbTip"> 请选择一张图片</em>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group " id="LinkError">
+                                <label>连接地址</label>
+                                <div>
+                                    <input id="link" name="content" type="text" placeholder="输入栏目标题" id="" class="form-control wp50 inline-block">
+                                    <label for="inputError" class="control-label hidden"><i
+                                            class="fa fa-times-circle-o"></i>请输入链接地址</label>
+                                    <em class="help-block hide" id="LinkTip"> 请输入链接地址</em>
+                                </div>
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button class="btn btn-primary w100" onclick="return Submit();" type="submit">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 mr20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+            </div><!--/.col (left) -->
+
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- 上传图片 -->
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="">上传图片</h4>
+            </div>
+            <div class="modal-body no-padding maxh500">
+                <div class="images-zone tc thumb-place-holder">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-left" style="">
+                    <div class="btn btn-success fileinput-button pull-left inline-block">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>添加图片...</span>
+                        <input id="fileupload" type="file" name="files[]" multiple="" data-text-control="#uiFileUploadInput1">
+                    </div>
+                    <span class="loading action-doing hide inline-block mt5 ml10"><i class="fa fa-refresh fa-spin"></i>&nbsp;文件上传中...</span>
+                    <span class="loading action-done hide inline-block mt5 ml10"><i class="fa fa-check-circle-o"></i>&nbsp;上传成功</span>
+                </div>
+                <button type="button" class="btn btn-default ml20" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{:ASSETS}plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="{:ASSETS}plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript">
+    function trim (str, charlist) {
+        var whitespace = [
+            ' ',
+            '\n',
+            '\r',
+            '\t',
+            '\f',
+            '\x0b',
+            '\xa0',
+            '\u2000',
+            '\u2001',
+            '\u2002',
+            '\u2003',
+            '\u2004',
+            '\u2005',
+            '\u2006',
+            '\u2007',
+            '\u2008',
+            '\u2009',
+            '\u200a',
+            '\u200b',
+            '\u2028',
+            '\u2029',
+            '\u3000'
+        ].join('')
+        var l = 0
+        var i = 0
+        str += ''
+
+        if (charlist) {
+            whitespace = (charlist + '').replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^:])/g, '$1')
+        }
+
+        l = str.length
+        for (i = 0; i < l; i++) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(i)
+                break
+            }
+        }
+
+        l = str.length
+        for (i = l - 1; i >= 0; i--) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(0, i + 1)
+                break
+            }
+        }
+
+        return whitespace.indexOf(str.charAt(0)) === -1 ? str : ''
+    }
+    //提交验证
+    function Submit() {
+        if(trim($("#name").val()) == '' || trim($("#uiFileUploadInput1").val()) == '' || trim($("#description").val()) == ''){
+//                验证分类名是否为空
+            if(trim($("#name").val()) == ''){
+                $('#NameError').addClass('has-error');
+                $('#NameTip').removeClass('hide');
+                $('#name').focus();
+            }else{
+                $('#NameError').removeClass('has-error');
+                $('#NameTip').addClass('hide');
+            }
+//                验证图片路径是否为空
+            if(trim($("#uiFileUploadInput1").val()) == ''){
+                $('#ThumbError').addClass('has-error');
+                $('#ThumbTip').removeClass('hide');
+                $('#uiFileUploadInput1').focus();
+            }else{
+                $('#ThumbError').removeClass('has-error');
+                $('#ThumbTip').addClass('hide');
+            }
+//                验证链接是否为空
+            if(trim($("#link").val()) == ''){
+                $('#LinkError').addClass('has-error');
+                $('#LinkTip').removeClass('hide');
+                $('#link').focus();
+            }else{
+                $('#LinkError').removeClass('has-error');
+                $('#LinkTip').addClass('hide');
+            }
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    row = "{$row|default=''}";
+    if(row != ''){
+        var id = "{$row['id']}";
+        var name = "{$row['name']}";
+        var parentid = "{$row['parentid']}";
+        var thumb = "{$row['thumb']}";
+        var content = "{$row['content']}";
+
+        $('#name').val(name);
+
+        var Inselect = $('#category option');
+        for (var i=0; i<Inselect.length; i++){
+            if(parentid == Inselect[i].value){
+                Inselect[i].selected = 'true';
+            }
+        }
+
+        $('#uiFileUploadInput1').val(thumb);
+
+        $('#link').val(content);
+
+        $('#form').attr('action','admin.php?m=Admin&c=category&a=DoAddLink&do=upd&id='+id);
+    }
+
+    var pid = "{$pid|default=''}";
+    if (pid != ''){
+        var Inselect = $('#category option');
+        for (var i=0; i<Inselect.length; i++){
+            if(pid == Inselect[i].value){
+                Inselect[i].selected = true;
+            }
+        }
+        $('#CategoryError').addClass('hide');
+        $('#form').attr('action','admin.php?m=Admin&c=category&a=DoAddLink&do=addc');
+    }
+
+    //上传图片
+    function upload() {
+
+        $('#myModal').modal({});
+    }
+
+    //上传图片
+    function upload() {
+        $('#myModal').modal({});
+    }
+    var file_url = "{:U('admin/house/jqueryFileUpload')}";
+    function show_img(id_1,id_2){
+        $(id_1).fileupload({
+            //options
+            url: file_url,
+            dataType: 'json',
+            autoUpload: true,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+            maxFileSize: 999000,
+            //event
+            add: function(e, data) {
+                //指定模态框容器
+                data.context = $(id_2);
+                var autoUpload = $.blueimp.fileupload.prototype.options.autoUpload;
+                if (autoUpload) {
+                    data.submit();
+                    data.context.find(".action-doing").removeClass("hide");
+                }
+                return true;
+            },
+
+            progressall: function(e, data) {
+                //进度条
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+            },
+
+            done: function(e, data) {
+                var fileInput = data.fileInput;
+                var inputTextId = fileInput.attr("data-text-control");
+                var inputText = $(inputTextId);
+                var placeHolder = data.context.find(".thumb-place-holder");
+                placeHolder.html("");
+                $.each(data.result.files, function (index, file) {
+                    if (file.thumbnailUrl) {
+
+                        $("<img>").attr("src", file.thumbnailUrl).appendTo(placeHolder);
+                        inputText.val(file.url);
+                        inputText.attr("data-thumb", file.thumbnailUrl);
+                    }
+                });
+
+                data.context.find(".action-doing").addClass("hide");
+                data.context.find(".action-done").removeClass("hide");
+
+            }
+
+        });
+    }
+    show_img('#fileupload','#myModal')
+
+</script>
+<include file="Public:footer"/>

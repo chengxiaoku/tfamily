@@ -1,0 +1,130 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+
+        <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header">
+
+                    </div><!-- /.box-header -->
+
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="box-body padding20">
+                            <div class="form-group has-error">
+                                <label for="">用户名</label>
+                                <input type="text" placeholder="输入用户名称" id="" class="form-control wp50" >
+                                <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> 用户名不能为空</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input type="password" placeholder="输入密码" id="" class="form-control wp50" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">真实姓名</label>
+                                <input type="text" placeholder="输入真实姓名" id="" class="form-control wp50" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">电话</label>
+                                <input type="text" placeholder="输入电话" id="" class="form-control wp50" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">身份证</label>
+                                <input type="password" placeholder="输入身份证" id="" class="form-control wp50" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">年龄</label>
+                                <input type="password" placeholder="输入年龄" id="" class="form-control w100" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">性别</label>
+                                <div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input checked="" value="option1" id="" name="optionsRadios" type="radio">男
+                                        </label>
+                                    </div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input value="option2" id="" name="optionsRadios" type="radio">女
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">地区</label>
+                                <div class="clearfix"></div>
+                                <select class="form-control w100 pull-left">
+                                    <option value="0">选择省</option>
+                                </select>
+                                <select class="form-control w100  pull-left ml10">
+                                    <option value="0">选择市</option>
+                                </select>
+                                <select class="form-control w100  pull-left ml10">
+                                    <option value="0">选择区</option>
+                                </select>
+                                <div class="clearfix"></div></div>
+
+
+                            <div class="form-group">
+                                <label for="">家庭住址</label>
+                                <input type="text" placeholder="输入家庭住址" id="" class="form-control wp50" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">状态</label>
+                                <div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input checked="" value="option1" id="" name="optionsRadio" type="radio">正常
+                                        </label>
+                                    </div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input value="option2" id="" name="optionsRadio" type="radio">冻结
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>备注</label>
+                                <textarea placeholder="Enter ..." rows="3" class="form-control"></textarea>
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20">
+                            <button class="btn btn-primary w100" type="submit">新建</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </section><!-- /.content -->
+    </div>
+<include file="Public:footer"/>

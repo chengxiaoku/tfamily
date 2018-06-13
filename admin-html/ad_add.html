@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> T家园消费创业平台 | 后台管理</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link href="css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css" type="text/css">
+
+
+
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="dist/js/app.min.js" type="text/javascript"></script>
+    <script src="plugins/bootbox.js" type="text/javascript"></script>
+
+    <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
+
+    <!--js template-->
+    <script src="plugins/tmpl.min.js" type="text/javascript"></script>
+</head>
+
+<body class="skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">TF</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">后台管理</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                            <span class="hidden-xs">管理员姓名</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                                <p>
+                                    管理员
+                                    <small>2015-06-03</small>
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">个人中心</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">退出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!--左侧边栏-->
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <!-- <li class="header">MAIN NAVIGATION</li> -->
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-dashboard"></i> <span>控制面板</span>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href="user.html">
+                        <i class="fa fa-th"></i>
+                        <span>用户管理</span>
+                    </a>
+
+                </li>
+
+
+                <li>
+                    <a href="pages/widgets.html">
+                        <i class="fa fa-th"></i> <span>楼盘管理</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                        <!-- <small class="label pull-right bg-green">new</small> -->
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="house.html"><i class="fa fa-circle-o"></i>楼盘列表</a></li>
+                        <li><a href="orders.html"><i class="fa fa-circle-o"></i>订单管理</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="category.html">
+                        <i class="fa  fa-th"></i>
+                        <span>栏目管理</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        <i class="fa  fa-th"></i>
+                        <span>新闻管理</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a href="comment.html">
+                        <i class="fa  fa-comment"></i>
+                        <span>评论管理</span>
+                        <small class="label pull-right bg-green">50条</small>
+                    </a>
+                </li>
+
+                <li class="treeview active">
+                    <a href="ads.html">
+                        <i class="fa fa-th"></i>
+                        <span>广告管理</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a href="notices.html">
+                        <i class="fa fa-th"></i>
+                        <span>公告管理</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a href="finance.html">
+                        <i class="fa fa-th"></i>
+                        <span>财务管理</span>
+                    </a>
+                </li>
+
+                <li class="header"></li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa  fa-user"></i>
+                        <span>管理员设置</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="admin.html"><i class="fa fa-circle-o"></i>管理员管理</a></li>
+                        <li><a href="admin-role.html"><i class="fa fa-circle-o"></i>角色管理</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-th"></i>
+                        <span>基础设置</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="settings-team.html"><i class="fa fa-circle-o"></i>团队设置</a></li>
+                        <li><a href="settings-parms.html"><i class="fa fa-circle-o"></i>参数设置</a></li>
+                        <li><a href="settings-site.html"><i class="fa fa-circle-o"></i>网站设置</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="header"></li>
+
+                <li class="treeview">
+                    <a href="page-message.html">
+                        <i class="fa fa-th"></i>
+                        <span>信息提示页面</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                添加广告
+                <p></p>
+            </h1>
+        </section>
+        <section class="content">
+
+            <div class="row">
+
+                <!-- left column -->
+                <div class="col-md-8">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+
+                        <!-- form start -->
+                        <form role="form">
+
+                            <div class="box-body padding20">
+                                <div class="form-group has-error">
+                                    <label for="">广告标题<span class="required">*</span></label>
+                                    <div>
+                                        <input type="text" placeholder="输入版位名称" id=""
+                                               class="form-control wp50 inline-block">
+                                        <label class="control-label" for="inputError"><i
+                                                class="fa fa-times-circle-o"></i> 版位名称已经存在</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>所属版位</label>
+                                    <input type="text" class="form-control wp50" disabled value="[大首][首页][底部]980*90">
+                                    <!-- <div class="input-group wp50">
+
+                                      <div class="input-group-addon">
+                                        <i class="fa  fa-flag-o"></i>
+                                      </div>
+                                    </div> -->
+                                </div>
+
+                                <div class="form-group input-group wp50">
+                                    <label for="">上线日期<span class="required">*</span></label>
+                                    <div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="begin-time" placeholder="">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success btn-flat" type="button"
+                                                        onclick="return selectDate(this, 'begin-time')"><i
+                                                        class="fa fa-clock-o"></i></button>
+                                            </div>
+                                        </div>
+                                        <!-- <em class="help-block"></em> -->
+                                    </div>
+                                </div>
+                                <div class="form-group input-group wp50">
+                                    <label for="">下线日期<span class="required">*</span></label>
+                                    <div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="end-time" placeholder="">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success btn-flat" type="button"
+                                                        onclick="return selectDate(this, 'end-time')"><i
+                                                        class="fa fa-clock-o"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group wp50">
+                                    <label for="">选择客户<span class="required">*</span></label>
+                                    <div>
+                                        <select class="form-control wp50">
+                                            <option value="0">≡ 请选择客户 ≡</option>
+                                            <option value="2015001">客户A</option>
+                                            <option value="2015002">客户B</option>
+                                            <option value="2015003">客户C</option>
+                                            <option value="2015004">客户D</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">广告金额<span class="required">*</span></label>
+                                    <div>
+                                        <input type="text" class="form-control wp50 inline-block" id=""
+                                               placeholder="输入广告金额">
+                                        <em class="help-block">备注：只能包含数字（单位是：元）</em>
+                                    </div>
+                                </div>
+
+                                <!--选择不同的广告类型-->
+                                <div class="form-group">
+                                    <label for="">广告类型<span class="required">*</span></label>
+                                    <select class="form-control wp50" onchange="return selectAdType(this)">
+                                        <option value="0">≡ 选择广告类型 ≡</option>
+                                        <option value="image">图片</option>
+                                        <option value="flash">动画</option>
+
+                                        <!--不同的广告位显示的广告类型也不一样-->
+                                        <option value="text">文字广告</option>
+                                        <option value="code">代码广告</option>
+                                    </select>
+                                </div>
+
+                                <!--
+                                说明：选择不同类型的广告，显示不同的内容：图片或动画
+                                      增加下拉框的change事件，然后显示不同的DIV:#ad-image-wrapper或#ad-flash-wrapper
+                                -->
+
+                                <!--图片类型广告：上线时间+下线时间+图片设置-->
+                                <div id="ad-image-wrapper" style="display:none;" class="to-hidden">
+                                    <div class="form-group">
+                                        <button class="btn btn-default btn-flat btn-block wp50"
+                                                onclick=" return addImageBox()"><i class="fa fa-plus"></i>&nbsp;添加图片
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <!--动画类型广告：上线时间+下线时间+上传动画-->
+                                <div id="ad-flash-wrapper" style="display:none;" class="to-hidden">
+
+                                    <div class="form-group wp50">
+                                        <label for="">上传动画</label>
+                                        <div>
+                                            <div class="input-group">
+                                                <input type="text" placeholder="上传或粘贴动画地址 ..."
+                                                       class="form-control inline-block">
+                                                <div class="input-group-btn">
+                                                    <button onclick="upload()" type="button"
+                                                            class="btn btn-success btn-flat"><i
+                                                            class="fa fw fa-plus-circle"></i></button>
+                                                </div>
+                                            </div>
+                                            <em class="help-block">提示：上传或粘贴动画地址</em>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--文字广告：上下时间+连接+文本-->
+                                <div id="ad-text-wrapper" style="" class="to-hidden">
+                                    <div class="form-group ">
+                                        <label for="">文字提示</label>
+                                        <div>
+                                            <input type="text" placeholder="输入图片文字提示" id=""
+                                                   class="form-control  inline-block wp50">
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="">连接地址</label>
+                                        <div>
+                                            <input type="text" placeholder="输入连接地址" id=""
+                                                   class="form-control  inline-block wp50">
+                                        </div>
+                                        <em class="help-block">如：http://www.site.com</em>
+                                    </div>
+                                </div>
+
+                                <div id="ad-code-wrapper" class="to-hidden">
+                                    <div class="form-group ">
+                                        <label for="">代码广告内容</label>
+                                        <div>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                        <em class="help-block">如：http://www.site.com</em>
+                                    </div>
+                                </div>
+
+                            </div><!-- /.box-body -->
+
+                            <div class="box-footer p20 ">
+                                <button class="btn btn-primary w100" type="submit">保存</button>
+                                <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                            </div>
+                        </form>
+                    </div><!-- /.box -->
+
+                </div>
+
+
+                <div class="col-md-4" id="ad_image_boxes">
+
+
+                    <!--图片/幻灯片设置-->
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <i class=""></i>
+                            <h3 class="box-title">图片设置</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" onclick="return removeImageBox(this)"><i
+                                        class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="">图片连接地址</label>
+                                <div>
+                                    <input type="text" placeholder="输入图片连接地址" id="" class="form-control  inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">图片文字提示</label>
+                                <div>
+                                    <input type="text" placeholder="输入图片文字提示" id="" class="form-control  inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">广告图片</label>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" placeholder="上传缩略图 ..." class="form-control inline-block">
+                                        <div class="input-group-btn">
+                                            <button onclick="upload()" type="button" class="btn btn-success btn-flat"><i
+                                                    class="fa fw fa-plus-circle"></i></button>
+                                        </div>
+                                    </div>
+                                    <em class="help-block"></em>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end图片/幻灯片设置-->
+                </div><!--/.col-md-4-->
+            </div>
+        </section>
+
+
+    </div><!-- /.content-wrapper -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">上传图片</h4>
+                </div>
+
+                <div class="modal-body no-padding maxh500">
+
+                    <div class="images-zone"></div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="loading pull-left" style="">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">选择图片</button>
+                        <button type="button" class="btn btn-default ml20" data-dismiss="modal">上传图片</button>
+                        <i class="fa fa-refresh fa-spin"></i>&nbsp; 数据加载中...
+                    </div>
+                    <button type="button" class="btn btn-default ml20" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--ad image box template-->
+    <script type="text/x-tmpl" id="tmpl-image-box">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class=""></i>
+            <h3 class="box-title">图片设置</h3>
+            <div class="box-tools pull-right">
+              <button class="btn btn-box-tool" onclick="return removeImageBox(this)"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+
+          <div class="box-body">
+            <div class="form-group">
+                <label for="">图片连接地址</label>
+                <div>
+                  <input type="text" placeholder="输入图片连接地址" id="" class="form-control  inline-block">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">图片文字提示</label>
+                <div>
+                  <input type="text" placeholder="输入图片文字提示" id="" class="form-control  inline-block">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">广告图片</label>
+                <div>
+                    <div class="input-group">
+                      <input type="text" placeholder="上传缩略图 ..."  class="form-control inline-block">
+                      <div class="input-group-btn">
+                        <button onclick="upload()" type="button" class="btn btn-success btn-flat"><i class="fa fw fa-plus-circle"></i></button>
+                      </div>
+                    </div>
+                    <em class="help-block"></em>
+                </div>
+              </div>
+          </div>
+        </div>
+
+    </script>
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="#">Almsaeed Studio</a>.</strong> All rights reserved.
+    </footer>
+
+
+    <div class='control-sidebar-bg'></div>
+
+</div><!-- ./wrapper -->
+
+
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">
+    function selectAdType(o) {
+        var me = $(o);
+        var _type = me.val();
+        switch (_type) {
+            case 'image':
+                $(".to-hidden").hide();
+                $("#ad-image-wrapper").show();
+                break;
+            case 'flash':
+                $(".to-hidden").hide();
+                $("#ad-flash-wrapper").show();
+                break;
+            case 'text':
+                $(".to-hidden").hide();
+                $("#ad-text-wrapper").show();
+                break;
+            case 'code':
+                $(".to-hidden").hide();
+                $("#ad-code-wrapper").show();
+                break;
+            default:
+                $(".to-hidden").hide();
+        }
+    }
+
+    //动态添加广告图片
+    function addImageBox() {
+        var box = tmpl("tmpl-image-box");
+        $("#ad_image_boxes").append(box);
+        return false;
+    }
+
+    //动态删除广告图片Box
+    function removeImageBox(o) {
+        bootbox.confirm("您确定要删除该图片吗？", function(data) {
+            if (data == false) {
+                return false;
+            } else {
+                $(o).parent().parent().parent().remove();
+            }
+        });
+        return false;
+    }
+
+    //上传图片
+    function upload() {
+        $('#myModal').modal({});
+    }
+
+
+    function selectDate(o, id) {
+        var _id = '#' + id;
+        $(_id).datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN'
+        }).on("changeDate", function (e) {
+            var me = e.target;
+            $(this).datepicker('hide');
+        });
+
+        $(_id).datepicker('show');
+
+    }
+
+
+    //删除所有
+    function delAll() {
+        bootbox.confirm("您确定要删除吗？", function(data) {
+            if (data == false) {
+                alert("取消");
+            } else {
+                alert("确定");
+            }
+        });
+    }
+
+    function del() {
+
+        //bootbox.alert(message, callback)
+        //bootbox.prompt(message, callback)
+        bootbox.confirm("确认要删除该会员组？", function(data) {
+            if (data == false) {
+                alert("取消");
+            } else {
+                alert("确定");
+            }
+        })
+
+    }
+
+
+</script>

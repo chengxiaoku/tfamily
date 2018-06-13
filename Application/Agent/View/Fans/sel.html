@@ -1,0 +1,179 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <style type="text/css">
+        .img_style {
+            width: 64px;
+            height: 64px;
+        }
+
+        /*上页下页样式*/
+        .prev, .next {
+            padding: 5px 10px;
+            border: 1px silver solid;
+        }
+
+        .num, .current {
+            font-size: 16px;
+            padding: 4px 10px;
+            border: 1px seashell solid;
+        }
+
+        .current {
+            background-color: #428bca;
+        }
+    </style>
+
+    <!-- 主体内容 -->
+    <section class="content" style="background-color: white; ">
+        <a href="{:U('fans/add_fans')}">
+            <button type="button" class="btn btn-primary" id="insert">添加粉丝</button>
+        </a>
+        <div style="width:250px; margin-left: 5px;" class="input-group pull-right">
+            <input type="text" placeholder="搜索..." style="" class="form-control  " name="" value="" id="ss">
+            <div class="input-group-btn">
+                <a id="sou">
+                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-hover" style="margin-top: 15px; text-align: center" id="table">
+            <tbody>
+            <tr>
+                <th width="15%" style="text-align: center">姓名</th>
+                <th width="15%" style="text-align: center">电话</th>
+                <th width="15%" style="text-align: center">注册时间</th>
+                <th width="15%" style="text-align: center">状态</th>
+                <th width="45%" style="text-align: center">管理</th>
+            </tr>
+            <volist name="list" id="data">
+
+                <tr>
+                    <td class="tc">{$data.name}</td>
+                    <td>{$data.tel}</td>
+                    <td>{$data.add_time}</td>
+                    <td>
+                        <if condition="$val.status == success"><small class="label bg-green">已审核</small>
+                            <elseif condition="$val.status == reject"/><small class="label bg-red">未通过</small>
+                            <else/><small class="label bg-gray">待审核</small>
+                        </if>
+                    </td>
+                    <td>
+                        <a class="btn btn-default btn-xs" href="#" onclick="return checked()">审核</a>
+                        <a class="btn btn-default btn-xs" href="{:U('fans/update',array('id'=>$val['id']))}">编辑</a>
+                        <a href="#" class="btn btn-default btn-xs" onclick="return del(this,'{$val.id}')">删除</a>
+                    </td>
+                </tr>
+            </volist>
+
+            </tbody>
+        </table>
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-sm-5"></div>
+                <div class=" col-sm-7 ">
+                    <div class="text-right">
+                        <ul class="pagination">
+                            <li class="paginate_button previous disabled" id="example2_previous">
+                                {$page}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content  -->
+
+</div>
+
+<!--模态框-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">删除操作</h4>
+            </div>
+            <div class="modal-body">
+                <span class='glyphicon glyphicon-question-sign text-red' style='font-size: 18px;'></span>
+                <span style='font-size: 18px;' class="ml10 text-red">确认要删除该会员？</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="button1" class="btn btn-primary w100 ">确定</button>
+                <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" id="Model2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">审查操作</h4>
+            </div>
+            <div class="modal-body">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    待审核
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    未通过审核
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    通过审核
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"> 确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<script type="text/javascript">
+    function checked() {
+        $('#Model2').modal('show');
+    }
+    //数据的删除
+    function del(a, b) {
+        $("#data_sum").text('确认删除这条数据？');
+        $('#myModal').modal('show');
+        id = b;
+        return false;
+    }
+    $('#button1').click(function () {
+
+        location.href = "agent.php?m=Agent&c=fans&a=del&id=" + id;
+    })
+    //搜索
+    $(function () {
+        $("#sou").click(function () {
+
+            var keyword = $('#ss').val();
+            if (keyword) {
+
+                location.href = "agent.php?m=Agent&c=fans&a=sel&keyword=" + keyword;
+            } else {
+                alert('无参数');
+                return false;
+            }
+
+
+        });
+    });
+</script>
+
+<include file="Public:footer"/>

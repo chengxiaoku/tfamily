@@ -1,0 +1,108 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <style type="text/css">
+        .tc{
+            text-align: right;
+            position: relative;
+            left: -95px;
+        }
+        .tx{
+            text-align: left;
+            position: relative;
+            left: 95px;
+        }
+
+    </style>
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content col-md-8" style="background-color: white; margin: 15px;position: relative;">
+        <table class="table table-hover" style="margin-top: 15px; text-align: center; width: 100%;" id="table">
+            <tbody>
+            <tr>
+                <th width="10%" class="tc">姓名：</th>
+                <th width="20%" class="tx">{$data[0].name}</th>
+            </tr>
+            <tr>
+                <td class="tc">电话：</td>
+                <td class="tx">{$data[0].tel}</td>
+            </tr>
+            <tr>
+                <td class="tc">性别：</td>
+                <td class="tx">
+                    <if condition="$data[0]['sex'] eq 'man'">
+                        男
+                        <else/>
+                        女
+                    </if>
+                </td>
+            </tr>
+            <tr>
+                <td class="tc">
+                    <if condition="$data[0]['order_type'] eq 'house'">意向购买楼盘：<else/>汽车品牌：</if>
+                </td>
+                <td class="tx">
+                    <if condition="$data[0]['order_type'] eq 'house'">{$data[0]['house_name']}<else/>{$data[0]['car_brand']}</if>
+                </td>
+            </tr>
+            <tr>
+                <td class="tc">
+                    <if condition="$data[0]['order_type'] eq 'house'">户型：<else/>车型：</if></td>
+                <td class="tx">
+                    <volist name="hx_name" id="row">
+                        <if condition="$data[0]['order_type'] eq 'house'">{$data[0]['house_my_type']}<else/>{$data[0]['like_car']}</if>
+                    </volist>
+                </td>
+            </tr>
+            <tr>
+                <td class="tc">地区：</td>
+                <td class="tx">{$adress_s}{$adress_ss}{$adress_q}</td>
+            </tr>
+            <tr>
+                <td class="tc">下单时间：</td>
+                <td class="tx">{$data[0].add_time}</td>
+            </tr>
+            <tr>
+                <td class="tc">订单状态：</td>
+                <td class="tx">
+                    <if condition="$data[0]['status'] eq 'pending'">
+                        <a class="btn btn-info btn-default btn-xs">待处理</a>
+                        <elseif condition="$data[0]['status'] eq 'done'"/>
+                        <a class="btn-default btn-xs">已处理</a>
+                        <elseif condition="$data[0]['status'] eq 'doing'"/>
+                        <a class="btn btn-warning btn-xs">处理中</a>
+                    </if>
+                </td>
+            </tr>
+            <tr>
+                <td class="tc">客户类型：</td>
+                <td class="tx">
+                    <if condition="$user_typ eq 'province_agent'">
+                        省级代理
+                        <elseif condition="$user_typ eq 'city_agent'"/>
+                        市级代理
+                        <elseif condition="$user_typ eq 'district_agent'"/>
+                        区级代理
+                        <elseif condition="$user_typ eq 'member'"/>
+                        会员
+                        <elseif condition="$user_typ eq 'partner'"/>
+                        合作商家
+                        <elseif condition="$user_typ eq 'fan'"/>
+                        粉丝
+                    </if>
+                </td>
+            </tr>
+            <tr>
+                <td class="tc">备注：</td>
+                <td class="tx">{$data[0].message}</td>
+            </tr>
+
+            </tbody>
+        </table>
+        <button type="button" style="width: 90px; margin-left: 210px;"  onclick="history.go(-1)" class="btn btn-default">返回</button>
+    </section>
+    </section>
+    <!-- /.content  -->
+</div>
+<include file="Public:footer"/>

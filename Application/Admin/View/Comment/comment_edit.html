@@ -1,0 +1,142 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <style type="text/css">
+        .error{
+            color: red;
+        }
+    </style>
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+    <!--遍历传入的数据-->
+    <volist name="date" id="vo">
+    </volist>
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <!-- form start -->
+                    <form role="form" id="myform" method="post" action="{:U('comment/comment_update')}">
+                        <div class="box-body padding20">
+                            <div class="form-group">
+                                <label>评论主题</label>
+                                <div>
+                                   <!-- <input type="hidden" value="{$vo.house_id}" name="house">-->
+                                    <input type="text" disabled name="theme" value="{$vo.title}" class="form-control wp50 inline-block">
+                                </div>
+                                <input type="hidden" name="id" value="{$vo.id}" >
+                            </div>
+                            <div class="form-group">
+                                <label>评论用户</label>
+                                <div>
+                                    <input type="hidden" name="user" value="{$vo.house_id}">
+                                    <input type="text" disabled name="users" value="{$vo.name}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>评论时间</label>
+                                <div>
+                                    <input type="text" disabled name="time" value="{$vo.add_time}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>IP地址</label>
+                                <div>
+                                    <input type="text" name="ip" value="{$vo.ip}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>评论内容</label>
+                                <div>
+                                    <textarea name="content"  rows="4" class="form-control wp50">{$vo.content}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>配套分数</label>
+                                <div>
+                                    <input type="text" name="prop" value="{$vo.prop_score}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>绿化分数</label>
+                                <div>
+                                    <input type="text" name="green" value="{$vo.green_score}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>交通分数</label>
+                                <div>
+                                    <input type="text" name="traffic" value="{$vo.traffic_score}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>综合分数</label>
+                                <div>
+                                    <input type="text" name="score" value="{$vo.score}" class="form-control wp50 inline-block">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>审核状态</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="audit" value="pending"> 待审核
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="audit" value="success"> 通过
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="audit"  value="reject"> 未通过
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" type="submit" onclick="return login()">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var audit = "{$vo.status}";
+        if (audit == 'pending') {
+            $("input[type=radio]").eq(0).attr("checked", "checked");
+        }
+        if (audit == 'success') {
+            $("input[type=radio]").eq(1).attr("checked", "checked");
+        }
+        if (audit == 'success') {
+            $("input[type=radio]").eq(1).attr("checked", "checked");
+        }
+        //$("input[type=radio]").eq(0).attr("checked","checked");
+    });
+    function login() {
+        $("#myform").validate({
+            rules: {
+                prop: "required",
+                green: "required",
+                score: "required",
+                content: "required",
+                traffic: "required",
+                ip: "required"
+            },
+            messages: {
+                prop: "*请输入修改后的配套分数",
+                green: "*绿化分数不能为空",
+                score: "*请输入修改后的综合分数",
+                content: "*请输入修改后的评论内容",
+                traffic: "*请输入修改后的综合分数",
+                ip: "*请输入修改后的用户ip"
+            }
+        })
+    }
+</script>
+
+<include file="Public:footer"/>

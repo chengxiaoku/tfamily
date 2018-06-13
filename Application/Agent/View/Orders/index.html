@@ -1,0 +1,79 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+    <div class="content-wrapper">
+        <include file="Public:breadcrumb"/>
+        <!-- 主体内容 -->
+        <section class="content">
+            <!--表格-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                                <table class="table table-hover" id="treeTable">
+                                    <thead>
+                                    <tr>
+                                        <th width="20%" class="tc" style="vertical-align: middle !important;">日期</th>
+                                        <th width="20%" class="tc" style="vertical-align: middle !important;">商品</th>
+                                        <th width="20%" class="tc" style="vertical-align: middle !important;">类型</th>
+                                        <th width="20%" class="tc" style="vertical-align: middle !important;">状态</th>
+                                        <th width="20%" class="tc" style="vertical-align: middle !important;">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="content" id="data">
+                                        <tr>
+                                            <td width="20%" class="tc" style="vertical-align: middle !important;">{$data['add_time']}</td>
+                                            <td width="20%" class="tc" style="vertical-align: middle !important;">{$data['product_name']}</td>
+                                            <td width="20%" class="tc" style="vertical-align: middle !important;">
+                                                <if condition="$data['order_type'] eq 'auto'">
+                                                    新车团购
+                                                    <else/>
+                                                    新房团购
+                                                </if>
+                                            </td>
+                                            <td width="20%" class="tc" style="vertical-align: middle !important;">
+                                                <if condition="$data['status'] eq 'pending'">
+                                                    <span class="label label-danger">待处理</span>
+                                                    <elseif condition="$data['status'] eq 'done'"/>
+                                                    <span class="label label-success">已处理</span>
+                                                    <else/>
+                                                    <span class="label label-info">处理中</span>
+                                                </if>
+                                            </td>
+                                            <td width="20%" class="tc" style="vertical-align: middle !important;">
+                                                    <a class="btn btn-default btn-xs" pp = "{$data['id']}" onclick="sel(this)">查看详情</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    </tbody>
+                                </table>
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <ul class="pagination pull-right">
+                                {$page_html}
+                            </ul>
+                        </div>
+                    </div><!-- /.box -->
+                </div>
+            </div>
+
+
+        </section>
+        <!-- /.content -->
+    </div>
+<include file="Public:footer"/>
+<script type="text/javascript">
+    function sel(a){
+        url  = "agent.php?m=Agent&c=orders&a=detail&id="+$(a).attr('pp');
+        $(a).attr('href',url);
+    }
+
+
+
+</script>

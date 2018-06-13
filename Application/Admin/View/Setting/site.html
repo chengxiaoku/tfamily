@@ -1,0 +1,145 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+        <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-8">
+                    <div class="nav-tabs-custom">
+                        <div class="tab-content">
+                            <form action="{:U('Setting/site_form')}" method="post" id="myform">
+                                <div class="tab-pane active" id="tab_1">
+                                    <div class="form-group">
+                                        <label for="">网站域名:</label>
+                                        <div>
+                                            <input type="text" placeholder="输入网站域名 ..." value="{$lists[domain_name]}" name="domain_name"
+                                                   class="form-control wp50 inline-block">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">网站名称:</label>
+                                        <div>
+                                            <input type="text" placeholder="输入网站名称 ..." value="{$lists[site_name]}" name="site_name"
+                                                   class="form-control wp50 inline-block">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">网站关键词:</label>
+                                        <div>
+                                            <input type="text" placeholder="输入网站关键词 ..." value="{$lists[site_keywords]}" name="site_keywords"
+                                                   class="form-control wp50 inline-block">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">网站描述:</label>
+                                        <div>
+                                            <textarea name="site_description" class="form-control wp50" rows="3"
+                                                      placeholder="网站描述 ...">{$lists['site_description']}</textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="">网站状态:</label>
+                                        <div>
+                                            <div class="radio inline-block mt0">
+                                                <label>
+                                                    <input type="radio" name="site_status" value="1" checked>正常
+                                                </label>
+                                            </div>
+                                            <div class="radio inline-block mt0 ml20">
+                                                <label>
+                                                    <input type="radio" name="site_status" value="0">关闭
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label>关闭原因:</label>
+                                        <textarea placeholder="Enter ..." name="close_reason" rows="5"
+                                                  class="form-control wp50">{$lists['close_reason']}</textarea>
+                                    </div>
+
+                                    <div class="box-footer p20">
+                                        <button class="btn btn-primary w100" id="botton" type="submit">保存</button>
+                                        <a onclick="history.go('-1')" class="btn btn-info w100 ml20"
+                                           type="submit">返回</a>
+                                    </div>
+                                </div><!-- /.tab-pane -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.content -->
+
+    </div><!-- /.content-wrapper -->
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            myform.submit();
+        }
+    });
+    $().ready(function () {
+        $("#myform").validate({
+            debug: true,
+            rules: {
+                domain_name: {
+                    required: true,
+                    url: true
+                },
+                site_name:{
+                    required: true,
+                    maxlength:10
+                },
+                site_keywords:{
+                    required: true,
+                    minlength:2
+                },
+                site_description:{
+                    required: true,
+                    minlength:4
+                },
+                close_reason:{
+                    required: true,
+                    minlength:4
+                }
+            },
+            messages: {
+                domain_name: {
+                    required: "请输入网站域名",
+                    url: "请输入正确的网址"
+                },
+                site_name:{
+                    required: "请输入网站名称",
+                    maxlength:"必须小于10位"
+                },
+                site_keywords:{
+                    required: "请输入网站关键词",
+                    minlength:"必须大于2位"
+                },
+                site_description:{
+                    required: "请输入网站描述",
+                    minlength:"必须大于4位"
+                },
+                close_reason:{
+                    required: "请输入网站关闭原因",
+                    minlength:"必须大于4位"
+                }
+            }
+        })
+    });
+</script>
+
+<script>
+    $('[value="{$lists[site_status]}"]').prop("checked", true);
+</script>
+<include file="Public:footer"/>

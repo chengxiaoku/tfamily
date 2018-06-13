@@ -1,0 +1,38 @@
+[ 2016-12-12T16:32:59+08:00 ] 127.0.0.1 /tfamily/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+SQL: SHOW COLUMNS FROM `tf_options` [ RunTime:0.0129s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_status' )  [ RunTime:0.0006s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'close_reason' )  [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_keywords' )  [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_description' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tf_house` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `tf_house` ORDER BY add_time asc LIMIT 4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tf_house` WHERE ( is_hot = 1 ) LIMIT 4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `tf_ads` [ RunTime:0.0144s ]
+SQL: SELECT `ad_content` FROM `tf_ads` WHERE ( id=3 )  [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0399s ]
+SQL: SELECT `region_name` FROM `tf_region` WHERE ( region_id=189 )  [ RunTime:0.0094s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] Use of undefined constant region - assumed 'region' E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 250 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+NOTIC: [8] Undefined index: user_id E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 329 行.
+NOTIC: [8] Undefined index: _member_user_id E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 329 行.
+NOTIC: [8] Undefined index: user_id E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 331 行.
+NOTIC: [8] Undefined index: _member_user_id E:\wamp\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 333 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.107253s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.107451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+

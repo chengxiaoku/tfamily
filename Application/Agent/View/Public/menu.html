@@ -1,0 +1,207 @@
+<!--左侧边栏-->
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <ul class="sidebar-menu">
+            <if condition="CONTROLLER_NAME == 'Index' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('index/index')}">
+                        <i class="fa fa-dashboard"></i> <span>控制面板</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('index/index')}">
+                        <i class="fa fa-dashboard"></i> <span>控制面板</span>
+                    </a>
+                </li>
+            </if>
+			<if condition="CONTROLLER_NAME == 'Orders' && ACTION_NAME == 'index'">
+			    <li>
+	                <a href="{:U('orders/index')}">
+	                    <i class="fa fa-th"></i>
+	                    <span>我的订单</span>
+	                </a>
+                </li>
+				<else/>
+				<li>
+	                <a href="{:U('orders/index')}">
+	                    <i class="fa fa-th"></i>
+	                    <span>我的订单</span>
+	                </a>
+                </li>
+			</if>	
+            <if condition="CONTROLLER_NAME == 'Member' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('member/index')}">
+                        <i class="fa fa-user"></i>
+                        <span>我的会员</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('member/index')}">
+                        <i class="fa fa-user"></i>
+                        <span>我的会员</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Team' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('team/index')}">
+                        <i class="fa fa-users"></i>
+                        <span>我的团队</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('team/index')}">
+                        <i class="fa fa-users"></i>
+                        <span>我的团队</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Fans' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('fans/index')}">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>我的粉丝</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('fans/index')}">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>我的粉丝</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'House' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('house/index')}">
+                        <i class="fa fa-building"></i>
+                        <span>楼盘管理</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('house/index')}">
+                        <i class="fa fa-building"></i>
+                        <span>楼盘管理</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Money' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('money/index')}">
+                        <i class="fa fa-yen"></i>
+                        <span>资金明细</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('money/index')}">
+                        <i class="fa fa-yen"></i>
+                        <span>资金明细</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Notices' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('notices/index')}">
+                        <i class="fa fa-comment"></i>
+                        <span>我的消息</span>
+						   <small class="label pull-right label-success">{$num}</small>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('notices/index')}">
+                        <i class="fa fa-comment"></i>
+                        <span>我的消息</span>
+						<small class="label pull-right label-success">{$num}</small>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Bank' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('bank/index')}">
+                        <i class="fa fa-credit-card"></i>
+                        <span>我的银行卡</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('bank/index')}">
+                        <i class="fa fa-credit-card"></i>
+                        <span>我的银行卡</span>
+                    </a>
+                </li>
+            </if>
+            <if condition="CONTROLLER_NAME == 'Balance' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('balance/index')}">
+                        <i class="fa fa-th"></i>
+                        <span>我的余额</span>
+                    </a>
+                </li>
+                <else/>
+                <li>
+                    <a href="{:U('balance/index')}">
+                        <i class="fa fa-th"></i>
+                        <span>我的余额</span>
+                    </a>
+                </li>
+            </if>
+
+            <if condition="CONTROLLER_NAME == 'Cash' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('Cash/index')}">
+                        <i class="fa fa-money"></i>
+                        <span>我要提现</span>
+                    </a>
+                </li>
+                <else/>
+                <li class="treeview">
+                    <a href="{:U('Cash/index')}">
+                        <i class="fa fa-money"></i>
+                        <span>我要提现</span>
+                    </a>
+                </li>
+            </if>
+
+            <if condition="CONTROLLER_NAME == 'Referee' && ACTION_NAME == 'index'">
+                <li class="active">
+                    <a href="{:U('Referee/index')}">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>我要推广</span>
+                    </a>
+                </li>
+                <else/>
+                <li class="treeview">
+                    <a href="{:U('Referee/index')}">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>我要推广</span>
+                    </a>
+                </li>
+            </if>
+            <li class="header"></li>
+
+            <li class="treeview">
+                <a href="{:U('ui/blank')}">
+                    <i class="fa fa-th"></i>
+                    <span>参考页面</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="{:U('ui/index')}">
+                    <i class="fa fa-th"></i>
+                    <span>UI参考</span>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

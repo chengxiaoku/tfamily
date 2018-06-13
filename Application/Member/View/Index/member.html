@@ -1,0 +1,106 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a class="btn btn-primary" href="member-add.html">添加会员</a>
+                        <div style="width:250px; margin-left: 5px;" class="input-group pull-right">
+                            <input type="text" placeholder="搜索..." style="" class="form-control  " name="">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+
+                    </div><!-- /.box-header -->
+
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th width="10%" class="text-center">会员编号</th>
+                                <th width="15%">用户名</th>
+                                <th width="20%">电话</th>
+                                <th width="25%">注册时间</th>
+                                <th width="15%">状态</th>
+                                <th width="15%">管理</th>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>张三</td>
+                                <td>1512344563</td>
+                                <td>2015/06/04 19:45</td>
+                                <td>
+                                    <small class="label bg-green">已认证</small>
+                                </td>
+                                <td>
+                                    <a class="btn btn-default btn-xs" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">审核</a>
+                                    <a class="btn btn-default btn-xs" href="member-add.html">修改</a>
+                                    <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">删除</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>李四</td>
+                                <td>18543278043</td>
+                                <td>2015/06/04 19:45</td>
+                                <td><small class="label bg-gray">未认证</small></td>
+                                <td>
+                                    <a class="btn btn-default btn-xs" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">审核</a>
+                                    <a class="btn btn-default btn-xs" href="member-add.html">修改</a>
+                                    <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">删除</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>王五</td>
+                                <td>15325679234</td>
+                                <td>2015/06/04 19:45</td>
+                                <td>
+                                    <small class="label bg-red">审核中</small>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm">审核</a>
+                                    <a class="btn btn-default btn-xs" href="member-add.html">修改</a>
+                                    <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">删除</a></td>
+                            </tr>
+
+                            </tbody></table>
+                    </div>
+
+
+
+                    <div class="box-footer">
+
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class=" col-sm-7 ">
+                                <div class="text-right">
+                                    <ul class="pagination"><li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a></li><li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">下一页</a></li></ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+
+    </section><!-- /.content -->
+
+</div><!-- /.content-wrapper -->
+
+
+<div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+<include file="Public:footer"/>

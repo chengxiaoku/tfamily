@@ -1,0 +1,98 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="box">
+                    <div class="box-header">
+
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover" id="treeTable">
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">订单号</td>
+                                <td width="20%" style="vertical-align: middle !important;">{$content['Sn']}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">商品名</td>
+                                <td width="20%" style="vertical-align: middle !important;">{$content['product_name']}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">订单类型</td>
+                                <td width="20%" style="vertical-align: middle !important;">
+                                    <if condition="$content['order_type'] eq 'auto'">
+                                        新车团购
+                                        <else/>
+                                        新房团购
+                                    </if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">订单状态</td>
+                                <td width="20%" style="vertical-align: middle !important;">
+                                    <if condition="$content['status'] eq 'pending'">
+                                        <span class="label label-danger">待处理</span>
+                                        <elseif condition="$content['status'] eq 'done'"/>
+                                        <span class="label label-success">已处理</span>
+                                        <else/>
+                                        <span class="label label-info">处理中</span>
+                                    </if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">下单日期</td>
+                                <td width="20%" style="vertical-align: middle !important;">{$content['add_time']}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">意向车型/户型</td>
+                                <td width="20%" style="vertical-align: middle !important;">
+                                    <if condition="$content['order_type'] eq 'auto'">
+                                        {$content['like_car']}
+                                        <else/>
+                                        {$content['house_my_type']}
+                                    </if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">理想价格</td>
+                                <td width="20%" style="vertical-align: middle !important;">
+                                    <if condition="$content['order_type'] eq 'auto'">
+                                        {$content['car_my_price']}
+                                        <else/>
+                                        {$content['house_my_price']}
+                                    </if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">真实姓名</td>
+                                <td width="20%" style="vertical-align: middle !important;">{$content['name']}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">手机号码</td>
+                                <td width="20%" style="vertical-align: middle !important;">{$content['tel']}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="vertical-align: middle !important;">备注信息</td>
+                                <td width="20%" style="vertical-align: middle !important;"></td>
+                            </tr>
+                        </table>
+                    </div><!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <a class="btn btn-default pull-right" href="javascript:history.go(-1);">返回</a>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<include file="Public:footer"/>

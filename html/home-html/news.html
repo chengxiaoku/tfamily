@@ -1,0 +1,503 @@
+<!-- 新闻详情页 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>房巴拉新闻</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/common_new.css" />
+</head>
+<body> 
+    <!-- 新闻头部与新房头部不同 -->
+    <section class="topnav">
+        <section class="wrapper clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="fl"><a href="javascript:;">新房</a></li>
+                <li class="fl"><a href="javascript:;">楼盘评分</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+                <li class="fl"><a href="javascript:;">旅游地产</a></li>
+                <li class="fl"><a href="javascript:;">在线装修</a></li>
+                <li class="fl"><a href="javascript:;">家居软装</a></li>
+                <li class="fl"><a href="javascript:;">施工进度查询</a></li>
+            </ul>
+            <div class="newstop fr">
+                <span class="newstop01">&#xe65e;</span> 热线电话 400 999 6993
+            </div>
+            <div class="normal_login fr normal_login01">
+                <span>&#xe671; </span><a href="javascript:;"> 注册</a><span style="color:#fff"> /</span>
+                <a href="javascript:;"> 登陆</a>
+            </div>
+        </section>
+    </section>
+    <style>
+        .topnav{
+            background:#394043;
+        }
+        .topnav a{
+            color:#A9ABAB;
+        }
+        .normal_nav li a:hover{
+            color:#fff;
+        }
+        .news_top{
+            background-color: #F5F5F6;
+        }
+    </style>
+    <!-- 二级导航 -->
+    <div class="news_top">
+        <section class="nhnav wrapper clearfix">
+        <ul class="clearfix fl">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="image/b_logo.png" width="98" alt="">
+                    <span>指南</span>
+                </a>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="javascript:;" class="nhnav04_cur" >热点</a>
+                <a href="javascript:;">问答</a>
+                <a href="javascript:;">百科</a>
+            </li>
+        </ul>
+        <div class="news_sear fr">
+            <input type="text" class="fl" placeholder="搜搜你感兴趣的热点内容吧~">
+            <span class="fr">&#xe60c;</span>
+        </div>
+        </section>
+    </div>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+
+    <section class="news_bn wrapper">
+        <ul class="clearfix">
+            <li><a href="javascript:;">房巴拉洛阳站</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">洛阳热点指南</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">洛阳资讯</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">正文</a><span> &gt; </span></li>    
+        </ul>
+    </section>
+
+    <section class="wrapper clearfix">
+        <div class="fl news_fl">
+            <h1 class="news_tit"><span>房产新闻｜</span>回龙观疯狂补涨 楼市好日子快到头了？</h1>
+            <div class="clearfix news_det">
+                <div class="fl">
+                    <span>发布时间:</span>
+                    <span>2016-10-05 11:16</span>
+                    <span>作者</span>
+                    <span>作者名称</span>
+                </div>
+                <div class="fr">
+                    <span>来源:</span>
+                    <span>房巴拉</span>
+                </div>
+            </div>
+            <div class="news_zy">
+                <span>文章摘要:</span>
+                <span>鸡犬升天通常出现在一波行情的末端</span>
+            </div>
+            <div class="news_con clearfix">
+                <div class="fl news_con01">
+                     <!-- 文章内容 -->
+                    <div>
+                        <p>月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。</p>
+                        <p>月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。月涨76万，抻了两个月，龙博苑二区的业主赵阿姨终于有点坐不住了。</p>
+                        <img src="image/bannerV2.jpg" width="790" alt="">
+                        <h3>Q1:回龙观地区是个啥情况？</h3>
+                        <div class="news_mz">
+                            免责声明：文中观点仅为个人建议，不代表链家网观点，仅供投资者参考。
+                        </div>
+                    </div>
+                    <!-- 标签 -->
+                    <div class="clearfix news_tips">
+                        <a href="newslist.html" target="_blank">二手房</a>
+                        <a href="newslist.html" target="_blank">房价</a>
+                    </div>
+                    <!-- 赞 -->
+                    <div class="news_zan">&#xe608;</div>
+                    <div class="news_zn">567人赞过</div>
+                </div>
+            </div>
+        </div>
+        <div class="fr news_fr">
+            <div class="news02">
+                <div class="news_hots news_tits news_hotsi">
+                    <h3 class="news_hots_tit">相关热点</h3>
+                    <ul>
+                        <li class="news_hots_tit_cur">
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>    
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="news_hots news_tits news_knews">
+                    <h3 class="news_hots_tit">相关百科</h3>
+                    <ol>
+                        <li class="news_hots_tit_cur">
+                            <div></div>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>    
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <div></div>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <div></div>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <div></div>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <div></div>
+                            <a href="javascript:;">
+                                全解惑｜超发的货币都造成了什么？ 
+                                <p>货币超发导致房价火热吗？</p>      
+                            </a>
+                            <span></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(".news_tits li span").click(function(){
+            // 改变li中的p与span的样式
+            var par  =$(this).parent(".news_tits li");
+            $(par).toggleClass("news_hots_tit_cur").siblings('li').removeClass("news_hots_tit_cur");
+        })
+        var bot = $("body,html").height()-350;
+        var hei = $(".news02").height();
+        var too = parseInt(bot-hei);
+        $(window).scroll(function(){
+            // 页面滚动时，未出现顶部与底部，fixed
+            if($(window).scrollTop()>194&&$(window).scrollTop()<too){
+                $(".news02").removeClass("news_froo");
+                $(".news02").addClass("news_fro");
+                $(".news_hotsi li:gt(3)").stop().fadeOut(300);
+                $(".news_knews li:gt(3)").stop().fadeOut(300);
+            }
+            // 页面滚动时，出现底部，fixed且bottom=450
+            else if($(window).scrollTop()>too){
+                $(".news02").removeClass("news_fro");
+                $(".news02").addClass("news_froo");
+            }
+            // 页面滚动时，出现顶部，fixed取消
+            else{
+                $(".news02").removeClass("news_fro");
+                $(".news_hotsi li:gt()").stop().fadeIn(300);
+                $(".news_knews li:gt()").stop().fadeIn(300);
+                $(".news02").removeClass("news_froo");
+            }
+        })
+    </script>
+
+    <!--尾部 -->
+    <section class='footer'>
+        <section class="wrapper clearfix">
+            <section class="fl footer_fl">
+                <ul class="footer_nav clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            了解房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            关于房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            联系我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            加入我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            隐私声明
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站地图
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            友情链接
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站名称
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站经营许可证
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站版权信息
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- 二维码 -->
+            <section class="bottom_right fr">
+                <div>官方客服电话 400 999 6993</div>
+                <img src="image/hetong11.jpg" alt="" width="120px">
+            </section>
+        </section>
+        <div class="copyright wrapper">
+                    全国最大的第三方在线置业服务平台  @2016房巴拉  网站备案/许可证号：豫TCP备16009472号-1   
+        </div>
+    </section>
+
+    <!-- 侧边栏 -->
+    <ul class="sidebar">
+        <!-- 消息 -->
+        <li>
+            <a href="javascript:;" class="sidebar01">
+                <p>&#xe630;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side01"><i></i><a href="javascript:;">【登录】</a>后可查看您的消息</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news">
+                <i></i>
+                <b>消息通知</b>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 5731 5731 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租 57317312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 收藏 -->
+        <li>
+            <a href="javascript:;" class="sidebar02">
+                <p>&#xe649;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side02"><i></i><a href="javascript:;">【登录】</a>后可查看收藏楼盘</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news side02">
+                <i></i>
+                <b>我收藏的楼盘</b>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time news_time_cur" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="side02_more">查看更多</a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 工具 -->
+        <li>
+            <a href="javascript:;" class="sidebar03">
+                <p>&#xe602;</p>
+                <div>工具</div>
+            </a>
+            <div class="po side03">
+                <i></i>
+                <a href="javascript:;">房贷计算器</a>
+                <a href="javascript:;">施工进度查询</a>
+                <a href="javascript:;">评分系统</a>
+            </div>
+        </li>
+        <!-- 客服 -->
+        <li>
+            <a href="javascript:;" class="sidebar04">
+                <p>&#xe668;</p>
+                <div>客服</div>
+            </a>
+            <div class="po side04"><i></i>房巴拉客服</div>
+        </li>
+        <span></span>
+        <!-- 二维码 -->
+        <li>
+            <a href="javascript:;" class="sidebar05">
+                <p>&#xe625;</p>
+            </a>
+            <div class="po side05"><i></i><img src="image/hetong11.jpg" width="95" alt=""></div>
+        </li>
+        <!-- 电话 -->
+        <li>
+            <a href="javascript:;" class="sidebar06">
+                <p>&#xe61d;</p>
+            </a>
+            <div class="po side06"><i></i>官方客服电话 400 999 6993</div>
+        </li>
+        <!-- 反馈 -->
+        <li>
+            <a href="javascript:;" class="sidebar07">
+                <p>&#xe656;</p>
+            </a>
+            <div class="po side07">
+                <i></i>
+                <p class="side07_att">您对新版房巴拉网站有任何意见和建议，或使用中遇到的问题，请在本页面反馈。我们会每天关注并不断优化产品，为您提供更好的服务！</p>
+                <div class="side07_tab clearfix">
+                    <div class="side07_tab_cur">意见反馈</div>
+                    <div>我要投诉</div>    
+                </div>
+                <div class="side07_contents">
+                    <!-- 意见 -->
+                    <div class="side07_content01">
+                        <form action="">
+                            <p>我的意见</p>
+                            <textarea></textarea>
+                            <p>联系方式</p>
+                            <input type="text">
+                            <input type="submit" style="curcor:pointer;">
+                        </form>
+                    </div>
+                    <!-- 反馈 -->
+                    <div class="side07_content02">
+                        <p class="side07_tel">投诉电话 400</p>
+                        <div class="side07_sc">处理流程:
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <div class="totop">
+            <p>&#xe605;</p>
+            top
+        </div>
+    </ul>
+<script type="text/javascript">
+// <!-- 返回顶部事件 -->
+    var hei = $(window).height(); 
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+// <!-- 侧边栏事件 -->
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>

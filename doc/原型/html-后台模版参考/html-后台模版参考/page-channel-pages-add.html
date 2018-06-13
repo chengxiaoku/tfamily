@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>频道添加页面 | 管理后台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />    
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link href="css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+   
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>    
+    <script src="dist/js/app.min.js" type="text/javascript"></script>    
+    <script src="plugins/bootbox.js" type="text/javascript"></script>    
+    
+
+
+  </head>
+
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+      
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini">QX</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg">后台管理</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">管理员姓名</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                    <p>
+                      管理员
+                      <small>2015-06-03</small>
+                    </p>
+                  </li>
+                  
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">个人中心</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="#" class="btn btn-default btn-flat">退出</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+      <!--左侧边栏-->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <!-- <li class="header">MAIN NAVIGATION</li> -->
+            <li class="treeview">
+              <a href="index.html">
+                <i class="fa fa-dashboard"></i> <span>控制面板</span>
+              </a>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>内容管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>视频管理</a></li>
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>资讯管理</a></li>
+              </ul>
+            </li>
+
+            <li class="">
+              <a href="page-category.html">
+                <i class="fa fa-files-o"></i>
+                <span>栏目管理</span>
+                <!-- <i class="fa fa-angle-left pull-right"></i> -->
+                <!-- <span class="label label-primary pull-right">4</span> -->
+              </a>
+              
+            </li>
+            <li class="active">
+              <a href="#">
+                <i class="fa fa-th"></i> <span>页面管理</span> 
+                <i class="fa fa-angle-left pull-right"></i>
+                <!-- <small class="label pull-right bg-green">new</small> -->
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="page-channel.html"><i class="fa fa-circle-o"></i>频道管理</a></li>
+                <li><a href="page-section.html"><i class="fa fa-circle-o"></i>区块管理</a></li>
+                <li><a href="page-page.html"><i class="fa fa-circle-o"></i>单页管理</a></li>
+                <li><a href="page-special.html"><i class="fa fa-circle-o"></i>专题管理</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa  fa-user"></i>
+                <span>用户管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class=""><a href="page-member.html"><i class="fa fa-circle-o"></i>会员列表</a></li>
+                <li ><a href="page-member-group.html"><i class="fa fa-circle-o"></i>会员组管理</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa  fa-comment"></i>
+                <span>评论管理</span>
+                <small class="label pull-right bg-green">50条</small> 
+              </a>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-bar-chart"></i>
+                <span>广告管理</span>
+                <!-- <small class="label pull-right bg-green">50条</small>  -->
+              </a>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-area-chart"></i>
+                <span>数据统计</span>
+                <!-- <small class="label pull-right bg-green">50条</small>  -->
+              </a>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa  fa-cny"></i>
+                <span>财务管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>充值记录</a></li>
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>消费记录</a></li>
+              </ul>
+            </li>
+            
+
+            <li class="header"></li>
+
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-area-chart"></i>
+                <span>基础设置</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="page-setting.html"><i class="fa fa-circle-o"></i>网站设置</a></li>
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>支付设置</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa  fa-user"></i>
+                <span>管理员设置</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>管理员管理</a></li>
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>角色管理</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!--子页面标题/面包屑-->
+        <section class="content-header">
+          <h1>频道（电影） - 添加页面</h1>
+          <ol class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">添加页面</li>
+          </ol>
+        </section>
+
+        <!-- 主体内容 -->
+        <section class="content">
+
+          <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-8">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header">
+                 
+                </div><!-- /.box-header -->
+
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body padding20">
+                    <div class="form-group has-error">
+                     <label for="">页面名称<span class="required">*</span></label>
+                     <div>
+                      <input type="text" placeholder="输入页面名称 ..." id="" class="form-control wp50 inline-block" >
+                      <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> 页面名称不能重复</label>
+                     </div>
+                     
+
+                   </div>
+            
+            <!-- 该表单項去掉，内容从模版字段中获取 -->
+            <!-- 
+                   <div class="form-group">
+                     <label for="">文件名<span class="required">*</span></label>
+                     <input type="text" placeholder="输入文件名称 ..." id="" class="form-control wp50" >
+                     
+                     <span class="help-block">说明：页面名称指的是模版文件名（如：single）.</span>
+                   </div>
+                    -->
+                
+                   <div class="form-group">
+                     <label for="">选择模版<span class="required">*</span></label>
+                     <div class=" input-group wp50">
+                       <input type="text" class="form-control" placeholder="请选择页面模版 ..." >
+                       <span class="input-group-btn">
+                         <button class="btn btn-info btn-flat" type="button" onclick="selectTpl()">选择</button>
+                       </span>
+                     </div>
+                     
+                     <span class="help-block">说明：模版文件目录（ru：page/page_template.html）</span>
+                     
+                     
+                   </div>
+
+
+                    <div class="form-group">
+                      <label for="">页面标题（SEO）</label>
+                      <input type="text" placeholder="输入页面标题 ..." id="" class="form-control wp50" >
+                    </div>
+
+                    <div class="form-group">
+                      <label>页面关键词（SEO）</label>
+                      <textarea placeholder="请输入页面关键词 ..." rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>页面描述（SEO）</label>
+                      <textarea placeholder="请输入页面描述 ..." rows="3" class="form-control"></textarea>
+                    </div>
+
+                  
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer p20">
+                    <button class="btn btn-primary w100" type="submit">新建</button>
+                    <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                  </div>
+                </form>
+              </div><!-- /.box -->
+
+              
+
+           </div>
+
+          </div>
+
+         
+        </section><!-- /.content -->
+
+      </div><!-- /.content-wrapper -->
+      
+    </div><!-- ./wrapper -->
+   
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">当前目录：templates/default/movies/</h4>
+      </div>
+      <div class="modal-body">
+
+        <!--动态获取目录下的文件列表 ajax -->
+          <table class="table table-hover table-noboder" >
+            <tbody>
+              <tr>
+                <td>
+                  <a href="#" class="block"><i class="fa fa-fw fa-file-code-o"></i>&nbsp; index.html</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" class="block"><i class="fa fa-fw fa-file-code-o"></i>&nbsp; page.html</a>
+                </td>
+              </tr>
+
+              <tr class="selected">
+                <td>
+                  <a href="#" class="block"><i class="fa fa-fw fa-file-code-o"></i>&nbsp; single.html</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="#" class="block"><i class="fa fa-fw fa-file-code-o"></i>&nbsp; category.html</a>
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+
+      </div>
+      <div class="modal-footer">
+
+        <p class="inline-block">当前选中页面: <span class="label label-success">single.html</span></p>
+
+        <button type="button" class="btn btn-default ml20" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   <script type="text/javascript">
+
+      //选择模版
+      function selectTpl() {
+
+          $('#myModal').modal({});
+      }
+
+
+
+
+
+      //删除所有
+      function delAll() {
+        bootbox.confirm("您确定要删除吗？", function(data) {
+          if (data == false) {
+            alert("取消");
+          } else {
+            alert("确定");
+          }
+        });
+      }
+
+      function del() {
+
+        //bootbox.alert(message, callback)
+        //bootbox.prompt(message, callback)
+        bootbox.confirm("确认要删除该会员组？", function(data) {
+          if (data == false) {
+            alert("取消");
+          } else {
+            alert("确定");
+          }
+        })
+
+      }
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,297 @@
+<include file="Public:head_new" />
+    <!-- 楼市资讯 -->
+        <div class="wrapper clearfix">
+            <!-- 焦点图 -->
+            <div class="n_message clearfix fl">
+                <div class="fl webslider_w websliderit">
+                    <ul class="web_img cleafix">
+                        <li>
+                            <a href="javascript:;" style="width:700px;height:330px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus_w">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" style="width:700px;height:330px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus_w">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" style="width:700px;height:330px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus_w">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="web_tab clearfix">
+                        <li class="web_tab_cur"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>               
+                </div>
+            </div>
+            <!-- 专题 -->
+            <div class="special_w fr">
+                <div class="clearfix">
+                    <div class="fl" style="width:218px;height: 160px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat;background-size: cover;"></div>
+                    <div class="fr" style="width:218px;height: 160px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat;background-size: cover;"></div>
+                </div>
+                <div class="clearfix special_w1">
+                    <div class="fl" style="width:218px;height: 160px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat;background-size: cover;"></div>
+                    <div class="fr" style="width:218px;height: 160px;background:url({:MEMBER}/image/nh_banner.jpg) no-repeat;background-size: cover;"></div>
+                </div>
+            </div>
+        </div>
+    <script>
+        var len = parseInt($(".web_img li").length);
+        $(".web_img").css("width",len*790);
+        for(var i=len;i<5;i++){
+            $(".web_tab li").eq(i).css("display","none")
+        }
+        $(".web_tab li").mouseover(function(){
+            $(this).addClass("web_tab_cur").siblings("li").removeClass("web_tab_cur");
+            var t = -$(this).index()*790;
+            $(".web_img").stop().animate({"left":t},600);
+        })
+    </script>
+    
+    <!-- 列表 -->
+    <section class="wrapper">
+        <div class="n2_rabs clearfix">
+            <span class="n2_rabs_cur wi_sn"><a href="javascript:;">洽谈技巧</a></span>
+            <span class="wi_sn"><a href="javascript:;">合同贷款</a></span>
+            <span><a href="javascript:;">收房办证</a></span>
+        </div>         
+    </section>
+    <section class="n2_co">
+        <div class="n2_cons wrapper">
+            <!-- 今日最热 -->
+            <div class="wi_div1">
+                <p>最热资讯</p>
+                <div class="clearfix" id="loaded_max" style="width: 1200px;">
+                    <volist name="data" id="vo" offset="0" length="4">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">{$vo.title}
+                        </div>
+                    </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+            
+            <img src="{:MEMBER}/image/line.png" style="display:block;margin:0 auto; margin-bottom: 50px" alt="">
+
+            <!-- 全部 -->
+            <div class="wi_div1">
+                <p>全部</p>
+                <div class="clearfix wi_all" style="width: 1215px;" id="hot">
+                <volist name="data" id="vo">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                            <!-- 时间 -->
+                            <div class="wi_time"><php>echo date("Y-m-d",$vo['input_time']);</php></div>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">
+                            <span class="wi_rank">{$vo.name}</span>
+                            {$vo.title}
+                        </div>
+                        <p class="item-info elli2">{$vo.abstract}</p>
+                    </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                </volist>    
+                </div>
+                <div class="nhall_btn wrapper" id="c_hot" onclick="ajax_jia(1)">
+                        查看更多
+                </div>
+            </div>
+        </div>
+
+        <div class="n2_cons wrapper" style="display: none;">
+            <!-- 今日最热 -->
+            <div class="wi_div1">
+                <p>最热资讯</p>
+                <div class="clearfix" id="loaded_max" style="width: 1200px;">
+                    <volist name="data_het" id="vo" offset="0" length="4">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">{$vo.title}
+                        </div>
+                    </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+            
+            <img src="{:MEMBER}/image/line.png" style="display:block;margin:0 auto; margin-bottom: 50px" alt="">
+
+            <!-- 全部 -->
+            <div class="wi_div1">
+                <p>全部</p>
+                <div class="clearfix wi_all" style="width: 1215px;" id="het">
+                <volist name="data_het" id="vo">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                            <!-- 时间 -->
+                            <div class="wi_time"><php>echo date("Y-m-d",$vo['input_time']);</php></div>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">
+                            <span class="wi_rank">{$vo.name}</span>
+                            {$vo.title}
+                        </div>
+                        <p class="item-info elli2">{$vo.abstract}</p>
+                        </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                </volist>    
+                </div>
+                <div class="nhall_btn wrapper" id="c_het" onclick="ajax_jia(2)">
+                        查看更多
+                </div>
+            </div>
+        </div>
+        <div class="n2_cons wrapper" style="display: none;">
+            <!-- 今日最热 -->
+            <div class="wi_div1">
+                <p>最热资讯</p>
+                <div class="clearfix" id="loaded_max" style="width: 1200px;">
+                    <volist name="data_souf" id="vo" offset="0" length="4">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">{$vo.title}
+                        </div>
+                    </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+            
+            <img src="{:MEMBER}/image/line.png" style="display:block;margin:0 auto; margin-bottom: 50px" alt="">
+
+            <!-- 全部 -->
+            <div class="wi_div1">
+                <p>全部</p>
+                <div class="clearfix wi_all" style="width: 1215px;" id="souf">
+                <volist name="data_souf" id="vo">
+                    <div class="wi_one">
+                    <a target="_blank" href="{:U('news/details',array('id'=>$vo[id],'title'=>'bk'))}">
+                        <!-- 图片 -->
+                        <div class="fl wi_item" style="width:265px;height:160px;background:url({$vo.thumb}) no-repeat center;background-size:cover;">
+                            <!-- 时间 -->
+                            <div class="wi_time"><php>echo date("Y-m-d",$vo['input_time']);</php></div>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="wi_two clearfix">
+                            <span class="wi_rank">{$vo.name}</span>
+                            {$vo.title}
+                        </div>
+                        <p class="item-info elli2">{$vo.abstract}</p>
+                    </a>
+                        <!-- 收藏 -->
+                        <div class="clearfix">
+                            <div class="fl">{$vo.source_from}</div>
+                            <div class="fr wi_store">&#xe6aa;<span>{$vo.like}</span></div>
+                        </div>
+                    </div>
+                </volist>    
+                </div>
+                <div class="nhall_btn wrapper" id="c_souf" onclick="ajax_jia(3)">
+                        查看更多
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(function(){
+            $(".n2_rabs span").click(function(){
+                $(this).addClass(".n2_rabs_cur").siblings("span").removeClass(".n2_rabs_cur");
+                var thi = $(this).index();
+                $(".n2_co .n2_cons").eq(thi).css("display","block").siblings(".n2_cons").css("display","none");
+            })
+        })
+    </script>   
+    <script type="text/javascript">
+        var current_one = {$current_one}+1;
+        var current_two = {$current_two}+1;
+        var current_three = {$current_three}+1;
+
+        function ajax_jia(o){
+            if(o=='1'){
+                var p = current_one;
+            }else if(o=='2'){
+                var p = current_two;
+            }else if(o=='3'){
+                var p = current_three;
+            }
+            var html = '';
+            $.getJSON('{:U("news/wike")}', {act: 'page', p: p,o:o}, function(data){
+                if(o=='1'){
+                    if(data.code=='1'){
+                        $("#c_hot").html("没有更多了 ╮(╯_╰)╭ ̑̑")
+                    }else{
+                        $('#hot').append(data.body);
+                        current_one++;
+                    }
+                }else if(o=='2'){
+                    if(data.code=='1'){
+                        $("#c_het").html("没有更多了 ╮(╯_╰)╭ ̑̑")
+                    }else{
+                        $('#het').append(data.body);
+                        current_two++;
+                    }
+                }else if(o=='3'){
+                    if(data.code=='1'){
+                        $("#c_souf").html("没有更多了 ╮(╯_╰)╭ ̑̑")
+                    }else{
+                        $('#souf').append(data.body);
+                        current_three++;
+                    }
+                }
+                
+            }); 
+        }
+    </script>
+  
+<include file="Public:foot" />

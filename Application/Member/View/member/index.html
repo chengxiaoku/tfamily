@@ -1,0 +1,131 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <form action="{:U('member/index')}" method="post">
+                            <a class="btn btn-primary" href="{:U('member/add')}">添加会员</a>
+                            <div class="select pull-right">
+                                <div style="width:250px; margin-left: 5px;" class="input-group fr">
+                                    <input type="text" id="select" placeholder="搜索..." class="form-control" name="find">
+                                    <div onclick="return select()" class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th width="10%" class="text-center">会员编号</th>
+                                <th width="15%">用户名</th>
+                                <th width="20%">电话</th>
+                                <th width="25%">注册时间</th>
+                                <th width="15%">状态</th>
+                                <th width="15%">管理</th>
+                            </tr>
+                            <if condition="empty($list)">
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="alert alert-danger text-center" role="alert">对不起，暂无数据<a
+                                                href="{:U('member/index')}" class="btn btn-warning btn-xs ml10"
+                                                style="text-decoration: none;">查看我的会员</a></div>
+                                    </td>
+                                </tr>
+                            </if>
+                            <foreach name="list" item="vo">
+                                <tr>
+                                    <td class="text-center">{$vo.id}</td>
+                                    <td>{$vo.name}</td>
+                                    <td>{$vo.tel}</td>
+                                    <td>{$vo.add_time}</td>
+                                    <td>
+                                        <if condition="$vo.status ==  pending">
+                                            <small class="label bg-gray">审核中</small><elseif condition="$vo.status == enabled"/>
+                                            <small class="label bg-green">已认证</small><else/>
+                                            <small class="label bg-red">未认证</small>
+                                        </if>
+                                        <!--bg-gray未认证 bg-red审核中-->
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-default btn-xs hide" href="#" data-toggle="modal"
+                                           data-target=".bs-example-modal-sm">审核</a>
+                                        <a class="btn btn-default btn-xs" href="{:U('member/edit')}&id={$vo.id}">修改</a>
+                                        <a href="#" class="btn btn-default btn-xs" onclick="return del('{$vo.id}')">删除</a>
+                                    </td>
+                            </foreach>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class=" col-sm-7 ">
+                                <div class="text-right">
+                                    {$page}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section><!-- /.content -->
+<!-- /.content-wrapper -->
+
+</div><!-- ./wrapper -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span></button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <i class="glyphicon glyphicon-question-sign fa-2x text-red" style="font-size: 18px;"></i>
+                <span style="position: absolute;top: 12px;left:40px;color: red; font-size: 18px;" id="data_sum"></span>
+
+                <div style="margin-top: 20px">
+                    <span class="fa">备注:删除该会员，该会员将无法享受VIP特权。</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="return yes()" data-dismiss="modal"> 确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+    //数据的删除
+    function del(id){
+        delid = id;
+        $("#data_sum").text('确认删除这条数据？');
+        $('#myModal').modal('show');
+        return fasle;
+    }
+    function yes() {
+        location.href = "{:U('member/del')}&id="+delid;
+    }
+    //判断搜索框的输入内容是否为空
+    function select() {
+        var val = $("#select").val();
+        var vals = $.trim(val);
+        if(vals == ""){
+            $("#select").val("");
+            $("#select").attr("placeholder","请输入有效内容");
+            $("#select").focus();
+            return false;
+        }
+    }
+</script>
+<include file="Public:footer"/>

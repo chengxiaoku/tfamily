@@ -1,0 +1,26 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>{$page_title}</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+                <li>{$page_title}</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12" >
+                    <div class="box" style="background-color: #ffffcc ; padding: 10px 10px">
+                        <div class="box-body" style="font-size: 16px">
+                            <i class="glyphicon glyphicon-exclamation-sign"></i>
+                            <span style="margin-right: 20px">您暂未绑定任何银行卡！</span>
+                            <a href="{:U('bank/bank_add')}">我要绑定</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<include file="Public:footer"/>

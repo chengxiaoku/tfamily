@@ -1,0 +1,305 @@
+<!--网页头部-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="<?php echo $_SESSION['site_description']; ?>">
+    <meta name="keywords" content="<?php echo $_SESSION['site_keywords']; ?>">
+    <title>{$page_title}</title>
+    <script type="text/javascript" src="{:HOUSE}js/jquery.min.js"></script>
+    <script type="text/javascript" src="{:HOUSE}layer/layer.js"></script>
+    <script type="text/javascript" src="{:HOUSE}bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/common_new.css" />
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/style_v2.css" />
+
+</head>
+
+<body>
+    <!-- 顶部导航和banner -->
+    <section class="header">
+        <!-- logo&导航 -->
+        <section class="wrapper clearfix">
+            <!-- logo -->
+            <div class="fl"> 
+                <a href="javascript:;" class="index_logo" title="T家园"></a>
+                <a href="javascript:;" class="index_adr">&#xe60f;{$city_name}</a>
+            </div>
+            <!-- 登陆注册 -->
+            <div class="fr">
+                <ul class="index_nav clearfix">
+                    <li class="fl"><a href="{:U('index/index')}">首页</a></li>
+                    <li class="fl"><a href="{:U('House/index')}" target="_blank">新房</a></li>
+                    <li class="fl"><a href="{:U('Car/index')}">新车</a></li>
+                    <li class="fl"><a href="{:U('news/index')}">资讯</a></li>
+                    <li class="fl login_box" style="padding: 3px 7px;">
+                        <a href="{:U('Auth/login')}">登陆</a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- banner内容 -->
+        <section class="index_banner">
+            <!-- 网站宣传标语 -->
+            <section class="index_title" >
+                <div class="nh_banner_tit">T家园创业平台，帮您找到梦想中的家</div>
+            </section>
+            <!-- 搜索引擎框体 -->
+            <!--<a href="../House/index.html" target="_blank">-->
+            <form action="{:U('House/house_select')}" method="post" class="index_search clearfix">
+                <input type="text" name="house_name" placeholder="请输入楼盘名称">
+                <input type="submit" value="开始找房">
+            </form>
+            </a>
+        </section>
+    </section>
+
+    <!-- 功能展示区域 -->
+    <ul class="wrapper clearfix index_fun">
+        <li class="fl">
+            <div class="box">
+                <a class="thumb" href="{:U('Page/bargain')}"><img src="{:HOUSE}image/icon-mm.png" height="70" alt=""></a>
+                <p class="title">抱团砍价</p>
+                <div>一个人砍太累，合砍才实惠！</div>
+                <div>无优惠，不买房！抱团砍价,必有惊喜</div>
+            </div>
+        </li>
+
+        <li class="fl">
+            <div class="box">
+                <a class="thumb"  href="{:U('Page/entrepreneurship')}"><img src="{:HOUSE}image/icon-one.png" height="70" alt=""></>
+                <p class="title">创业就业</p>
+                <div>成为T会员获取消费收益和提成奖励</div>
+                <div>实现提成本创业，获取更大利润回报</div>
+            </div>
+        </li>
+        <li class="fl">
+            <div class="box">
+                <a class="thumb"  href="{:U('Page/make_money')}"><img src="{:HOUSE}image/icon-money.png" height="70" alt=""></a>
+                <p class="title">赚钱省钱</p>
+                <div>推荐既有奖励，开启您的创业激情</div>
+                <div>互联网与实体商家完美融合</div>
+            </div>
+        </li>
+        <li class="fl">
+            <div class="box">
+                <a class="thumb"  href="{:U('Page/service')}"><img src="{:HOUSE}image/icon-car.png" height="70" alt=""></a>
+                <p class="title">专车接送</p>
+                <div>专车接送，全程陪同看房</div>
+                <div>好房不必等，优质更低价！</div>
+            </div>
+        </li>
+    </ul>
+
+    <img src="{:ASSETS}img/line.png" style="display:block;margin:0 auto;margin-top:50px;" alt="">
+
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 500px;width: 1150px;margin: 30px auto;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <foreach name="img" item="row" key="key">
+                <li data-target="#carousel-example-generic" data-slide-to="{$key-1}"></li>
+            </foreach>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox" >
+            <volist name="img" id="row">
+                <div class="item">
+                    <a href="{$row.url}">
+                        <img src="{$row.img}" style="height: 500px;width: 1150px;">
+                    </a>
+                    <div class="carousel-caption">
+                        {$row.text}
+                    </div>
+                </div>
+            </volist>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 新房源 -->
+    <section class="newhouse2" id="ershoufanglist">
+        <div class="wrapper">
+            <h3>最新楼盘</h3>
+            <p>真实信息准确同步，楼盘动态一手掌握
+                <a href="{:U('House/index')}" class="pull-right more">更多新房</a>
+            </p>
+            <ul class="clearfix new">
+                <volist name="new_house" id="row">
+                    <li>
+                        <a href="{:U('House/house_detail')}&id = {$row.id}" target="_blank">
+                        <div class="wra shadowv">
+                            <img src="{$row.thumb}">
+                            <span class="price">{$row.price}元/平</span>
+                            <div class="bottom">
+                                <p style="font-size: 16px; padding: 10px 20px 0 20px;" title="{$row.summary}">{$row.title}:{$row.summary|my_substr=0,16}</p>
+                            </div>
+                        </div>
+                        <div class="tips">
+                            <p>
+                                <span>{$row.title}</span>
+                                <span>{$row.rooms}室</span>
+                                <span>{$row.max_area}平米</span>
+                            </p>
+                        </div>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 优质楼盘推荐 -->
+    <section class="new_house">
+        <div class="wrapper">
+            <h3>优质楼盘</h3>
+            <p>
+            真实信息准确同步，楼盘动态一手掌握
+            <a class="pull-right more" href="{:U('House/index')}">更多优质楼盘</a>
+            </p>
+            <div class="newhose_list">
+            <ul clas="row clearfix">
+                <volist name="hot_house" id="row">
+                    <li style="background: url({$row.thumb})">
+                        <a href="{:U('House/house_detail')}&id = {$row.id}" target="_blank">
+                            <div class="bg"></div>
+                            <div class="title">{$row.title}<span>{$row.price}元/平</span></div>
+                            <div class="title01"></div>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+
+    <style>
+        .nh_banner_tit {
+            color: #fff;
+            font-size: 50px;
+            font-weight: 900;
+            padding-top: 0;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer{
+            margin-top:0;
+        }
+        .index_fun .box {
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .index_fun .box img {
+            display: block;
+            margin:0 auto;
+        }
+
+        .index_fun .box .title {
+            color: #394043;
+            font-size: 18px;
+            padding: 10px 0;
+
+        }
+
+        .index_fun .box div {
+            color: #b0b3b4;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .city {
+            position: relative;
+            padding: 10px;
+        }
+        .city a {
+            border: 1px solid #d2d2d2;
+            border-radius: 15px;
+            color: #888;
+            height: 26px;
+			text-align: center;
+            line-height: 26px;
+            margin: 5px 12px;
+            text-decoration: none;
+            width: 110px;
+            display: inline-block;
+            float: left;
+        }
+        .city a:hover {
+            background-color: #f8f8f8;
+        }
+
+    </style>
+
+    <!--广告幻灯片-->
+    <script type="text/javascript">
+        $('.carousel-indicators li:eq(0)').addClass('active');
+        $('.carousel-inner div:eq(0)').addClass('active');
+    </script>
+
+    <script type="text/javascript">
+        //弹出选择城市
+        $(".index_adr").on('click',function(){
+            $.post('{:U(region)}',{provice_id:1},function(data){
+                var address = '';
+                $.each(data,function(i,provices){
+                    //拼成样式
+                    address+='<a href="javascript:;" id="'+provices.id+'" onclick="city('+provices.id+')" style="">'+provices.name+'</a>';
+                });
+
+                layer.open({
+                    type: 1,
+                    //title:false,
+                    title: "选择城市",
+                    skin: 'layui-layer-demo', //样式类名
+                    closeBtn: 1, //不显示关闭按钮
+                    shift: 2,
+                    area: ['570px', '470px'],
+                    shadeClose: true, //开启遮罩关闭
+                    content: '<div class="city">'+address + '</div>'
+                });
+                $("#{$city_id}").css({
+                    "color":"#3FBE65",
+                    "border":'1px solid #3FBE65'
+                });
+            });
+
+        })
+
+        //获取市并存入cookie
+        var i = null;
+        function city(id) {
+
+            layer.closeAll();
+            $.post('{:U(region)}', {city_id: id}, function () {
+                location.href="{:U('index/index')}";
+            });
+        }
+
+        $(function(){
+            $('.new li:eq(3)').css('margin-right','0px');
+        })
+
+        //searchHouse底部查询房
+        function searchHouses(){
+            searchHousee.submit();
+        }
+
+    </script>
+<!--网页底部-->
+<include file="Public:footer"/>

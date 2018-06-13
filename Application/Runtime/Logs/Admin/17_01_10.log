@@ -1,0 +1,512 @@
+[ 2017-01-10T10:26:16+08:00 ] 127.0.0.1 /tfamily/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002318s ]
+NOTIC: [8] Undefined index: HTTP_REFERER E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 24 行.
+
+[ 2017-01-10T10:26:16+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 5 行.
+NOTIC: [8] Undefined variable: meta_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 101 行.
+NOTIC: [8] Undefined variable: error E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 121 行.
+NOTIC: [8] Undefined variable: ref E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045785s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001777s ]
+
+[ 2017-01-10T10:26:16+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000906s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2017-01-10T10:26:22+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015182771
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001120s ]
+
+[ 2017-01-10T10:26:23+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015183530
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001829s ]
+
+[ 2017-01-10T10:26:24+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015184442
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000893s ]
+
+[ 2017-01-10T10:26:25+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015185185
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001136s ]
+
+[ 2017-01-10T10:26:25+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015185890
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2017-01-10T10:26:26+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1484015186566
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001159s ]
+
+[ 2017-01-10T10:26:30+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `tf_admin` [ RunTime:0.0316s ]
+SQL: SELECT * FROM `tf_admin` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `tf_admin` SET `last_time`='2017-01-10 10:26:30',`last_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0022s ]
+
+[ 2017-01-10T10:26:30+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0206s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'province_agent' or user_type = 'district_agent' or user_type = 'city_agent' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'member' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'fan' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tf_house` [ RunTime:0.0169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_house` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tf_car` [ RunTime:0.0282s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_car` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0262s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_orders` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tf_news` [ RunTime:0.0207s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_news` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tf_adspace` [ RunTime:0.0389s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_adspace` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tf_money_details` [ RunTime:0.0233s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_money_details` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 5 行.
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 58 行.
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 114 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049470s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001120s ]
+
+[ 2017-01-10T10:26:54+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=order&a=orders
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_orders` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `tf_orders` ORDER BY add_time DESC LIMIT 0,2   [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0064s ]
+SQL: SELECT `user_type` FROM `tf_user` WHERE ( id=9 )  [ RunTime:0.0005s ]
+SQL: SELECT `user_type` FROM `tf_user` WHERE ( id=8 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\834c9ffac70d37d96827484f10e2eb52.php 第 58 行.
+NOTIC: [8] Undefined variable: find E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\834c9ffac70d37d96827484f10e2eb52.php 第 145 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2017-01-10T10:26:55+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001471s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0581s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0490s ]
+
+[ 2017-01-10T10:27:01+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=Order&a=index_sel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0060s ]
+SQL: select count(*) from tf_orders where `name` LIKE '%%' AND `province` = 7 AND `city` =75 AND `district` = 878 OR `tel` LIKE '%%'  AND `province` = 7  AND `city` =75 AND `district` = 878 [ RunTime:0.0004s ]
+SQL: select * from tf_orders where `name` LIKE '%%' AND `province` = 7 AND `city` =75 AND `district` = 878 OR `tel` LIKE '%%'  AND `province` = 7  AND `city` =75 AND `district` = 878 ORDER BY `add_time` DESC LIMIT 0 , 4 [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\834c9ffac70d37d96827484f10e2eb52.php 第 58 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025586s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000882s ]
+
+[ 2017-01-10T10:27:01+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0233s ]
+
+[ 2017-01-10T10:27:07+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=news&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_news` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_news` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `tf_news` ORDER BY add_time DESC LIMIT 0,4   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\36087655c6ab8580337cdc45b35a926d.php 第 58 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001140s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001287s ]
+
+[ 2017-01-10T10:27:10+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=News&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000835s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_category` [ RunTime:0.0461s ]
+SQL: SELECT * FROM `tf_category` WHERE `type` = 'category'  [ RunTime:0.0034s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 58 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\2dfc02e2d7eeff6052237f403f7435fe.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038577s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2017-01-10T10:27:25+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=comment&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002277s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_house_comments` [ RunTime:0.0285s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_house_comments` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_house_comments` WHERE ( status='pending' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tf_house_comments` [ RunTime:0.0066s ]
+SQL: SELECT comment.id,comment.add_time,comment.status,comment.content,comment.ip,house.title,user.name FROM tf_house_comments as comment INNER JOIN tf_house as house on comment.house_id=house.id INNER JOIN tf_user as user on comment.user_id=user.id  ORDER BY id desc LIMIT 0,4   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000551s ]
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\8f9bdbc99d42082705483228747a68c1.php 第 59 行.
+NOTIC: [8] Undefined variable: val E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\8f9bdbc99d42082705483228747a68c1.php 第 139 行.
+NOTIC: [8] Undefined index: status E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\8f9bdbc99d42082705483228747a68c1.php 第 322 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063475s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001244s ]
+

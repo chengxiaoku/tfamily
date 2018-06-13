@@ -1,0 +1,60 @@
+<div role="tabpanel" class="tab-pane active" id="home">
+    <div class="box-header">
+        <a class="btn btn-info" onclick="add_user({$team_id},1)">返回</a>
+        <div class="pull-right">
+            <div style="width:200px;" class="input-group">
+                <input type="text" placeholder="搜索..." class="center-block form-control" name="ajaxsearch">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" id="search_btn" type="button" onclick="ajax_search()"><i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover text-center">
+        <thead>
+        <tr>
+            <th width="15%">
+                <input id="selectAll" type="checkbox" >全选
+            </th>
+            <th width="15%">昵称</th>
+            <th width="15%">真实姓名</th>
+            <th width="15%">年龄</th>
+            <th width="15%">性别</th>
+            <th width="25%">电话</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+            <volist name="data" id="list">
+                <tr>
+                    <td>
+                        <input type="checkbox" name="checkbox[]" value="{$list.id}">
+                        <input type="hidden" name="team_id" value="{$team_id}">
+                    </td>
+                    <td>{$list.name}</td>
+                    <td>{$list.real_name}</td>
+                    <td>{$list.age}</td>
+                    <td>
+                        <if condition="$list.sex == man">
+                            男
+                            <elseif condition="$list.sex == female"/>
+                            女
+                            <elseif condition="$list.sex == secret"/>
+                            保密
+                        </if>
+                    </td>
+                    <td>{$list.tel}</td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class=" col-sm-7 ">
+            <div class="text-right page">
+                {$page}
+            </div>
+        </div>
+    </div>
+</div>
+

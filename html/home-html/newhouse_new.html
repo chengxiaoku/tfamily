@@ -1,0 +1,1051 @@
+<!-- 新房 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>房巴拉</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/common_new.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <section class="topnav"> 
+        <section class="wrapper clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="fl"><a href="javascript:;">新房</a></li>
+                <li class="fl"><a href="javascript:;">楼盘评分</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+                <li class="fl"><a href="javascript:;">旅游地产</a></li>
+                <li class="fl"><a href="javascript:;">在线装修</a></li>
+                <li class="fl"><a href="javascript:;">家居软装</a></li>
+                <li class="fl"><a href="javascript:;">施工进度查询</a></li>
+            </ul>
+            <div class="normal_login fr">
+                <a href="javascript:;">注册</a>
+                <span>|</span>
+                <a href="javascript:;">登陆</a>
+            </div>
+        </section>
+    </section>
+
+    <!-- 二级导航 -->
+    <section class="nhnav wrapper">
+        <ul class="clearfix">
+            <li class="nhnav01 fl">
+                <a href="index_new.html" target="_blank">
+                    <img src="image/b_logo.png" width="98" alt="">
+                    <span>新房</span>
+                </a>
+            </li>
+            <li class="nhnav02 fl"></li>
+            <li class="nhnav03 fl" id="nhnav03">
+                <div>洛阳</div>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="javascript:;" class="nhnav04_cur">首页</a>
+                <a href="javascript:;">楼盘</a>
+                <a href="javascript:;">旅游地产</a>
+            </li>
+            <li class="nhnav05 fr">
+                &#xe61d; 客服电话 400 999 6993
+            </li>
+        </ul>
+    </section>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+
+    <!-- banner和搜索 -->
+    <section class="nh_banner">
+        <div class="nh_banner_tit">房巴拉，帮您找到梦想中的家</div>
+        <div class="nh_banner_det">洛阳市在售楼盘数量 <span>666</span> 个</div>
+        <!-- 搜索引擎框体 -->
+        <form action="" class="index_searcht clearfix">
+            <input type="text" placeholder="请输入楼盘名称">
+            <input type="submit" value="开始找房">  
+            <a href="javascript:;">地图找房</a> 
+        </form>
+    </section>
+
+    <!-- 频道推荐 -->
+    <section style="background:#f0f2f5;width:100%;">
+        <section class="nh_rec clearfix wrapper">
+            <div class="fl"><a href="javascript:;">近期开盘</a></div>
+            <div class="fl"><a href="javascript:;">尾盘清仓</a></div>
+            <div class="fl"><a href="javascript:;">别墅精选</a></div>
+        </section>
+    </section>
+
+    <!-- 精选楼盘 -->
+    <section class="newhouse">
+        <div class="wrapper">
+            <div class="n_title">
+                <div class="title_l"><h1>精选新盘</h1></div>
+                <div class="title_r"><span>冷静客观 专业可靠</span></div>
+            </div>
+            <div class="n_just">
+            <!-- 剛需要 -->
+                <div class="just_item topic_item_s1">
+                    <div class="just_title clearfix">
+                        <h4>刚需盘</h4>
+                        <a href="newslist02.html" target="_blank" title="更多刚需盘专题">更多</a>
+                    </div>
+                    <div class="topic_list">
+                        <a href="news_details.html" target="_blank"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="news_details.html" target="_blank">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p>大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p class="elli2">大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p class="elli2">大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- 改善盘 -->
+                <div class="just_item topic_item_s1">
+                    <div class="just_title clearfix">
+                        <h4>改善盘</h4>
+                        <a href="javascript:;" title="更多刚需盘专题">更多</a>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p class="elli2">大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p>大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p>大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- 专家盘 -->
+                <div class="just_item topic_item_s1">
+                    <div class="just_title clearfix">
+                        <h4>专家盘</h4>
+                        <a href="javascript:;" title="更多刚需盘专题">更多</a>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p class="elli2">大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p>大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                    <div class="topic_list">
+                        <a href="javascript:;"><img src="image/index01.jpg" class="n_img01 fl"></a>
+                        <div class="n_text fr">
+                            <h5 class="elli2"><a href="javascript::">新房日｜一大波人去昌平买房 图什么？</a></h5>
+                            <p>大中关催化昌平区，引来更多“高精尖”买房</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section>
+
+    <!-- 分割线 -->
+    <img src="image/line.png" style="display:block;margin:0 auto;margin-top:50px;" alt="" >
+    
+    <!-- 楼市资讯 -->
+    <section class="newhouse">
+        <div class="wrapper">
+            <div class="n_title">
+                <div class="title_l"><h1>楼市资讯</h1></div>
+                <div class="title_r"><span>随时掌握行业动态 即刻了解热点资讯</span></div>
+            </div>
+            <div class="n_message clearfix">
+                <div class="fl webslider websliderit">
+                    <ul class="web_img cleafix">
+                        <li>
+                            <a href="news_details.html" target="_blank" style="width:740px;height:415px;background:url(image/late1.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            <div class="n_title2">本地资讯</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="news_details.html" target="_blank" style="width:740px;height:415px;background:url(image/late1.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            <div class="n_title2">本地资讯</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="news_details.html" target="_blank" style="width:740px;height:415px;background:url(image/late1.jpg) no-repeat center;background-size:cover;">
+                            <p class="n_focus">洛阳楼市前八月成交额达1936亿元 同比增长13%</p>
+                            <div class="n_title2">本地资讯</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="web_tab clearfix">
+                        <li class="web_tab_cur"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>               
+                </div>
+                <div class="fr webslider2">
+                    <div class="w2_img"><img src="image/index01.jpg"></div>
+                    <div class="w2_bg">
+                        <h3>
+                            <span>全国资讯</span>
+                            <span><a href="newslist.html" target="_blank">更多</a></span>
+                        </h3>
+                        <ul>
+                            <li><a href="news.html" target="_blank"><span>行业资讯</span>房企在渝拿地 资金一旦涉及高利贷取消竞拍资格</a></li>
+                            <li><a href="javascript:;"><span>行业资讯</span>房企在渝拿地 资金一旦涉及高利贷取消竞拍资格</a></li>
+                            <li><a href="javascript:;"><span>行业资讯</span>房企在渝拿地 资金一旦涉及高利贷取消竞拍资格</a></li>
+                            <li><a href="javascript:;"><span>行业资讯</span>房企在渝拿地 资金一旦涉及高利贷取消竞拍资格</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var len = parseInt($(".web_img li").length);
+        $(".web_img").css("width",len*790);
+        for(var i=len;i<5;i++){
+            $(".web_tab li").eq(i).css("display","none")
+        }
+        $(".web_tab li").mouseover(function(){
+            $(this).addClass("web_tab_cur").siblings("li").removeClass("web_tab_cur");
+            var t = -$(this).index()*790;
+            $(".web_img").stop().animate({"left":t},600);
+        })
+    </script>
+ 
+    <!-- 分割线 -->
+    <img src="image/line.png" style="display:block;margin:0 auto;margin-top:50px;" alt="" >
+
+    <!-- 热门楼盘 -->
+    <section class="newhouse" style="height:665px;">
+        <div class="wrapper">
+            <div class="n_title">
+                <div class="title_l"><h1>热门楼盘</h1></div>
+                <div class="title_r"><span>用品质保证 用口碑说话</span></div>
+            </div>
+            <div class="n_conts">
+                <div class="n_hot n_hot_show">
+                    <ul class="clearfix">
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="n_hot">
+                    <ul class="clearfix">
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="n_hot">
+                    <ul class="clearfix">
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="fl hotimg" style="background: url(image/index02.jpg) no-repeat center;background-size: cover;">
+                                <div class="hottrade">10万抵40万</div>
+                            </div>
+                            <div class="fr hottext">
+                                <p class="hotname"><a href="javascript::">华远裘马四季</a><span class="hotlab">普通住宅</span></p>
+                                <p class="hotsite"><span class="n_adr">&#xe60f;</span>门头沟</p>
+                                <p class="n_weight">190平米-190平米</p>
+                                <p class="n_weight">均价<span class="hotprice">57000 元/平</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="n_hot_tab clearfix">
+                <li class="n_hot_cur"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        var len = parseInt($(".n_conts .n_hot").length);
+        for(var i=len;i<5;i++){
+            $(".n_hot_tab li").eq(i).css("display","none")
+        }
+        $(".n_hot_tab").css("width",len*20);
+        $(".n_hot_tab li").mouseover(function(){
+            $(this).addClass("n_hot_cur").siblings('li').removeClass("n_hot_cur");
+            $(".n_conts .n_hot").eq($(this).index()).stop().fadeIn(600).siblings(".n_hot").stop().fadeOut(300)
+        })
+    </script>
+        
+    <!-- 分割线 -->
+    <img src="image/line.png" style="display:block;margin:0 auto;margin-top:50px;" alt="" >
+
+    <!-- 全部楼盘 -->
+    <section class="nh_all">
+        <h3>全部楼盘</h3>
+        <div class="nhh3_det">全面的数据 真实的信息</div>
+        <div class="nh_alt wrapper">洛阳在售楼盘 <a href="javascript:;">666</a> 个</div>
+        <ul class="clearfix nh_allul">
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" style="background:url(image/nh_banner.jpg) no-repeat center;background-size:cover;">
+                    楼盘名称
+                    <div class="elli">&#xe60f;【海淀】万柳区域巴沟路华联购物中心西侧</div>
+                </a>
+                <div class="clearfix nhall_det">
+                    <div class="fl">
+                        均价 <span> 5000元/平</span>
+                    </div>
+                    <div class="fr">
+                        楼盘类型
+                    </div>
+                </div>
+                <div class="clearfix nhall_squ">
+                    <span>6居/5居/4居/3居</span>
+                    <span>-</span>
+                    <span>213-466平</span>
+                </div>
+            </li>
+        </ul>
+        <div class="nhall_btn wrapper">
+            查看更多
+        </div>
+    </section>
+    <script>
+        var len = $(".nh_allul li").length;
+        var h = Math.ceil(parseInt(len)/6)*910;
+        $(".nhall_btn").click(function(){
+            var hei = $(".nh_allul").css("height");
+            var thei = parseInt(hei)+910;
+            if(thei<=h){
+                $(".nh_allul").stop().animate({"height":thei+"px"},800);
+            }else{
+                $(".nhall_btn").html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            }
+        })
+    </script>
+
+    <!--尾部 -->
+    <section class='footer'>
+        <section class="wrapper clearfix">
+            <section class="fl footer_fl">
+                <ul class="footer_nav clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            了解房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            关于房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            联系我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            加入我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            隐私声明
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站地图
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            友情链接
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站名称
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站经营许可证
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站版权信息
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- 二维码 -->
+            <section class="bottom_right fr">
+                <div>官方客服电话 400 999 6993</div>
+                <img src="image/hetong11.jpg" alt="" width="120px">
+            </section>
+        </section>
+        <div class="copyright wrapper">
+                    全国最大的第三方在线置业服务平台  @2016房巴拉  网站备案/许可证号：豫TCP备16009472号-1   
+        </div>
+    </section>
+
+    <!-- 侧边栏 -->
+    <ul class="sidebar">
+        <!-- 消息 -->
+        <li>
+            <a href="javascript:;" class="sidebar01">
+                <p>&#xe630;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side01"><i></i><a href="javascript:;">【登录】</a>后可查看您的消息</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news">
+                <i></i>
+                <b>消息通知</b>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 5731 5731 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租 57317312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 收藏 -->
+        <li>
+            <a href="javascript:;" class="sidebar02">
+                <p>&#xe649;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side02"><i></i><a href="javascript:;">【登录】</a>后可查看收藏楼盘</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news side02">
+                <i></i>
+                <b>我收藏的楼盘</b>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time news_time_cur" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="side02_more">查看更多</a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 工具 -->
+        <li>
+            <a href="javascript:;" class="sidebar03">
+                <p>&#xe602;</p>
+                <div>工具</div>
+            </a>
+            <div class="po side03">
+                <i></i>
+                <a href="javascript:;">房贷计算器</a>
+                <a href="javascript:;">施工进度查询</a>
+                <a href="javascript:;">评分系统</a>
+            </div>
+        </li>
+        <!-- 客服 -->
+        <li>
+            <a href="javascript:;" class="sidebar04">
+                <p>&#xe668;</p>
+                <div>客服</div>
+            </a>
+            <div class="po side04"><i></i>房巴拉客服</div>
+        </li>
+        <span></span>
+        <!-- 二维码 -->
+        <li>
+            <a href="javascript:;" class="sidebar05">
+                <p>&#xe625;</p>
+            </a>
+            <div class="po side05"><i></i><img src="image/hetong11.jpg" width="95" alt=""></div>
+        </li>
+        <!-- 电话 -->
+        <li>
+            <a href="javascript:;" class="sidebar06">
+                <p>&#xe61d;</p>
+            </a>
+            <div class="po side06"><i></i>官方客服电话 400 999 6993</div>
+        </li>
+        <!-- 反馈 -->
+        <li>
+            <a href="javascript:;" class="sidebar07">
+                <p>&#xe656;</p>
+            </a>
+            <div class="po side07">
+                <i></i>
+                <p class="side07_att">您对新版房巴拉网站有任何意见和建议，或使用中遇到的问题，请在本页面反馈。我们会每天关注并不断优化产品，为您提供更好的服务！</p>
+                <div class="side07_tab clearfix">
+                    <div class="side07_tab_cur">意见反馈</div>
+                    <div>我要投诉</div>    
+                </div>
+                <div class="side07_contents">
+                    <!-- 意见 -->
+                    <div class="side07_content01">
+                        <form action="">
+                            <p>我的意见</p>
+                            <textarea></textarea>
+                            <p>联系方式</p>
+                            <input type="text">
+                            <input type="submit" style="curcor:pointer;">
+                        </form>
+                    </div>
+                    <!-- 反馈 -->
+                    <div class="side07_content02">
+                        <p class="side07_tel">投诉电话 400</p>
+                        <div class="side07_sc">处理流程:
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <div class="totop">
+            <p>&#xe605;</p>
+            top
+        </div>
+    </ul>
+<script type="text/javascript">
+// <!-- 返回顶部事件 -->
+    var hei = $(window).height(); 
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+// <!-- 侧边栏事件 -->
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>

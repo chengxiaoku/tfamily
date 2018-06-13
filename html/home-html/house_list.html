@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>楼盘列表</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/common_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_v2.css" />
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <!-- 新闻头部与新房头部不同 -->
+    <section class="topnav">
+        <section class="wrapperi clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="fl"><a href="javascript:;">新房</a></li>
+                <li class="fl"><a href="javascript:;">二手房</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+            </ul>
+            <div class="normal_login fr normal_login01">
+                <a href="javascript:;"> 注册</a>
+                <a href="javascript:;"> 登陆</a>
+            </div>
+        </section>
+    </section>
+    <style>
+        
+        
+     
+    </style>
+    <!-- 二级导航 -->
+    <div class="news_top" style="background:#fff;">
+        <section class="nhnav wrapperi clearfix">
+        <ul class="clearfix fl wrapperi">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="image/normal-logo.png" width="100" alt="">
+                    <span>新房</span>
+                </a>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="javascript:;">首页</a>
+                <a href="javascript:;" class="nhnav04_cur" >楼盘</a>
+            </li>
+            <li class="nhnav05 fr">
+                &#xe61d; 客服电话 400 999 6993
+            </li>
+        </ul>
+        </section>
+    </div>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+    
+    <!-- 搜索 -->
+    <section class="hl01">
+        <section class="wrapperi clearfix">   
+            <form action="" class="fl">
+                <input type="text" placeholder="请输入楼盘名或区域">
+                <input type="submit" value="&#xe60c;">
+            </form>  
+            <div class="fl">
+                搜索历史 : 
+                <a href="javascript:;">万柳书院</a>
+                <a href="javascript:;">万柳书院</a>
+                <a href="javascript:;">万柳书院</a>
+                <a href="javascript:;">万柳书院</a>
+                <a href="javascript:;">万柳书院</a>
+                <a href="javascript:;">万柳书院</a>
+            </div>  
+            <!--地图找房-->
+            <!-- <a href="javascript:;" class="hl0103 fr"><span>&#xe60f;</span> 地图找房</a> -->
+        </section>
+    </section>
+
+    <!-- 面包屑 -->
+    <section class="news_bn wrapperi">
+        <ul class="clearfix">
+            <li><a href="javascript:;">房巴拉洛阳站</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">北京新房</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">北京楼盘</a><span> &gt; </span></li>   
+            <li><a href="javascript:;">朝阳楼盘</a><span> &gt; </span></li>   
+            <li><a href="javascript:;">恒大华府</a><span> &gt; </span></li>   
+        </ul>
+    </section>
+   
+    <!-- 选项 -->
+    <div class="hoc_box1 wrapperi">
+                <!--区域-->
+                <div class="hoc_list1">
+                    <ul id="one1">
+                        <li>区域:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;">不限</a></li>
+                        <li tag="jx"><a href="javascript:;">涧西区</a></li>
+                        <li tag="xg"><a href="javascript:;">西工区</a></li>
+                        <li tag="lc"><a href="javascript:;">老城区</a></li>
+                        <li tag="ll"><a href="javascript:;">洛龙区</a></li>
+                        <li tag="ch"><a href="javascript:;">瀍河区</a></li>
+                        <li tag="jl"><a href="javascript:;">吉利区</a></li>
+                        <li tag="gx"><a href="javascript:;">高新区</a></li>
+                        <li tag="yb"><a href="javascript:;">伊滨区</a></li>
+                        <li tag="jj"><a href="javascript:;">开发区</a></li>
+                        <li tag="qt"><a href="javascript:;">其他区县</a></li>
+                    </ul>
+                </div>
+              
+                <!--户型-->
+                <div class="hoc_list2">
+                    <ul id="two1">
+                        <li>户型:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;">不限</a></li>
+                        <li tag="one"><a href="javascript:;">一室</a></li>
+                        <li tag="two"><a href="javascript:;">二室</a></li>
+                        <li tag="three"><a href="javascript:;">三室</a></li>
+                        <li tag="four"><a href="javascript:;">四室</a></li>
+                        <li tag="five"><a href="javascript:;">五室以上</a></li>
+                    </ul>
+                </div>
+              
+              <!--价格-->
+              <div class="hoc_list3">
+                <ul id="three1">
+                    <li>价格:</li>
+                    <li class="hoc_active" tag="o"><a href="javascript:;">不限</a></li>
+                    <li class="" tag="3000"><a href="javascript:;">3000以下</a></li>
+                    <li class="" tag="3000-4000"><a href="javascript:;">3000-4000</a></li>
+                    <li class="" tag="4000-5000"><a href="javascript:;">4000-5000</a></li>
+                    <li class="" tag="5000-6000"><a href="javascript:;">5000-6000</a></li>
+                    <li class="" tag="6000"><a href="javascript:;">6000以上</a></li>
+                </ul>
+            </div>
+              
+              <!--类型-->
+              <div class="hoc_list4">
+                  <ul id="four1">
+                      <li class="">类型:</li>
+                      <li tag="o" class="hoc_active"><a href="javascript:;">不限</a></li>
+                      <li tag="grade"><a href="javascript:;">住宅</a></li>
+                      <li tag="villa"><a href="javascript:;">别墅</a></li>
+                      <li tag="indpark"><a href="javascript:;">产业园</a></li>
+                      <li tag="writehouse"><a href="javascript:;">写字楼</a></li>
+                  </ul>
+              </div>
+    </div>
+
+    <!-- 两种模式 -->
+    <ul class="hl_tabs wrapperi">
+        <li class="hl_tabs_cur">全部楼盘</li>
+        <!-- <li>户型图模式</li> -->
+        <select name="" id="" value="按开盘时间排序" class="fr">
+            <option value="">开盘时间由近到远</option>
+            <option value="">开盘时间由远到近</option>
+        </select>
+        <select name="" id="" value="按价格排序" class="fr">
+            <option value="">均价由高到低</option>
+            <option value="">均价由低到高</option>
+        </select>
+        <button class="px_cur fr">默认排序</button>
+        <span class="fr">排序方式 : </span>
+    </ul>
+
+    <ul class="hl_con wrapperi">
+        <li>
+            <section class="clearfix hl_con1">
+                <a href="house_detail.html" target="_blank" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>
+                <div class="hl_con02 fl">
+                    <h3 class="hl_con02_tit">
+                        <a href="house_detail.html" target="_blank" class="fl">万柳书院</a>
+                        <div class="fl">
+                            26万抵50万<span></span><span></span>
+                        </div>
+                    </h3>
+                    <p class="elli hl_con02_adr">长虹东路与阜盛大街交汇处</p>
+                    <p class="elli hl_con02_squ">6居/5居/3居/2居 - <span>131～166平米</span></p>
+                    <div class="hl_con02_tip">
+                        <span class="hlip01">在售</span>
+                        <span class="hlip02">普通住宅</span>
+                    </div>
+                </div>
+                <div class="fr hl_con03">
+                    <!-- 均价 <span>5500</span> 元/平 -->
+                    <!-- 价格待定 -->
+                    总价 <span>600</span> 万/套
+                </div>
+            </section>
+            <section class="hl_con2">
+                <div class="hl_con201">
+                    <ul>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                    </ul>
+                </div>
+                <span class="hl_le">&lt;</span>
+                <span class="hl_re">&gt;</span>
+            </section>
+        </li>
+        <li>
+            <section class="clearfix hl_con1">
+                <a href="house_detail.html" target="_blank" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>
+                <div class="hl_con02 fl">
+                    <h3 class="hl_con02_tit">
+                        <a href="house_detail.html" target="_blank" class="fl">万柳书院</a>
+                        <div class="fl">
+                            26万抵50万<span></span><span></span>
+                        </div>
+                    </h3>
+                    <p class="elli hl_con02_adr">长虹东路与阜盛大街交汇处</p>
+                    <p class="elli hl_con02_squ">6居/5居/3居/2居 - <span>131～166平米</span></p>
+                    <div class="hl_con02_tip">
+                        <span class="hlip01">在售</span>
+                        <span class="hlip02">普通住宅</span>
+                    </div>
+                </div>
+                <div class="fr hl_con03">
+                    <!-- 均价 <span>5500</span> 元/平 -->
+                    <!-- 价格待定 -->
+                    总价 <span>600</span> 万/套
+                </div>
+            </section>
+            <section class="hl_con2">
+                <div class="hl_con201">
+                    <ul>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                    </ul>
+                </div>
+                <span class="hl_le">&lt;</span>
+                <span class="hl_re">&gt;</span>
+            </section>
+        </li>
+        <li>
+            <section class="clearfix hl_con1">
+                <a href="house_detail.html" target="_blank" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>
+                <div class="hl_con02 fl">
+                    <h3 class="hl_con02_tit">
+                        <a href="house_detail.html" target="_blank" class="fl">万柳书院</a>
+                        <div class="fl">
+                            26万抵50万<span></span><span></span>
+                        </div>
+                    </h3>
+                    <p class="elli hl_con02_adr">长虹东路与阜盛大街交汇处</p>
+                    <p class="elli hl_con02_squ">6居/5居/3居/2居 - <span>131～166平米</span></p>
+                    <div class="hl_con02_tip">
+                        <span class="hlip01">在售</span>
+                        <span class="hlip02">普通住宅</span>
+                    </div>
+                </div>
+                <div class="fr hl_con03">
+                    <!-- 均价 <span>5500</span> 元/平 -->
+                    <!-- 价格待定 -->
+                    总价 <span>600</span> 万/套
+                </div>
+            </section>
+            <section class="hl_con2">
+                <div class="hl_con201">
+                    <ul>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                        <li>
+                            <a href="house_detail.html" target="_blank" style="display:block;background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></a>
+                            <p titlt="A-w6户型：2室2厅2卫 (131.00㎡)" class="elli">A-w6户型：2室2厅2卫 (131.00㎡)</p>
+                        </li>
+                    </ul>
+                </div>
+                <span class="hl_le">&lt;</span>
+                <span class="hl_re">&gt;</span>
+            </section>
+        </li>
+    </ul>
+    <script>
+        $(function(){
+            // 全部楼盘
+            $(".hl_tabs li").click(function(){
+                $(this).addClass("hl_tabs_cur").siblings("li").removeClass("hl_tabs_cur");
+            })
+            $(".hl_tabs li:nth-child(2)").click(function(){
+                $(".hl_con2").css("display","block");
+            })
+            $(".hl_tabs li:nth-child(1)").click(function(){
+                $(".hl_con2").css("display","none");
+            })
+
+            // 户型图组右移动
+            $(".hl_le").click(function(){
+                var par = $(this).parents(".hl_con li").addClass("hl_con2_t").siblings("li").removeClass("hl_con2_t");
+                var lef = parseInt($(".hl_con2_t .hl_con201 ul").css("left"))+188;
+                if(lef<=0){
+                    $(".hl_con2_t .hl_con201 ul").stop().animate({"left":lef},300)
+                }else{
+                    lef=0;
+                }
+            })
+
+            // 户型图组左移动
+            $(".hl_re").click(function(){
+                var par = $(this).parents(".hl_con li").addClass("hl_con2_t").siblings("li").removeClass("hl_con2_t");
+                var ull = -parseInt($(".hl_con2_t li").length)*188+188;
+                var ulli = parseInt($(".hl_con2_t li").length)*188;
+                $(".hl_con2_t .hl_con201 ul").css("width",ulli);
+                var lef = parseInt($(".hl_con2_t .hl_con201 ul").css("left"))-188;
+                if(lef>=ull){
+                    $(".hl_con2_t .hl_con201 ul").stop().animate({"left":lef},300)
+                }else{
+                    lef=ull;
+                }
+            })
+
+        })
+    </script>
+
+
+
+    <!--尾部 -->
+    <!--尾部 -->
+    <section class='footer'>
+        <section class="wrapper clearfix">
+            <p class="footer_fl">
+                <a href="javascript:;">
+                    了解T家园
+                </a>
+                <a href="javascript:;">
+                    关于T家园
+                </a>
+                <a href="javascript:;">
+                    联系我们
+                </a>
+                <a href="javascript:;">
+                    加入我们
+                </a>
+                <a href="javascript:;">
+                    隐私声明
+                </a>
+                <a href="javascript:;">
+                    网站地图
+                </a>
+                <a href="javascript:;">
+                    友情链接
+                </a>
+                
+            </p>
+            <p class="copyright">
+            Copyright © 2016 tjiayuan.com 洛阳T家园科技股份有限公司 版权所有
+            </p>
+            
+        </section>
+        
+    </section>
+    
+    
+<script type="text/javascript">
+// <!-- 返回顶部事件 -->
+    var hei = $(window).height(); 
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+// <!-- 侧边栏事件 -->
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>

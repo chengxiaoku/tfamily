@@ -1,0 +1,1614 @@
+<!-- T家园楼盘详情页 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>楼盘详情页</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/common_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_v2.css" />
+
+</head>
+<body style="background-color: #f5f5f6;">
+    <!-- 新闻头部与新房头部不同 -->
+    <section class="topnav">
+        <section class="wrapperi clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="fl"><a href="javascript:;">新房</a></li>
+                <li class="fl"><a href="javascript:;">二手房</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+            </ul>
+            <div class="normal_login fr normal_login01">
+                <a href="javascript:;"> 注册</a>
+                <a href="javascript:;"> 登陆</a>
+            </div>
+        </section>
+    </section>
+    
+    <!-- 二级导航 -->
+    <div class="news_top" style="background:#fff;">
+        <section class="nhnav wrapperi clearfix">
+        <ul class="clearfix fl">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="image/normal-logo.png" width="98" alt="">
+                    <span>新房</span>
+                </a>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="javascript:;">首页</a>
+                <a href="javascript:;" class="nhnav04_cur" >楼盘</a>
+            </li>
+        </ul>
+        <a href="house_list.html" target="_blank">
+        <form class="fr newslist_sear">
+            <input type="text" class="fl" placeholder="请输入楼盘名或区域">
+            <button class="fr">&#xe60c;</button>
+        </form>
+        </a>
+        </section>
+    </div>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        });
+    </script>
+
+    <!-- banner -->
+    <section class="ra01">
+        <!-- <div class="ra0101">
+            <img src="image/h01.jpg" alt="">
+        </div> -->
+        <div clsas="ra0102"></div>
+        <section class="news_bn wrapperi">
+            <ul class="clearfix">
+                <li><a href="javascript:;">T家园洛阳站</a><span> &gt; </span></li>    
+                <li><a href="javascript:;">北京新房</a><span> &gt; </span></li>    
+                <li><a href="javascript:;">北京楼盘</a><span> &gt; </span></li>   
+                <li><a href="javascript:;">朝阳楼盘</a><span> &gt; </span></li>   
+                <li><a href="javascript:;">恒大华府</a><span> &gt; </span></li>   
+            </ul>
+        </section>
+        <section class="ra_banner wrapperi" style="background:url(image/h02.jpg) no-repeat center;background-size:cover;">
+            <ul class="ra_bc">
+                <li class="ra_bc01">
+                    <p class="ra_bc0101">在售</p>
+                    <p class="ra_bc0102">恒大华府</p>
+                    <p class="ra_bc0103 clearfix">
+                        <span class="fl">均价</span>
+                        <span class="fl"> 90000 </span>
+                        <span class="fl">元／平</span>
+                        <span class="fr">别名：恒大水岸嘉园</span>
+                    </p>
+                </li>
+                <section class="ra_bcs">
+                    <!-- 标签 -->
+                    <li class="ra_bc02">
+                        <span>普通住宅</span>
+                        <span>普通住宅</span>
+                        <span>普通住宅</span>
+                        <span>普通住宅</span>
+                        <span>普通住宅</span>
+                    </li>
+                    <li class="ra_bc03 clearfix">
+                        <span class="ra_bc0301">&#xe649;</span>
+                        <span class="ra_bc0302 elli">物业类型 : 普通住宅</span>
+                    </li>
+                    <li class="ra_bc03 ra_bc04 clearfix">
+                        <span class="ra_bc0301">&#xe694;</span>
+                        <span class="ra_bc0302 elli">项目地址 : 东坝南区五环路七棵树以东，坝河以南</span>
+                        <span class="ra_bc0503n">&gt;</span>
+                        <div class="ra_bc0504m">
+                            <p class="ra_bc0506">东坝南区五环路七棵树以东，坝河以南</p>
+                        </div>
+                    </li>
+                    <li class="ra_bc03 ra_bc05 clearfix">
+                        <span class="ra_bc0301">&#xe68f;</span>
+                        <span class="ra_bc0302 elli">最新开盘 : 2016年03月27日</span>
+                        <span class="ra_bc0503x">&gt;</span>
+                        <div class="ra_bc0504y">
+                            <p class="ra_bc0506">最新开盘</p>
+                            <p class="ra_bc0507">2016-07-07</p>
+                            <p class="ra_bc0508">查看详情</p>
+                        </div>
+                    </li>
+                    <li class="ra_bc06">
+                        <span>&#xe61d;</span> 咨询电话
+                    </li>
+                </section>
+            </ul>
+            <a href="house_photo.html" target="_blank" class="ra_bca">
+                <span>&#xe618;</span> 相册 (18)
+            </a>
+        </section>
+    </section>
+    <script>
+        $(".ra_bc0503n").click(function(){
+            if($(".ra_bc0504m").css("display")=="none"){
+                $(this).siblings(".ra_bc0504m").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504m").stop().fadeOut(300);
+            }
+        })
+        $(".ra_bc0503x").click(function(){
+            if($(".ra_bc0504y").css("display")=="none"){
+                $(this).siblings(".ra_bc0504y").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504y").stop().fadeOut(300);
+            }
+        })
+         $(".ra_bc0508").on('click',function(){
+            layer.open({
+              type: 1,
+              title:"开盘详情",
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['380px', '300px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="ra_tan">1. 2016-03-27 3号楼开盘</div>'
+            });
+        })
+         $(".ra_bc06").click(function(){
+            $(this).html("400 999 6993").addClass("ra_bc06t");
+         })
+    </script>
+    
+    <!-- 优惠 -->
+    <section class="ra02">
+        <div class="fl ra0201">8万抵10万</div>
+        <div class="fr ra0202">领优惠</div>
+    </section>
+
+    <!-- 吸顶导航 -->
+    <section class="ra03 wrapperi">
+        <div class="ra03gr">
+            <span></span>
+        </div>
+        <ul class="fl">
+            <li class="ra0301 ra0301_cur"><a href="#ra_det01">楼盘动态</a></li>
+            <li class="ra0301"><a href="#ra_det02">户型介绍</a></li>
+            <li class="ra0301"><a href="#ra_det03">楼盘相册</a></li>
+            <!-- <li class="ra0301"><a href="#ra_det04">价格决策</a></li> -->
+            <li class="ra0301"><a href="#ra_det06">周边配套</a></li>
+            <li class="ra0301"><a href="#ra_det07">楼盘详情</a></li>
+            <li class="ra0301"><a href="#ra_det08">抱团砍价</a></li>
+        </ul>
+        <div class="ra0302"><span>&#xe61d;</span> 咨询电话</div>
+    </section>
+
+    <!-- 主内容块 -->
+    <section class="raco">
+
+        <!-- 楼盘动态 -->
+        <section class="ra_det ra_det01 wrapperi" id="ra_det01" style="padding-bottom:0;">
+            <h3 class="ra_det0101">楼盘动态</h3>
+            <ul class="ra_det0102">
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="fl ra_det0102_fl">最新活动</div>
+                    <div class="ra_det0102_fr fr">
+                        <div class="clearfix">
+                            <p class="fl">万柳书院精装新房大户型均价160000</p>
+                            <p class="fr">2016-09-01 16:42</p>
+                        </div>
+                        <a href="javascript:;">
+                            万柳书院在售1-15#楼,10#楼为会所.面积206平米,250平米,336平米,273平米,277平米,213平米,558平米和466平米户型.9月初均价上调为160000元/平米.精装修现房.
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <p class="ra_detmore_tw">查看更多</p>
+        </section>
+    
+        <!-- 户型介绍 -->
+        <section class="ra_det ra_det01 wrapperi ra_det02" id="ra_det02">
+            <h3 class="ra_det0101">户型介绍
+                <ul class="ra_det0201_ul">
+                    <li class="ra_d_cur">全部户型(6)</li>
+                    <li>四居室(1)</li>
+                    <li>五居室(1)</li>
+                    <li>六居室(1)</li>
+                    <li>三居室(3)</li>
+                </ul>
+            </h3>
+            <div class="ra_det0202">
+                <!-- 每个.ra_det0202_ul的子标签li只有前两个拥有ra_det0202_ulli类名 -->
+                <ul class="ra_det0202_ul ra_det0202_ul01 ra_det0202_ul_cur">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+                <ul class="ra_det0202_ul ra_det0202_ul02">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+                <ul class="ra_det0202_ul ra_det0202_ul03">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+                <ul class="ra_det0202_ul ra_det0202_ul04">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+                <ul class="ra_det0202_ul ra_det0202_ul05">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="fl ra_det0202_li01 ra_det_tan" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;">
+                            <span>A户型</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>3室2厅2卫 213.00㎡</span>
+                                <span>（南,北朝向）</span>
+                                <span>在售</span>
+                            </div>
+                            <div>户型解读：30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</div>
+                            <div>   
+                                <span class="ra_tip1">南北通透</span>
+                                <span class="ra_tip2">全明格局</span>
+                                <span class="ra_tip3">主卧带卫</span>
+                                <span class="ra_tip4">厨卫不对门</span>
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan">
+                            查看
+                        </div>
+                    </li>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+            </div>   
+        </section>
+        <!-- 户型介绍中，点击查看按钮  弹出层-->
+        <section class="ra_det0202_tan">
+            <ul class="ra_det0202_tan_ul">
+                <li class="ra_det0202_tan_li ra_det0202_tan_li_cur clearfix">
+                    <div class="ra_det0202_tan01" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:80%">
+                        <span>A户型</span>
+                        <a href="image/bannerv2.jpg" target="_blank">查看原图</a>
+                    </div>
+                    <div class="ra_det0202_tan02">
+                        <div class="ra_det0202_tan0201">
+                            <h3>1万柳书院</h3>
+                            <div class="ra_det0202_tan0202">
+                                <span class="ra_col00">南北通透</span>
+                                <span class="ra_col01">南北通透</span>
+                                <span class="ra_col02">南北通透</span>
+                            </div>              
+                            <ul class="ra_det0202_tan0203">
+                                <li class="clearfix"><span>房屋朝向：</span><span class="elli"> 东,南,北</span></li>
+                                <li class="clearfix"><span>居室：</span><span class="elli">5室1厅3卫</span></li>
+                                <li class="clearfix"><span>装修标准：</span><span class="elli">精装修</span></li>
+                                <li class="clearfix"><span>建筑面积：</span><span class="elli">277㎡</span></li>
+                                <li class="clearfix"><span>参考总价：</span><span class="elli">4638-4734万</span></li>
+                                <li class="clearfix"><span>参考首付：</span><span class="elli">1391万</span></li>
+                                <li class="clearfix"><span>参考月供：</span><span class="elli">141294元</span></li>
+                                <li class="clearfix"><span>户型解读：</span><span class="elli">30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</span></li>
+                            </ul>
+                            <div class="clearfix ra_det0202_tan0204">
+                                <button class="ra_add">添加对比</button>
+                                <button class="ra_tac">关注</button>
+                            </div>
+                            <button class="ra_det0202_tan0205"><span>&#xe61d;</span> 咨询电话</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="ra_det0202_tan_li clearfix">
+                    <div class="ra_det0202_tan01" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:80%">
+                        <span>A户型</span>
+                        <a href="javascript:;">查看原图</a>
+                    </div>
+                    <div class="ra_det0202_tan02">
+                        <div class="ra_det0202_tan0201">
+                            <h3>2万柳书院</h3>
+                            <div class="ra_det0202_tan0202">
+                                <span class="ra_col00">南北通透</span>
+                                <span class="ra_col01">南北通透</span>
+                                <span class="ra_col02">南北通透</span>
+                            </div>              
+                            <ul class="ra_det0202_tan0203">
+                                <li class="clearfix"><span>房屋朝向：</span><span class="elli"> 东,南,北</span></li>
+                                <li class="clearfix"><span>居室：</span><span class="elli">5室1厅3卫</span></li>
+                                <li class="clearfix"><span>装修标准：</span><span class="elli">精装修</span></li>
+                                <li class="clearfix"><span>建筑面积：</span><span class="elli">277㎡</span></li>
+                                <li class="clearfix"><span>参考总价：</span><span class="elli">4638-4734万</span></li>
+                                <li class="clearfix"><span>参考首付：</span><span class="elli">1391万</span></li>
+                                <li class="clearfix"><span>参考月供：</span><span class="elli">141294元</span></li>
+                                <li class="clearfix"><span>户型解读：</span><span class="elli">30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</span></li>
+                            </ul>
+                            <div class="clearfix ra_det0202_tan0204">
+                                <button>添加对比</button>
+                                <button>关注</button>
+                            </div>
+                            <button class="ra_det0202_tan0205"><span>&#xe61d;</span> 咨询电话</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="ra_det0202_tan_li clearfix">
+                    <div class="ra_det0202_tan01" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:80%">
+                        <span>A户型</span>
+                        <a href="javascript:;">查看原图</a>
+                    </div>
+                    <div class="ra_det0202_tan02">
+                        <div class="ra_det0202_tan0201">
+                            <h3>3万柳书院</h3>
+                            <div class="ra_det0202_tan0202">
+                                <span class="ra_col00">南北通透</span>
+                                <span class="ra_col01">南北通透</span>
+                                <span class="ra_col02">南北通透</span>
+                            </div>              
+                            <ul class="ra_det0202_tan0203">
+                                <li class="clearfix"><span>房屋朝向：</span><span class="elli"> 东,南,北</span></li>
+                                <li class="clearfix"><span>居室：</span><span class="elli">5室1厅3卫</span></li>
+                                <li class="clearfix"><span>装修标准：</span><span class="elli">精装修</span></li>
+                                <li class="clearfix"><span>建筑面积：</span><span class="elli">277㎡</span></li>
+                                <li class="clearfix"><span>参考总价：</span><span class="elli">4638-4734万</span></li>
+                                <li class="clearfix"><span>参考首付：</span><span class="elli">1391万</span></li>
+                                <li class="clearfix"><span>参考月供：</span><span class="elli">141294元</span></li>
+                                <li class="clearfix"><span>户型解读：</span><span class="elli">30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</span></li>
+                            </ul>
+                            <div class="clearfix ra_det0202_tan0204">
+                                <button>添加对比</button>
+                                <button>关注</button>
+                            </div>
+                            <button class="ra_det0202_tan0205"><span>&#xe61d;</span> 咨询电话</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="ra_det0202_tan_li clearfix">
+                    <div class="ra_det0202_tan01" style="background:url(image/bannerv2.jpg) no-repeat center;background-size:80%">
+                        <span>A户型</span>
+                        <a href="javascript:;">查看原图</a>
+                    </div>
+                    <div class="ra_det0202_tan02">
+                        <div class="ra_det0202_tan0201">
+                            <h3>万柳书院</h3>
+                            <div class="ra_det0202_tan0202">
+                                <span class="ra_col00">南北通透</span>
+                                <span class="ra_col01">南北通透</span>
+                                <span class="ra_col02">南北通透</span>
+                            </div>              
+                            <ul class="ra_det0202_tan0203">
+                                <li class="clearfix"><span>房屋朝向：</span><span class="elli"> 东,南,北</span></li>
+                                <li class="clearfix"><span>居室：</span><span class="elli">5室1厅3卫</span></li>
+                                <li class="clearfix"><span>装修标准：</span><span class="elli">精装修</span></li>
+                                <li class="clearfix"><span>建筑面积：</span><span class="elli">277㎡</span></li>
+                                <li class="clearfix"><span>参考总价：</span><span class="elli">4638-4734万</span></li>
+                                <li class="clearfix"><span>参考首付：</span><span class="elli">1391万</span></li>
+                                <li class="clearfix"><span>参考月供：</span><span class="elli">141294元</span></li>
+                                <li class="clearfix"><span>户型解读：</span><span class="elli">30平客厅宽阔,更显宽敞大气，南向主卧,保证充足采光</span></li>
+                            </ul>
+                            <div class="clearfix ra_det0202_tan0204">
+                                <button>添加对比</button>
+                                <button>关注</button>
+                            </div>
+                            <button class="ra_det0202_tan0205"><span>&#xe61d;</span> 咨询电话</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <span class="ra_x">&#xe672;</span>
+            <span class="ra_l">&#xe622;</span>
+            <span class="ra_r">&#xe678;</span>
+        </section>
+        <script>
+        $(function(){
+
+            // 全部户型展开
+            var len = $(".ra_det0202_ul01 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul01");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+            //三居室展开
+            var len = $(".ra_det0202_ul02 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul02");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+            // 四居室展开
+            var len = $(".ra_det0202_ul03 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul03");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+            // 五居室展开
+            var len = $(".ra_det0202_ul04 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul04");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+            // 六居室展开
+            var len = $(".ra_det0202_ul05 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul05");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+            // 几居室？tab切换
+            $(".ra_det0201_ul li").click(function(){
+                $(".ra_det0202_ul").eq($(this).index()).addClass("ra_det0202_ul_cur").siblings("ul").removeClass("ra_det0202_ul_cur");
+                $(this).addClass("ra_d_cur").siblings("li").removeClass("ra_d_cur");
+            })
+
+            // 弹出
+            $(".ra_det_tan").click(function(){
+                $(".ra_det0202_tan").css("display","block");
+            })
+            // 弹出框里li的个数
+            var tu = $(".ra_det0202_tan_li").length;
+            // 弹出框里的内容切换 点击左箭头切换到上一个
+            $(".ra_l").click(function(){
+                var ti = $(".ra_det0202_tan_li_cur").index()-1;
+                if(ti<0){
+                    ti = 0;
+                    alert("没有更多了 ╮(╯_╰)╭ ̑̑");
+                }
+                $(".ra_det0202_tan_li").eq(ti).addClass("ra_det0202_tan_li_cur").siblings("li").removeClass("ra_det0202_tan_li_cur");
+            })
+            // 弹出框里的内容切换 点击右箭头切换到下一个
+            $(".ra_r").click(function(){
+                var ti = $(".ra_det0202_tan_li_cur").index()+1;
+                if(ti>=tu){
+                    ti = tu;
+                    alert("没有更多了 ╮(╯_╰)╭ ̑̑");
+                }
+                $(".ra_det0202_tan_li").eq(ti).addClass("ra_det0202_tan_li_cur").siblings("li").removeClass("ra_det0202_tan_li_cur");
+            })
+            // 退出弹出
+            $(".ra_x").click(function(){
+                $(".ra_det0202_tan").css("display","none");
+            })
+
+            // 回到顶部按钮出现
+            $(window).scroll(function(){
+                var wi = $(window).height();
+                var tpoo = $(this).scrollTop();
+                if(tpoo>wi){
+                    $(".raco_rt03").css("display","block");
+                }
+                if(tpoo<=wi){
+                    $(".raco_rt03").css("display","none");
+                }
+            })
+            // 回到顶部
+            $(".raco_rt03").click(function(){
+                $("body,html").stop().animate({"scrollTop":"0"},300);
+            })
+            
+            // 刷新页面时，对比项超过两项，开始对比按钮出现,且有对比项时，显示raco_rt_new
+            var tri = $(".raco_rt02_ul li").length;
+                if(tri>=2){
+                    $(".raco_rt02_a").css("display","block");
+                }
+                if(tri>=1){
+                    $(".raco_rt_old").css("display","none");
+                    $(".raco_rt_new").css("display","block");
+                }
+                $(".raco_rt02_num span").html(tri);
+
+            // 点击添加对比按钮,若添加对比块没有出现，则让他出现
+            $(".ra_add").click(function(){
+                $(".raco_rt_old").css("display","none");
+                $(".raco_rt_new").css("display","block");
+                $(".raco_rt02_num span").html(tri);
+            })
+
+            // 对比项超过两个，开始对比按钮出现
+            $(".ra_add").click(function(){
+                var tri = $(".raco_rt02_ul li").length;
+                if(tri>=2){
+                $(".raco_rt02_a").css("display","block");
+                }
+                if(tri<4){
+                    $(this).html("取消对比");
+                    $(this).css('background',"#ececec");
+                }
+            // 对比项超过四个，不能再添加对比
+                if(tri>=4){
+                    layer.open({
+                      type: 1,
+                      skin: 'layui-layer-demo', //样式类名
+                      closeBtn: 0, //不显示关闭按钮
+                      shift: 2,
+                      area: ['300px', '170px'],
+                      shadeClose: true, //开启遮罩关闭
+                      content: '<div style="text-align:center;line-height:100px;">楼盘对比个数超过上限！</div>'
+                    });
+                }
+
+                // 以上判断之后，才能添加节点
+            })
+
+            // 点击楼盘后的X 取消此项
+            $(".raco_rt02_x").click(function(){
+                var tui = $(this).parents("li").index();
+                var list=document.getElementById("raco_rt");
+                list.removeChild(list.childNodes[tui]);
+                // 对比项小于一个，则开始对比按钮消失
+                var tri = $(".raco_rt02_ul li").length;
+                if(tri<2){
+                $(".raco_rt02_a").css("display","none");
+                }
+                $(".raco_rt02_num span").html(tri);
+            })
+
+            var tf = 1;
+            var bf = 1;
+            // 关注楼盘
+            $(".ra_tac").click(function(){
+                if(tf==1){
+                    $(this).html("取消关注")
+                    tf=0;
+                }else{
+                    $(this).html("关注")
+                    tf=1;
+                }
+            })
+            $(".raco_rt01").click(function(){
+                if(bf==1){
+                    $(this).html("取消关注")
+                    bf=0;
+                }else{
+                    $(this).html("关注楼盘")
+                    bf=1;
+                }
+            })
+            
+            // 电话
+            $(".ra_det0202_tan0205").click(function(){
+                $(this).html('400 999 6993');
+            }) 
+
+            // 全部清空
+            $(".raco_rt02_clo").click(function(){
+                var tri = $("#raco_rt li").length;
+                var list=document.getElementById("raco_rt");
+                for(var i=1;i<=tri;i++){
+                    list.removeChild(list.childNodes[i]);
+                }
+                $(".raco_rt02_a").css("display","none");
+                $(".raco_rt_new").css("display","none");
+                $(".raco_rt_old").css("display","block");
+            })
+
+            // 楼盘动态
+            $(".ra_detmore_tw").click(function(){
+                var thi = $(this).siblings(".ra_det0102");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+        })
+        </script>
+
+        <section class="ra_det wrapperi" id="ra_det03">
+            <!-- 楼盘相册  -->
+            <section class="ra_det03 ra_det01">
+                <h3 class="ra_det0101">楼盘相册</h3>
+                <ul class="ra_det0302 clearfix">
+                    <li class="fl">
+                        <a  href="house_photo.html" target="_blank">
+                            <div style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></div>
+                            <p>效果图(9)</p>
+                        </a>
+                    </li>
+                    <li class="fl">
+                        <a  href="house_photo.html" target="_blank">
+                            <div style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></div>
+                            <p>位置图(9)</p>
+                        </a>
+                    </li>
+                    <li class="fl">
+                        <a  href="house_photo.html" target="_blank">
+                            <div style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></div>
+                            <p>样板间(9)</p>
+                        </a>
+                    </li>
+                    <li class="fl">
+                        <a  href="house_photo.html" target="_blank">
+                            <div style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></div>
+                            <p>实景图(9)</p>
+                        </a>
+                    </li>
+                    <li class="fl">
+                        <a  href="house_photo.html" target="_blank">
+                            <div style="background:url(image/bannerv2.jpg) no-repeat center;background-size:cover;"></div>
+                            <p>小区配套(9)</p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="house_photo.html" target="_blank" class="ra_det0303">查看全部</a>
+            </section>
+
+            <!-- 新房百科 -->
+            <section class="nbc wrapperi">
+                <h4><img src="image/nb.png" alt=""></h4>
+                <ul class="clearfix">
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                    <li>
+                        <a href="news.html" target="_blank">八个理由告诉你为什么要买新房</a>
+                    </li>
+                </ul>
+            </scection>
+        </section>
+
+        <!--价格决策 -->
+        
+
+        <!-- 周边配套 -->
+        <section class="ra_det hbox" id="ra_det06">
+            <div class="h_cnt">
+                <h3 class="htitle1">周边配套</h3>
+                <ul class="assortlist">
+                    <li class="licur"><a href="javascript:;">公交</a></li>
+                    <li><a href="javascript:;">教育设施</a></li>
+                    <li><a href="javascript:;">医院</a></li>
+                    <li><a href="javascript:;">银行</a></li>
+                    <li><a href="javascript:;">休闲娱乐</a></li>
+                    <li><a href="javascript:;">购物</a></li>
+                    <li><a href="javascript:;">餐饮</a></li>
+                    <li><a href="javascript:;">运动健身</a></li>
+                </ul>
+            </div>
+            <div class="ra_det0601">
+                <!-- 地图 -->
+            </div>
+        </section>
+
+        <section class="ra_det" id="ra_det07">
+            <!-- 楼盘详情 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">楼盘详情</h3>
+                    <div class="h_line"></div>
+                    <div class="h_dt clearfix">
+                            <p class="clearfix hp">
+                                <span>项目名称 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>地理位置 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>开发商 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>开发商资质 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>建筑设计单位 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>建筑设计单位资质 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>景观设计单位 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>景观设计单位资质 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>承建商 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>承建商资质 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>占地面积 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>总建面积 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>容积率 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>绿化率 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>分期情况 : </span>
+                                <span>名门半山溪谷</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>建筑配套 : </span>
+                                <span>品牌电梯、智能家居、新风系统、中央空调、中央除尘、指纹密码锁</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>社区配套 : </span>
+                                <span>幼儿园、高档私人健身房、恒温游泳池、私人会所、社区服务中心、卫生服务站</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>产品形态 : </span>
+                                <span> 联排、叠拼</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>建筑风格 : </span>
+                                <span>新中式</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>景观风格 : </span>
+                                <span>中式园林景观</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>总户数 : </span>
+                                <span>463户</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>户型配比 : </span>
+                                <span>联排309-430㎡；叠拼240-306㎡</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>物业公司 : </span>
+                                <span>世邦魏理仕顾问</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>物业公司资质 : </span>
+                                <span>一级</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>物业收费 : </span>
+                                <span>4.00</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>五证获得情况 : </span>
+                                <span>三证</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>当期开盘时间 : </span>
+                                <span>2014-02-01 00:00:00</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>当期交房时间 : </span>
+                                <span>2015-12-31 00:00:00</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>当期工程进度 : </span>
+                                <span>部分外立面已做好，绿植已种</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>当前价格 : </span>
+                                <span>待定</span>
+                            </p>
+                    </div>
+                </div>
+                <div class="ra_det07_more">查看详细</div>
+            </section>
+
+            <!-- calculator -->
+            <!-- <section class="hbox">
+                <form class="h_cnt clearfix">
+                    <div class="h_count1 fl">
+                        <p class="counttop">
+                            <span class="c_icon"></span>
+                            <span class="price_title">房贷计算器</span>
+                            <span class="count_intro">选择基本情况，帮您快速计算房贷</span>
+                        </p>
+                        <ul class="count_ul">
+                            <li class="clearfix">
+                                <span class="fl">单价:</span>
+                                <div><input type="text" class="count_input"></div>
+                            </li>
+                            <li class="clearfix">
+                                <span>面积:</span>
+                                <div class="count_case"><input type="text" class="count_input"><span class="count_unit">万</span></div>
+                            </li>
+                            <li class="clearfix">
+                                <span>首付成数:</span>
+                                <div class="">
+                                <div class="count_se">
+                                    <select class="count_ret">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <span>贷款类别:</span>
+                                <div class="">
+                                <div class="count_se">
+                                    <select class="count_ret">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <span>利      率:</span>
+                                <div class="">
+                                <div class="count_se">
+                                    <select class="count_ret">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <span>贷款时间:</span>
+                                <div class="">
+                                <div class="count_se">
+                                    <select class="count_ret">
+                                        <option value="0" selected="">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clearfix cal_inp">
+                            <i class="cal_inp_cur"></i><span>等额本息</span>
+                            <i></i><span>等额本金</span>
+                        </div>
+                    </div>
+                    <div class="h_count2 fl">
+                        <span class="count_line"></span>
+                        <button class="count_btn"><a href="javascript:;">开始<br />计算</a></button>
+                    </div>
+                    <div class="h_count3 fr">
+                        <h3>您的账单</h3>
+                        <p>房屋总价:</p>
+                        <div class="h_loan1 h_loan"><span>贷款总额:</span><span></span></div>
+                        <div class="h_loan2 h_loan"><span>还款总额:</span><span></span></div>
+                        <div class="h_loan3 h_loan"><span>支付利息:</span><span></span></div>
+                        <div class="h_loan4 h_loan"><span>首期付款:</span><span></span></div>
+                        <div class="h_loan5 h_loan"><span>贷款月数:</span><span></span></div>
+                        <div class="h_loan6 h_loan"><span>月均还款:</span><span></span></div>
+                        <div class="h_count3x">＊利率公积金<span>3.25%</span> 商业性<span>4.635%</span>（9折）</div>
+                    </div>
+                </form>
+            </section> -->
+
+            <!-- 推荐楼盘 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">推荐楼盘</h3>
+                    <ul class="h_choose clearfix">
+                        <li>
+                            <a href="javascript:;" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url(image/bannerv2.jpg) no-repeat;background-size: 100% 100%;">
+                                <span class="h_Price">均价5000元/平</span>
+                            </a>
+                            <a href="javascript:;" class="h_classify clearfix"><span class="h_namev elli">恒大华府</span><span class="bieshu">别墅</span></a>
+                            <p class="h_areav">72㎡-83㎡</p>
+                        </li>
+                        <li>
+                            <a href="javascript:;" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url(image/bannerv2.jpg) no-repeat;background-size: 100% 100%;">
+                                <span class="h_Price">均价5000元/平</span>
+                            </a>
+                            <a href="javascript:;" class="h_classify clearfix"><span class="h_namev elli">恒大华府</span><span class="bieshu">别墅</span></a>
+                            <p class="h_areav">72㎡-83㎡</p>
+                        </li>
+                        <li>
+                            <a href="javascript:;" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url(image/bannerv2.jpg) no-repeat;background-size: 100% 100%;">
+                                <span class="h_Price">均价5000元/平</span>
+                            </a>
+                            <a href="javascript:;" class="h_classify clearfix"><span class="h_namev elli">恒大华府</span><span class="bieshu">别墅</span></a>
+                            <p class="h_areav">72㎡-83㎡</p>
+                        </li>
+                        <li>
+                            <a href="javascript:;" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url(image/bannerv2.jpg) no-repeat;background-size: 100% 100%;">
+                                <span class="h_Price">均价5000元/平</span>
+                            </a>
+                            <a href="javascript:;" class="h_classify clearfix"><span class="h_namev elli">恒大华府</span><span class="bieshu">别墅</span></a>
+                            <p class="h_areav">72㎡-83㎡</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+        <script>
+            $(".ra_det07_more").click(function(){
+                $(this).stop().fadeOut(100);
+                $(".h_dt p span").css("height","auto");
+                $(".h_dt").css("height","auto");
+            })
+        </script>
+        
+        <!-- 抱团砍价 -->
+        <section class="ra_det  ra_det01 wrapperi ra_det08" id="ra_det08" style="margin-bottom:50px;">
+            <h3 class="ra_det0101">抱团砍价
+                <a href="javascript:;">了解详情</a>
+            </h3>
+            <div class="clearfix">
+                <div class="fl" style="margin-left:40px;">
+                    <h4><span>A</span><span>发起</span><span>抱团砍价具体流程</span></h4>
+                    <ul class="ll_ul2">
+                      <li class="ll_ulli1 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe62f;</span>发起抱团</li>
+                          <li><span>&#xe615;</span>填写信息</li>
+                          <li><span>&#xe6a9;</span>申请陪同</li>
+                        </ul>
+                      </li>
+                      <li class="ll_ulli2 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe601;</span>招募参与者</li>
+                          <li><span>&#xe6d7;</span>现场砍价</li>
+                          <li><span>&#xe6a0;</span>活动结束</li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+                <div class="fl ra_det08_line"></div>
+                <div class="fr" style="margin-right:58px;">
+                    <h4><span>B</span><span>参与</span><span>抱团砍价具体流程</span></h4>
+                    <ul class="ll_ul2_2">
+                      <li class="ll_ulli2 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe7b7;</span>参与抱团</li>
+                          <li><span>&#xe615;</span>填写信息</li>
+                          <li><span>&#xe6d7;</span>现场砍价</li>
+                          <li><span>&#xe6a0;</span>活动结束</li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ra_det08_btn">发起与参与抱团砍价</div>
+        </section>
+        <script>
+            $(".ra_det08_btn").on('click',function(){
+                layer.open({
+                  type: 1,
+                  skin: 'layui-layer-demo', //样式类名
+                  closeBtn: 0, //不显示关闭按钮
+                  shift: 2,
+                  area: ['570px', '470px'],
+                  shadeClose: true, //开启遮罩关闭
+                  content: '<form class="ra_det08_tan"><h3>发起抱团砍价</h3><ul><li><span>理想户型 : </span><select class="form-control wp50 wordspli5" name="hx" id="hx_a" style="float:none;padding:0;"><option value="两室两厅一卫">两室两厅一卫</option><option value=" 两室两厅一卫"> 两室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅两卫">三室两厅两卫</option><option value=" 四室两厅两卫"> 四室两厅两卫</option><option value="三室两厅两卫">三室两厅两卫</option><option value="四室两厅两卫">四室两厅两卫</option></select><span class="xing">*</span></li><li><span>理想面积 : </span><select class="form-control wp50 wordspli5" name="mj" id="mj_b" style="float:none;padding:0;"><option value="94.00">94.00m²</option><option value="103.00">103.00m²</option><option value="110.00">110.00m²</option><option value="116.00">116.00m²</option><option value="118.00">118.00m²</option><option value="125.00">125.00m²</option><option value="135.00">135.00m²</option><option value="136.00">136.00m²</option><option value="138.00">138.00m²</option><option value="174.00">174.00m²</option></select><span class="xing">*</span></li><li class="ra_det08_tan03"><span>意向户型 : </span><input type="text"/></li><li><span>售楼部价格 : </span><input type="text"/ class="ra_det08_sh"><span>元/每平方</span><span class="xing">*</span></li><li><span>理想价格 : </span><input type="text" class="ra_det08_sh"/><span>元/每平方</span><span>*</span></li><li><span>真实姓名 : </span><input type="text" class="ra_det08_sh"/><span class="xing">*</span></li></ul><div class="ra_det08_di">———— 自抱团起，30天后截止报名 ————</div><input type="submit" value="提交" class="ra_det08_sub"/></form>'
+                });
+            })
+        </script>
+    </section>
+
+    
+    <script>
+        // 客服电话
+        $(".ra0302").click(function(){
+            $(this).html("400 999 6993")
+        })
+
+        // 滚动导航发生hover事件
+        $(".ra0301").hover(function(){
+            // 需要绿色块移动到的位置
+            var lti = parseInt($(this).index())*97;
+            $(this).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+            $(".ra03gr").stop().animate({"left":lti},300)
+        })
+
+        // 内容块数
+        var le = $(".ra03 ul li").length;
+
+        // 导航初次和文件顶部的距离
+        var ht = $(".ra03").offset().top;
+
+        // 发生滚动时间是滚动导航自处方式
+        $(window).scroll(function(){
+            // 每个内容块和文件顶部的距离
+            var n;
+
+            // 每个内容块底部和文件顶部的距离
+            var m;
+
+            // 需要绿色块移动到的位置
+            var u;
+
+            // 此时屏幕和文件顶部的距离
+            var tpo = $(this).scrollTop();
+
+            // 根据tpo选择滚动导航是否吸顶
+            if(tpo>ht){
+                $(".ra03").addClass("ra03i");
+            }else{
+                $(".ra03").removeClass("ra03i");
+                $(".ra03 ul li").eq(0).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                $(".ra03gr").stop().animate({"left":0},300);
+                }
+
+            //屏幕顶部在那个内容块上，就按顺序使得绿色块停在哪个导航标签上
+            for(var i=0;i<le;i++){
+                n=$(".ra_det").eq(i).offset().top;
+                m=parseInt($(".ra_det").eq(i).css('height'))+n;
+                if(tpo>=n&&tpo<m){
+                    u=i*97;
+                    $(".ra03 ul li").eq(i).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                    $(".ra03gr").stop().animate({"left":u},200); 
+                }
+            }
+        })
+    </script>
+
+    <!--尾部 -->
+    <section class='footer'>
+        <section class="wrapper clearfix">
+            <p class="footer_fl">
+                <a href="javascript:;">
+                    了解T家园
+                </a>
+                <a href="javascript:;">
+                    关于T家园
+                </a>
+                <a href="javascript:;">
+                    联系我们
+                </a>
+                <a href="javascript:;">
+                    加入我们
+                </a>
+                <a href="javascript:;">
+                    隐私声明
+                </a>
+                <a href="javascript:;">
+                    网站地图
+                </a>
+                <a href="javascript:;">
+                    友情链接
+                </a>
+                
+            </p>
+            <p class="copyright">
+            Copyright © 2016 tjiayuan.com 洛阳T家园科技股份有限公司 版权所有
+            </p>
+            
+        </section>
+        
+    </section>
+
+    
+<script type="text/javascript">
+// <!-- 返回顶部事件 -->
+    var hei = $(window).height(); 
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+// <!-- 侧边栏事件 -->
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>

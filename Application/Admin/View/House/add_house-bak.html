@@ -1,0 +1,490 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <style type="text/css">
+        .label_mess{
+            width: 100px;
+            text-align: right;
+            margin-right: 15px;
+        }
+        .house_img{
+            background-color: #cfcfcf;
+            padding: 10px;
+        }
+        .img_1{
+            width: 100px;
+            height: 100px;
+        }
+        .text{
+            margin-left: 50px;
+        }
+        .del{
+            position: relative;
+            top: 35px;
+        }
+        .new_div{
+            border: 2px #888888 double; padding: 15px; margin-top: 15px;
+        }
+
+    </style>
+    <!-- 主体内容 -->
+    <form method="post" action="{:U('House/add_house_sql')}" enctype="multipart/form-data">
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-9">
+
+                <div class="nav-tabs-custom" id="bod">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">基本信息</a></li>
+                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">户型</a></li>
+                        <li ><a href="#tab_3" data-toggle="tab" aria-expanded="false">楼盘相册</a></li>
+                        <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">其他信息</a></li>
+                    </ul>
+                    <!--基本信息-->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+                            <div class="form-group">
+                                <label for="" class="label_mess">楼盘名称：</label>
+                                <input type="text" name="house_name" placeholder="输入楼盘名称 ..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">楼盘简介：</label>
+                                <input type="text" name="house_mess" placeholder="输入楼盘简介 ..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">物业类型：</label>
+                                <input type="text" name="house_type" placeholder="输入物业类型 ..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">参考价格：</label>
+                                <input type="text" name="house_money" placeholder="输入参考价格..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess" style="position: relative;top: -130px;">项目特色：</label>
+                                <textarea name="ts" style="width: 400px; height: 150px;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess" >区域地址：</label>
+                                <select class="form-control" name="adress_sh" style="width: 120px; display: inline">
+                                    <option>选择省</option>
+                                </select>
+                                <select class="form-control" name="adress_s" style="width: 120px; display: inline">
+                                    <option>选择市</option>
+                                </select>
+                                <select class="form-control" name="adress_q" style="width: 120px; display: inline">
+                                    <option>选择区</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">楼盘地址：</label>
+                                <input name="house_adress" type="text" placeholder="输入楼盘地址..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">售楼处地址：</label>
+                                <input name="sl_adress" type="text" placeholder="输入售楼处地址..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">开发商：</label>
+                                <input name="developer" type="text" placeholder="输入开发商..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">缩略图：</label>
+                                <div class="input-group" style="position: relative; left: 120px; top: -30px;">
+                                    <input type="text"  name="image" placeholder="上传缩略图 ..." style="width: 150px;"  class="form-control">
+                                    <div class="input-group-btn">
+                                        <button onclick="upload()" style="position: relative;left: -720px;" type="button" class="btn btn-success btn-flat"><i class="fa fw fa-plus-circle"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- /.tab-pane -->
+
+                        <!--户型-->
+
+                        <div class="tab-pane" id="tab_2">
+                            <div style="display: none;">
+                              <div class="new_div" id="house_type_template">
+                                <div class="form-group">
+                                    <label for="" class="label_mess">户型名称：</label>
+                                    <span class="hx"></span>
+                                    <input  name="hx[]" type="hidden">
+                                    <span class="hx_del" onmouseover="cc(this)" onmouseout="c1(this)" onclick="c2(this)" style="float: right; cursor: pointer; font-size: 26px; position: relative; top: -10px;">×</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="label_mess">户型朝向：</label>
+                                    <span class="hx_cx" ></span>
+                                    <input  name="hx_cx[]" type="hidden">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="label_mess">居室：</label>
+                                    <span class="hx_type" ></span>
+                                    <input  name="hx_type[]" type="hidden">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="label_mess">建筑面积：</label>
+                                    <span class="hx_mj" ></span>
+                                    <input name="hx_mj[]" type="hidden">
+                                    <!--<input type="hidden" name="house[type][area][]" value="">-->
+                                </div>
+
+                                  <div class="form-group">
+                                      <label for="" class="label_mess">缩略图：</label>
+                                      <img src="" class="thumb">
+                                      <input type="hidden" name="thumb[]" class="hide_thumb" value="">
+                                  </div>
+
+                              </div>
+                            </div>
+                            <div id="new_cont"></div>
+                            <input type="button" class="btn btn-success w150" style="margin-left: 210px; margin-top: 30px;" id="insert" value="添加户型">
+
+                        </div><!-- /.tab-pane -->
+
+                        <!--楼盘相册-->
+                        <div class="tab-pane" id="tab_3">
+                            <div style="display: none;">
+                            <div class="form-group house_img">
+                                <div class="div_1"><img id="img_1" style="width: 120px; height: 120px;">
+                                    <span class="label_mess text" id="lp_text"></span>
+                                    <button type="button" class="btn btn-danger pull-right del " onclick="return yc()">移除</button>
+                                </div>
+                            </div>
+                            </div>
+                            <div id="insert_img_new"></div>
+                            <input type="button" class="btn btn-success w150" style="margin-left: 210px; margin-top: 30px;" id="inser_img" value="添加相册">
+                        </div><!-- /.tab-pane -->
+                        <!--其他信息-->
+                        <div class="tab-pane" id="tab_4">
+                            <div class="form-group">
+                                <label for="" class="label_mess">建筑类型：</label>
+                                <select class="form-control" style="width: 300px; display: inline">
+                                    <option>不限</option>
+                                    <option>公寓</option>
+                                    <option>别墅</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">最新开盘：</label>
+                                <input type="text" placeholder="输入最新开盘 ..." class="form-control wp50 inline-block" >
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">物业类型：</label>
+                                <select class="form-control" style="width: 300px; display: inline">
+                                    <option>住宅小区</option>
+                                    <option>公寓</option>
+                                    <option>别墅</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="label_mess">产权年限：</label>
+                                <input type="text" placeholder="输入产权年限 ..." class="form-control wp50 inline-block" >
+                            </div>
+                        </div>
+                    </div><!-- /.tab-content -->
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary w200" value="保存">
+                </div>
+            </div>
+
+
+        </div>
+    </section><!-- /.content -->
+
+
+
+    <!-- 添加户型 -->
+    <div class="modal fade" id="myhintModal" style="margin-top: 80px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myMdalLabel">添加户型</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="label_mess">户型名称：</label>
+                        <input id="hx1" type="text" placeholder="输入 户型名称..." class="form-control wp50 inline-block" >
+                    </div>
+                    <div class="form-group">
+                        <label class="label_mess">户型朝向：</label>
+                    <span>
+                        <input type="checkbox" class="hx_cx"><span  style="margin-right: 20px;">东</span>
+                        <input type="checkbox" class="hx_cx"><span  style="margin-right: 20px;">南</span>
+                        <input type="checkbox" class="hx_cx"><span  style="margin-right: 20px;">西</span>
+                        <input type="checkbox" class="hx_cx"><span style="margin-right: 20px;">北</span>
+                    </span>
+                    </div>
+                    <div class="form-group">
+                        <label class="label_mess">建筑面积：</label>
+                        <input type="text" id="hx_j" placeholder="输入面积..." class="form-control wp50 inline-block" >
+                    </div>
+                    <div class="form-group">
+                        <label class="label_mess">居室：</label>
+                        <input type="text" id="hx_s" style="width: 30px;">室
+                        <input type="text" id="hx_t" style="width: 30px;">厅
+                        <input type="text" id="hx_w" style="width: 30px;">卫
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="" class="label_mess">缩略图：</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="上传缩略图 ..." id="uiFileUploadInput" data-thumb="">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success btn-flat" type="button" onclick="upload()"><i
+                                            class="fa fw fa-plus-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="submt">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--楼盘相册的添加-->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">添加楼盘</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label  class="label_mess">开发商：</label>
+                        <input type="text" id="kf" placeholder="输入开发商..." class="form-control wp50 inline-block" >
+                    </div>
+                    <div class="form-group">
+                        <label class="label_mess">缩略图：</label>
+                        <div class="input-group" style="position: relative; left: 120px; top: -30px;">
+                            <input type="text"  name="image" placeholder="上传缩略图 ..." style="width: 150px;"  class="form-control textimg">
+                            <div class="input-group-btn">
+                                <button onclick="upload()" style="position: relative;left: -370px;" type="button" class="btn btn-success btn-flat"><i class="fa fw fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="ok_insert_img">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--上传图片-->
+        
+    <!--楼盘相册移除-->
+    <div class="modal fade" id="myModall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">移除操作</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 style="color: red;"><span class="glyphicon glyphicon-exclamation-sign" style="margin-right:10px; "></span>是否移除?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary"> 确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </form>
+    <!-- /.content  -->
+
+</div>
+
+<!--户型模板-->
+
+
+
+<!-- 上传图片模态框 -->
+<div class="modal fade " id="imageUploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="">上传图片</h4>
+            </div>
+            <div class="modal-body no-padding maxh500">
+                <div class="images-zone tc thumb-place-holder">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-left" style="">
+                    <div class="btn btn-success fileinput-button pull-left inline-block">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>添加图片...</span>
+                        <input id="fileupload" type="file" name="files[]" multiple="" data-text-control="#uiFileUploadInput">
+                    </div>
+                    <span class="loading action-doing hide inline-block mt5 ml10"><i class="fa fa-refresh fa-spin"></i>&nbsp;文件上传中...</span>
+                    <span class="loading action-done hide inline-block mt5 ml10"><i class="fa fa-check-circle-o"></i>&nbsp;上传成功</span>
+                </div>
+                <button type="button" class="btn btn-default ml20" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jquery file upload -->
+<script src="{:ASSETS}plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="{:ASSETS}plugins/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+<link href="{:ASSETS}plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">
+    //BEGIN:上传图片
+    function upload() {
+        $('#imageUploadModal').modal({});
+    }
+    var file_url = "{:U('admin/house/jqueryFileUpload')}";
+    $("#fileupload").fileupload({
+        //options
+        url: file_url,
+        dataType: 'json',
+        autoUpload: true,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+        maxFileSize: 999000,
+        //event
+        add: function(e, data) {
+            //指定模态框容器
+            data.context = $("#imageUploadModal");
+            var autoUpload = $.blueimp.fileupload.prototype.options.autoUpload;
+            if (autoUpload) {
+                data.submit();
+                data.context.find(".action-doing").removeClass("hide");
+            }
+            return true;
+        },
+
+        progressall: function(e, data) {
+            //进度条
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+        },
+
+        done: function(e, data) {
+            var fileInput = data.fileInput;
+            var inputTextId = fileInput.attr("data-text-control");
+            var inputText = $(inputTextId);
+            var placeHolder = data.context.find(".thumb-place-holder");
+            placeHolder.html("");
+            $.each(data.result.files, function (index, file) {
+                if (file.thumbnailUrl) {
+
+                    $("<img>").attr("src", file.thumbnailUrl).appendTo(placeHolder);
+                    inputText.val(file.url);
+                    inputText.attr("data-thumb", file.thumbnailUrl);
+                }
+            });
+
+            data.context.find(".action-doing").addClass("hide");
+            data.context.find(".action-done").removeClass("hide");
+
+        }
+
+    });
+    //END:上传图片
+
+    //添加户型
+    $("#insert").click(function (){
+        //初始化
+        $('#hx1').val('');
+        $('.hx_cx').each(function (){
+            $(this).prop('checked',false);
+        });
+        $('#hx_s').val('');
+        $('#hx_t').val('');
+        $('#hx_w').val('');
+
+        $("#uiFileUploadInput").val("");
+        $("#imageUploadModal").find(".thumb-place-holder").html("");
+        $('#myhintModal').modal('show');
+    });
+
+    //添加户型模态框确认事件
+    $("#submt").click(function (){
+
+
+        //户型名称
+        $("#tab_2 div:eq(0)").find(".hx").text($('#hx1').val());
+        $("#tab_2 div:eq(0)").find(".hx").next().val($('#hx1').val());
+        //户型面积
+        $("#tab_2 div:eq(0)").find(".hx_mj").text($('#hx_j').val());
+        $("#tab_2 div:eq(0)").find(".hx_mj").next().val($('#hx_j').val());
+        //户型朝向
+        var string ='';
+        $('.hx_cx:checked').each(function (){
+            string += ','+$(this).next().text();
+        });
+            string = string.substring(1);
+        $("#tab_2 div:eq(0)").find(".hx_cx").text(string);
+        $("#tab_2 div:eq(0)").find(".hx_cx").next().val(string);
+        //居室
+        var ty= $('#hx_s').val()+'室'+$('#hx_t').val()+'厅'+$('#hx_w').val()+'卫';
+        $("#tab_2 div:eq(0)").find(".hx_type").text(ty);
+        $("#tab_2 div:eq(0)").find(".hx_type").next().val(ty);
+        //缩略图
+        var img_url = $("#uiFileUploadInput").val();
+        var img_thumb_url = $("#uiFileUploadInput").attr("data-thumb");
+        $("#tab_2 div:eq(0)").find(".thumb").attr("src", img_thumb_url);
+        $("#tab_2 div:eq(0)").find(".hide_thumb").val(img_url);
+
+        //$('#img_src').attr('src', img_thumb_url);
+        //$('#img_src').attr('src',getObjectURL($('#file')[0].files[0]));
+
+        var new1=$("#tab_2 div:eq(0)").find('div').first().clone(true);
+        $("#new_cont").append(new1);
+        $('#myhintModal').modal('hide');
+        $('#file')[0].files[0]='';
+    });
+    function cc(a){
+        $(a).css('color','red');
+    }
+    function c1(a){
+        $(a).css('color','black');
+    }
+    function c2(a){
+        if($(a).parent().parent().index() !=0){
+            $(a).parent().parent().slideUp(800).remove()
+        }else{
+            $(a).parent().parent().slideUp(800)
+        }
+    }
+
+    //楼盘相册移除
+    function yc(){
+        $('#myModall').modal('show');
+    }
+    //添加相册
+    $("#inser_img").click(function (){
+        $("#Modal").modal('show');
+    });
+    //添加楼盘相册
+    $("#ok_insert_img").click(function (){
+        $('#lp_text').text($('#kf').val());
+        $('#img_1').attr('src',getObjectURL($('#file')[0].files[0]));
+
+        $("#insert_img_new").append($("#tab_3 div:eq(0)").find('div').first().clone(true));
+        $("#Modal").modal('hide');
+    });
+
+</script>
+
+<include file="Public:footer"/>

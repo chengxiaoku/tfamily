@@ -1,0 +1,203 @@
+<include file="Public:header"/>
+
+<link rel="stylesheet" href="{:WEIXIN_ASSETS}plugins/swiper/css/swiper.min.css" type="text/css">
+<script type="text/javascript" src="{:WEIXIN_ASSETS}plugins/swiper/js/swiper.jquery.min.js"></script>
+
+<div id="wrapper">
+	<!--头部-->
+	<div id="header">
+		<div class="pull-left">
+			<a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+		</div>
+
+		<div class="title">新闻列表</div>
+
+		<div class="pull-right map-marker">
+			<!--<a href=""><i class="icon ion-ios-location-outline size-21"></i> 全国</a>-->
+		</div>
+	</div>
+
+	<!--头条-->
+	<div class="lastest-news container" style="margin-top: 15px;">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__hd">最新新闻</div>
+	            <div class="weui-panel__bd" id="news">
+					<volist name="new" id="news">
+						<div class="weui-media-box weui-media-box_text">
+							<a href="{:U('News/single')}&id={$news.id}">
+								<h4 class="weui-media-box__title">{$news.title}</h4>
+								<p class="clearfix">
+									<span class="pull-left toutiao_tag">帮你选房</span>
+									<span class="pull-right date_tag">{$news.add_time}</span>
+								</p>
+							</a>
+						</div>
+					</volist>
+	            </div>
+	            <div class="weui-panel__ft" id="new_html">
+					<a href="javascript:void(0)" id="new_see" onclick="news_see_more()" class="weui-cell weui-cell_access weui-cell_link">
+						<div class="weui-cell__bd text-center">查看更多</div>
+						<span class="weui-cell__ft"></span>
+					</a>
+					<div id="new_loading" class="weui-cell weui-cell_access weui-cell_link hide">
+						<div class="weui-cell__bd text-center"><img src="{:WEIXIN_ASSETS}img/loading.gif">数据加载中...</div>
+						<span class="weui-cell__ft"></span>
+					</div>
+					<div class="weui-cell weui-cell_access weui-cell_link hide" id="news_loaded">
+						<div class="weui-cell__bd text-center">加载完毕</div>
+						<span class="weui-cell__ft"></span>
+					</div>
+	            </div>
+	        </div>
+		</div>
+
+	</div>
+
+    <footer id="footer">
+    	<p class="weui-footer__links">
+            <a href="javascript:void(0);" class="weui-footer__link">T家园创业平台</a>
+        </p>
+        <p class="weui-footer__text">Copyright &copy; 2008-2016 tjy518.com</p>
+    </footer>
+	
+	<!-- <div id="push"></div> -->
+</div><!--/end wrapper-->
+	
+<style>
+	.weui-grid__icon {
+		width: 60px;
+		height: 60px;
+	}
+	.weui-grids::before {
+		border-top:none;
+	}
+	#main-menu {
+		padding: 0 !important;
+	}
+	#main-menu .row {
+		margin-bottom: 0 !important;
+	}
+</style>	
+
+<script type="text/javascript">
+	/*var k = 5;
+	if ("{$car_num}" <= k) {
+		$('#car_loaded').removeClass('hide');
+		$('#car_see').addClass('hide');
+	}
+	function car_see_more() {
+		k = k+5;
+		$('#car_see').addClass('hide');
+		$('#car_loading').removeClass('hide');
+		var url = "{:U('Index/car_see_more')}";
+
+		$.getJSON(url,{k:k},function (data) {
+			//console.log(data);
+			var cars = '';
+			$.each(data,function (index,value) {
+				cars += '<a href='+"{:U('House/details')}"+' class="weui-media-box weui-media-box_appmsg">';
+				cars +=	'<div class="weui-media-box__hd">';
+				cars +=	'<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+				cars +=	'</div>';
+				cars +=	'<div class="weui-media-box__bd">';
+				cars +=	'<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				cars +=	'<p class="weui-media-box__desc">'+value.content+'</p>';
+				cars +=	'<span class="price">'+value.price_min+'万-'+value.price_max+'万/辆</span>';
+				cars +=	'</div>';
+				cars += '</a>';
+			});
+			$('#cars').html(cars);
+			if ("{$car_num}" == data.length) {
+				$('#car_loaded').removeClass('hide');
+				$('#car_see').addClass('hide');
+				$('#car_loading').addClass('hide');
+			} else {
+				$('#car_loading').addClass('hide');
+				$('#car_see').removeClass('hide');
+			}
+
+		})
+	}
+	var j = 5;
+	if ("{$house_num}" <= j) {
+		$('#house_see').addClass('hide');
+		$('#house_loaded').removeClass('hide');
+	}
+	function house_see_more() {
+		j = j+5;
+		$('#house_see').addClass('hide');
+		$('#house_loading').removeClass('hide');
+		var url = "{:U('Index/house_see_more')}";
+
+		$.getJSON(url,{j:j},function (data) {
+			//console.log(data);
+			var houses = '';
+			$.each(data,function (index,value) {
+				houses += '<a href='+"{:U('House/details')}"+' class="weui-media-box weui-media-box_appmsg">';
+				houses += '<div class="weui-media-box__hd">';
+				houses += '<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+				houses += '</div>';
+				houses += '<div class="weui-media-box__bd">';
+				houses += '<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				houses += '<p class="weui-media-box__desc">'+value.summary+'</p>';
+				houses += '<span class="price">'+value.price+'/m²</span>';
+				houses += '</div>';
+				houses += '</a>';
+			});
+			$('#houses').html(houses);
+			if ("{$house_num}" == data.length) {
+				$('#house_loading').addClass('hide');
+				$('#house_see').addClass('hide');
+				$('#house_loaded').removeClass('hide');
+			} else {
+				$('#house_loading').addClass('hide');
+				$('#house_see').removeClass('hide');
+			}
+		})
+	}*/
+	var i = 10;
+	if ("{$new_num}" <= i) {
+		$('#new_see').addClass('hide');
+		$('#news_loaded').removeClass('hide');
+	}
+	function news_see_more() {
+		i = i+10;
+		$('#new_see').addClass('hide');
+		$('#new_loading').removeClass('hide');
+		var url = "{:U('Index/news_see_more')}";
+
+		$.getJSON(url,{i:i},function (data) {
+			//console.log(data);
+			var news = '';
+			$.each(data,function (index,value) {
+				if (value.title == null) {
+					value.title = '';
+				}
+				if (value.add_time == null) {
+					value.add_time = '';
+				}
+				news += '<div class="weui-media-box weui-media-box_text">';
+				news += '<a href="#">';
+				news += '<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				news += '<p class="clearfix">';
+				news += '<span class="pull-left toutiao_tag">帮你选房</span>';
+				news += '<span class="pull-right date_tag">'+value.add_time+'</span>';
+				news += '</p>';
+				news += '</a>';
+				news += '</div>';
+			});
+			$('#news').html(news);
+			if ("{$new_num}" == data.length) {
+				$('#new_loading').addClass('hide');
+				$('#new_see').addClass('hide');
+				$('#news_loaded').removeClass('hide');
+			} else {
+				$('#new_loading').addClass('hide');
+				$('#new_see').removeClass('hide');
+			}
+		})
+	}
+
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,175 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a class="btn btn-primary" href="admin.php?m=Admin&c=admin&a=role_add">添加角色</a>
+                        <a class="btn  btn-danger" id="delall">全部删除</a>
+
+                        <div class="select pull-right">
+                            <div class="input-group" style="width:250px; margin-left: 5px;">
+                                <input type="text" name="" class="form-control  " style="" placeholder="搜索...">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.box-header -->
+
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody id="tbody">
+                            <tr>
+                                <th width="5%" class="tc">
+                                    <input type="checkbox" id="selectAll" onclick="selAll ()">
+                                </th>
+                                <th width="5%">编号</th>
+                                <th width="10%">角色名称</th>
+                                <th width="10%">角色描述</th>
+                                <th width="10%">状态</th>
+                                <th width="10%">管理操作</th>
+                            </tr>
+                            <volist name="data" id="role">
+                                <tr>
+                                <td class="tc"><input type="checkbox" class="ckbox" value="{$role.id}"></td>
+                                <td>{$role.id}</td>
+                                <td>{$role.name}</td>
+                                <td>{$role.description}</td>
+                                <if condition="$role.enabled eq 1">
+                                      <td id="enabled"><span class="label label-success">启用</span></td>
+                                    <else/>
+                                      <td id="enabled"><span class="label label-default">未启用</span></td>
+                                </if>
+
+                                <td>
+                                <a class="btn btn-default btn-xs"  href="admin.php?m=Admin&c=admin&a=role_right&id={$rolre.id}">权限设置</a>
+                                <a class="btn btn-default btn-xs" href="admin.php?m=Admin&c=admin&a=role_update&id={$rolre.id}">修改</a>
+                                <a href="#" class="btn btn-default btn-xs" onclick="return del()">删除</a>
+                                </td>
+                                </tr>
+
+                            </volist>
+
+
+
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+
+                    <div class="box-footer">
+
+                    </div>
+
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+
+    </section><!-- /.content -->
+
+</div><!-- /.content-wrapper -->
+<include file="Public:footer"/>
+
+
+<div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">警告</h4>
+            </div>
+            <div class="modal-body">
+                <span style="color: red;font-size: 18px"><li class="glyphicon glyphicon-exclamation-sign" style="color: red;margin-right: 10px;"></li>是否删除数据</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+
+
+
+
+
+    //设置权限
+    function setRights() {
+        $('#myModal').modal({});
+
+
+    }
+
+    function fetchData() {
+        var data = JSON.parse('{$data}');
+
+        tbody = document.getElementById('tbody').innerHTML;
+
+
+        for (var key in data) {
+            var row = data[key];
+            tbody=tbody+'<tr>'
+            tbody=tbody+'<td class="tc"><input type="checkbox" class="ckbox" value="'+row.id+'"></td>'
+            tbody=tbody+'<td>'+row.id+'</td>'
+            tbody=tbody+'<td>'+row.name+'</td>'
+            tbody=tbody+'<td>'+row.description+'</td>'
+            if(row.enabled==1) {
+                tbody=tbody+'<td id="enabled"><span class="label label-success">启用</span></td>'
+            }else {
+                tbody=tbody+'<td id="enabled"><span class="label label-default">未启用</span></td>'
+            }
+
+            tbody=tbody+'<td>'
+            tbody=tbody+'<a class="btn btn-default btn-xs"  href="admin.php?m=Admin&c=admin&a=role-right&id='+row.id+'">权限设置</a>'
+            tbody=tbody+'<a class="btn btn-default btn-xs" href="admin.php?m=Admin&c=admin&a=role_update&id='+row.id+'">修改</a>'
+            tbody=tbody+'<a href="#" class="btn btn-default btn-xs" onclick="return del()">删除</a>'
+            tbody=tbody+'</td>'
+            tbody=tbody+'</tr>'
+
+        }
+
+        document.getElementById('tbody').innerHTML = tbody;
+
+
+
+
+
+    }
+    //单条数据的删除
+    function del(){
+
+        $('#myModal').modal('show');
+    }
+    fetchData();
+
+    function selAll() {
+
+        var checkbox = document.getElementById("selectAll");
+        var boxs = document.getElementsByClassName("ckbox");
+        for (var i = 0; i < boxs.length; i++) {
+            var box = boxs[i];
+            if (checkbox.checked) {
+                box.checked = true;
+            } else {
+                box.checked = false;
+            }
+        }
+    }
+</script>

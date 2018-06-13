@@ -1,0 +1,196 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+    <style>
+        .bank_message {
+            width: 70px;
+            display: block;
+        }
+    </style>
+    <!-- 主体内容 -->
+    <section class="content">
+        <if condition="empty($list)">
+            <div>
+                <div class="callout callout-danger">
+                    <h4><i class="fa fa-warning"></i><span class="ml10">提示</span></h4>
+                    <p>您暂未绑定任何银行卡!
+                        <button class="btn btn-warning btn-xs ml10" data-toggle="modal" data-target="#BankAdd">我要绑定
+                        </button>
+                    </p>
+                </div>
+
+            </div>
+        </if>
+        <volist name="list" id="vo" offset="0" length="1">
+            <div class="box" style="border-top:3px solid #3c8dbc">
+                <div class="box-header with-border">
+                    <h3 class="box-title" style="font-size: 14px;"><span class="bank_message text-right fl">开户行：</span>{$vo.bank_name}
+                    </h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#BankEdit">修改</button>
+                        <a href="#" class="btn btn-default btn-xs" onclick="return del('{$vo.id}')">删除</a>
+                    </div>
+                </div>
+                <div class="box-body"><span class="bank_message text-right fl">开户人：</span>{$vo.bank_user}</div>
+                <div class="box-footer"><span class="bank_message text-right fl">银行账号：</span>{$vo.bank_account}</div>
+            </div>
+        </volist>
+    </section>
+</div>
+<!--添加银行卡信息-->
+<div class="modal fade" id="BankAdd" tabindex="-1" role="dialog" aria-labelledby="BankAddLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="box" style="border-top:3px solid #dd4b39">
+            <div class="box-header">
+                <h3 class="box-title">添加银行卡信息</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+            </div>
+            <!-- form start -->
+            <form role="form" id="loginForm_add" action="{:U('agent/bank/add')}" method="post">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>开户行：</label>
+                        <input class="form-control" name="bank_name" required id="" placeholder="添加开户行" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>开户人：</label>
+                        <input class="form-control" name="bank_user" required id="" placeholder="添加开户人" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>银行卡号：</label>
+                        <input class="form-control" name="bank_account" required id="" placeholder="添加银行卡号" type="text">
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-danger w100" onclick="return login_add()">添加</button>
+                    <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--修改银行卡信息-->
+<div class="modal fade" id="BankEdit" tabindex="-1" role="dialog" aria-labelledby="BankEditLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="box" style="border-top:3px solid #3c8dbc">
+            <div class="box-header">
+                <h3 class="box-title">修改银行卡信息</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+            </div>
+            <!-- form start -->
+            <form role="form" id="loginForm_edit" action="{:U('agent/bank/edit')}" method="post">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>开户行：</label>
+                        <input class="form-control" name="bank_edit_name" required id="" value="{$vo.bank_name}"
+                               type="text">
+                        <input name="id" type="text" class="hidden" value="{$vo.id}">
+                    </div>
+                    <div class="form-group">
+                        <label>开户人：</label>
+                        <input class="form-control" name="bank_edit_user" required id="" value="{$vo.bank_user}"
+                               type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>银行卡号：</label>
+                        <input class="form-control" name="bank_edit_account" required id="" value="{$vo.bank_account}"
+                               type="text">
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary w100" onclick="return login_edit()">修改</button>
+                    <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--删除弹出框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                <span class='glyphicon glyphicon-question-sign text-red' style='font-size: 18px;'></span>
+                <span style='font-size: 18px;' class="ml10 text-red">确认要删除该银行卡信息？</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="truedel()" class="btn btn-primary w100 ">确定</button>
+                <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<script type="text/javascript">
+    var delid = "";
+    function del(id) {
+        delid = id;
+        $("#myModal").modal();
+        return fasle;
+    }
+    //确认删除操作
+    function truedel() {
+        location.href = "{:U('bank/del')}&id=" + delid;
+    }
+    //添加不能为空
+    function login_add() {
+        $("#loginForm_add").validate({
+            rules: {
+                bank_name: "required",
+                bank_user: "required",
+                bank_account: {
+                    required: true,
+                    digits: true,
+                },
+            },
+            messages: {
+                bank_name: "请输入想要添加的开户行",
+                bank_user: "请输入想要添加开户人",
+                bank_account: {
+                    required: "请输入想要添加的银行卡号",
+                    digits: "请输入有效的银行卡号",
+                },
+            }
+        });
+        return true;
+    }
+    //修改值不能为空
+    function login_edit() {
+        $("#loginForm_edit").validate({
+            rules: {
+                bank_edit_name: "required",
+                bank_edit_user: "required",
+                bank_edit_account: {
+                    required: true,
+                    digits: true,
+                },
+            },
+            messages: {
+                bank_edit_name: "请输入想要修改的开户行",
+                bank_edit_user: "请输入想要修改开户人",
+                bank_edit_account: {
+                    required: "请输入想要修改的银行卡号",
+                    digits: "请输入有效的银行卡号",
+                },
+            }
+        });
+        return true;
+    }
+</script>
+<include file="Public:footer"/>

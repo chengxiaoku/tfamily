@@ -1,0 +1,132 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <style type="text/css">
+        .img_style{
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+    <!-- 主体内容 -->
+    <section class="content" style="background-color: white; margin: 15px;" >
+
+        <div class="box-header">
+            <div class="pull-right">
+                <form action="{:U('house/meg')}" method="post">
+                    <label>过滤:</label>
+                        <span id="region">
+                            <select class="form-control inline-block province" id="province_id" name="province_id" style="width: 130px;">
+                                <option value="">≡ 请选择省 ≡</option>
+                            </select>
+                            <select class="form-control inline-block city" id="city_id" name="city_id" style="width: 130px;">
+                                <option value="">≡ 请选择市 ≡</option>
+                            </select>
+                            <select class="form-control inline-block district" id="district_id" name="district_id" style="width: 130px;">
+                                <option value="">≡ 请选择区 ≡</option>
+                            </select>
+                            <label class="control-label regionhint hide">
+                                <i class="fa fa-times-circle-o"></i>
+                                请选择省、市、区
+                            </label>
+                            <div style="width:250px; margin-left: 5px;" class="input-group fr">
+                                <input type="text" id="select" placeholder="输入用户名或电话..." class="form-control" name="find">
+                                <div class="input-group-btn" id="sel_id"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>
+                            </div>
+                        </span>
+                </form>
+            </div>
+
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <div class="col-md-12 ">
+                <table class="table table-hover" style=" text-align: center" id="table">
+                    <tbody>
+                    <tr>
+                        <th width="10%" style="text-align: center">姓名</th>
+                        <th width="10%" style="text-align: center">电话</th>
+                        <th width="15%" style="text-align: center">所选楼盘</th>
+                        <th width="20%" style="text-align: center">地区</th>
+                        <th width="10%" style="text-align: center">客户类型</th>
+                        <th width="10%" style="text-align: center">下单日期</th>
+                        <th width="10%" style="text-align: center">处理状态</th>
+                        <th width="15%" style="text-align: center">操作</th>
+                    </tr>
+
+                    <volist name="data" id="row">
+                        <tr>
+                            <td class="tc">{$row.name}</td>
+                            <td>{$row.tel}</td>
+                            <td>{$row.house_id}</td>
+                            <td>{$data_city[($i-1)*3]}{$data_city[($i-1)*3+1]}{$data_city[($i-1)*3+2]}</td>
+                            <td>
+                                <a class="btn btn-default btn-xs">
+                                    <if condition="$user_arr[$i-1][0]['user_type'] eq 'province_agent'">
+                                        省级代理
+                                        <elseif condition="$user_arr[$i-1][0]['user_type'] eq 'city_agent'"/>
+                                        市级代理
+                                        <elseif condition="$user_arr[$i-1][0]['user_type'] eq 'district_agent'"/>
+                                        区级代理
+                                        <elseif condition="$user_arr[$i-1][0]['user_type'] eq 'member'"/>
+                                        会员
+                                        <elseif condition="$user_arr[$i-1][0]['user_type'] eq 'partner'"/>
+                                        合作商家
+                                        <elseif condition="$user_arr[$i-1][0]['user_type'] eq 'fan'"/>
+                                        粉丝
+                                    </if>
+                                </a>
+                            </td>
+                            <td>{$row.addtime}</td>
+                            <td>
+                                <if condition="$row.status eq 'pending'">
+                                    <a class="btn btn-info btn-default btn-xs">待处理</a>
+                                    <elseif condition="$row.status eq 'done'"/>
+                                    <a class="btn-default btn-xs">已处理</a>
+                                    <elseif condition="$row.status eq 'doing'"/>
+                                    <a class="btn btn-warning btn-xs">处理中</a>
+                                </if>
+                            </td>
+                            <td>
+                                <a href="{:U('House/house_mess',array('id_mess'=>$row['id']))}" class="btn btn-default btn-xs">查看详情</a>
+                            </td>
+                        </tr>
+
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-sm-5"></div>
+                <div class=" col-sm-7 ">
+                    <div class="text-right">
+                        {$page}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content  -->
+
+</div>
+<!--省市区三级联动-->
+<script src="{:ASSETS}plugins/jquery.cityselect.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    //省市区三级联动
+    $(function () {
+        //省市区三级联动
+        //注意三级联动结构：#region(自定义) > .province + .city + .district
+        $("#region").citySelect({
+            nodata: "none",
+            required: false,
+            province: null, //"河南省"
+            city: null,
+            district: null,
+            url: "{:U('agent/house/getCity')}"
+        });
+    });
+
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,149 @@
+<!-- 新闻列表 -->
+<include file="Public:header"/>
+<script>
+    $("#nhnav03").on('click', function () {
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            area: ['300px', '170px'],
+            shadeClose: true, //开启遮罩关闭
+            content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+        });
+    })
+</script>
+
+<section class="news_bn wrapperi" style="padding-top: 0;">
+    <ul class="clearfix news_fld">
+        <li><a href="{:U('Index/index')}">T家园首页</a><span> &gt; </span></li>
+        <li><a href="{:U('news/index')}">公告</a><span> &gt; </span></li>
+    </ul>
+</section>
+
+<section class="wrapperi clearfix">
+    <div class="fl news_fl" style="width: 720px;">
+        <div class="hoc_list1">
+        <section class="sss_1" >
+            <volist name="news" id="vo">
+                <div class="clearfix news_fld" >
+
+                    <if condition="$vo.thumb neq ''">
+                        <a class="fl news_img" href='{:U("News/news")}&id={$vo.id}'style="background:url({$vo.thumb}) no-repeat center;background-size:cover;width:230px;height:175px;"></a>
+                    </if>
+
+
+                    <ul class="fl news_co" style="width: 300px;">
+                        <li class="news_co1"><a href='{:U("News/news")}&id={$vo.id}'>{$vo.title}</a></li>
+                        <li class="news_co2">{$vo.description}</li>
+                        <li class="news_co3">{$vo.add_time}</li>
+                        <li class="news_co4">
+                            <a href="javascript:;" class="fl">房价</a>
+                            <a href="javascript:;" class="fl">二手房</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </volist>
+
+        </section>
+            </div>
+
+    </div>
+    <div class="fr news_fr">
+        <div class="news02">
+            <div class="news_hots news_tits news_hom">
+                <h3 class="news_hots_tit">房产热点</h3>
+                <volist name="hot" id="data">
+                    <ul>
+                        <li class="news_hots_tit_cur">
+                            <div class="ind">{$i}</div>
+                            <a href='{:U("News/news")}&id={$data.id}'>
+                                {$data.title}
+                                <p>{$data.description|my_substr=0,17}</p>
+
+                            </a>
+                            <span></span>
+                        </li>
+                    </ul>
+                </volist>
+
+            </div>
+            <div class="news_hots news_tits news_knews">
+                <h3 class="news_hots_tit">热门百科<a class="fr" href="javascript:;"></a></h3>
+                <volist name="baike" id="vo">
+                    <ol>
+                        <li class="news_hots_tit_cur">
+                            <div></div>
+                            <a href='{:U("News/news")}&id={$vo.id}'>
+                                {$vo.title}
+
+                                <p>{$vo.description|my_substr=0,17}</p>
+
+                            </a>
+                            <span></span>
+                        </li>
+                    </ol>
+                </volist>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="ra_det08_btn login">加载更多</div>
+<script>
+
+
+
+    $(".news_tits li span").click(function () {
+        // 改变li中的p与span的样式
+        var par = $(this).parent(".news_tits li");
+        $(par).toggleClass("news_hots_tit_cur").siblings('li').removeClass("news_hots_tit_cur");
+    });
+    $(function () {
+        var start = 5;
+        //加载更多
+        $('.login').click(function () {
+            $(this).html('<img src="{:HOUSE}image/loading.gif" style="width: 20px;height: 20px;display: inline-block">加载中...');
+            //判断还有没有数据，有则异步拉取
+            if (start > {$count}) {
+                $('.login').text('抱歉！没有更多数据了！');
+                return false;
+            } else {
+                $.post("{:U('news/news_data')}", {starts: start}, function (data) {
+                    var htm = "";
+                    $.each(data, function (i, row) {
+                        htm += ' <div class="clearfix news_fld">';
+                        if(row.thumb!=='') {
+
+                            htm += '<a class="fl news_img" href=' + "{:U('News/news')}&id=" + row.id + ' style = "background:url(' + row.thumb + ') no-repeat center;background-size:cover;width:230px;height:175px;" ></a>';
+                        }
+                        htm += '<ul class="fl news_co" style="width: 300px;">';
+                        htm += '<li class="news_co1">';
+                        htm += '<a href='+"{:U('News/news')}&id="+row.id+">"+ row.title + '</a>';
+
+                        htm += '</li>';
+                        htm += '<li class="news_co2">' + row.description + '</li>';
+                        htm += '<li class="news_co3">' + row.add_time + '</li>';
+
+                        htm += '<li class="news_co4">';
+                        htm += '<a href="javascript:;" class="fl">房价</a>';
+                        htm += '<a href="javascript:;" class="fl">二手房</a>';
+                        htm += '</li>';
+                        htm += '</ul>';
+
+                        htm += '</div>';
+                    })
+
+                    $('.sss_1').append(htm);
+                    $('.login').text('加载更多');
+                })
+                start += 4;
+            }
+        })
+    });
+
+</script>
+
+<!--网页底部-->
+<include file="Public:footer"/>

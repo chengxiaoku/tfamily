@@ -1,0 +1,149 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="box box-primary">
+                    <form role="form" id="form" method="post" action="{:U('Ad/add_ads')}">
+                        <div class="box-body padding20">
+                            <input name="id" value="{$list[0][id]}" type="hidden">
+                            <div class="form-group " id="Name">
+                                <label for="">版位名称<span class="required">*</span></label>
+                                <div>
+                                    <input type="text" placeholder="输入版位名称" name="title" value="{$list[0][title]}"
+                                           class="form-control wp50 inline-block">
+                                    <label class="control-label hidden" for="inputError"><i
+                                            class="fa fa-times-circle-o"></i> 版位名称不能为空</label>
+                                    <em class="help-block"></em>
+                                </div>
+                            </div>
+                            <div class="form-group" id="adtype">
+                                <label for="">版位类型<span class="required">*</span></label>
+                                <div>
+                                    <select onchange="return selectAdType(this)" name="type" id="type" class="form-control wp50 inline-block">
+                                        <option value="0">≡ 选择版位类型 ≡</option>
+                                        <option value="banner">矩形横幅</option>
+                                        <option value="images">图片轮播</option>
+                                        <option value="text">文字广告</option>
+                                        <option value="code">代码广告</option>
+                                    </select>
+                                    <label class="control-label hidden" for="inputError"><i
+                                            class="fa fa-times-circle-o"></i>请选择版位类型</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="wh">
+                                <div>
+                                    <label for="">版位尺寸</label>
+                                    <p></p>
+                                    <label>宽<span class="required">*</span></label>
+                                    <div id="width">
+                                        <input type="text" name="width" value="{$list[0][width]}" class="form-control inline-block w100" id=""
+                                               placeholder=""> px
+                                        <label class="control-label hidden" for="inputError"><i
+                                                class="fa fa-times-circle-o"></i> 请输入宽度</label>
+
+                                    </div>
+                                </div>
+                                <p></p>
+                                <div>
+                                    <label>高<span class="required">*</span></label>
+                                    <div id="height">
+                                        <input type="text" name="height" value="{$list[0][height]}" class=" form-control inline-block w100"
+                                               placeholder=""> px
+                                        <label class="control-label hidden" for="inputError"><i
+                                                class="fa fa-times-circle-o"></i> 请输入高度</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>描述</label>
+                                <textarea class="form-control" name="description" rows="3" placeholder="描述 ...">{$list[0][description]}</textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" onclick="return Submit()" type="submit">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /.content-wrapper -->
+
+
+<script>
+    var val = "{$list[0][type]}";
+
+    $("#type option[value='"+val+"']").attr("selected",true);
+
+    function Submit() {
+
+        if ($('#Name div input').val() == '' || $('#wh #width input').val() == '' || $('#wh #height input').val() == '' || $('#adtype div select').val() == 0) {
+            if ($('#Name div input').val() == '') {
+                $('#Name').addClass('has-error');
+                $('#Name div label').removeClass('hidden');
+                $('#Name div input').focus();
+            }
+            else {
+                $('#Name').removeClass('has-error');
+                $('#Name div label').addClass('hidden');
+            }
+            if ($('#wh #width input').val() == '') {
+                $('#wh #width').addClass('has-error');
+                $('#wh #width label').removeClass('hidden');
+                $('#wh #width input').focus();
+            }
+            else {
+                $('#wh #width').css('color', '#000');
+                $('#wh #width label').addClass('hidden');
+            }
+            if ($('#wh #height input').val() == '') {
+                $('#wh #height').addClass('has-error');
+                $('#wh #height label').removeClass('hidden');
+                $('#wh #height input').focus();
+            }
+            else {
+                $('#wh #height').css('color', '#000');
+                $('#wh #height label').addClass('hidden');
+            }
+            if ($('#adtype div select').val() == 0) {
+                $('#adtype').addClass('has-error');
+                $('#adtype div label').removeClass('hidden');
+                $('#adtype div select').focus();
+            }
+            else {
+                $('#adtype').removeClass('has-error');
+                $('#adtype div label').addClass('hidden');
+            }
+            return false;
+
+
+            /*if (trim($('#Name div input').val()) == '') {
+             if (trim($('#Name div input').val()) == '') {
+             $('#Name').addClass('has-error');
+             $('#Name div label').removeClass('hidden');
+             $('#Name div input').focus();
+             } else {
+             $('#Name').removeClass('has-error');
+             $('#Name div label').addClass('hidden');
+             }
+
+             return false;
+             } else {
+             return true;
+             }*/
+        }
+    }
+</script>
+<include file="Public:footer"/>

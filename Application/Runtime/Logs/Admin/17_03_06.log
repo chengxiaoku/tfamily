@@ -1,0 +1,846 @@
+[ 2017-03-06T15:49:02+08:00 ] 127.0.0.1 /tfamily/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: HTTP_REFERER E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 24 行.
+
+[ 2017-03-06T15:49:02+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 5 行.
+NOTIC: [8] Undefined variable: meta_title E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 101 行.
+NOTIC: [8] Undefined variable: error E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 121 行.
+NOTIC: [8] Undefined variable: ref E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\dcfb7ddaab59bfbce2ddc9c860debad0.php 第 150 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T15:49:02+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2017-03-06T15:49:26+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786566387
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-06T15:49:27+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786567316
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-06T15:49:28+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786568331
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T15:49:29+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786569467
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-03-06T15:49:30+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786570298
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-03-06T15:49:31+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=verify&t=1488786571050
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-06T15:49:34+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=auth&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tf_admin` [ RunTime:0.0550s ]
+SQL: SELECT * FROM `tf_admin` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `tf_admin` SET `last_time`='2017-03-06 15:49:34',`last_ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0020s ]
+
+[ 2017-03-06T15:49:34+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0420s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'province_agent' or user_type = 'district_agent' or user_type = 'city_agent' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'member' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'fan' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tf_house` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_house` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_car` [ RunTime:0.0500s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_car` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_orders` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_news` [ RunTime:0.0280s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_news` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tf_adspace` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_adspace` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_money_details` [ RunTime:0.0320s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_money_details` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: page_title E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 5 行.
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 58 行.
+NOTIC: [8] Undefined variable: page_title E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
+NOTIC: [8] Undefined variable: page_title E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 114 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-06T16:03:16+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=user&a=province_agent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0000s ]
+SQL: select count(user_type) as user_type_num from tf_user WHERE `user_type`='province_agent' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0000s ]
+SQL: SELECT user.id,user.add_time,user.name,user.real_name,user.tel,user.user_type,user.money,user.integral,user.is_validated,level.name as level_name FROM tf_user as user LEFT JOIN tf_level as level ON user.level_id = level.id  WHERE ( user_type='province_agent' ) ORDER BY add_time desc LIMIT 0,4   [ RunTime:0.0624s ]
+SQL: select count(is_validated) as num from tf_user where `user_type`='province_agent' AND is_validated = 'pending' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_level` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `tf_level`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 59 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 128 行.
+NOTIC: [8] Undefined variable: val E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 128 行.
+NOTIC: [8] Undefined variable: province_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 358 行.
+NOTIC: [8] Undefined variable: city_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 359 行.
+NOTIC: [8] Undefined variable: district_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 360 行.
+NOTIC: [8] Undefined variable: level E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 361 行.
+NOTIC: [8] Undefined variable: search E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2017-03-06T16:03:17+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=user&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0624s ]
+
+[ 2017-03-06T16:03:18+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=user&a=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0156s ]
+SQL: select count(user_type) as user_type_num from tf_user WHERE `user_type`='member' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0156s ]
+SQL: SELECT user.id,user.add_time,user.name,user.real_name,user.tel,user.user_type,user.money,user.integral,user.is_validated,level.name as level_name FROM tf_user as user LEFT JOIN tf_level as level ON user.level_id = level.id  WHERE ( user_type='member' ) ORDER BY add_time desc LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: select count(is_validated) as num from tf_user where `user_type`='member' AND is_validated = 'pending' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_level` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `tf_level`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 59 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 128 行.
+NOTIC: [8] Undefined variable: val E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 128 行.
+NOTIC: [8] Use of undefined constant province_agent - assumed 'province_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 175 行.
+NOTIC: [8] Use of undefined constant district_agent - assumed 'district_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 176 行.
+NOTIC: [8] Use of undefined constant city_agent - assumed 'city_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 177 行.
+NOTIC: [8] Use of undefined constant fan - assumed 'fan' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 178 行.
+NOTIC: [8] Use of undefined constant partner - assumed 'partner' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 179 行.
+NOTIC: [8] Use of undefined constant no - assumed 'no' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 186 行.
+NOTIC: [8] Use of undefined constant yes - assumed 'yes' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 193 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 197 行.
+NOTIC: [8] Use of undefined constant province_agent - assumed 'province_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 175 行.
+NOTIC: [8] Use of undefined constant district_agent - assumed 'district_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 176 行.
+NOTIC: [8] Use of undefined constant city_agent - assumed 'city_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 177 行.
+NOTIC: [8] Use of undefined constant fan - assumed 'fan' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 178 行.
+NOTIC: [8] Use of undefined constant partner - assumed 'partner' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 179 行.
+NOTIC: [8] Use of undefined constant no - assumed 'no' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 186 行.
+NOTIC: [8] Use of undefined constant yes - assumed 'yes' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 193 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 197 行.
+NOTIC: [8] Use of undefined constant province_agent - assumed 'province_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 175 行.
+NOTIC: [8] Use of undefined constant district_agent - assumed 'district_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 176 行.
+NOTIC: [8] Use of undefined constant city_agent - assumed 'city_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 177 行.
+NOTIC: [8] Use of undefined constant fan - assumed 'fan' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 178 行.
+NOTIC: [8] Use of undefined constant partner - assumed 'partner' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 179 行.
+NOTIC: [8] Use of undefined constant no - assumed 'no' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 186 行.
+NOTIC: [8] Use of undefined constant yes - assumed 'yes' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 193 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 197 行.
+NOTIC: [8] Use of undefined constant province_agent - assumed 'province_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 175 行.
+NOTIC: [8] Use of undefined constant district_agent - assumed 'district_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 176 行.
+NOTIC: [8] Use of undefined constant city_agent - assumed 'city_agent' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 177 行.
+NOTIC: [8] Use of undefined constant fan - assumed 'fan' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 178 行.
+NOTIC: [8] Use of undefined constant partner - assumed 'partner' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 179 行.
+NOTIC: [8] Use of undefined constant no - assumed 'no' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 186 行.
+NOTIC: [8] Use of undefined constant yes - assumed 'yes' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 193 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 197 行.
+NOTIC: [8] Undefined variable: province_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 358 行.
+NOTIC: [8] Undefined variable: city_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 359 行.
+NOTIC: [8] Undefined variable: district_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 360 行.
+NOTIC: [8] Undefined variable: level E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 361 行.
+NOTIC: [8] Undefined variable: search E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2a29f2db7e5d066ba9b42bfd58f48adc.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:19+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=user&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0156s ]
+
+[ 2017-03-06T16:03:22+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=news&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_news` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_news` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_news` ORDER BY add_time DESC LIMIT 0,4   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\36087655c6ab8580337cdc45b35a926d.php 第 58 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:23+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=category&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_category` [ RunTime:0.0312s ]
+SQL: select * from tf_category order by order_by asc [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 58 行.
+NOTIC: [8] Undefined variable: page_html E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 183 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:24+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=order&a=orders
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_orders` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_orders` ORDER BY add_time DESC LIMIT 0,2   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\834c9ffac70d37d96827484f10e2eb52.php 第 58 行.
+NOTIC: [8] Undefined variable: find E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\834c9ffac70d37d96827484f10e2eb52.php 第 145 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:25+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0156s ]
+
+[ 2017-03-06T16:03:26+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=car&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_car` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_car` ORDER BY add_time desc LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_car` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 58 行.
+NOTIC: [8] Use of undefined constant front - assumed 'front' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 159 行.
+NOTIC: [8] Use of undefined constant manual - assumed 'manual' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 164 行.
+NOTIC: [8] Use of undefined constant auto - assumed 'auto' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 165 行.
+NOTIC: [8] Use of undefined constant hatchback - assumed 'hatchback' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 168 行.
+NOTIC: [8] Use of undefined constant two - assumed 'two' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 169 行.
+NOTIC: [8] Use of undefined constant three - assumed 'three' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 170 行.
+NOTIC: [8] Use of undefined constant other - assumed 'other' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 171 行.
+NOTIC: [8] Use of undefined constant front - assumed 'front' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 159 行.
+NOTIC: [8] Use of undefined constant manual - assumed 'manual' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 164 行.
+NOTIC: [8] Use of undefined constant auto - assumed 'auto' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 165 行.
+NOTIC: [8] Use of undefined constant hatchback - assumed 'hatchback' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 168 行.
+NOTIC: [8] Use of undefined constant two - assumed 'two' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 169 行.
+NOTIC: [8] Use of undefined constant three - assumed 'three' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 170 行.
+NOTIC: [8] Use of undefined constant other - assumed 'other' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 171 行.
+NOTIC: [8] Use of undefined constant front - assumed 'front' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 159 行.
+NOTIC: [8] Use of undefined constant manual - assumed 'manual' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 164 行.
+NOTIC: [8] Use of undefined constant hatchback - assumed 'hatchback' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 168 行.
+NOTIC: [8] Use of undefined constant two - assumed 'two' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 169 行.
+NOTIC: [8] Use of undefined constant front - assumed 'front' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 159 行.
+NOTIC: [8] Use of undefined constant manual - assumed 'manual' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 164 行.
+NOTIC: [8] Use of undefined constant hatchback - assumed 'hatchback' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 168 行.
+NOTIC: [8] Use of undefined constant two - assumed 'two' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 169 行.
+NOTIC: [8] Undefined variable: search E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\04b23713780a662ebbfa0e1c142e2e30.php 第 236 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:29+08:00 ] 127.0.0.1 /tfamily/admin.php?m=Admin&c=ui&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\2c4a1c8deed93884cba9b5fe5405077a.php 第 59 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:03:30+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=ui&a=getCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0156s ]
+
+[ 2017-03-06T16:04:29+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=finance&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_money_details` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_level` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant BUSINESS_TYPE - assumed 'BUSINESS_TYPE' E:\phpstudy\www\tfamily\Application\Admin\Controller\FinanceController.class.php 第 26 行.
+SQL: SELECT * FROM `tf_level`  [ RunTime:0.0000s ]
+SQL: select COUNT(*) from tf_money_details [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_money_details` ORDER BY id DESC LIMIT 0,4   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_user`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tf_level`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\be63e8ac18ebea09dc932cef0872ffd8.php 第 58 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-06T16:04:30+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=category&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 195 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 218 行.
+NOTIC: [8] Undefined index: children E:\phpstudy\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 178 行.
+SQL: SHOW COLUMNS FROM `tf_category` [ RunTime:0.0000s ]
+SQL: select * from tf_category order by order_by asc [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.015600s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8] Undefined variable: uname E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 58 行.
+NOTIC: [8] Undefined variable: page_html E:\phpstudy\www\tfamily\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 183 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

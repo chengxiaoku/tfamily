@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>提示信息</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}bootstrap/css/bootstrap.min.css" />
+    <style type="text/css">
+        body {
+            font-family: 微软雅黑;
+        }
+        .message-page {
+            background: #d2d6de;
+        }
+        .message-page .hr {
+            background: #fff;
+            background: rgba(0,0,0,.2);
+            /*background-color:#3c8dbc;*/
+            display: inline-block;
+            height: 5px;
+            margin: 10px 0;
+            width: 40px;
+        }
+
+        .message-box {
+            text-align: center;
+            width: 460px;
+            height: 270px;
+            margin: 7% auto;
+            background: #fff;
+        }
+
+        .message-box-body {
+            padding: 20px 20px;
+            color: #444;
+            border-top: 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+
+        .message-box-header {
+            min-height: 16.43px;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .message-box-header .fa {
+            color: #F1122D;
+            font-size: 22px;
+        }
+        #header {
+            height: 60px;
+            margin: 0 auto !important;
+            background: #3c8dbc none repeat scroll 0 0;
+            margin: 0 auto !important;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+        }
+
+        .header_title {
+            font-size: 21px;
+        }
+
+    </style>
+</head>
+<body class="message-page">
+<div id="header">
+    <div class="header_title">{$page_title}</div>
+</div>
+<div class="message-box">
+    <div style="border-bottom: solid #ddd 1px;"><span style="padding-top: 20px;padding-bottom: 20px;font-size: 25px;color: #ff3926" class="glyphicon glyphicon-ban-circle"></span> </div>
+    <div class="message-box-header"><span class="glyphicon glyphicon-wrench"></span><span>&nbsp;&nbsp;网站暂时关闭......</span></div>
+    <div class="message-box-body">
+
+        <div style="margin: 0;padding: 0; color:#aaa;">关闭原因:<p style="color:#bbb;font-size:14px;padding-top: 10px;">{$because}</p></div>
+    </div>
+</div>
+</body>
+</html>

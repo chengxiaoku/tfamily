@@ -1,0 +1,50 @@
+
+(function(){
+function addslashes(str) {
+return (str + '')
+.replace(/[\\"']/g, '\\$&')
+.replace(/\u0000/g, '\\0');
+}
+
+var AD_TEXT = {
+id: '',
+type: '',
+name: '',
+content: '',
+width: '',
+height: '',
+url: '',
+show: function() {
+var content = this.content;
+var str = '';
+for (var i = 0; i < content.length; i++) {
+var rows = content[i];
+for (var key in rows) {
+var row = rows[key];
+var url = row['url'];
+var title = row['text'];
+var img = row['img'];
+if (url) {
+str += '<div class="swiper-slide"><a href="'+url+'"><img src="'+img+'"></a></div>';
+} else {
+str += '<div class="swiper-slide"><img src="'+img+'"></div>';
+}
+}
+}
+document.write(str);
+},
+
+set: function(key, value) {
+this[key] = value;
+},
+
+get: function(key) {
+return this[key];
+}
+}
+
+AD_TEXT.set('id', "{$id}");
+AD_TEXT.set('content', {$content});
+AD_TEXT.show();
+
+})();

@@ -1,0 +1,139 @@
+<!--加载网页头部-->
+<include file="Public:header"/>
+<!--加载左侧菜单-->
+<include file="Public:menu"/>
+<!--公告控制主体内容-->
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <include file="Public:breadcrumb"/>
+        <!-- 公告表格 -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <!-- 1. 发布公告、批量删除按钮 -->
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <button class="btn btn-primary" onclick="location.href='{:U(notices_add)}';return false;">发布公告</button>
+                                    <button class="btn btn-danger" onclick="delall()">批量删除</button>
+                                </div>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover text-center">
+                                <tbody>
+                                <tr>
+                                    <th width="15%" style="position: relative;left: 14px;"><input type="checkbox" id="checkboxall"><span>全选</span></th>
+                                    <th width="30%">公告内容</th>
+                                    <th width="15%">发布时间</th>
+                                    <th width="20%">接收人</th>
+                                    <th width="20%">操作</th>
+                                </tr>
+                                <volist name="data" id="notice">
+                                    <tr>
+                                        <td><input type="checkbox" value="{$notice[id]}" name="item"></td>
+                                        <td>通知:{$notice.message}</td>
+                                        <td>{$notice.add_time}</td>
+                                        <td>{$notice.type}</td>
+                                        <td><a href="javascript:void(0)" class="btn btn-default btn-xs del" onclick="update('{$notice[id]}','{$notice[type]}')" >编辑</a>
+                                            <a href="javascript:void(0)" class="btn btn-default btn-xs update" onclick="del('{$notice[id]}')" >删除</a></td>
+
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                         </div><!-- /.box-body -->
+                        <!--翻页-->
+                        <div class="box-footer">
+                            <div class="row">
+                            <div class="col-sm-5">
+                            </div>
+                            <div class="col-sm-7 text-right">
+                                <div class="result page">{$page}</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div><!-- /.box -->
+            </div>
+            </div>
+        </section>
+        <!-- /.content -->
+        <section class="content">
+        </section>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body text-center" id="myModalbody">
+                        <i class="glyphicon glyphicon-info-sign fa-2x text-red " style="font-size: 18px;"></i>
+                        <span class="text-red" style="font-size:18px;margin-left: 10px;"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="delurl()">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.content-wrapper -->
+<!--js-->
+<script>
+    var id = [];
+    /*控制模态框删除事件*/
+    //多选删除
+    function delall () {
+        var deldata =[];
+        $('input[name=item]:checked').each(function(){
+            var check =$(this).val();
+            deldata.push(check);
+        });
+        id = deldata;
+        $('#myModalbody span').text('确认要删除的公告信息？');
+        $('#myModal').modal();
+    };
+    //单选删除
+    function del (delid) {
+        id = delid;
+        $('#myModalbody span').text('确认要删除这条公告信息？');
+        $('#myModal').modal();
+    };
+
+    //删除链接
+    function delurl () {
+        var url = "{:U('notice/del')}&id="+id;
+        location.href=url;
+    }
+
+    //编辑公告
+    function update(upid,upname){
+        var url = "{:U('notice/notices_add')}&id="+upid+'&username='+upname;
+        location.href=url;
+    }
+
+
+    $(function(){
+        /*全选全不选*/
+        $('#checkboxall').change(function(){
+            $('[name=item]:checkbox').prop('checked',$('#checkboxall').prop('checked'));
+        });
+
+        /*所有选中后，全选自动选中*/
+        $('[name=item]:checkbox').change(function(){
+            var sum = $('[name=item]:checkbox').length;
+            var count = $('input[name=item]:checked').length;
+            if (sum==count){
+                $('#checkboxall').prop('checked',true);
+            }else{
+                $('#checkboxall').prop('checked',false);
+            }
+
+        });
+
+    });
+</script>
+<include file="Public:footer"/>

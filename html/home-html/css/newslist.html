@@ -1,0 +1,119 @@
+<include file="Public:head_new" />
+
+    <section class="news_bn wrapper">
+        <ul class="clearfix">
+            <li><a href="javascript:;">房巴拉洛阳站</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">洛阳热点指南</a><span> &gt; </span></li>    
+            <if condition = " $typ neq '' and $typ[id] neq '4' ">
+            <li><a href="{:U('news/newslist',array('pid'=>$typ[id]))}">{$typ.name} </a><span> &gt; </span></li>   
+            <elseif condition="$typ[id] eq '4'"/> 
+                <li><a href="{:U('news/wike')}">{$typ.name} </a><span> &gt; </span></li>  
+            </if>
+            <if condition = " $types neq '' ">
+            <li><a href="{:U('news/newslist',array('catid'=>$types[id]))}">{$types.name} </a><span> &gt; </span></li> 
+            </if>   
+        </ul>
+    </section>
+
+    <section class="wrapper clearfix">
+        <div class="fl news_fl">
+            <h4>为您找到<span>{$count}</span>篇 {$types.name} 相关的文章</h4>
+            <section>
+            <volist name="data" id="vo">
+                <div class="clearfix news_fld">
+                    <div class="fl news_img" style="background:url({$vo.thumb}) no-repeat center;background-size:cover;width:230px;height:175px;"></div>
+                    <ul class="fl news_co">
+                        <li class="news_co1"><a target="_blank" href="{:U('news/details',array('id'=>$vo[id]))}">{$vo.name}｜{$vo.title}</a></li>
+                        <li class="news_co2">{$vo.abstract}</li>
+                        <li class="news_co3">{$vo.add_time}</li>
+                        <li class="news_co4">
+                            <foreach name="vo[keywords]" key="key" item="v"> 
+                                <a target="_blank" href="javascript:;" class="fl">{$v}</a>
+                            </foreach>
+                        </li>
+                    </ul>
+                </div>
+            </volist>
+                
+            </section>
+             <ul class="hl_pages">
+                <if condition="$page eq ''">
+                <else/>
+                    <li class="hl_pages_cur">{$page}</li>
+                </if>
+            </ul>
+        </div>
+        <div class="fr news_fr">
+            <div class="news02">
+                <div class="news_hots news_tits news_hom">
+                    <h3 class="news_hots_tit">房产热点</h3>
+                    <ul>
+                    <php>$pi = 1;</php>
+                    <volist name="pos" id="po">
+                        <li <if condition="$pi eq '1'"> class="news_hots_tit_cur"</if>>
+                            <div class="ind">{$pi}</div>
+                            <a target="_blank" href="{:U('news/details',array('id'=>$po[id]))}">
+                                {$po.title} 
+                                <p class="elli">{$po.abstract} </p>    
+                            </a>
+                            <span></span>
+                        </li>
+                        <php>$pi++;</php>
+                    </volist>
+                    </ul>
+                </div>
+                <div class="news_que">
+                    <h3>热门问答<a target="_blank" href="javascript:;" class="fr">更多</a></h3>
+                    <ul class="news_qurl">
+                        <li class="news_quei">
+                            <a target="_blank" href="javascript:;">买的商住房要交什么税？满五唯一了可以免税吗？</a>
+                            <div class="clearfix news_queid"><span>1个回答 / </span><span>5小时前</span></div>
+                        </li>
+                        <li class="news_quei">
+                            <a target="_blank" href="javascript:;">买的商住房要交什么税？满五唯一了可以免税吗？</a>
+                            <div class="clearfix news_queid"><span>1个回答 / </span><span>5小时前</span></div>
+                        </li>
+                        <li class="news_quei">
+                            <a target="_blank" href="javascript:;">买的商住房要交什么税？满五唯一了可以免税吗？</a>
+                            <div class="clearfix news_queid"><span>1个回答 / </span><span>5小时前</span></div>
+                        </li>
+                        <li class="news_quei">
+                            <a target="_blank" href="javascript:;">买的商住房要交什么税？满五唯一了可以免税吗？</a>
+                            <div class="clearfix news_queid"><span>1个回答 / </span><span>5小时前</span></div>
+                        </li>
+                        <li class="news_quei">
+                            <a target="_blank" href="javascript:;">买的商住房要交什么税？满五唯一了可以免税吗？</a>
+                            <div class="clearfix news_queid"><span>1个回答 / </span><span>5小时前</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="news_hots news_tits news_knews">
+                    <h3 class="news_hots_tit">热门百科<a target="_blank" class="fr" href="{:U('news/wike')}">更多</a></h3>
+                    <ol>
+                        <php>$bi = 1;</php>
+                        <volist name="bk" id="bk">
+                        <li <if condition="$bi eq '1'"> class="news_hots_tit_cur"</if>>
+                            <div></div>
+                            <a target="_blank" href="{:U('news/details',array('id'=>$bk[id]))}">
+                                {$bk.title}  
+                                <p class="elli">{$bk.abstract} </p>   
+                            </a>
+                            <span></span>
+                        </li>
+                        <php>$bi++;</php>
+                        </volist>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(".news_tits li span").click(function(){
+            // 改变li中的p与span的样式
+            var par  =$(this).parent(".news_tits li");
+            $(par).toggleClass("news_hots_tit_cur").siblings('li').removeClass("news_hots_tit_cur");
+        })
+    </script>  
+
+
+ <include file="Public:foot" />

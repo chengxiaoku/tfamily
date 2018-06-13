@@ -1,0 +1,296 @@
+<!--汽车首页头部-->
+<include file="Public:header"/>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+    
+    <!-- 搜索 -->
+    <section class="hl01">
+
+    </section>
+
+    <!-- 面包屑 -->
+    <section class="news_bn wrapperi">
+        <ul class="clearfix">
+            <li><a href="index.php">T家园首页</a><span> &gt; </span></li>
+            <li><a href="javascript:;">汽车</a><span> &gt; </span></li>
+        </ul>
+    </section>
+   
+    <!-- 选项 -->
+    <div class="hoc_box1 wrapperi" id="options">
+                <!--品牌-->
+                <div class="hoc_list1">
+                    <ul id="one1">
+                        <li>品牌:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;" onclick='WhSel("pp","不限",this)'>不限</a></li>
+                        <foreach name="carbrand" item="value" key="key">
+                            <li tag="jx"><a href="javascript:;" onclick='WhSel("pp","{$key}",this)'>{$value}</a></li>
+                        </foreach>
+
+                    </ul>
+                </div>
+              
+                <!--级别-->
+                <div class="hoc_list2">
+                    <ul id="two1">
+                        <li>级别:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;" onclick='WhSel("jb","不限",this)'>不限</a></li>
+                        <foreach name="carsize" item="value" key="key">
+                            <li tag="o"><a href="javascript:;" onclick='WhSel("jb","{$key}",this)'>{$value}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+
+        <!--驱动-->
+        <div class="hoc_list3">
+            <ul id="three1">
+                <li>驱动:</li>
+                <li class="hoc_active" tag="o"><a href="javascript:;" onclick='WhSel("qd","不限",this)'>不限</a></li>
+                <foreach name="cardrive" item="value" key="key">
+                    <li tag="o"><a href="javascript:;" onclick='WhSel("qd","{$key}",this)'>{$value}</a></li>
+                </foreach>
+            </ul>
+        </div>
+
+        <!--结构-->
+        <div class="hoc_list4">
+            <ul id="four1">
+                <li>结构:</li>
+                <li class="hoc_active" tag="o"><a href="javascript:;"  onclick='WhSel("jg","不限",this)'>不限</a></li>
+                <foreach name="carstructure" item="value" key="key">
+                    <li tag="o"><a href="javascript:;" onclick='WhSel("jg","{$key}",this)'>{$value}</a></li>
+                </foreach>
+            </ul>
+        </div>
+
+        <!--变速箱-->
+        <div class="hoc_list5">
+            <ul id="five1">
+                <li>变速箱:</li>
+                <li class="hoc_active" tag="o"><a href="javascript:;"  onclick='WhSel("bsx","不限",this)'>不限</a></li>
+                <foreach name="cargearbox" item="value" key="key">
+                    <li tag="o"><a href="javascript:;" onclick='WhSel("bsx","{$key}",this)'>{$value}</a></li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 两种模式 -->
+    <ul class="hl_tabs wrapperi">
+        <li class="hl_tabs_cur" onclick="javascript:location.href = 'index.php?m=index&c=car&a=index';">全部车型</li>
+        <!-- <li>户型图模式</li> -->
+        <select name="" id="" class="fr">
+            <option onclick="WhSel('px','asc','')">按价格从低到高</option>
+            <option onclick="WhSel('px','desc','')">按价格从高到低</option>
+        </select>
+        <button class="px_cur fr" onclick="return de_sel();">默认排序</button>
+        <span class="fr">排序方式 : </span>
+    </ul>
+
+    <ul class="hl_con wrapperi" id="li">
+        <volist name="cardata" id="data">
+            <li style="position: relative;">
+                <section class="clearfix hl_con1">
+                    <a href="index.php?m=index&c=car&a=car_details&id={$data.id}" target="_blank" style="background:url({$data.thumb}) no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>
+                    <div class="hl_con02 fl">
+                        <h3 class="hl_con02_tit">
+                            <a href="index.php?m=index&c=car&a=car_details&id={$data.id}" target="_blank" class="fl">{$data.title}</a>
+                            <div class="fl">
+                                可以团购<span></span><span></span>
+                            </div>
+                        </h3>
+                        <p class="elli hl_con02_squ" style="margin-bottom: 10px;">地址：{$data.address|my_substr=0,30}</p>
+                        <p class="elli hl_con02_adr" style="margin-bottom: 50px;">公司：{$data.company}</p>
+                        <div class="hl_con02_tip">
+                            <span class="hlip01">
+                                <if condition="$data.is_sale eq 'no'">
+                                    售罄
+                                    <elseif condition="$data.is_sale eq 'pedding'"/>
+                                    待售
+                                    <elseif condition="$data.is_sale eq 'yes'"/>
+                                    在售
+                                    <elseif condition="$data.is_sale eq 'all'"/>
+                                    不限
+                                </if>
+                            </span>
+                            <span class="hlip02">
+                                <if condition="$data.size eq 'wxc'">
+                                    微型车
+                                    <elseif condition="$data.size eq 'xxc'"/>
+                                    小型车
+                                    <elseif condition="$data.siez eq 'jcc'"/>
+                                    紧凑车
+                                    <elseif condition="$data.size eq 'zxc'"/>
+                                    中型车
+                                    <elseif condition="$data.size eq 'dxc'"/>
+                                    大型车
+                                    <elseif condition="$data.size eq 'suv'"/>
+                                    SUV
+                                    <elseif condition="$data.size eq 'mpv'"/>
+                                    MPV
+                                    <elseif condition="$data.size eq 'pk'"/>
+                                    皮卡
+                                    <elseif condition="$data.size eq 'qk'"/>
+                                    轻客
+                                    <elseif condition="$data.size eq 'other'"/>
+                                    其他
+                                </if>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hl_con03" style="position: absolute;right: 0;">
+                        价格 <span>{$data.price_min}万~{$data.price_max}万</span>
+                    </div>
+                </section>
+
+            </li>
+        </volist>
+    </ul>
+
+    <div class="ra_det08_btn login" style="width: 1000px;" onclick="loading()">加载更多</div>
+
+    <script>
+        //输入框提示文字
+        $(function(){
+            $('#search').prev().attr('placeholder','请输入车的名称');
+        })
+        //li间距放大
+        $('#options li').css('margin-left','5px');
+
+        //搜索
+        $('#search').click(function () {
+            var select = $(this).prev().val();
+            WhSel('ss',select,'');
+            return false;
+        })
+
+        //初始化加载条数
+        var endnum = 7;
+        //加载更多
+        function loading(){
+            //点击后显示出加载中
+            $(this).html('<img src="{:HOUSE}image/loading.gif" style="width: 20px;height: 20px;display: inline-block">加载中...');
+            //判断条数
+            WhSel('jz',endnum,'');
+            //每次加载的数据
+            endnum += 2;
+        }
+
+
+    </script>
+
+<script type="text/javascript">
+    function WhSel(select_type,select_condition,select_place) {
+        //异步加载更多和搜搜索数据
+        if(select_place!=''){
+            //高亮切换
+            $(select_place).parent().parent().children().removeClass('hoc_active');
+            $(select_place).parent().addClass('hoc_active');
+        }
+
+        //异步加载数据
+        $.post("{:U('car/car_select')}",{types:select_type,condition:select_condition},function(data){
+            var li = '';
+            $.each(data,function(i,row){
+                if(row.title==null){
+                    row.title = "暂无数据";
+                }
+                if(row.company==null){
+                    row.company = "暂无数据";
+                }
+                if(row.address==null){
+                    row.address = "暂无数据";
+                }
+                if(row.is_sale==null){
+                    row.is_sale = "暂无数据";
+                }
+                if(row.price_min==null){
+                    row.price_min = "暂无数据";
+                }
+                if(row.price_max==null){
+                    row.price_max = "暂无数据";
+                }
+
+
+                //售卖情况
+                if (row.is_sale == 'yes') {
+                    row.is_sale="在售";
+                } else if (row.is_sale == 'on') {
+                    row.is_sale="售罄";
+                } else if (row.is_sale == 'pedding') {
+                    row.is_sale="待售";
+                } else {
+                    row.is_sale="不限";
+                }
+
+                //车型
+                if (row.size=='wxc') {
+                    row.size="微型车";
+                } else if(row.size=='xxc'){
+                    row.size="小型车";
+                } else if(row.size=='jcc'){
+                    row.size="紧凑车";
+                } else if(row.size=='zxc'){
+                    row.size="中型车";
+                } else if(row.size=='dxc'){
+                    row.size="大型车";
+                } else if(row.size=='suv'){
+                    row.size="SUV";
+                } else if(row.size=='mpv'){
+                    row.size="MPV";
+                } else if(row.size=='pk'){
+                    row.size="皮卡";
+                } else if(row.size=='qk'){
+                    row.size="轻客";
+                } else {
+                    row.size="其他";
+                }
+
+                li += '<li style="position: relative;">';
+                li += '<section class="clearfix hl_con1">';
+                li += '<a href="index.php?m=index&c=car&a=car_details&id='+row.id+'" target="_blank" style="background:url('+row.thumb+') no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>';
+                li += '<div class="hl_con02 fl">';
+                li += '<h3 class="hl_con02_tit">';
+                li += '<a href="index.php?m=index&c=car&a=car_details&id='+row.id+'" target="_blank" class="fl">'+row.title+'</a>';
+                li += '<div class="fl">';
+                li += '可以团购<span></span><span></span>';
+                li += '</div>';
+                li += '</h3>';
+                li += '<p class="elli hl_con02_squ" style="margin-bottom: 10px;" title='+row.address+'>地址：' +row.address+ '</p>';
+                li += '<p class="elli hl_con02_adr" style="margin-bottom: 50px;">公司：'+row.company+'</p>';
+                li += '<div class="hl_con02_tip">';
+                li += '<span class="hlip01">'+row.is_sale+'</span>';
+                li += '<span class="hlip02">'+row.size+'</span>';
+                li += '</div>';
+                li += '</div>';
+                li += '<div class="hl_con03" style="position: absolute; right: 0;">';
+                li += '价格 <span>'+row.price_min+'万~'+row.price_max+'万</span>';
+                li += '</div>';
+                li += '</section>';
+                li += '</li>';
+
+            });
+            $('#li').html(li);
+            if (data.length!=endnum-2) {
+                $('.login').text('抱歉没有更多的数据了！/(ㄒoㄒ)/~~');
+            } else {
+                $('.login').text('加载更多');
+            }
+
+        })
+
+    }
+</script>
+    <!--网页底部-->
+    <include file="Public:footer"/>

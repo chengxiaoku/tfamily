@@ -1,0 +1,143 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <input style="display: none" id="pd2" value="{$pd2}">
+    <input style="display: none" id="pd" value="{$pd}">
+    <include file="Public:breadcrumb"/>
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content" id="no_time" style="display: none">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="box">
+                    <div class="box-body">
+                        <div style="background-color: #f7ecb5; text-align: center; line-height: 50px; " >
+                            <h2>当前时间不可提取，请在{$t_time}几天提取。</h2>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="no" style="display: none">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="box-body">
+                        <div style="background-color: #f7ecb5; text-align: center; line-height: 50px; " >
+                            <h1><a href="{:U('bank/index')}">请点我绑定银行卡</a></h1>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="yes">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="box">
+                    <div class="box-header">
+                        <div style="background-color: #f7ecb5; text-align: center; line-height: 50px; ">
+                            <p>注：将收取{$fuwu}服务费</p>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label style="width: 58px">我的余额</label>：<b><span style="color: #ff701d;font-size: 30px">￥</span><span style="color: #ff701d;font-size: 30px" id="allmoney"></span></b>
+                                </div>
+                                <div class="form-group">
+                                    <label style="width: 58px">提现金额</label>：
+                                    <input type="text" placeholder="输入提取金额" id="money" class=" wp10">
+                                    <label class="control-label" id="tishi" style="color: #ffd600"><i class="fa fa-bell-o"></i> 必须输入{$mini}的倍数</label>
+                                </div>
+                                <div class="form-group">
+                                    <label style="width: 58px">实际提取</label>：<b><span style="color: #ff701d;font-size: 30px">￥</span><span style="color: #ff701d;font-size: 30px" id="shiji"></span></b>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button class="btn btn-primary w100" onclick="return tijiao()">确定</button>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+
+    <div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+
+<script src="{:ASSETS}plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="{:ASSETS}plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
+<script>
+    $(document).ready(
+            function () {
+                var a=$("#pd").val();
+                var b=$("#pd2").val();
+                if (a){
+                    $("#no").css('display','none');
+                    $("#yes").css('display','');
+                    $("#allmoney").text({$allmoney}+'.00');
+                }else {
+                    $("#no").css('display','');
+                    $("#yes").css('display','none');
+                    return false;
+                }
+                if (b){}else{
+                    $("#no").css('display','none');
+                    $("#yes").css('display','none');
+                    $("#no_time").css('display','');
+                    return false;
+                }
+                var time=setInterval(function () {
+                    var m=$("#money").val();
+                    var all=$("#allmoney").text();
+                    var pduan2=m/{$mini};
+                    var re=/^(\+)?\d+$/;
+                    if (!re.test(pduan2)){
+                        m='';
+                        $("#shiji").text(0);
+                        $("#tishi").css('display','');
+                        $("#tishi").css('color','red');
+                        return false;
+                    }
+                    if(m){
+                        $("#tishi").css('display','none');
+                    }
+                    if (parseFloat(m) > parseFloat(all)){
+                        $("#shiji").text("金额不足");
+                        return false;
+                    }
+                    var shiji=m-m*{$fuwu2};
+                    $("#shiji").text(shiji);
+                },1000);
+            }
+    )
+    function tijiao() {
+        var m=$("#money").val();
+        var all=$("#allmoney").text();
+        if(!m){
+            alert("请输入提取金额")
+            return false;
+        }
+        var pduan2=m/{$mini};
+        var re=/^(\+)?\d+$/;
+        if (!re.test(pduan2)){
+            alert("请输入{$mini}的倍数")
+            return false;
+        }
+        if (parseFloat(m) > parseFloat(all)){
+            alert("金额不足");
+            return false;
+        }
+        self.location="{:U('Cash/index')}&money="+m;
+
+    }
+</script>
+
+<include file="Public:footer"/>

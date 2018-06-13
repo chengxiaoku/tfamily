@@ -1,0 +1,272 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                我的团队
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+                <li>我的团队</li>
+            </ol>
+        </section>
+
+        <!--主题内容-->
+        <section class="content">
+            <!--表格-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <a href="javascript:void(0)"><button type="button" class="btn btn-primary" id="create">创建团队</button></a>
+                            <a id='ser' class="btn btn-info hide" onclick="history.go('-1')">返回</a>
+                            <div class="pull-right">
+                                <form action="{:U('Team/search')}" method="post">
+                                    <div style="width:250px;" class="input-group">
+                                        <input type="text" placeholder="搜索..." class="center-block form-control"
+                                               name="search" id="select" value="">
+                                        <div class="input-group-btn"  onclick="return select()">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover text-center">
+                                <tbody>
+                                <tr>
+                                    <th width="20%">创建时间</th>
+                                    <th width="20%">队员</th>
+                                    <th width="20%">团队人数</th>
+                                    <th width="20%">团队状态</th>
+                                    <th width="20%">管理</th>
+                                </tr>
+
+                                <volist name="list" id="data">
+                                    <tr>
+                                        <td>{$data.add_time}</td>
+                                        <td>{$data.members_names}</td>
+                                        <td>{$data.num}/{$teams}</td>
+                                        <td>
+                                            <if condition="$data.status == no">
+                                                <small class="label fa bg-gray">组团中..</small>
+                                                <elseif condition="$data.status == yes"/>
+                                                <small class="label fa bg-blue">组团成功</small>
+                                            </if>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
+                                                    data-target="#Mymodal01" onclick="detail('{$data.id}')">团队详情
+                                            </button>
+
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
+                                                    data-target="#Mymodal03" onclick="add_user('{$data.id}')">添加成员
+                                            </button>
+
+                                            <button type="button" class="btn btn-default btn-sm" onclick="dissolve('{$data.id}')">解散团队
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+
+                            <div class="row">
+                                <div class="col-sm-5"></div>
+                                <div class=" col-sm-7 ">
+                                    <div class="text-right">
+                                        {$page}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.box -->
+                </div>
+            </div>
+
+            <div class="modal fade" id="Mymodal01">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                            <h4>团队详情</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row detail" style="padding-left: 15px;">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default w100" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <!--解散团队-->
+            <div class="modal fade" id="Mymodal02">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                            <h4 class="modal-title">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                        <i class="glyphicon glyphicon-question-sign fa-2x text-red" style="font-size: 18px;"></i>
+                        <span style="position: absolute;top: 12px;left:40px;color: red; font-size: 18px;">确认要解散该团队</span>
+                            <div style="margin-top: 20px">
+                                <span class="fa"><i>备注:解散团队后，该团队创建人将无法享受团队奖励和相关分红。</i></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary w100" onclick="sure()">确定</button>
+                            <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+
+            <div class="modal fade" id="Mymodal03">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="{:U('Team/add_form')}" method="post">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                            <h4 class="modal-title">提示</h4>
+                        </div>
+                        <div class="modal-body" id="modal_body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary w100" onclick="sub()">确定</button>
+                            <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+                        </div>
+                        </form>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </section><!-- /.content -->
+        <!--团队详情-->
+    </div><!-- /.content-wrapper -->
+<script>
+    var team_id = '';
+    function ajax_search(p) {
+        var url_search = "{:U('Team/ajax_search')}";
+        var val = $("[name=ajaxsearch]").val();
+        if (val == '男') {
+            val = 'man';
+        } else if (val == '女') {
+            val = 'female';
+        } else if (val == '保密') {
+            val = 'secret';
+        }
+        $.get(url_search, {'key':val,'p':p,'id':team_id}, function(html){
+            //console.log(html);
+            $("#modal_body").html(html);
+            if (val == 'man') {
+                val = '男';
+            } else if (val == 'female') {
+                val = '女';
+            } else if (val == 'secret') {
+                val = '保密';
+            }
+            $("[name=ajaxsearch]").val(val);
+        });
+    }
+    /*
+     * 创建团队
+     */
+    $('#create').click(function () {
+        location.href = "{:U('Team/create')}"
+    });
+    /*
+     * 异步添加成员
+     */
+    function add_user(id,p) {
+        if (id == 0) {
+            id == team_id;
+        } else {
+            team_id = id;
+        }
+       url_add = "{:U('Team/add_user')}";
+       $.get(url_add, {'id':team_id,'p':p}, function(html){
+           //console.log(html);
+           $("#modal_body").html(html);
+       });
+    }
+    $(document).on("click", "#selectAll", function(){
+        $("input:checkbox").prop("checked", $("#selectAll").prop('checked'));
+    });
+    /*
+     * 判断是否是搜索和为空判断
+     */
+    if ("{$para}" != '') {
+        $('#ser').removeClass('hide');
+        $('#select').val("{$content}");
+    } else {
+        $('#select').val("");
+    }
+    function select() {
+        var val = $("#select").val();
+        var vals = $.trim(val);
+        if(vals == ""){
+            location.href = "{:U('Team/index')}";
+            return false;
+        }
+    }
+    /*
+     * 解散团队
+     */
+    var ids = '';
+    function dissolve(id) {
+        ids = id;
+        $('#Mymodal02').modal();
+    }
+    function sure() {
+        location.href = "{:U('Team/dissolve')}"+"&id="+ids;
+    }
+    /*
+    * 团队详情
+    */
+    function detail(id) {
+        var url = "{:U('Team/detail')}";
+        $.getJSON(url,{'id':id},function (date) {
+            //console.log(date);
+            var div = '';
+            if (date == '') {
+                div = '';
+            } else {
+                $.each(date, function (index, value) {
+                    div += '<div class="col-md-6">';
+                    div += '<div style="height:130px">';
+                    div += '<div class="pull-left">';
+                    div += '<img width="108" src="{:ASSETS}/img/avatar.png" alt="" class="img-circle">';
+                    div += '</div>';
+                    div += ' <div class="pull-left" style="font-size: 15px;position:absolute;left: 144px;top: 30px;">';
+                    div += ' 姓名：' + value.name;
+                    div += ' </div>';
+                    div += '<div class="pull-left" style="font-size: 15px;position:absolute;left: 144px;top:60px;">';
+                    div += ' 电话：' + value.tel;
+                    div += ' </div>';
+                    div += '</div>';
+                    div += '</div>';
+                });
+            }
+            $(".detail").html(div);
+        });
+    }
+</script>
+<include file="Public:footer"/>

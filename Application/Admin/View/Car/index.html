@@ -1,0 +1,142 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <!--主题内容-->
+    <section class="content">
+
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a href="{:U('car/car_add')}"><button type="button" class="btn btn-primary">添加汽车</button></a>
+                        <div class="pull-right">
+                            <form action="{:U('car/search')}" method="post">
+                                <div class="input-group" style="width:250px;">
+                                    <input  placeholder="搜索..."  class="center-block form-control " name="search" id="search" type="text">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--box-header-->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                            <tr>
+                                <th width="10%">名称</th>
+                                <th width="10%">最低价格</th>
+                                <th width="10%">最高价格</th>
+                                <th width="10%">4s店名称</th>
+                                <th width="10%">排量</th>
+                                <th width="10%">变速箱</th>
+                                <th width="10%">驱动</th>
+                                <th width="10%">车身结构</th>
+                                <th width="20%">管理</th>
+                            </tr>
+                            <volist name="data" id="val">
+                                <tr>
+                                    <td>{$val.title}</td>
+                                    <td>{$val.price_min}</td>
+                                    <td>{$val.price_max}</td>
+                                    <td>{$val.company}</td>
+                                    <td>{$val.emission}</td>
+                                    <td>
+                                        <if condition="$val.drive == front">前驱
+                                            <elseif condition="$val.drive == back"/>后驱
+                                            <elseif condition="$val.drive == all"/>四驱
+                                        </if>
+                                    </td>
+                                    <td>
+                                        <if condition="$val.gearbox == manual">手动
+                                            <elseif condition="$val.gearbox == auto"/>自动
+                                        </if>
+                                    </td>
+                                    <td>
+                                        <if condition="$val.structure == hatchback">掀背
+                                            <elseif condition="$val.structure == two"/>两箱
+                                            <elseif condition="$val.structure == three"/>三箱
+                                            <elseif condition="$val.structure == other"/>其他
+                                        </if>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" style="margin-top: 3px;" type="button" class="btn btn-default btn-sm" onclick="car_edit('{$val.id}')">编辑</a>
+                                        <a href="javascript:void(0)" style="margin-top: 3px;" type="button" class="btn btn-default btn-sm" onclick="del('{$val.id}')">删除</a>
+                                    </td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div><!--box-body -->
+
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class=" col-sm-7 ">
+                                <div class="text-right">
+                                    {$page}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- box -->
+            </div>
+        </div>
+        <!--查看详情-->
+        <div class="modal fade" id="view_details">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">基本信息</h4>
+                    </div>
+                    <div class="modal-body" style="padding-top: 0px;">
+                        <table class="table table-hover">
+
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default w100" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!--删除-->
+        <div class="modal fade" id="del">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span class="glyphicon glyphicon-question-sign fa-2x text-red" style="font-size: 18px" ></span><span style="margin-left: 10px;font-size: 18px;color: red;">确认要删除选择的数据</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary w100">确定</button>
+                        <button type="button" class="btn btn-default w100" data-dismiss="modal">取消</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </section><!--content -->
+</div>
+<script type="text/javascript">
+    //搜索内容返回
+    var search = "{$search}";
+    $("#search").val(search);
+    //删除
+    function del(id) {
+        $("#del").modal({});
+        $("#del button:contains('确定')").click(function () {
+            location.href = "{:U('car/del')}&id="+id;
+        })
+    }
+    function car_edit(id) {
+        location.href = "{:U('car/car_edit')}&id="+id;
+    }
+</script>
+<include file="Public:footer"/>

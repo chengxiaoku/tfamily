@@ -1,0 +1,520 @@
+<!-- 专题列表 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>房巴拉专题</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="css/common_new.css" />
+</head>
+<body style="background-color: #f5f5f6;">
+    <!-- 新闻头部与新房头部不同 -->
+    <section class="topnav">
+        <section class="wrapperi clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="javascript:;">首页</a></li>
+                <li class="fl"><a href="javascript:;">新房</a></li>
+                <li class="fl"><a href="javascript:;">楼盘评分</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+                <li class="fl"><a href="javascript:;">旅游地产</a></li>
+                <li class="fl"><a href="javascript:;">在线装修</a></li>
+                <li class="fl"><a href="javascript:;">家居软装</a></li>
+                <li class="fl"><a href="javascript:;">施工进度查询</a></li>
+            </ul>
+            <div class="normal_login fr normal_login01">
+                <a href="javascript:;"> 注册</a>
+                <a href="javascript:;"> 登陆</a>
+            </div>
+        </section>
+    </section>
+    <style>
+        .wrapperi{
+            width:1000px;
+            margin:0 auto;
+        }
+        .topnav{
+            background:transparent;
+        }
+        .topnav a,.topnav .normal_login01 a{
+            color:#555;
+        }
+        .normal_nav li a:hover{
+            color:#fff;
+        }
+        .news_top{
+            background-color: #F5F5F6;
+        }
+        .footer{
+            margin-top:0;
+        }
+    </style>
+    <!-- 二级导航 -->
+    <div class="news_top" style="background:#fff;">
+        <section class="nhnav wrapperi clearfix">
+        <ul class="clearfix fl">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="image/b_logo.png" width="98" alt="">
+                    <span>新房</span>
+                </a>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="javascript:;" class="nhnav04_cur" >首页</a>
+                <a href="javascript:;">楼盘</a>
+            </li>
+        </ul>
+        <form class="fr newslist_sear">
+            <input type="text" class="fl" placeholder="请输入楼盘名或区域">
+            <button class="fr">&#xe60c;</button>
+        </form>
+        </section>
+    </div>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+
+    <section class="news_bn wrapperi">
+        <ul class="clearfix">
+            <li><a href="javascript:;">房巴拉洛阳站</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">北京新房</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">北京改善盘推荐</a><span> &gt; </span></li>   
+        </ul>
+    </section>
+
+    <h3 class="nltit wrapperi">改善盘</h3>
+
+    <section class="nlfir wrapperi">
+        <a href="javascript:;">
+            <img src="image/bannerV2.jpg" width='655' height='358' alt="" class="fl">
+            <ul class="nll fr">
+                <li>帮住｜上有老下有小 大四居才是改善首选</li>
+                <li>二胎政策开放后，三居被刚需，四居则成了改善首选。</li>
+                <li><span>2016-07-29 14:18:21</span><span>&#xe622; 4009</span></li>
+            </ul>
+        </a>
+    </section>
+
+    <section class="nlsec">
+        <ul class="nlsecl clearfix">
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+            <li class="nlseci fl">
+                <a href="javascript:;" style="background:url(image/bannerV2.jpg) no-repeat center;background-size:cover;">
+                    <div class="elli">换大房｜换房要买四环内的 去哪都方便</div>
+                </a>
+                <div class="nlsecd clearfix">
+                    <p class="fl">2016-07-22 16:48:32</p>
+                    <p class="fr">&#xe622; 6009</p>
+                </div>
+            </li>
+        </ul>
+        <div class="nlmor">加载更多</div>
+        <script>
+            var len = $(".nlsecl li").length;
+            var h = Math.ceil(parseInt(len)/6)*594;
+            $(".nlmor").click(function(){
+                var hei = $(".nlsecl").css("height");
+                var thei = parseInt(hei)+594;
+                if(thei<=h){
+                    $(".nlsecl").stop().animate({"height":thei+"px"},800);
+                }else{
+                    $(".nlmor").html("没有更多了 ╮(╯_╰)╭ ̑̑")
+                }
+            })
+        </script>
+        <section class="nll0 clearfix">
+            <section class="nll01 fl">
+                <h3>刚需盘</h3>
+                <ul class="nll0101 clearfix">
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="nll01 fl">
+                <h3>特色盘</h3>
+                <ul class="nll0101 clearfix">
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="elli">新房日｜一大波人去昌平买房 图什么？</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+
+    !--尾部 -->
+    <section class='footer'>
+        <section class="wrapper clearfix">
+            <section class="fl footer_fl">
+                <ul class="footer_nav clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            了解房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            关于房巴拉
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            联系我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            加入我们
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            隐私声明
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站地图
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            友情链接
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站名称
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站经营许可证
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            网站版权信息
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- 二维码 -->
+            <section class="bottom_right fr">
+                <div>官方客服电话 400 999 6993</div>
+                <img src="image/hetong11.jpg" alt="" width="120px">
+            </section>
+        </section>
+        <div class="copyright wrapper">
+                    全国最大的第三方在线置业服务平台  @2016房巴拉  网站备案/许可证号：豫TCP备16009472号-1   
+        </div>
+    </section>
+
+    <!-- 侧边栏 -->
+    <ul class="sidebar">
+        <!-- 消息 -->
+        <li>
+            <a href="javascript:;" class="sidebar01">
+                <p>&#xe630;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side01"><i></i><a href="javascript:;">【登录】</a>后可查看您的消息</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news">
+                <i></i>
+                <b>消息通知</b>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 5731 5731 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租 57317312 套<p class="news_time">2106/9/27 14:52</p></a>
+                <a href="javascript:;" class="elli">北京真实租房 57312 套<p class="news_time">2106/9/27 14:52</p></a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 收藏 -->
+        <li>
+            <a href="javascript:;" class="sidebar02">
+                <p>&#xe649;</p>
+            </a>
+
+            <!-- 未登录状态 -->
+            <!-- <div class="po side02"><i></i><a href="javascript:;">【登录】</a>后可查看收藏楼盘</div> -->
+
+            <!-- 登录状态 -->
+            <div class="po side01 side01_news side02">
+                <i></i>
+                <b>我收藏的楼盘</b>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time news_time_cur" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="elli">
+                    楼盘名称
+                    <p class="news_time" style="width:260px;height:120px;background:url(image/late1.jpg) no-repeat center;background-size:cover;"></p>
+                </a>
+                <a href="javascript:;" class="side02_more">查看更多</a>
+            </div>
+        </li>
+        <span></span>
+        <!-- 工具 -->
+        <li>
+            <a href="javascript:;" class="sidebar03">
+                <p>&#xe602;</p>
+                <div>工具</div>
+            </a>
+            <div class="po side03">
+                <i></i>
+                <a href="javascript:;">房贷计算器</a>
+                <a href="javascript:;">施工进度查询</a>
+                <a href="javascript:;">评分系统</a>
+            </div>
+        </li>
+        <!-- 客服 -->
+        <li>
+            <a href="javascript:;" class="sidebar04">
+                <p>&#xe668;</p>
+                <div>客服</div>
+            </a>
+            <div class="po side04"><i></i>房巴拉客服</div>
+        </li>
+        <span></span>
+        <!-- 二维码 -->
+        <li>
+            <a href="javascript:;" class="sidebar05">
+                <p>&#xe625;</p>
+            </a>
+            <div class="po side05"><i></i><img src="image/hetong11.jpg" width="95" alt=""></div>
+        </li>
+        <!-- 电话 -->
+        <li>
+            <a href="javascript:;" class="sidebar06">
+                <p>&#xe61d;</p>
+            </a>
+            <div class="po side06"><i></i>官方客服电话 400 999 6993</div>
+        </li>
+        <!-- 反馈 -->
+        <li>
+            <a href="javascript:;" class="sidebar07">
+                <p>&#xe656;</p>
+            </a>
+            <div class="po side07">
+                <i></i>
+                <p class="side07_att">您对新版房巴拉网站有任何意见和建议，或使用中遇到的问题，请在本页面反馈。我们会每天关注并不断优化产品，为您提供更好的服务！</p>
+                <div class="side07_tab clearfix">
+                    <div class="side07_tab_cur">意见反馈</div>
+                    <div>我要投诉</div>    
+                </div>
+                <div class="side07_contents">
+                    <!-- 意见 -->
+                    <div class="side07_content01">
+                        <form action="">
+                            <p>我的意见</p>
+                            <textarea></textarea>
+                            <p>联系方式</p>
+                            <input type="text">
+                            <input type="submit" style="curcor:pointer;">
+                        </form>
+                    </div>
+                    <!-- 反馈 -->
+                    <div class="side07_content02">
+                        <p class="side07_tel">投诉电话 400</p>
+                        <div class="side07_sc">处理流程:
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                            <p>1.处理流程:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <div class="totop">
+            <p>&#xe605;</p>
+            top
+        </div>
+    </ul>
+<script type="text/javascript">
+// <!-- 返回顶部事件 -->
+    var hei = $(window).height(); 
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+// <!-- 侧边栏事件 -->
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>

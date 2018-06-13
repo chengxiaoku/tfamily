@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <link href="{:ASSETS}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/fonts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/fonts/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/css/AdminLTE.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{:ASSETS}/css/custom.css" rel="stylesheet" type="text/css"/>
+
+    <script src="{:ASSETS}/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="{:ASSETS}/plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/plugins/bootbox.js" type="text/javascript"></script>
+
+
+    <style type="text/css">
+        .login-box, .register-box {
+
+        }
+
+        .text-align {
+            text-align: center;
+        }
+
+        .login-box-body .btn {
+            font-size: 16px;
+        }
+
+        #header {
+            height: 60px;
+            margin: 0 auto !important;
+            background: #3c8dbc none repeat scroll 0 0;
+            margin: 0 auto !important;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+        }
+
+        .header_title {
+            font-size: 21px;
+        }
+
+        .btn-social *:first-child {
+            font-size: 14px !important;
+        }
+
+        .login-page {
+            background: #ededed url("./Public/assets/img/login-bg.png") no-repeat scroll center top;
+        }
+
+        .my-tips {
+            color: #a8a8a8;
+        }
+
+        #verifyImg {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .footer {
+            text-align: center;
+
+            border-top: 1px solid #d2d6de;
+            color: #444;
+            padding: 20px;
+        }
+
+        .login-box, .register-box {
+            width: 460px;
+        }
+
+        .login-box-body {
+            padding: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body class="login-page" >
+
+<div id="header">
+    <div class="pull-left" id="back" style="position:absolute;left: 25px;">
+        <a href="{:U('Index/index')}" class="arrow-back"><i class="icon ion-ios-arrow-back" style="font-size: 35px;color: white"></i></a>
+    </div>
+    <div class="header_title">T家园用户登陆页面</div>
+</div>
+
+
+<div class="login-box" style="width: 100%">
+
+    <div class="login-box-body">
+
+        <div class="login-logo"><i class="fa fa-street-view"></i></div>
+
+        <hr>
+        <p class="login-box-msg"><span style="font-size:18px;">用户登陆</span></p>
+
+
+
+            <div class="form-group has-feedback">
+                <div class="col-xs-12">
+                    <br>
+                    <a href="./agent.php" class="btn btn-info btn-block btn-flat">代理商登录</a>
+                </div>
+            </div>
+
+            <div class="form-group has-feedback">
+                <div class="col-xs-12">
+                    <br>
+                    <a href="./member.php" class="btn btn-success btn-block btn-flat">T会员登录</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <p style="padding:20px 0 10px;">
+                        Copyright &copy; 2016 <a href="#">T家园创业平台</a></strong> 版权所有.
+                    </p>
+                </div>
+            </div>
+
+
+
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+
+
+</body>
+</html>

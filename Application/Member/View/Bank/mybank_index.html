@@ -1,0 +1,85 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>{$page_title}</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+            <li>{$page_title}</li>
+        </ol>
+    </section>
+    <!--遍历传入的数据-->
+    <volist name="date" id="vo">
+    </volist>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <button onclick="del()" class="btn btn-danger">删除</button>
+                    </div>
+                    <div class="box-body">
+                            <div class="form-group row">
+                                <div class="col-xs-4 col-md-2  text-right">
+                                    <label>开户行</label>
+                                </div>
+                                <div class="col-xs-8 col-md-4">
+                                    <span>{$vo.bank_name}</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-4 col-md-2 text-right">
+                                    <label>开户人</label>
+                                </div>
+                                <div class="col-xs-8 col-md-4">
+                                    <span>{$vo.bank_user}</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-4 col-md-2 text-right">
+                                    <label>银行账号</label>
+                                </div>
+                                <div class="col-xs-8 col-md-4">
+                                    <span>{$vo.bank_account}</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-2"></div>
+                                <div class="col-xs-4">
+                                    <a href="{:U('bank/bank_update')}" class="btn btn-info w100">编辑</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--删除模态框-->
+        <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">提示：</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <span style="font-size: 18px;" class="text-red glyphicon glyphicon-exclamation-sign"><span style=" margin-left: 10px">确定要删除您的银行卡信息？</span></span>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" href="{:U('bank/bank_del')}">确定</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<script type="text/javascript">
+    function del() {
+        $("#delModal").modal();
+    }
+</script>
+
+<include file="Public:footer"/>

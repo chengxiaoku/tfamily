@@ -1,0 +1,56 @@
+<div role="tabpanel" class="tab-pane active" id="home">
+    <div class="box-header">
+        <div class="pull-right" style=" margin-top: 12px;margin-inside: 12px;">
+
+            <input value="" type="text" placeholder="按手机号码搜索..."
+                   class="form-control w150  inline-block" id="ssearch">
+            <a onclick="return AjaxSearch()" class="btn btn-default"><i
+                    class="fa fa-search inline-block"></i></a>
+
+        </div>
+    </div>
+    <table class="table table-hover text-center">
+
+        <thead>
+        <tr>
+            <th width="10%" class="tc">
+                <input id="selectAll" type="checkbox" value="">全选
+            </th>
+            <th width="25%" class="tc ">昵称</th>
+            <th width="25%">真实姓名</th>
+            <th width="10%" class="tc">年龄</th>
+            <th width="10%">性别</th>
+            <th width="20%">电话</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <volist name="data" id="list">
+            <tr>
+                <td>
+                    <input type="checkbox" name="ckbox" value="{$list.id}">
+                    <input type="hidden" id="teamid" value="{$teamid}">
+                </td>
+                <td>{$list.name}</td>
+                <td>{$list.real_name}</td>
+                <td>{$list.age}</td>
+                <td> <if condition="$list.sex == man">
+                        男 <elseif condition="$list.sex == female"/>
+                        女 <elseif condition="$list.sex == secret"/>
+                        保密
+                    </if>
+                </td>
+                <td>{$list.tel}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-0"></div>
+        <div class=" col-sm-12 ">
+            <div class="text-right page ">
+               {$pages}
+            </div>
+        </div>
+    </div>
+</div>
+

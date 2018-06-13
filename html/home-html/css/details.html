@@ -1,0 +1,159 @@
+<include file="Public:head_new" />
+
+    <section class="news_bn wrapper">
+        <ul class="clearfix">
+            <li><a href="javascript:;">房巴拉洛阳站</a><span> &gt; </span></li>    
+            <li><a href="javascript:;">洛阳热点指南</a><span> &gt; </span></li>    
+            <if condition = " $typ neq '' and $typ[id] neq '4' ">
+            <li><a href="{:U('news/newslist',array('pid'=>$typ[id]))}">{$typ.name} </a><span> &gt; </span></li>   
+            <elseif condition="$typ[id] eq '4'"/> 
+                <li><a href="{:U('news/wike')}">{$typ.name} </a><span> &gt; </span></li>  
+            </if>
+            <li><a href="{:U('news/newslist',array('catid'=>$types[id]))}">{$types.name}</a><span> &gt; </span></li>    
+            <li>正文<span> &gt; </span></li>    
+        </ul>
+    </section>
+
+    <section class="wrapper clearfix">
+        <div class="fl news_fl">
+            <h1 class="news_tit"><span>{$types.name}｜</span>{$data.title}</h1>
+            <div class="clearfix news_det">
+                <div class="fl">
+                    <span>发布时间:</span>
+                    <span>{$data.add_time}</span>
+                    <!-- <span>作者</span>
+                    <span>作者名称</span> -->
+                </div>
+                <div class="fr">
+                    <span>来源:</span>
+                    <span>{$data.source_from}</span>
+                </div>
+            </div>
+            <div class="news_zy">
+                <span>文章摘要:</span>
+                <span>{$data.abstract}</span>
+            </div>
+            <div class="news_con clearfix"> 
+                <div class="fl news_con01">
+                     <!-- 文章内容 -->
+                    <div>
+                        {$data.content}
+                        <div class="news_mz">
+                            免责声明：文中观点仅为个人建议，不代表房巴拉网站观点，仅供投资者参考。
+                        </div>
+                    </div>
+                    <!-- 标签 -->
+                    <div class="clearfix news_tips">
+                        <volist name="keyword" id="vo">
+                            <a href="javascript:;" target="_blank">{$vo}</a>
+                        </volist>
+                    </div>
+                    <!-- 赞 -->
+                    <div class="news_zan" onclick="ajax_z({$id})">&#xe608;</div>
+                    <div class="news_zn" id="news_zn">{$data.like}人赞过</div>
+                </div>
+            </div>
+        </div>
+        <div class="fr news_fr">
+            <div class="news02">
+                <div class="news_hots news_tits news_hotsi">
+                    <h3 class="news_hots_tit">相关热点</h3>
+                    <ul>
+                    <php>$pi = 1;</php>
+                    <volist name="pos" id="po">
+                        <li <if condition="$pi eq '1'"> class="news_hots_tit_cur"</if>>
+                            <a href="{:U('news/details',array('id'=>$po[id]))}">
+                                {$types.name}｜{$po.title} 
+                                <p class="elli">{$po.abstract} </p>    
+                            </a>
+                            <span></span>
+                        </li>
+                        <php>$pi++;</php>
+                    </volist>
+                    </ul>
+                </div>
+                <div class="news_hots news_tits news_knews">
+                    <h3 class="news_hots_tit">相关百科</h3>
+                    <ol>
+                        <php>$bi = 1;</php>
+                        <volist name="bk" id="bk">
+                        <li <if condition="$bi eq '1'"> class="news_hots_tit_cur"</if>>
+                            <div></div>
+                            <a target="_blank" href="{:U('news/details',array('id'=>$bk[id]))}">
+                                {$bk.title}  
+                                <p class="elli">{$bk.abstract} </p>   
+                            </a>
+                            <span></span>
+                        </li>
+                        <php>$bi++;</php>
+                        </volist>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(".news_tits li span").click(function(){
+            // 改变li中的p与span的样式
+            var par  =$(this).parent(".news_tits li");
+            $(par).toggleClass("news_hots_tit_cur").siblings('li').removeClass("news_hots_tit_cur");
+        })
+        var boti = $(window).height();
+        var bot = $("body,html").height()-boti;
+        var hei = $(".news02").height();
+        $(window).scroll(function(){
+            // 页面滚动时，未出现顶部与底部，fixed
+            if($(window).scrollTop()>194&&$(window).scrollTop()<bot){
+                $(".news02").addClass("news_fro");
+                $(".news_hotsi li:gt(3)").stop().fadeOut(300);
+                $(".news_knews li:gt(3)").stop().fadeOut(300);
+            }
+            // 页面滚动时，出现底部，fixed且bottom=450
+            else if($(window).scrollTop()>bot){
+                $(".news02").removeClass("news_fro");
+            }
+            // 页面滚动时，出现顶部，fixed取消
+            else{
+                $(".news02").removeClass("news_fro");
+                $(".news_hotsi li:gt()").stop().fadeIn(300);
+                $(".news_knews li:gt()").stop().fadeIn(300);
+                $(".news02").removeClass("news_froo");/**/
+            }
+        })
+    </script>
+    <script type="text/javascript">
+        function tua(){
+            layer.closeAll();
+        }
+
+        function ajax_z(id){
+            var url = "{:U('News/ajax_ajh')}";
+            $.getJSON(url,{'id':id},function(data){
+               // alert(_id);
+                var pic=data.pic;
+                $("#news_zn").text(pic);
+                if(data.code==400){
+                    // alert('点赞失败');
+                    layer.open({
+                        type: 1,
+                        area: ['400px', '200px'],
+                        title:'点赞',
+                        // skin: 'layui-layer-rim', //加上边框
+                        content: "<div style='overflow:hidden;width:80%;margin:30px auto;'><div class='qingtan05'>点赞失败</div><br/><div style='width:100px;margin:0 auto;'><button class='qingtan03' onclick='tua()'>确 定</button></div></div>"
+                    });
+                }else if(data.code==410){
+                  // alert('您已经表决过了哦！');
+                    layer.open({
+                        type: 1,
+                        area: ['400px', '200px'],
+                        title:'点赞',
+                        // skin: 'layui-layer-rim', //加上边框
+                        content: "<div style='overflow:hidden;width:80%;margin:30px auto;'><div class='qingtan05'>已经表决过了哦</div><br/><div style='width:100px;margin:0 auto;'><button class='qingtan03' onclick='tua()'>确 定</button></div></div>"
+                    });
+                }
+          });
+        }
+        
+    </script>
+
+<include file="Public:foot" />

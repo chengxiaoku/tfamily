@@ -1,0 +1,122 @@
+<!-- 专车接送页 -->
+<include file="Public:header"/>
+<section class="news_bn wrapper">
+    <ul class="clearfix">
+        <li><a href="javascript:;">T家园创业平台</a><span> &gt; </span></li>
+        <li>专车接送<span> &gt; </span></li>
+        <li>正文<span> &gt; </span></li>
+    </ul>
+</section>
+
+<section class="wrapper" >
+    <div class="nd_banner">
+        <div class="nd_text">
+            <p>专车接送</p>
+            <p>专车接送简要说明</p>
+        </div>
+    </div>
+</section>
+
+<section class="wrapper" style="background-color: #fff; ">
+    <div class="menu" >
+        <ul>
+            <li>
+                <h2>T家园简介</h2>
+                <a href="{:U('Page/aboutus')}" class="aboutus">- 关于T家园</a>
+                <a href="{:U('Page/help')}" class="help">- 帮助中心</a>
+                <a href="{:U('Page/contactus')}" class="contactus">- 联系我们</a>
+                <a href="{:U('Page/joinus')}" class="joinus">- 加入我们</a>
+                <a href="{:U('Page/privacynotice')}" class="privacynotice">- 隐私声明</a>
+                <a href="{:U('Page/bargain')}" class="bargain">- 抱团砍价</a>
+                <a href="{:U('Page/entrepreneurship')}" class="entrepreneurship">- 创业就业</a>
+                <a href="{:U('Page/make_money')}" class="make_money">- 赚钱省钱</a>
+                <a href="{:U('Page/service')}" class="service">- 专车接送</a>
+            </li>
+        </ul>
+    </div>
+    <div style="width: 760px;float: right;">
+        <div class="nd_acticle">
+            <div class="nd_cnt">
+                <volist name="rows" id="row">
+                    <div class="myImg">
+                        <img src="{$row.thumb}" width="100%">
+                    </div>
+
+                    {$row.content}
+
+                </volist>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</section>
+
+<style>
+    /* 帮助菜单栏样式*/
+    .menu{
+        width: 200px;
+        float: left;
+        margin-top: 25px;
+        background-color: #FFFFFF;
+        font-family: '微软雅黑';
+    }
+    .menu h2{
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 30px;
+        font-weight: 500;
+        color: #1a2226;
+    }
+
+    .menu ul{
+        padding-bottom: 10px;
+    }
+    .menu a{
+
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        display: block;
+        color: #AAAAAA;
+    }
+
+    .menu a:hover {
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        display: block;
+        color: #3FBE65;
+    }
+
+    .wrapper {
+        width: 960px;
+    }
+    .nd_cnt {
+        padding: 0 !important;
+        width: 100%;
+    }
+    .nd_acticle {
+        padding: 20px;
+    }
+    .nd_banner {
+        width: 960px;
+        height: 300px;
+    }
+
+</style>
+
+
+<script>
+    $('body').css('background', '#f5f5f6');
+    $(function(){
+        $('.'+"<?php echo ACTION_NAME?>"+'').css({
+            'margin-top': '10px',
+            'margin-left': '20px',
+            'font-size': '15px',
+            'display': 'block',
+            'color': '#3FBE65'
+        })
+    })
+</script>
+<!--网页底部-->
+<include file="Public/footer"/>

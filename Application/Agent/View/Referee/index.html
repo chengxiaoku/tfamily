@@ -1,0 +1,46 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <script type="text/javascript">
+        function jsCopy() {
+            var e = document.getElementById("content");//对象是content
+            e.select(); //选择对象
+            document.execCommand("Copy"); //执行浏览器复制命令
+
+            alert("复制完成。");
+        }
+    </script>
+
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-solid">
+                    <!-- form start -->
+                    <div class="box-body">
+
+                        <div  class="box-body  ">
+                            <input type="text" class="col-md-5" style="height: 35px;" id="content" value="{$url}">
+                            <input class="btn btn-primary btn-xm" type=button value="复制" onclick="jsCopy()">
+
+                        </div>
+                        <img src="{:U('Referee/code')}" style="align-content: center;">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+
+<include file="Public:footer"/>

@@ -1,0 +1,197 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+        <!-- 主体内容 -->
+        <section class="content">
+
+            <div class="row">
+
+                <!-- left column -->
+                <div class="col-md-8">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header">
+
+                        </div><!-- /.box-header -->
+
+                        <!-- form start -->
+                        <form role="form" id="myform" action="{:U('Setting/team_lv_add')}" method="post">
+                            <div class="box-body padding20">
+                                <div class="form-group">
+                                    <label for="">级别名称:</label>
+                                    <div>
+                                        <input type="hidden" value="{$lists[id]}" name="id">
+                                        <input type="text" placeholder="输入级别名称" value="{$lists[name]}" name="name" class="form-control wp50" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">积分奖励:</label>
+                                    <input type="text" placeholder="输入积分奖励" value="{$lists[award_integral]}" name="award_integral" class="form-control wp50" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">年薪:</label>
+                                    <input type="text" placeholder="输入年薪" value="{$lists[year_salary]}" name="year_salary" class="form-control wp50" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">粉丝奖励</label>
+                                    <input type="text" placeholder="粉丝奖励" value="{$lists[award_fans]}" name="award_fans" class="form-control wp50" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">直推奖励:</label>
+                                    <input type="text" placeholder="直推奖励" value="{$lists[award_direct]}" name="award_direct" class="form-control wp50" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">组团奖励:</label>
+                                    <input type="text" placeholder="组团奖励" value="{$lists[award_team]}" name="award_team" class="form-control wp50" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="">分红奖励:</label>
+                                    <input type="text" placeholder="分红奖励" value="{$lists[award_year]}" name="award_year" class="form-control wp50" >
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">每个团队人数最低</label>
+                                    <input type="text" placeholder="" name="teams" value="{$lists[teams]}" class="form-control inline-block w150">
+                                    <label class="control-lable">个</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>等级描述:</label>
+                                    <textarea placeholder="Enter ..." rows="5" name="description" class="form-control wp50"></textarea>
+                                </div>
+
+
+                            </div><!-- /.box-body -->
+
+                            <div class="box-footer p20">
+                                <button class="btn btn-primary w100" id="botton" type="submit">添加</button>
+                                <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                            </div>
+                        </form>
+                    </div><!-- /.box -->
+
+
+
+                </div>
+
+            </div>
+
+        </section><!-- /.content -->
+
+    </div><!-- /.content-wrapper -->
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            myform.submit();
+        }
+    });
+    $().ready(function() {
+        $("#myform").validate({
+            rules:{
+                name:{
+                    minlength:2,
+                    maxlength:15,
+                    required:true
+                },
+                award_integral:{
+                    required:true,
+                    digits:true,
+                    maxlength:10
+                },
+                year_salary:{
+                    required:true,
+                    number:true,
+                    maxlength:10
+                },
+                award_fans:{
+                    required:true,
+                    digits:true,
+                    maxlength:10
+                },
+                award_direct:{
+                    required:true,
+                    digits:true,
+                    maxlength:10
+                },
+                award_team:{
+                    required:true,
+                    digits:true,
+                    maxlength:10
+                },
+                award_year:{
+                    required:true,
+                    number:true,
+                    maxlength:10
+                },
+                teams:{
+                    required:true,
+                    digits:true,
+                    maxlength:3
+                },
+                description:{
+                    required:true,
+                    minlength:4
+                }
+            },
+            messages:{
+                name:{
+                    minlength:"请至少输入两个字符",
+                    maxlength:"必须小于15位",
+                    required:"请输入级别名称"
+                },
+                award_integral:{
+                    required:"请输入积分奖励",
+                    digits:"必须输入整数",
+                    maxlength:"必须小于10位"
+                },
+                year_salary:{
+                    required:"请输入年薪",
+                    number:"请输入有效数字",
+                    maxlength:"必须小于10位"
+                },
+                award_fans:{
+                    required:"请输入粉丝奖励",
+                    digits:"必须输入整数",
+                    maxlength:"必须小于10位"
+                },
+                award_direct:{
+                    required:"请输入直推奖励",
+                    digits:"必须输入整数",
+                    maxlength:"必须小于10位"
+                },
+                award_team:{
+                    required:"请输入组团奖励",
+                    digits:"必须输入整数",
+                    maxlength:"必须小于10位"
+                },
+                award_year:{
+                    required:"请输入分红奖励",
+                    number:"请输入有效数字",
+                    maxlength:"必须小于10位"
+                },
+                teams:{
+                    required:"请输入数量",
+                    digits:"必须输入整数",
+                    maxlength:"必须小于3位"
+                },
+                description:{
+                    required:"请输入描述",
+                    minlength:"请至少输入4个字符"
+                }
+            }
+        })
+    });
+</script>
+<script>
+    if ("{$lists}"){
+        $('[name=description]').text("{$lists[description]}");
+        myform.action="{:U('Setting/team_lv_upd')}";
+        $('#botton').text("修改");
+    }
+</script>
+<include file="Public:footer"/>

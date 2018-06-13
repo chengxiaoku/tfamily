@@ -1,0 +1,584 @@
+<!-- T家园新车详情页 -->
+<include file="Public:header"/>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        });
+    </script>
+
+    <!-- banner -->
+    <section class="ra01">
+        <!-- <div class="ra0101">
+            <img src="image/h01.jpg" alt="">
+        </div> -->
+        <div clsas="ra0102"></div>
+        <!-- 面包屑 -->
+        <section class="news_bn wrapperi">
+            <ul class="clearfix">
+                <li><a href="javascript:;">新车</a><span> &gt; </span></li>
+                <li><a href="javascript:;">{$data.title}</a><span> &gt; </span></li>
+            </ul>
+        </section>
+
+        <section class="ra_banner wrapperi" style="background:url({$data.thumb}) no-repeat center;background-size:cover;">
+            <ul class="ra_bc">
+                <li class="ra_bc01">
+                    <p class="ra_bc0101">
+                        <if condition="$data.is_sale eq 'no'">售罄
+                            <elseif condition="$data.is_sale eq 'pedding'"/>
+                            待售
+                            <elseif condition="$data.is_sale eq 'yes'"/>
+                            在售
+                            <elseif condition="$data.is_sale eq 'all'"/>
+                            不限
+                        </if>
+                    </p>
+                    <p class="ra_bc0102">{$data.title}</p>
+                    <p class="ra_bc0103 clearfix">
+                        <span class="fl">价格</span>
+                        <span class="fl"> {$data.price_min}万~{$data.price_max}万 </span>
+                        <span class="fl">／辆</span>
+                    </p>
+                </li>
+                <section class="ra_bcs">
+                    <!-- 标签 -->
+                    <li class="ra_bc02">
+                        <span>
+                            <if condition="$data.structure eq 'two'">两厢
+                                <elseif condition="$data.structure eq 'three'" />三厢
+                                <elseif condition="$data.structure eq 'hatchback'" />掀背
+                                <elseif condition="$data.structure eq 'other'" />其他
+                            </if>
+                        </span>
+                        <span>
+                            <if condition="$data.gearbox eq 'auto'">自动
+                                <elseif condition="$data.gearbox eq 'manual'" />手动
+                            </if>
+                        </span>
+                    </li>
+                    <li class="ra_bc03 clearfix">
+                        <span class="ra_bc0301"></span>
+                        <span class="ra_bc0302 elli">4S店 : {$data.company}</span>
+                    </li>
+                    <li class="ra_bc03 ra_bc04 clearfix">
+                        <span class="ra_bc0301"></span>
+                        <span class="ra_bc0302 elli">4S店地址 : {$data.address}</span>
+                        
+                    </li>
+                    
+                    <li class="ra_bc06">
+                        <span>&#xe61d;</span> 咨询电话
+                    </li>
+                </section>
+            </ul>
+            <a href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank" class="ra_bca">
+                <span>&#xe618;</span> 相册 (18)
+            </a>
+        </section>
+    </section>
+    <script>
+        $(".ra_bc0503n").click(function(){
+            if($(".ra_bc0504m").css("display")=="none"){
+                $(this).siblings(".ra_bc0504m").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504m").stop().fadeOut(300);
+            }
+        })
+        $(".ra_bc0503x").click(function(){
+            if($(".ra_bc0504y").css("display")=="none"){
+                $(this).siblings(".ra_bc0504y").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504y").stop().fadeOut(300);
+            }
+        })
+         $(".ra_bc0508").on('click',function(){
+            layer.open({
+              type: 1,
+              title:"开盘详情",
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['380px', '300px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="ra_tan">1. 2016-03-27 3号楼开盘</div>'
+            });
+        })
+         $(".ra_bc06").click(function(){
+            $(this).html("400 999 6993").addClass("ra_bc06t");
+         })
+    </script>
+
+   
+    
+    <!-- 主内容块 -->
+    <section class="raco">
+
+        <section class="ra_det wrapperi" id="ra_det03">
+            <!-- 楼盘相册  -->
+            <section class="ra_det03 ra_det01">
+                <h3 class="ra_det0101">车型相册</h3>
+                <ul class="ra_det0302 clearfix">
+                    <volist name="images" id="image">
+                        <li class="fl">
+                            <a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">
+                                <div style="background:url({$image.images.0}) no-repeat center;background-size:cover;"></div>
+
+                            </a>
+                        </li>
+                    </volist>
+                    <!--<li class="fl">-->
+                        <!--<a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">-->
+                            <!--<div style="background:url({$data.thumb}) no-repeat center;background-size:cover;"></div>-->
+
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="fl">-->
+                        <!--<a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">-->
+                            <!--<div style="background:url({$data.thumb}) no-repeat center;background-size:cover;"></div>-->
+
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="fl">-->
+                        <!--<a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">-->
+                            <!--<div style="background:url({$data.thumb}) no-repeat center;background-size:cover;"></div>-->
+
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="fl">-->
+                        <!--<a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">-->
+                            <!--<div style="background:url({$data.thumb}) no-repeat center;background-size:cover;"></div>-->
+
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="fl">-->
+                        <!--<a  href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank">-->
+                            <!--<div style="background:url({$data.thumb}) no-repeat center;background-size:cover;"></div>-->
+
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+                <a href="index.php?m=index&c=car&a=car_photo&id={$data.id}" target="_blank" class="ra_det0303">查看全部</a>
+            </section>
+
+            
+        </section>
+
+        <section class="ra_det" id="ra_det07">
+            <!-- 楼盘详情 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">汽车详情</h3>
+                    <div class="h_line"></div>
+                    <div class="h_dt clearfix">
+                            <p class="clearfix hp">
+                                <span>名称 : </span>
+                                <span>{$data.title}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>4S店 : </span>
+                                <span>{$data.company}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>4S店地址 : </span>
+                                <span>{$data.address}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>最低价格 : </span>
+                                <span>{$data.price_min}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>最大价格 : </span>
+                                <span>{$data.price_max}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>排量 : </span>
+                                <span>xxxx</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>驱动 : </span>
+                                <span>
+                                    <if condition="$data.drive eq 'front'">前驱
+                                        <elseif condition="$data.drive eq 'back'" />后驱
+                                        <elseif condition="$data.drive eq 'all'" />四驱
+                                    </if>
+                                </span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>变速箱 : </span>
+                                <span>
+                                    <if condition="$data.gearbox eq 'auto'">自动
+                                        <elseif condition="$data.gearbox eq 'manl'" />手动
+                                    </if>
+                                </span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>车身结构 : </span>
+                                <span>
+                                    <if condition="$data.structure eq 'two'">两厢
+                                        <elseif condition="$data.structure eq 'three'"/>三厢
+                                        <elseif condition="$data.structure eq 'hatchback'"/>掀背
+                                        <elseif condition="$data.structure eq 'other'"/>其他
+                                    </if>
+                                </span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>描述 : </span>
+                                <span>{$data.content}</span>
+                            </p>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- 推荐车型 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">推荐车型</h3>
+                    <ul class="h_choose clearfix">
+                        <volist name="recommended" id="recommended">
+                            <li>
+                                <a href="index.php?m=index&c=car&a=car_details&id={$recommended.id}" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url({$recommended.thumb}) no-repeat;background-size: 100% 100%;">
+                                    <span class="h_Price">价格：{$recommended.price_min}万~{$recommended.price_max}万</span>
+                                </a>
+                                <a href="index.php?m=index&c=car&a=car_details&id={$recommended.id}" class="h_classify clearfix"><span class="h_namev elli">{$recommended.title}</span><span class="bieshu"></span></a>
+                                <p class="h_areav">{$recommended.address}</p>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+        
+        
+        <!-- 抱团砍价 -->
+        <section class="ra_det  ra_det01 wrapperi ra_det08" id="ra_det08" style="margin-bottom:50px;">
+            <h3 class="ra_det0101">抱团砍价
+                <a href="javascript:;">了解详情</a>
+            </h3>
+            <div class="clearfix">
+                <div class="fl" style="margin-left:40px;">
+                    <h4><span>A</span><span>发起</span><span>抱团砍价具体流程</span></h4>
+                    <ul class="ll_ul2">
+                      <li class="ll_ulli1 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe62f;</span>发起抱团</li>
+                          <li><span>&#xe615;</span>填写信息</li>
+                          <li><span>&#xe6a9;</span>申请陪同</li>
+                        </ul>
+                      </li>
+                      <li class="ll_ulli2 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe601;</span>招募参与者</li>
+                          <li><span>&#xe6d7;</span>现场砍价</li>
+                          <li><span>&#xe6a0;</span>活动结束</li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+                <div class="fl ra_det08_line"></div>
+                <div class="fr" style="margin-right:165px; margin-top:140px;">
+                    <div class="layui-btn layui-btn-danger layui-btn-big">我要参与抱团砍价</div>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(".layui-btn").on('click',function(){
+                //判断用户是否登录
+                $.post("{:U('Auth/logins')}",{},function(data){
+                    if (data==0) {
+                        location.href="{:U('Auth/login')}";
+                    } else if(data==1) {
+                        var content = '';
+                        content += '<form class="ra_det08_tan" method="post" action="index.php?m=index&c=car&a=form" id="form">';
+                        content += '<ul>';
+                        content += '<li>';
+                        content += '<span>品牌 : </span>';
+                        content += '<select id="title" name="title" class="form-control wp50 wordspli5" style="float:none;padding:0;">';
+                        content += '<option value="宝马">宝马</option>';
+                        content += '<option value="奔驰">奔驰</option>';
+                        content += '<option value="林肯">林肯</option>';
+                        content += '<option value="现代">现代</option>';
+                        content += '</select>';
+                        content += '<span>*</span>';
+                        content += '</li>';
+                        content += '<li>';
+                        content += '<span>级别 : </span>';
+                        content += '<select id="car_style" name="car_style" class="form-control wp50 wordspli5" style="float:none;padding:0;">';
+                        content += '<option value="微型车">微型车</option>';
+                        content += '<option value="小型车">小型车</option>';
+                        content += '<option value="紧凑型车">紧凑型车</option>';
+                        content += '<option value="中型车">中型车</option>';
+                        content += '<option value="中大型车">中大型车</option>';
+                        content += '<option value="大型车">大型车</option>';
+                        content += '<option value="SUV">SUV</option>';
+                        content += '<option value="MPV">MPV</option>';
+                        content += '<option value="跑车">跑车</option>';
+                        content += '<option value="皮卡">皮卡</option>';
+                        content += '<option value="轻客">轻客</option>';
+                        content += '</select>';
+                        content += '<span>*</span>';
+                        content += '</li>';
+                        content += '<li><span>意向车型 : </span><input type="text" id="car_my_type" name="car_my_type" placeholder="输入意向车型"/><span>*</span></li>';
+                        content += '<li><span>4S店价格 : </span><input type="text" id="price_4s" name="price_4s" placeholder="输入4S店价格" class="ra_det08_sh"><span>万/辆</span><span>*</span></li>';
+                        content += '<li><span>理想价格 : </span><input type="text" id="car_my_price" name="car_my_price" placeholder="输入理想价格" class="ra_det08_sh"/><span>万/辆</span><span>*</span></li>';
+                        content += '<li><span>真实姓名 : </span><input type="text" id="name" name="name" placeholder="输入真实姓名" class="ra_det08_sh"/><span>*</span></li>';
+                        content += '<li><span>手机号码 : </span><input type="text" id="tel" name="tel" placeholder="输入手机号码" class="ra_det08_sh"/><span>*</span></li>';
+                        content += '<li><span>备注信息 : </span><textarea id="beizhu" name="beizhu" placeholder="请输入备注信息" rows="3"></textarea><span>*</span></li>';
+                        content += '<li style="display: none;"><input name="car_id" value="{$data.id}"></li>'
+                        content += '</ul>';
+                        content += '<div class="ra_det08_di">———— 自抱团起，30天后截止报名 ————</div>';
+                        content += '<input type="submit" onclick="return check();" value="提交" class="ra_det08_sub"/></form>';
+
+                        layer.open({
+                            type: 1,
+                            title : "发起抱团砍价",
+                            skin: 'layui-layer-demo', //样式类名
+                            closeBtn: 1, //不显示关闭按钮
+                            shift: 2,
+                            area: ['570px', '600px'],
+                            shadeClose: true, //开启遮罩关闭
+                            content: content
+                        });
+                    }
+                })
+            })
+
+
+        </script>
+    </section>
+
+    
+    <style>
+        
+        .h_dt {
+            height: 200px;
+            overflow: hidden;
+        }
+
+    </style>
+
+    <script>
+        // 客服电话
+        $(".ra0302").click(function(){
+            $(this).html("400 999 6993")
+        })
+
+        // 滚动导航发生hover事件
+        $(".ra0301").hover(function(){
+            // 需要绿色块移动到的位置
+            var lti = parseInt($(this).index())*97;
+            $(this).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+            $(".ra03gr").stop().animate({"left":lti},300)
+        })
+
+        // 内容块数
+        var le = $(".ra03 ul li").length;
+
+        // 导航初次和文件顶部的距离
+        var ht = $(".ra03").offset().top;
+
+        // 发生滚动时间是滚动导航自处方式
+        $(window).scroll(function(){
+            // 每个内容块和文件顶部的距离
+            var n;
+
+            // 每个内容块底部和文件顶部的距离
+            var m;
+
+            // 需要绿色块移动到的位置
+            var u;
+
+            // 此时屏幕和文件顶部的距离
+            var tpo = $(this).scrollTop();
+
+            // 根据tpo选择滚动导航是否吸顶
+            if(tpo>ht){
+                $(".ra03").addClass("ra03i");
+            }else{
+                $(".ra03").removeClass("ra03i");
+                $(".ra03 ul li").eq(0).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                $(".ra03gr").stop().animate({"left":0},300);
+                }
+
+            //屏幕顶部在那个内容块上，就按顺序使得绿色块停在哪个导航标签上
+            for(var i=0;i<le;i++){
+                n=$(".ra_det").eq(i).offset().top;
+                m=parseInt($(".ra_det").eq(i).css('height'))+n;
+                if(tpo>=n&&tpo<m){
+                    u=i*97;
+                    $(".ra03 ul li").eq(i).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                    $(".ra03gr").stop().animate({"left":u},200); 
+                }
+            }
+        })
+    </script>
+
+    <style>
+        .ra_det0302 {
+            height: 160px;
+            margin: 0 auto;
+            width: 940px;
+        }
+    </style>
+    <script>
+        function trim (str, charlist) {
+            var whitespace = [
+                ' ',
+                '\n',
+                '\r',
+                '\t',
+                '\f',
+                '\x0b',
+                '\xa0',
+                '\u2000',
+                '\u2001',
+                '\u2002',
+                '\u2003',
+                '\u2004',
+                '\u2005',
+                '\u2006',
+                '\u2007',
+                '\u2008',
+                '\u2009',
+                '\u200a',
+                '\u200b',
+                '\u2028',
+                '\u2029',
+                '\u3000'
+            ].join('')
+            var l = 0
+            var i = 0
+            str += ''
+
+            if (charlist) {
+                whitespace = (charlist + '').replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^:])/g, '$1')
+            }
+
+            l = str.length
+            for (i = 0; i < l; i++) {
+                if (whitespace.indexOf(str.charAt(i)) === -1) {
+                    str = str.substring(i)
+                    break
+                }
+            }
+
+            l = str.length
+            for (i = l - 1; i >= 0; i--) {
+                if (whitespace.indexOf(str.charAt(i)) === -1) {
+                    str = str.substring(0, i + 1)
+                    break
+                }
+            }
+
+            return whitespace.indexOf(str.charAt(0)) === -1 ? str : ''
+        }
+        function check(){
+            var a = true;
+            var $title = $('#title');
+            var $car_style = $('#car_style');
+            var $car_my_type = $('#car_my_type');
+            var $price_4s = $('#price_4s');
+            var $car_my_price = $('#car_my_price');
+            var $name = $('#name');
+            var $tel = $('#tel');
+            var $beizhu = $('#beizhu');
+            if($title.val() == ''){
+                $title.next().addClass('xing');
+                $title.focus();
+                a = false;
+            }else if($title.val() != ''){
+                $title.next().removeClass('xing');
+            }
+            if($car_style.val() == ''){
+                $car_style.next().addClass('xing');
+                $car_style.focus();
+                a = false;
+            }else if($car_style.val() != ''){
+                $car_style.next().removeClass('xing');
+            }
+            if(trim($car_my_type.val()) == ''){
+                $car_my_type.next().addClass('xing');
+                $car_my_type.focus();
+                a = false;
+            }else if(trim($car_my_type.val()) != ''){
+                $car_my_type.next().removeClass('xing');
+            }
+            if(trim($price_4s.val()) == ''){
+                $price_4s.next().next().addClass('xing');
+                $price_4s.focus();
+                a =  false;
+            }else if(trim($price_4s.val()) != ''){
+                reg = /^\d{1,}$/;
+                if(!reg.test($price_4s.val())){
+                    $price_4s.next().next().addClass('xing');
+                    $price_4s.next().next().text('请输入正确的价格');
+                    $price_4s.focus();
+                    a = false;
+                }else{
+                    $price_4s.next().next().text('*');
+                    $price_4s.next().next().removeClass('xing');
+                }
+            }
+            if(trim($car_my_price.val()) == ''){
+                $car_my_price.next().next().addClass('xing');
+                $car_my_price.focus();
+                a =  false;
+            }else if(trim($car_my_price.val()) != ''){
+                reg = /^\d{1,}$/;
+                if(!reg.test($car_my_price.val())){
+                    $car_my_price.next().next().addClass('xing');
+                    $car_my_price.next().next().text('请输入正确的价格');
+                    $car_my_price.focus();
+                    a = false;
+                }else{
+                    $car_my_price.next().next().text('*');
+                    $car_my_price.next().next().removeClass('xing');
+                }
+            }
+            if(trim($name.val()) == ''){
+                $name.next().addClass('xing');
+                $name.focus();
+                a =  false;
+            }else if(trim($name.val()) != ''){
+                reg = /[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*/;
+                if(!reg.test($name.val())){
+                    $name.next().addClass('xing');
+                    $name.next().text('请输入真实的姓名');
+                    $name.focus();
+                    a = false;
+                }else{
+                    $name.next().text('*');
+                    $name.next().removeClass('xing');
+                }
+            }
+            if(trim($tel.val()) == ''){
+                $tel.next().addClass('xing');
+                $tel.focus();
+                a =  false;
+            }else if(trim($tel.val()) != ''){
+                reg = /^\d{11}$/;
+                if(!reg.test($tel.val())){
+                    $tel.next().addClass('xing');
+                    $tel.next().text('请输入真实的手机号');
+                    $tel.focus();
+                    a = false;
+                }else{
+                    $tel.next().text('*');
+                    $tel.next().removeClass('xing');
+                }
+            }
+            return a;
+        }
+    </script>
+
+    <!--网页底部-->
+    <include file="Public:footer"/>

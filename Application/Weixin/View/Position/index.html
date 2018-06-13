@@ -1,0 +1,48 @@
+<include file="Public:header"/>
+<div id="wrapper">
+    <!--头部-->
+    <div id="header" class="header-color">
+        <div class="pull-left">
+            <a href="{:U('Index/index')}" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+        </div>
+        <div class="title">选择城市</div>
+    </div>
+
+    <div class="hr-title">当前定位的城市</div>
+    <div class="container">
+        <div class="row my-row my-row-one">
+            <a href="javascript:void(0)">{$position}</a>
+        </div>
+    </div>
+
+    <div class="hr-title">所有城市</div>
+    <div class="container city-all">
+        <div class="row" id="cityall">
+            <volist name="open_city" id="list">
+                <a href="javascript:void(0)" id="{$list.id}">{$list.name}</a>
+            </volist>
+        </div>
+    </div>
+
+    <div id="push"></div>
+</div>
+
+<script>
+    $('#cityall a').click(function () {
+        $('.my-row-one a').text($(this).text());
+    });
+    $('#cityall a').click(function () {
+        var url = "{:U('Position/location')}";
+        var id = $(this).attr('id');
+        var name = $(this).text();
+        $.post(url,{id:id,name:name},function (date) {
+            console.log(date);
+        })
+    })
+</script>
+<!--加载更多-->
+<!--<div id="loading">
+    <img src="img/loading.gif">数据加载中...
+</div>-->
+
+<include file="Public:footer"/>

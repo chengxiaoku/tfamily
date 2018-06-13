@@ -1,0 +1,381 @@
+<include file="Public:header"/>
+<div id="wrapper">
+    <!--头部-->
+    <div id="header">
+        <div class="pull-left">
+            <a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+        </div>
+        <div class="title">汽车列表</div>
+
+         <div class="pull-right user-center">
+            <a href="{:U('Auth/login')}"><i class="ion-android-contact size-18"></i></a>
+        </div>
+    </div>
+
+    <div class="container tab-container">
+        <div class="row">
+            <div class="weui-tab">
+                <div class="weui-navbar">
+                    <div id="tabArea" data-tmpl="tpl_t_area" class="weui-navbar__item">
+                        地区
+                    </div>
+                    <div id="tabcarType" data-tmpl="tpl_t_car_type" class="weui-navbar__item">
+                        品牌
+                    </div>
+                </div>
+                <div class="weui_tab_bd">
+                    <div id="actionSheet_wrap">
+                        <div class="weui-mask" id="iosMask" style="display: none;"></div>
+                        <div class="weui-actionsheet" id="iosActionsheet">
+                            <div class="weui-actionsheet__menu" id="weui_actionsheet_menu_placeholder">
+
+                            </div>
+                            <div class="weui-actionsheet__action">
+                                <div class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--最新房产-->
+    <div class="lastest-news container">
+        <div class="row" id="null_row">
+            <div class="weui-panel weui-panel_access">
+                <div class="weui-panel__hd">最新车型</div>
+                <div class="weui-panel__bd" id="cars">
+                    <volist name="car" id="cars">
+                        <a href="{:U('car/details')}&id={$cars.id}" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img width="100" height="70" class="weui-media-box__thumb" src="{$cars.thumb}">
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title pull-left">{$cars.title|subtext=8}</h4>
+                                <span class="car-price pull-right">{$cars.price_min}万/辆</span>
+                                <div class="clearfix"></div>
+                                <p class="weui-media-box__desc">{$cars.content|my_substr=0,33}</p>
+
+                            </div>
+                        </a>
+                    </volist>
+                </div>
+                <div class="weui-panel__ft" id="car_html">
+                    <a href="javascript:void(0);" id="car_see" onclick="car_see_more()" class="weui-cell weui-cell_access weui-cell_link">
+                        <div class="weui-cell__bd text-center">查看更多</div>
+                        <span class="weui-cell__ft"></span>
+                    </a>
+                    <div id="car_loading" class="weui-cell weui-cell_access weui-cell_link hide">
+                        <div class="weui-cell__bd text-center"><img src="{:WEIXIN_ASSETS}img/loading.gif">数据加载中...</div>
+                        <span class="weui-cell__ft"></span>
+                    </div>
+                    <div class="weui-cell weui-cell_access weui-cell_link hide" id="loaded">
+                        <div class="weui-cell__bd text-center">加载完毕</div>
+                        <span class="weui-cell__ft"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-loadmore weui-loadmore_line hide" id="is_null">
+            <span class="weui-loadmore__tips" style="background:none;">暂无数据</span>
+        </div>
+    </div>
+    <div id="push"></div>
+</div><!--/end wrapper-->
+
+
+
+
+
+<style>
+	.tab-container {
+		padding-bottom: 15px;
+		height: 50px;
+	}
+    .weui-actionsheet {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+    .car-price{
+        margin-top: 10px;
+        color: #f40;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.1;
+    }
+
+</style>
+
+
+
+<!-- Modal地区 -->
+<script type="text/x-tmpl" id="tpl_t_area">
+    <div order="-1" class="weui-actionsheet__cell region_name">{%='不限'%}<i class="weui-icon-success-no-circle hide"></i></div>
+    {% for(var i=0;i<o.obj.length;i++) { %}
+         <div order="{%=i%}" class="weui-actionsheet__cell region_name">{%=o.obj[i]['region_name']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    {% } %}
+</script>
+<!--模板:品牌-->
+<script type="text/x-tmpl" id="tpl_t_car_type">
+    <div sid="-1" class="weui-actionsheet__cell car_type">{%='不限'%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="0" class="weui-actionsheet__cell car_type">{%=o.obj[0]['bwm']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="1" class="weui-actionsheet__cell car_type">{%=o.obj[0]['das']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="2" class="weui-actionsheet__cell car_type">{%=o.obj[0]['honda']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="3" class="weui-actionsheet__cell car_type">{%=o.obj[0]['maza']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="4" class="weui-actionsheet__cell car_type">{%=o.obj[0]['kia']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="5" class="weui-actionsheet__cell car_type">{%=o.obj[0]['toyota']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="6" class="weui-actionsheet__cell car_type">{%=o.obj[0]['skoda']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="7" class="weui-actionsheet__cell car_type">{%=o.obj[0]['ford']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="8" class="weui-actionsheet__cell car_type">{%=o.obj[0]['buick']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="9" class="weui-actionsheet__cell car_type">{%=o.obj[0]['chevrolet']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="10" class="weui-actionsheet__cell car_type">{%=o.obj[0]['cadillac']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="11" class="weui-actionsheet__cell car_type">{%=o.obj[0]['lincoln']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="12" class="weui-actionsheet__cell car_type">{%=o.obj[0]['byd']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="13" class="weui-actionsheet__cell car_type">{%=o.obj[0]['mg']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="14" class="weui-actionsheet__cell car_type">{%=o.obj[0]['lufeng']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="15" class="weui-actionsheet__cell car_type">{%=o.obj[0]['benteng']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="16" class="weui-actionsheet__cell car_type">{%=o.obj[0]['qirui']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="17" class="weui-actionsheet__cell car_type">{%=o.obj[0]['changan']%}<i class="weui-icon-success-no-circle hide"></i></div>
+    <div sid="18" class="weui-actionsheet__cell car_type">{%=o.obj[0]['other']%}<i class="weui-icon-success-no-circle hide"></i></div>
+
+</script>
+<script type="text/javascript">
+    var j ={$page_size};
+    var order = "";
+    var sid = "";
+    $(document).on('click','.car_type',function () {
+        var brand = $(this).text();
+        $('#loaded').addClass('hide');
+        $('#car_loading').addClass('hide');
+        $('#car_see').removeClass('hide');
+        $('#is_null').addClass('hide');
+        $('#null_row').removeClass('hide');
+        j={$page_size};
+        var url = "{:U('car/region_type_select')}";
+        $.getJSON(url,{'brand':brand},function (data) {
+            var div = '';
+            $.each(data,function (index,value) {
+                if (value.title == null) {
+                    value.title = '';
+                }
+                if (value.content == null) {
+                    value.content = '';
+                }
+                if (value.price == null) {
+                    value.price = '';
+                }
+                var con=value.content;
+                var car_content=con.substr(0,33);
+                var tit=value.title;
+                var car_title=tit.substr(0,8);
+                if (tit.length > 11){
+                    var car_titles=car_title+'...';
+                }else {
+                    var car_titles=car_title;
+                }
+                div += '<a href='+"{:U('car/details')}"+"&id="+value.id+' class="weui-media-box weui-media-box_appmsg">';
+                div += '<div class="weui-media-box__hd">';
+                div += '<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+                div += '</div>';
+                div += '<div class="weui-media-box__bd">';
+                div += '<h4 class="weui-media-box__title pull-left">'+car_title+'</h4>';
+                div += '<span class="car-price pull-right">'+value.price_min+'万/辆</span>';
+                div += '<div class="clearfix"></div>';
+                div += '<p class="weui-media-box__desc">'+car_content+'...</p>';
+                div += '</div>';
+                div += '</a>';
+            });
+            $('#cars').html(div);
+            if (data.length < {$page_size} && data.length >=1) {
+                $('#car_see').addClass('hide');
+                $('#loaded').removeClass('hide');
+            } else if (data.length < 1) {
+                $('#car_see').addClass('hide');
+                $('#null_row').addClass('hide');
+                $('#is_null').removeClass('hide');
+            }
+        });
+        sid = $(this).attr('sid');
+        hideActionSheet();
+    });
+
+    $(document).on('click', '.region_name', function () {
+        var region = $(this).text();
+        $('#loaded').addClass('hide');
+        $('#car_loading').addClass('hide');
+        $('#car_see').removeClass('hide');
+        $('#is_null').addClass('hide');
+        $('#null_row').removeClass('hide');
+        j = {$page_size};
+        var url = "{:U('car/region_type_select')}";
+        $.getJSON(url, {'region': region}, function (data) {
+            console.log(data);
+            var div = '';
+            $.each(data, function (index, value) {
+                if (value.title == null) {
+                    value.title = '';
+                }
+                if (value.content == null) {
+                    value.content = '';
+                }
+                if (value.price == null) {
+                    value.price = '';
+                }
+                var con=value.content;
+                var car_content=con.substr(0,33);
+                var tit=value.title;
+                var car_title=tit.substr(0,8);
+                if (tit.length > 11){
+                    var car_titles=car_title+'...';
+                }else {
+                    var car_titles=car_title;
+                }
+                div += '<a href=' + "{:U('car/details')}" + "&id=" + value.id + ' class="weui-media-box weui-media-box_appmsg">';
+                div += '<div class="weui-media-box__hd">';
+                div += '<img width="100" height="70" class="weui-media-box__thumb" src="' + value.thumb + '">';
+                div += '</div>';
+                div += '<div class="weui-media-box__bd">';
+                div += '<h4 class="weui-media-box__title pull-left">'+car_titles+'</h4>';
+                div += '<span class="car-price pull-right">'+value.price_min+'万/辆</span>';
+                div += '<div class="clearfix"></div>';
+                div += '<p class="weui-media-box__desc">'+car_content+'...</p>';
+                div += '</div>';
+                div += '</a>';
+            });
+            $('#cars').html(div);
+            if (data.length < {$page_size} && data.length >=1) {
+                $('#car_see').addClass('hide');
+                $('#loaded').removeClass('hide');
+            } else if (data.length < 1) {
+                $('#car_see').addClass('hide');
+                $('#null_row').addClass('hide');
+                $('#is_null').removeClass('hide');
+            }
+
+        });
+        order = $(this).attr('order');
+        hideActionSheet();
+    });
+
+    if ("{$num}" <= {$page_size} && "{$num}" >=1 ) {
+        $('#car_see').addClass('hide');
+        $('#loaded').removeClass('hide');
+    } else if ("{$num}" < 1) {
+        $('#car_see').addClass('hide');
+        $('#null_row').addClass('hide');
+        $('#is_null').removeClass('hide');
+    }
+
+    function car_see_more() {
+        j = j+{$page_size};
+        $('#car_see').addClass('hide');
+        $('#car_loading').removeClass('hide');
+        var url = "{:U('car/car_see_more')}";
+        //var data_length = '';
+        $.getJSON(url,{j:j},function (data) {
+            //console.log(data);
+            var cars = '';
+            $.each(data,function (index,value) {
+                if (value.title == null) {
+                    value.title = '';
+                }
+                if (value.content == null) {
+                    value.content = '';
+                }
+                if (value.price == null) {
+                    value.price = '';
+                }
+                var con=value.content;
+                var car_content=con.substr(0,33);
+                var tit=value.title;
+                var car_title=tit.substr(0,8);
+                if (tit.length > 11){
+                    var car_titles=car_title+'...';
+                }else {
+                    var car_titles=car_title;
+                }
+                cars += '<a href='+"{:U('car/details')}"+"&id="+value.id+' class="weui-media-box weui-media-box_appmsg">';
+                cars += '<div class="weui-media-box__hd">';
+                cars += '<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+                cars += '</div>';
+                cars += '<div class="weui-media-box__bd">';
+                cars += '<h4 class="weui-media-box__title pull-left">'+car_titles+'</h4>';
+                cars += '<span class="car-price pull-right">'+value.price_min+'万/辆</span>';
+                cars += '<div class="clearfix"></div>';
+                cars += '<p class="weui-media-box__desc">'+car_content+'...</p>';
+                cars += '</div>';
+                cars += '</a>';
+            });
+            $('#cars').html(cars);
+
+            if (j > data.length) {
+                $('#car_loading').addClass('hide');
+                $('#car_see').addClass('hide');
+                $('#loaded').removeClass('hide');
+            } else {
+                $('#car_loading').addClass('hide');
+                $('#car_see').removeClass('hide');
+            }
+
+        });
+    }
+
+
+    //js模板弹出与消失
+    var $iosActionsheet = $('#iosActionsheet');
+    var $iosMask = $('#iosMask');
+
+    function hideActionSheet() {
+        $iosActionsheet.removeClass('weui-actionsheet_toggle');
+        $iosMask.fadeOut(200);
+    }
+
+    $iosMask.on('click', hideActionSheet);
+    $('#iosActionsheetCancel').on('click', hideActionSheet);
+
+    //tab1 event
+    $('#tabArea').on('click', function () {
+        $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+        //actionsheet
+        var tmpId = $(this).attr("data-tmpl");
+
+        var obj = eval('<?php echo json_encode($district) ; ?>');
+        var data = {
+            'obj':obj
+        };
+        var tpl = window.tmpl(tmpId,data);
+        $("#weui_actionsheet_menu_placeholder").html($(tpl));
+
+        if(order != ""){
+            $("div[order="+order+"]").children().removeClass("hide");
+        }
+
+        $iosActionsheet.addClass('weui-actionsheet_toggle');
+        $iosMask.fadeIn(200);
+
+    });
+    //tab2 event
+    $('#tabcarType').on('click', function () {
+        $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+        //actionsheet
+        var tmpId = $(this).attr("data-tmpl");
+
+        var obj = eval('<?php echo json_encode($car_brand); ?>');
+        var data = {
+            "obj":obj
+        };
+        var tpl = window.tmpl(tmpId,data);
+        $("#weui_actionsheet_menu_placeholder").html($(tpl));
+
+        if(sid != ""){
+            $("div[sid="+sid+"]").children().removeClass("hide");
+        }
+
+        $iosActionsheet.addClass('weui-actionsheet_toggle');
+        $iosMask.fadeIn(200);
+    });
+
+</script>
+<include file="Public:footer"/>

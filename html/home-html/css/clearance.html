@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>房巴拉-{$title}</title>
+    <script src="{:MEMBER}/js/jQuery.min.js"></script>
+    <script src="{:MEMBER}/js/layer/layer.js"></script>
+    <script src="{:MEMBER}/js/maodian.js"></script>
+    <link rel="stylesheet" type="text/css" href="{:MEMBER}/cssv2/clearance.css">
+<script type="text/javascript" src="{:MEMBER}/js/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="{:MEMBER}/css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="{:MEMBER}/css/common_new.css" />
+</head>
+<body>
+    <!-- 新闻头部与新房头部不同 -->
+    <section class="topnav">
+        <section class="wrapper clearfix">
+            <ul class="normal_nav clearfix fl">
+                <li class="fl"><a href="{:U('index/index')}">首页</a></li>
+                <li class="fl"><a href="{:U('house/index_house')}">新房</a></li>
+                <li class="fl"><a href="javascript:;">楼盘评分</a></li>
+                <li class="fl"><a href="javascript:;">尾盘清仓</a></li>
+                <li class="fl"><a href="javascript:;">抱团砍价</a></li>
+                <li class="fl"><a href="javascript:;">旅游地产</a></li>
+                <li class="fl"><a href="javascript:;">在线装修</a></li>
+                <li class="fl"><a href="javascript:;">家居软装</a></li>
+                <li class="fl"><a href="javascript:;">施工进度查询</a></li>
+            </ul>
+            <div class="normal_login fr normal_login01">
+                <a href="javascript:;"> 注册</a>
+                <a href="javascript:;" class="setini"> 登陆</a>
+            </div>
+        </section>
+    </section>
+    <style>
+        .wrapperi{
+            width:1000px;
+            margin:0 auto;
+        }
+        .topnav{
+            background:##ececec;
+        }
+        .topnav a,.topnav .normal_login01 a{
+            color:#555;
+        }
+        .normal_nav li a:hover{
+            color:#fff;
+        }
+        .news_top{
+            border-bottom:1px solid #eee;
+        }
+        .footer{
+            margin-top:0;
+        }
+        body{
+            background-color: #fff;
+        }
+    </style>
+    <!-- 二级导航 -->
+    <div class="news_top" style="background:#fff;">
+        <section class="nhnav wrapper clearfix">
+        <ul class="clearfix fl wrapper">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="{:MEMBER}/images/b_logo.png" width="98" alt="">
+                    <span>尾盘清仓</span>
+                </a>
+            </li>
+            <li class="nhnav02 fl"></li>
+            <li class="nhnav03 fl" id="nhnav03">
+                <div>洛阳</div>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="{:U('house/index_house')}">首页</a>
+                <a href="{:U('house/index')}" class="nhnav04_cur" >楼盘</a>
+            </li>
+            <li>
+                <a href="house_list.html" target="_blank">
+                    <form class="fr newslist_sear">
+                        <input type="text" class="fl" placeholder="请输入楼盘名或区域">
+                        <button class="fr">&#xe60c;</button>
+                    </form>
+                </a>
+            </li>
+        </ul>
+        </section>
+    </div>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="javascript:;" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+    <div id="clearance" class="clearfix">
+       <!--  第一部分内容 -->
+        <div id="clear_one" class="clearfix">
+            <div class="clbox_one">
+               <div>
+                    <form action="{:U('news/clearance')}" method="post">
+                        <select name="" id="">
+                            <option value="">河南省</option>
+                        </select>
+                        <select>
+                            <option value="">洛阳市</option>
+                        </select>
+                        <select name="qy">
+                           <option selected value="">区域</option>
+                           <option value="jx">涧西区</option>
+                           <option value="xg">西工区</option>
+                           <option value="lc">老城区</option>
+                           <option value="ll">洛龙区</option>
+                           <option value="ch">瀍河区</option>
+                           <option value="gx">高新区</option>
+                           <option value="jj">经济开发区</option>
+                           <option value="jl">吉利区</option>
+                           <option value="yb">伊滨区</option>
+                           <option value="qt">其他县区</option>
+                        </select>
+                        <input type="submit" value="查询" />
+                    </form>
+                </div>
+            </div>
+            <div class="clbox_two">
+                <div class="o">尾盘清仓</div>
+                <div class="t">
+                    <img src="{:MEMBER}/imagesv2/clearancehand.png" alt="">
+                </div>
+                <div class="d">
+                    <p>房巴拉精选</p>
+                    <p style="width: 126px;margin-left: -28px;">优质好房源一网打尽</p>
+                </div>
+                <div class="e">
+                    <img src="{:MEMBER}/imagesv2/clearancenone.png" alt="">
+                </div>
+                <div class="f">
+                    <p>房巴拉为您</p>
+                    <p style="width: 126px;margin-left: -28px;">找到优质价低好房源</p>
+                </div>
+            </div>
+        </div>
+        <!-- 第二部分内容 -->
+            <h3 class="linem">清仓项目</h3>
+        <!-- 第三部分内容 -->
+        <div id="clear_two" class="clearfix">
+                    <!--  第一行 -->
+            <div class="usualline clearfix">
+            <volist name="data" id="vo">
+                <div class="lineo"><!-- 1 -->
+                    <div class="onepart" style="background:url({$vo.img}) no-repeat center;background-size:cover;"></div>
+                    <div class="twopart">
+                        <div class="o">{$vo.name}</div>
+                        <div class="t">
+                            <p>交房时间：<span class="y"><if condition="$vo[possession_time] eq '0000-00-00 00:00:00'">待定<else/>{$vo.possession_time}</if></span></p>
+                            <p>剩余套数：<span><?php echo $cnt[$vo['id']];?>套</span></p>
+                            <!-- <p>楼栋：<span>3栋</span></p> -->
+                            <div class="search"><a target="_blank" href="{:U('news/clearance_detail',array('id'=>$vo['id']))}">查看详情</a></div>
+                        </div>
+                    </div>
+                    <!-- <img src="{:MEMBER}/imagesv2/cleartwo.png"> -->
+                    <div class="biao">剩余套数<span>/<?php echo $cnt[$vo['id']];?>套</span></div>
+                </div>
+            </volist>
+            </div>
+        </div>
+    </div>
+<include file="Public:foot_v2" />

@@ -1,0 +1,147 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a class="btn btn-primary" href="admin.php?m=Admin&c=category&a=add">添加栏目</a>
+                        <a class="btn btn-info" href="admin.php?m=Admin&c=category&a=addPage">添加单网页</a>
+                        <a class="btn btn-warning" href="admin.php?m=Admin&c=category&a=addLink">添加外部连接</a>
+                        <button class="btn btn-default" onclick="return order();">排序</button>
+                        <div class="select pull-right">
+                            <div style="width:250px; margin-left: 5px;" class="input-group">
+                                <input id="sel" type="text" placeholder="搜索..." style="" class="center-block form-control  "
+                                       name="">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" onclick="return sel();"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <form id="form" method="post" action="admin.php?m=Admin&c=category&a=order">
+                            <table class="table table-hover" id="treeTable">
+                                <thead>
+                                <tr>
+                                    <th width="10%" class="tc" style="vertical-align: middle !important;">展开</th>
+                                    <th width="10%" class="tc" style="vertical-align: middle !important;">排序</th>
+                                    <th width="10%" class="tc" style="vertical-align: middle !important;">栏目ID</th>
+                                    <th width="40%" class="tc" style="vertical-align: middle !important;">栏目名称</th>
+                                    <th width="10%" class="tc" style="vertical-align: middle !important;">类型</th>
+                                    <th width="20%" class="tc" style="vertical-align: middle !important;">管理操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <volist name="content" id="data">
+                                    <tr data-tt-id="{$data['id']}" data-tt-parent-id="{$data['parentid']}">
+                                        <td width="10%" class="tc" style="vertical-align: middle !important;"></td>
+                                        <td width="10%" class="tc" style="vertical-align: middle !important;">
+                                            <input type="text" value="{$data['order_by']}" name="{$data['id']}" class="center-block form-control w50 text-center">
+                                        </td>
+                                        <td width="10%" class="tc" style="vertical-align: middle !important;">{$data['id']}</td>
+                                        <td width="40%" class="tc" style="vertical-align: middle !important;">{$data['name']}</td>
+                                        <td width="10%" class="tc" style="vertical-align: middle !important;">
+                                            <if condition="$data['type'] eq 'link'">
+                                                链接
+                                                <elseif condition="$data['type'] eq 'page'"/>
+                                                单页
+                                                <else/>
+                                                分类
+                                            </if>
+                                        </td>
+                                        <td width="20%" class="tc" style="vertical-align: middle !important;">
+                                            <if condition="$data['type'] neq 'page'">
+                                                <a class="btn btn-default btn-xs" href="admin.php?m=Admin&c=category&a=upd&type={$data['type']}&pid={$data['id']}">添加子栏目</a>
+                                            </if>
+                                            <a class="btn btn-default btn-xs"
+                                               href="admin.php?m=Admin&c=category&a=upd&type={$data['type']}&id={$data['id']}">编辑</a>
+                                            <!-- <a class="btn btn-default btn-xs" href="#">模版</a> -->
+                                            <a href="#" class="btn btn-default btn-xs"
+                                               onclick="return del(<?php echo $data['id']; ?>);">删除</a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div><!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <ul class="pagination pull-right">
+                            {$page_html}
+                        </ul>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<!--模态框-->
+<div class="modal fade" id="myModa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <p class="modal-title" style="font-size:16px;">标题</p>
+            </div>
+            <div class="modal-body">
+                <h5 style="color: red;"><span class="glyphicon glyphicon-exclamation-sign" style="margin-right:10px; "></span><span id="data_sum">内容</span></h5>
+            </div>
+            <div class="modal-footer">
+                按钮
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<link type="text/css" rel="stylesheet" href="{:ASSETS}plugins/jquery-treetable/jquery.treetable.css">
+<script src="{:ASSETS}plugins/jquery-treetable/jquery.treetable.js"></script>
+<script type="text/javascript">
+    function del(id) {
+        $('#myModa div.modal-header p').text('警告');
+        $('#myModa div.modal-body h5').css('color','red');
+        $("#data_sum").text('确认要删除该栏目？');
+        $('#myModa div.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">取消</button> <button id="DelId" type="button" class="btn btn-primary" onclick=""> 确认</button>');
+        $('#DelId').attr('onclick','return SureDel('+id+");");
+        $('#myModa').modal('show');
+    }
+    function SureDel(id) {
+        $('#myModa').modal('hide');
+        $.get('admin.php?m=Admin&c=category&a=del&id='+id,function (data) {
+            if (data == 1){
+                $('#myModa div.modal-header p').text('提示');
+                $('#myModa div.modal-body h5').css('color','green');
+                $("#data_sum").text('删除成功');
+                $('#myModa div.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:location.reload();">确定</button>');
+                $('#myModa').modal('show');
+            }else{
+                $('#myModa div.modal-header p').text('提示');
+                $('#myModa div.modal-body h5').css('color','red');
+                $("#data_sum").text('删除失败');
+                $('#myModa div.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>');
+                $('#myModa').modal('show');
+            }
+        })
+    }
+
+    function sel() {
+        var like = $('#sel').val();
+        var like_url = 'admin.php?m=Admin&c=category&a=index&like='+like;
+        window.location.assign(like_url);
+    }
+    $("#treeTable").treetable({ expandable: true });
+    function order() {
+        $('#form').submit();
+    }
+
+</script>
+<include file="Public:footer"/>

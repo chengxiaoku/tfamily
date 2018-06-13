@@ -1,0 +1,367 @@
+<include file="Public:header"/>
+
+<link rel="stylesheet" href="{:WEIXIN_ASSETS}plugins/swiper/css/swiper.min.css" type="text/css">
+<script type="text/javascript" src="{:WEIXIN_ASSETS}plugins/swiper/js/swiper.jquery.min.js"></script>
+
+<div id="wrapper">
+	<!--头部-->
+	<div id="header">
+		<div class="pull-left">
+			<a href="{:U('Position/index')}" class="arrow-map"><i class="icon ion-location"></i>{$position}</a>
+		</div>
+		<div class="title">首页</div>
+		<div class="pull-right user-center">
+			<a href="{:U('Auth/login')}"><i class="ion-android-contact size-18"></i></a>
+		</div>
+	</div>
+
+    <!-- 幻灯片 -->
+	<div id="" class="swiper-container" style="height: 220px;">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+
+		<script language="javascript" src="/api.php?m=api&c=ad&a=render&id=2"></script>
+
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+
+
+	<!--主菜单-->
+	<div id="main-menu" class="container">
+		<div class="row">
+			<div class="weui-grids">
+		        <a href="{:U('House/index')}" class="weui-grid">
+		            <div class="weui-grid__icon">
+		                <!-- <img src="./images/icon_tabbar.png" alt=""> -->
+		                <span class="menu-item bgc-one round menu-item-one">
+		                	<i class="icon ion-coffee size-24"></i>
+		                </span>
+		            </div>
+		            <p class="weui-grid__label">新房</p>
+		        </a>
+		        <a href="{:U('Car/index')}" class="weui-grid">
+		            <div class="weui-grid__icon">
+		                <!-- <img src="./images/icon_tabbar.png" alt=""> -->
+		                <span class="menu-item bgc-two round menu-item-two">
+		                	<i class="icon ion-podium size-24"></i>
+		                </span>
+		            </div>
+		            <p class="weui-grid__label">汽车</p>
+		        </a>
+		        <a href="{:U('House/index')}" class="weui-grid">
+		            <div class="weui-grid__icon">
+		                <!-- <img src="./images/icon_tabbar.png" alt=""> -->
+		                <span class="menu-item bgc-three round menu-item-three">
+		                	<i class="icon ion-mic-c size-24"></i>
+		                </span>
+		            </div>
+		            <p class="weui-grid__label">团购</p>
+		        </a>
+		    </div>
+
+			
+		</div>
+		
+	</div>
+
+	<!--&lt;!&ndash;头条&ndash;&gt;
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__hd">最新新闻</div>
+	            <div class="weui-panel__bd" id="news">
+					<volist name="new" id="news">
+						<div class="weui-media-box weui-media-box_text">
+							<a href="{:U('News/single')}&id={$news.id}">
+								<h4 class="weui-media-box__title">{$news.title}</h4>
+								<p class="clearfix">
+									<span class="pull-left toutiao_tag">帮你选房</span>
+									<span class="pull-right date_tag">{$news.add_time}</span>
+								</p>
+							</a>
+						</div>
+					</volist>
+	            </div>
+	            <div class="weui-panel__ft" id="new_html">
+					<a href="{:U('News/index')}" id="new_see" class="weui-cell weui-cell_access weui-cell_link">
+						<div class="weui-cell__bd text-center">查看更多</div>
+						<span class="weui-cell__ft"></span>
+					</a>
+					&lt;!&ndash;<div id="new_loading" class="weui-cell weui-cell_access weui-cell_link hide">
+						<div class="weui-cell__bd text-center"><img src="{:WEIXIN_ASSETS}img/loading.gif">数据加载中...</div>
+						<span class="weui-cell__ft"></span>
+					</div>
+					<div class="weui-cell weui-cell_access weui-cell_link hide" id="news_loaded">
+						<div class="weui-cell__bd text-center">加载完毕</div>
+						<span class="weui-cell__ft"></span>
+					</div>&ndash;&gt;
+	            </div>
+	        </div>
+		</div>
+
+	</div>
+-->
+	<!--最新房产-->
+	<div class="lastest-news container">
+		<div class="row" id="house_row">
+			<div class="weui-panel weui-panel_access">
+				<div class="weui-panel__hd">最新楼盘</div>
+				<div class="weui-panel__bd" id="houses">
+					<volist name="house" id="houses">
+						<a href="{:U('House/details')}&id={$houses.id}" class="weui-media-box weui-media-box_appmsg">
+							<div class="weui-media-box__hd">
+								<img width="100" height="70" class="weui-media-box__thumb" src="{$houses.thumb}">
+							</div>
+							<div class="weui-media-box__bd">
+								<h4 class="weui-media-box__title" style="display: inline-block">{$houses.title|subtext=8}</h4>
+								<span class="price">{$houses.price}/m²</span>
+								<p class="weui-media-box__desc">{$houses.summary|subtext=31}</p>
+							</div>
+						</a>
+					</volist>
+				</div>
+				<div class="weui-panel__ft" id="house_html">
+					<a href="{:U('House/index')}" id="house_see" class="weui-cell weui-cell_access weui-cell_link">
+						<div class="weui-cell__bd text-center">查看更多</div>
+						<span class="weui-cell__ft"></span>
+					</a>
+					<!--<div id="house_loading" class="weui-cell weui-cell_access weui-cell_link hide">
+						<div class="weui-cell__bd text-center"><img src="{:WEIXIN_ASSETS}img/loading.gif">数据加载中...</div>
+						<span class="weui-cell__ft"></span>
+					</div>
+					<div class="weui-cell weui-cell_access weui-cell_link hide" id="house_loaded">
+						<div class="weui-cell__bd text-center">加载完毕</div>
+						<span class="weui-cell__ft"></span>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div class="weui-loadmore weui-loadmore_line hide" id="house_null">
+			<span class="weui-loadmore__tips">该地区暂无楼盘数据</span>
+		</div>
+	</div>
+
+	<!--最新车型-->
+	<div class="lastest-news container">
+		<div class="row" id="car_row">
+			<div class="weui-panel weui-panel_access">
+				<div class="weui-panel__hd">最新车型</div>
+				<div class="weui-panel__bd" id="cars">
+					<volist name="car" id="cars">
+						<a href="{:U('Car/details')}&id={$cars.id}" class="weui-media-box weui-media-box_appmsg">
+							<div class="weui-media-box__hd">
+								<img width="100" height="70" class="weui-media-box__thumb" src="{$cars.thumb}">
+							</div>
+							<div class="weui-media-box__bd">
+								<h4 class="weui-media-box__title" style="display: inline-block">{$cars.title|subtext=8}</h4>
+								<span class="price">{$cars.price_min}万/辆</span>
+								<p class="weui-media-box__desc">{$cars.content|subtext=31}</p>
+							</div>
+						</a>
+					</volist>
+				</div>
+				<div class="weui-panel__ft" id="car_html">
+					<a href="{:U('Car/index')}" id="car_see" class="weui-cell weui-cell_access weui-cell_link">
+						<div class="weui-cell__bd text-center">查看更多</div>
+						<span class="weui-cell__ft"></span>
+					</a>
+				</div>
+				<!--<div id="car_loading" class="weui-cell weui-cell_access weui-cell_link hide">
+					<div class="weui-cell__bd text-center"><img src="{:WEIXIN_ASSETS}img/loading.gif">数据加载中...</div>
+					<span class="weui-cell__ft"></span>
+				</div>
+				<div class="weui-cell weui-cell_access weui-cell_link hide" id="car_loaded">
+					<div class="weui-cell__bd text-center">加载完毕</div>
+					<span class="weui-cell__ft"></span>
+				</div>-->
+            </div>
+		</div>
+		<div class="weui-loadmore weui-loadmore_line hide" id="car_null">
+			<span class="weui-loadmore__tips">该城市暂无车型数据</span>
+		</div>
+	</div>
+
+
+	
+    <footer id="footer">
+    	<p class="weui-footer__links">
+            <a href="javascript:void(0);" class="weui-footer__link">T家园创业平台</a>
+        </p>
+        <p class="weui-footer__text">Copyright &copy; 2008-2016 tjy518.com</p>
+    </footer>
+	
+	<!-- <div id="push"></div> -->
+</div><!--/end wrapper-->
+	
+<style>
+	.weui-grid__icon {
+		width: 60px;
+		height: 60px;
+	}
+	.weui-grids::before {
+		border-top:none;
+	}
+	#main-menu {
+		padding: 0 !important;
+	}
+	#main-menu .row {
+		margin-bottom: 0 !important;
+	}
+	.price {
+		top: 22px;
+	}
+</style>	
+
+<script type="text/javascript">
+	if ("{$car_num}" < 1) {
+		$('#car_null').removeClass('hide');
+		$('#car_row').addClass('hide');
+	}
+	if ("{$house_num}" < 1) {
+		$('#house_row').addClass('hide');
+		$('#house_null').removeClass('hide');
+	}
+
+	/*var k = 5;
+	if ("{$car_num}" <= k) {
+		$('#car_loaded').removeClass('hide');
+		$('#car_see').addClass('hide');
+	}
+	function car_see_more() {
+		k = k+5;
+		$('#car_see').addClass('hide');
+		$('#car_loading').removeClass('hide');
+		var url = "{:U('Index/car_see_more')}";
+
+		$.getJSON(url,{k:k},function (data) {
+			//console.log(data);
+			var cars = '';
+			$.each(data,function (index,value) {
+				cars += '<a href='+"{:U('House/details')}"+' class="weui-media-box weui-media-box_appmsg">';
+				cars +=	'<div class="weui-media-box__hd">';
+				cars +=	'<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+				cars +=	'</div>';
+				cars +=	'<div class="weui-media-box__bd">';
+				cars +=	'<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				cars +=	'<p class="weui-media-box__desc">'+value.content+'</p>';
+				cars +=	'<span class="price">'+value.price_min+'万-'+value.price_max+'万/辆</span>';
+				cars +=	'</div>';
+				cars += '</a>';
+			});
+			$('#cars').html(cars);
+			if ("{$car_num}" == data.length) {
+				$('#car_loaded').removeClass('hide');
+				$('#car_see').addClass('hide');
+				$('#car_loading').addClass('hide');
+			} else {
+				$('#car_loading').addClass('hide');
+				$('#car_see').removeClass('hide');
+			}
+
+		})
+	}
+	var j = 5;
+	if ("{$house_num}" <= j) {
+		$('#house_see').addClass('hide');
+		$('#house_loaded').removeClass('hide');
+	}
+	function house_see_more() {
+		j = j+5;
+		$('#house_see').addClass('hide');
+		$('#house_loading').removeClass('hide');
+		var url = "{:U('Index/house_see_more')}";
+
+		$.getJSON(url,{j:j},function (data) {
+			//console.log(data);
+			var houses = '';
+			$.each(data,function (index,value) {
+				houses += '<a href='+"{:U('House/details')}"+' class="weui-media-box weui-media-box_appmsg">';
+				houses += '<div class="weui-media-box__hd">';
+				houses += '<img width="100" height="70" class="weui-media-box__thumb" src="'+value.thumb+'">';
+				houses += '</div>';
+				houses += '<div class="weui-media-box__bd">';
+				houses += '<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				houses += '<p class="weui-media-box__desc">'+value.summary+'</p>';
+				houses += '<span class="price">'+value.price+'/m²</span>';
+				houses += '</div>';
+				houses += '</a>';
+			});
+			$('#houses').html(houses);
+			if ("{$house_num}" == data.length) {
+				$('#house_loading').addClass('hide');
+				$('#house_see').addClass('hide');
+				$('#house_loaded').removeClass('hide');
+			} else {
+				$('#house_loading').addClass('hide');
+				$('#house_see').removeClass('hide');
+			}
+		})
+	}
+	var i = 3;
+	if ("{$new_num}" <= i) {
+		$('#new_see').addClass('hide');
+		$('#news_loaded').removeClass('hide');
+	}
+	function news_see_more() {
+		i = i+3;
+		$('#new_see').addClass('hide');
+		$('#new_loading').removeClass('hide');
+		var url = "{:U('Index/news_see_more')}";
+
+		$.getJSON(url,{i:i},function (data) {
+			//console.log(data);
+			var news = '';
+			$.each(data,function (index,value) {
+				news += '<div class="weui-media-box weui-media-box_text">';
+				news += '<a href="#">';
+				news += '<h4 class="weui-media-box__title">'+value.title+'</h4>';
+				news += '<p class="clearfix">';
+				news += '<span class="pull-left toutiao_tag">帮你选房</span>';
+				news += '<span class="pull-right date_tag">'+value.add_time+'</span>';
+				news += '</p>';
+				news += '</a>';
+				news += '</div>';
+			});
+			$('#news').html(news);
+			if ("{$new_num}" == data.length) {
+				$('#new_loading').addClass('hide');
+				$('#new_see').addClass('hide');
+				$('#news_loaded').removeClass('hide');
+			} else {
+				$('#new_loading').addClass('hide');
+				$('#new_see').removeClass('hide');
+			}
+		})
+	}*/
+	$(document).ready(
+		function() {
+
+			$("#header").addClass("bordered-none");
+
+			//initialize swiper when document ready
+			var mySwiper = new Swiper('.swiper-container', {
+				// Optional parameters
+				//direction: 'vertical',
+				loop : true,
+				pagination : '.swiper-pagination',
+				paginationClickable : true,
+				height : 220,
+				lazyLoading : true,
+				preloadImages : ''
+			});
+
+
+			$(window).scroll(
+				function() {
+					if ($(window).scrollTop() == $(document).height()
+							- $(window).height()) {
+						// ajax call get data from server and append to the div
+						$("#loading").show();
+					}
+				});
+
+			});
+</script>
+<include file="Public:footer"/>

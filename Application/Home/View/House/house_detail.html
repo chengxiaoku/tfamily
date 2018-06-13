@@ -1,0 +1,655 @@
+<!-- T家园楼盘详情页 -->
+<include file="Public:header"/>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        });
+    </script>
+
+    <!-- banner -->
+    <section class="ra01">
+        <!-- <div class="ra0101">
+            <img src="image/h01.jpg" alt="">
+        </div> -->
+        <div clsas="ra0102"></div>
+        <section class="news_bn wrapperi">
+            <ul class="clearfix">
+                <li><a href="index.php">T家园洛阳站</a><span> &gt; </span></li>
+                <li><a href="index.php?m=&c=House&a=index">新房</a><span> &gt; </span></li>
+                <li><a href="javascript:;">{$detail.title}</a><span> &gt; </span></li>
+            </ul>
+        </section>
+        <section class="ra_banner wrapperi" style="background:url({:HOUSE}image/h02.jpg)no-repeat center;background-size:cover;">
+            <ul class="ra_bc">
+                <li class="ra_bc01">
+                    <p class="ra_bc0101">在售</p>
+                    <p class="ra_bc0102">{$detail.title}</p>
+                    <p class="ra_bc0103 clearfix">
+                        <span class="fl">均价</span>
+                        <span class="fl">{$detail.price}</span>
+                        <span class="fl">元／平</span>
+
+                    </p>
+                </li>
+                <section class="ra_bcs">
+                    <!-- 标签 -->
+                    <li class="ra_bc02">
+                        <span>{$detail.tags}</span>
+
+                    </li>
+                    <li class="ra_bc03 clearfix">
+                        <span class="ra_bc0301">&#xe649;</span>
+                        <span class="ra_bc0302 elli">物业类型 :{$detail.property_type}</span>
+                    </li>
+                    <li class="ra_bc03 ra_bc04 clearfix">
+                        <span class="ra_bc0301">&#xe694;</span>
+                        <span class="ra_bc0302 elli" title="{$detail.address}">项目地址 :{$detail.address}</span>
+
+                    </li>
+                    <li class="ra_bc03 ra_bc05 clearfix">
+                        <span class="ra_bc0301">&#xe68f;</span>
+                        <span class="ra_bc0302 elli">最新开盘 :{$detail.open_time}</span>
+                        
+                    </li>
+                    <li class="ra_bc06">
+                        <span>&#xe61d;</span> 咨询电话
+                    </li>
+                </section>
+            </ul>
+            <a href="{:U('House/house_photo',array('id'=>$id))}" target="_blank" class="ra_bca">
+                <span>&#xe618;</span> 相册
+            </a>
+        </section>
+    </section>
+    <script>
+        $(".ra_bc0503n").click(function(){
+            if($(".ra_bc0504m").css("display")=="none"){
+                $(this).siblings(".ra_bc0504m").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504m").stop().fadeOut(300);
+            }
+        })
+        $(".ra_bc0503x").click(function(){
+            if($(".ra_bc0504y").css("display")=="none"){
+                $(this).siblings(".ra_bc0504y").stop().fadeIn(300);
+            }else{
+                $(this).siblings(".ra_bc0504y").stop().fadeOut(300);
+            }
+        })
+         $(".ra_bc0508").on('click',function(){
+            layer.open({
+              type: 1,
+              title:"开盘详情",
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['380px', '300px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="ra_tan">{$detail.open_time}</div>'
+            });
+        })
+         $(".ra_bc06").click(function(){
+            $(this).html("{$tel}").addClass("ra_bc06t");
+         })
+    </script>
+
+    <!-- 吸顶导航 -->
+    <section class="ra03 wrapperi">
+        <div class="ra03gr">
+            <span></span>
+        </div>
+        <ul class="fl">
+            <li class="ra0301"><a href="#ra_det02">户型介绍</a></li>
+            <li class="ra0301"><a href="#ra_det03">楼盘相册</a></li>
+            <li class="ra0301"><a href="#ra_det07">楼盘详情</a></li>
+            <li class="ra0301"><a href="#ra_det08">抱团砍价</a></li>
+        </ul>
+        <div class="ra0302"><span>&#xe61d;</span> 咨询电话</div>
+    </section>
+
+    <!-- 主内容块 -->
+    <section class="raco">
+        <!-- 户型介绍 -->
+        <section class="ra_det ra_det01 wrapperi ra_det02" id="ra_det02">
+            <h3 class="ra_det0101">户型介绍
+                <ul class="ra_det0201_ul">
+                    <li class="ra_d_cur">全部户型({$count})</li>
+
+                </ul>
+            </h3>
+            <div class="ra_det0202">
+                <!-- 每个.ra_det0202_ul的子标签li只有前两个拥有ra_det0202_ulli类名 -->
+                <ul class="ra_det0202_ul ra_det0202_ul01 ra_det0202_ul_cur">
+                    <volist name="type" id="type">
+                    <if condition="$i elt 2">
+                    <li class="clearfix ra_det0202_ulli">
+                        <div class="fl ra_det0202_li01 ra_det_tan" onclick="aaa('{$type.id}')" style="background:url({$type.thumb}) no-repeat center;background-size:cover;">
+                            <span>{$type.title}</span>
+                        </div>
+                        <div class="fl ra_det0202_li02">
+                            <div>
+                                <span>{$type.room}室{$type_hall}厅{$type.toilet}卫 {$type.area}㎡</span>
+                                <span>（{$type.orientation}朝向）</span>
+                                <span><if condition="$type.status eq yes">
+                                    在售
+                                    <elseif condition="$type.status eq no" />
+                                    售罄
+                                    <elseif condition="$type.status eq pending" />
+                                    待售
+                                    <else/>
+                                    不限
+                                </if></span>
+
+                            </div>
+                            <div>户型解读：{$type.content}</div>
+                            <div>
+                                <span class="ra_tip1">{$type.tags}</span>
+
+                            </div>
+                        </div>
+                        <div class="fr ra_det0202_li03 ra_det_tan" onclick="aaa('{$type.id}')">
+                            查看
+                        </div>
+                    </li>
+                        <else/>
+                        <li class="clearfix">
+                            <div class="fl ra_det0202_li01 ra_det_tan" onclick="aaa('{$type.id}')" style="background:url({$type.thumb}) no-repeat center;background-size:cover;">
+                                <span>{$type.title}</span>
+                            </div>
+                            <div class="fl ra_det0202_li02">
+                                <div>
+                                    <span>{$type.room}室{$type_hall}厅{$type.toilet}卫 {$type.area}㎡</span>
+                                    <span>（{$type.orientation}朝向）</span>
+                                <span><if condition="$type.status eq yes">
+                                    在售
+                                    <elseif condition="$type.status eq no" />
+                                    售罄
+                                    <elseif condition="$type.status eq pending" />
+                                    待售
+                                    <else/>
+                                    不限
+                                </if></span>
+
+                                </div>
+                                <div>户型解读：{$type.content}</div>
+                                <div>
+                                    <span class="ra_tip1">{$type.tags}</span>
+
+                                </div>
+                            </div>
+                            <div class="fr ra_det0202_li03 ra_det_tan" onclick="aaa('{$type.id}')">
+                                查看
+                            </div>
+                        </li>
+                    </if>
+                    </volist>
+                    <p class="ra_detmore">查看更多</p>
+                </ul>
+
+
+
+            </div>   
+        </section>
+        <!-- 户型介绍中，点击查看按钮  弹出层-->
+        <volist name="type2" id="type2">
+        <section class="ra_det0202_tan" id="{$type2.id}">
+            <ul class="ra_det0202_tan_ul">
+                <li class="ra_det0202_tan_li ra_det0202_tan_li_cur clearfix">
+                    <div class="ra_det0202_tan01" style="background:url({$type2.thumb}) no-repeat center;background-size:80%">
+                        <span>{$type2.title}</span>
+                        <a href="{$type2.thumb}" target="_blank">查看原图</a>
+                    </div>
+                    <div class="ra_det0202_tan02">
+                        <div class="ra_det0202_tan0201">
+                            <h3>{$type2.title}</h3>
+                            <div class="ra_det0202_tan0202">
+                                <span class="ra_col00">{$type2.tags}</span>
+                            </div>
+                            <ul class="ra_det0202_tan0203">
+                                <li class="clearfix"><span>房屋朝向：</span><span class="elli">{$type2.orientation}</span></li>
+                                <li class="clearfix"><span>居室：</span><span class="elli">{$type2.room}室{$type2.hall}厅{$type2.toilet}卫</span></li>
+                                <li class="clearfix"><span>装修标准：</span><span class="elli">{$type2.decoration}</span></li>
+                                <li class="clearfix"><span>建筑面积：</span><span class="elli">{$type2.area}㎡</span></li>
+                                <li class="clearfix"><span>参考总价：</span><span class="elli">{$type2.price}万</span></li>
+                                <li class="clearfix"><span>户型解读：</span><span class="elli">{$type2.content}</span></li>
+                            </ul>
+
+                            <button class="ra_det0202_tan0205"><span>&#xe61d;</span> 咨询电话</button>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <span class="ra_x">&#xe672;</span>
+
+        </section>
+        </volist>
+        <script>
+
+
+
+
+            function aaa (id) {
+                var id = id;
+
+
+                $("#"+id).css("display","block");
+
+            }
+
+            $(function(){
+
+            // 全部户型展开
+            var len = $(".ra_det0202_ul01 li").length;
+            $(".ra_detmore").click(function(){
+                var thi = $(this).parents(".ra_det0202_ul01");
+                $(thi).children("li").css("display","block");
+                $(this).html("没有更多了 ╮(╯_╰)╭ ̑̑")
+            })
+
+
+
+            // 弹出
+
+
+
+
+            // 退出弹出
+            $(".ra_x").click(function(){
+                $(".ra_det0202_tan").css("display","none");
+            })
+
+
+
+
+
+            // 电话
+            $(".ra_det0202_tan0205").click(function(){
+                $(this).html('{$tel}');
+            })
+
+        })
+        </script>
+
+        <section class="ra_det wrapperi" id="ra_det03">
+            <!-- 楼盘相册  -->
+            <section class="ra_det03 ra_det01">
+                <h3 class="ra_det0101">楼盘相册</h3>
+                <ul class="ra_det0302 clearfix">
+                    <li class="fl">
+                        <a href="{:U('House/house_photo')}&id={$detail.id}" target="_blank">
+                            <div style="background:url({$detail.thumb}) no-repeat center;background-size:cover;"></div>
+                            <p>效果图</p>
+                        </a>
+                    </li>
+
+                </ul>
+                <a href="{:U('House/house_photo')}&id={$detail.id}" target="_blank" class="ra_det0303">查看全部</a>
+            </section>
+
+            <!-- 新房百科 -->
+
+        </section>
+
+        <!--价格决策 -->
+        
+
+
+
+        <section class="ra_det" id="ra_det07">
+            <!-- 楼盘详情 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">楼盘详情</h3>
+                    <div class="h_line"></div>
+                    <div class="h_dt clearfix" style="height: 200px;">
+                            <p class="clearfix hp">
+                                <span>项目名称 : </span>
+                                <span>{$detail.title}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>地理位置 : </span>
+                                <span>{$detail.address}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>开发商: </span>
+                                <span>{$detail.title}</span>
+                            </p>
+                            <p class="clearfix hp">
+                                <span>承建商 : </span>
+                                <span>{$detail.builder_company}</span>
+                            </p>
+
+                            <p class="clearfix hp">
+                                <span>物业公司 : </span>
+                                <span>{$detail.property_company}</span>
+                            </p>
+
+                            <p class="clearfix hp">
+                                <span>当期开盘时间 : </span>
+                                <span>{$detail.open_time}</span>
+                            </p>
+
+                            <p class="clearfix hp">
+                                <span>当前价格 : </span>
+                                <span>{$detail.price}元/平</span>
+                            </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 推荐楼盘 -->
+            <section class="hbox">
+                <div class="h_cnt">
+                    <h3 class="htitle1">推荐楼盘</h3>
+                    <ul class="h_choose clearfix">
+                        <volist name="rec" id="vo">
+                        <li>
+                            <a href="index.php?m=&c=House&a=house_detail&id={$vo.id}" style="display:block;width: 213px;height: 163px;position: relative; background-size: cover;background: url({$vo.thumb}) no-repeat;background-size: 100% 100%;">
+                                <span class="h_Price">均价{$vo.price}元/平</span>
+                            </a>
+                            <a href="javascript:;" class="h_classify clearfix"><span class="h_namev elli">{$vo.title}</span><span class="bieshu">{$vo.tags}</span></a>
+                            <p class="h_areav">{$vo.min_area}㎡-{$vo.max_area}㎡</p>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+
+        
+        <!-- 抱团砍价 -->
+        <section class="ra_det  ra_det01 wrapperi ra_det08" id="ra_det08" style="margin-bottom:50px;">
+            <h3 class="ra_det0101">抱团砍价
+                <a href="javascript:;">了解详情</a>
+            </h3>
+            <div class="clearfix">
+                <div class="fl" style="margin-left:40px;">
+                    <h4><span>A</span><span>发起</span><span>抱团砍价具体流程</span></h4>
+                    <ul class="ll_ul2">
+                      <li class="ll_ulli1 clearfix">
+                        <ul class="clearfix">
+                          <li><span>&#xe62f;</span>发起抱团</li>
+                          <li><span>&#xe615;</span>填写信息</li>
+                          <li><span>&#xe6a9;</span>申请陪同</li>
+                        </ul>
+                      </li>
+                        <li class="ll_ulli2 clearfix">
+                            <ul class="clearfix">
+                                <li><span>&#xe601;</span>招募参与者</li>
+                                <li><span>&#xe6d7;</span>现场砍价</li>
+                                <li><span>&#xe6a0;</span>活动结束</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    </ul>
+                </div>
+                <div class="fl ra_det08_line"></div>
+                <div class="fr" style="margin-right:165px; margin-top:140px;">
+                    <div class="layui-btn layui-btn-danger layui-btn-big">我要参与抱团砍价</div>
+                </div>
+            </div>
+
+        </section>
+        <script>
+            $(".layui-btn").on('click',function(){
+                $.post("{:U('Auth/logins')}",{},function(data){
+                    //判断用户是否登录
+                    if (data==0) {
+                        location.href="{:U('Auth/login')}";
+                    } else if(data==1) {
+                        layer.open({
+                            type: 1,
+							title : "发起抱团砍价",
+                            skin: 'layui-layer-demo', //样式类名
+                            closeBtn: 1, //不显示关闭按钮
+                            shift: 2,
+                            area: ['570px', '470px'],
+                            shadeClose: true, //开启遮罩关闭
+                            content: '<form class="ra_det08_tan" action="index.php?m=&c=House&a=orders&id={$detail.id}" method="post">' +
+                             '<ul>' +
+                            '<li><span>楼盘名称 : </span><input type="text" name="title"  value="{$detail.title}" class="ra_det08_sh"/><span class="xing">*</span><li>'+
+                            '<li><span>理想户型 : </span>' +
+                            '<select class="form-control wp50 wordspli5" name="hx" id="hx_a" style="float:none;padding:0;">' +
+                            '<option value="两室两厅一卫">两室两厅一卫</option><option value=" 两室两厅一卫"> 两室两厅一卫</option>' +
+                            '<option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option>' +
+                            '<option value="三室两厅一卫">三室两厅一卫</option><option value="三室两厅一卫">三室两厅一卫</option>' +
+                            '<option value="三室两厅两卫">三室两厅两卫</option><option value=" 四室两厅两卫"> 四室两厅两卫</option>' +
+                            '<option value="三室两厅两卫">三室两厅两卫</option><option value="四室两厅两卫">四室两厅两卫</option>' +
+                            '</select>' +
+                            '<span class="xing">*</span>' +
+                            '</li><li><span>理想面积 : </span>' +
+                            '<select class="form-control wp50 wordspli5" name="mj" id="mj_b" style="float:none;padding:0;">' +
+                            '<option value="94.00">94.00m²</option><option value="103.00">103.00m²</option><option value="110.00">110.00m²</option>' +
+                            '<option value="116.00">116.00m²</option><option value="118.00">118.00m²</option><option value="125.00">125.00m²</option>' +
+                            '<option value="135.00">135.00m²</option><option value="136.00">136.00m²</option><option value="138.00">138.00m²</option>' +
+                            '<option value="174.00">174.00m²</option></select><span class="xing">*</span></li><li class="ra_det08_tan03">' +
+                            '<li><span>售楼部价格 : </span><input type="text" name="price" id="price" class="ra_det08_sh"/>' +
+                            '<span>元/每平方</span><span class="xing">*</span></li>' +
+                            '<li><span>理想价格 : </span><input type="text" name="lxprice" id="lxprice" class="ra_det08_sh"/><span>元/每平方</span>' +
+                            '<span class="xing">*</span></li><li><span>真实姓名 : </span><input type="text" id="realname" name="realname" class="ra_det08_sh"/>' +
+                            '</li><li><span>手机号 : </span><input type="text"  name="tel" id="tel" class="ra_det08_sh"/><span class="xing">*</span>'+
+                            '<li><span>备注信息 : </span><textarea id="beizhu" name="beizhu" placeholder="请输入备注信息" rows="3"></textarea><span>*</span></li>'+
+                            '<span class="xing">*</span></li></ul><div class="ra_det08_di">———— 自抱团起，30天后截止报名 ————</div>' +
+                            '<input type="submit" value="提交" onclick="return check()" class="ra_det08_sub"/></form>'
+                        });
+                    }
+                })
+
+            })
+        </script>
+    </section>
+    </section>
+    
+    <script>
+        // 客服电话
+        $(".ra0302").click(function(){
+            $(this).html("{$tel}")
+        })
+
+        // 滚动导航发生hover事件
+        $(".ra0301").hover(function(){
+            // 需要绿色块移动到的位置
+            var lti = parseInt($(this).index())*97;
+            $(this).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+            $(".ra03gr").stop().animate({"left":lti},300)
+        })
+
+        // 内容块数
+        var le = $(".ra03 ul li").length;
+
+        // 导航初次和文件顶部的距离
+        var ht = $(".ra03").offset().top;
+
+        // 发生滚动时间是滚动导航自处方式
+        $(window).scroll(function(){
+            // 每个内容块和文件顶部的距离
+            var n;
+
+            // 每个内容块底部和文件顶部的距离
+            var m;
+
+            // 需要绿色块移动到的位置
+            var u;
+
+            // 此时屏幕和文件顶部的距离
+            var tpo = $(this).scrollTop();
+
+            // 根据tpo选择滚动导航是否吸顶
+            if(tpo>ht){
+                $(".ra03").addClass("ra03i");
+            }else{
+                $(".ra03").removeClass("ra03i");
+                $(".ra03 ul li").eq(0).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                $(".ra03gr").stop().animate({"left":0},300);
+                }
+
+            //屏幕顶部在那个内容块上，就按顺序使得绿色块停在哪个导航标签上
+            for(var i=0;i<le;i++){
+                n=$(".ra_det").eq(i).offset().top;
+                m=parseInt($(".ra_det").eq(i).css('height'))+n;
+                if(tpo>=n&&tpo<m){
+                    u=i*97;
+                    $(".ra03 ul li").eq(i).addClass("ra0301_cur").siblings('li').removeClass("ra0301_cur");
+                    $(".ra03gr").stop().animate({"left":u},200); 
+                }
+            }
+        })
+
+        function trim (str, charlist) {
+            var whitespace = [
+                ' ',
+                '\n',
+                '\r',
+                '\t',
+                '\f',
+                '\x0b',
+                '\xa0',
+                '\u2000',
+                '\u2001',
+                '\u2002',
+                '\u2003',
+                '\u2004',
+                '\u2005',
+                '\u2006',
+                '\u2007',
+                '\u2008',
+                '\u2009',
+                '\u200a',
+                '\u200b',
+                '\u2028',
+                '\u2029',
+                '\u3000'
+            ].join('')
+            var l = 0
+            var i = 0
+            str += ''
+
+            if (charlist) {
+                whitespace = (charlist + '').replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^:])/g, '$1')
+            }
+
+            l = str.length
+            for (i = 0; i < l; i++) {
+                if (whitespace.indexOf(str.charAt(i)) === -1) {
+                    str = str.substring(i)
+                    break
+                }
+            }
+
+            l = str.length
+            for (i = l - 1; i >= 0; i--) {
+                if (whitespace.indexOf(str.charAt(i)) === -1) {
+                    str = str.substring(0, i + 1)
+                    break
+                }
+            }
+
+            return whitespace.indexOf(str.charAt(0)) === -1 ? str : ''
+        }
+        function check(){
+            var a = true;
+            var $hx = $('#hx_a');
+            var $mj = $('#mj_b');
+            var $price = $('#price');
+            var $lxprice = $('#lxprice');
+            var $realname = $('#realname');
+            var $tel = $('#tel');
+            var $beizhu = $('#beizhu');
+            if($hx.val() == ''){
+                $hx.next().addClass('xing');
+                $hx.focus();
+                a = false;
+            }else if($hx.val() != ''){
+                $hx.next().removeClass('xing');
+            }
+            if($mj.val() == ''){
+                $mj.next().addClass('xing');
+                $mj.focus();
+                a = false;
+            }else if($mj.val() != ''){
+                $mj.next().removeClass('xing');
+            }
+            if(trim($price.val()) == ''){
+                $price.next().next().addClass('xing');
+                $price.focus();
+                a =  false;
+            }else if(trim($price.val()) != ''){
+                reg = /^\d{1,}$/;
+                if(!reg.test($price.val())){
+                    $price.next().next().addClass('xing');
+                    $price.next().next().text('请输入正确的价格');
+                    $price.focus();
+                    a = false;
+                }else{
+                    $price.next().next().text('*');
+                    $price.next().next().removeClass('xing');
+                }
+            }
+            if(trim($lxprice.val()) == ''){
+                $lxprice.next().next().addClass('xing');
+                $lxprice.focus();
+                a =  false;
+            }else if(trim($lxprice.val()) != ''){
+                reg = /^\d{1,}$/;
+                if(!reg.test($lxprice.val())){
+                    $lxprice.next().next().addClass('xing');
+                    $lxprice.next().next().text('请输入正确的价格');
+                    $lxprice.focus();
+                    a = false;
+                }else{
+                    $lxprice.next().next().text('*');
+                    $lxprice.next().next().removeClass('xing');
+                }
+            }
+
+            if(trim($realname.val()) == ''){
+                $realname.next().addClass('xing');
+                $realname.focus();
+                a =  false;
+            }else if(trim($realname.val()) != ''){
+                reg = /[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*/;
+                if(!reg.test($realname.val())){
+                    $realname.next().addClass('xing');
+                    $realname.next().text('请输入真实的姓名');
+                    $realname.focus();
+                    a = false;
+                }else{
+                    $realname.next().text('*');
+                    $realname.next().removeClass('xing');
+                }
+            }
+            if(trim($tel.val()) == ''){
+                $tel.next().addClass('xing');
+                $tel.focus();
+                a =  false;
+            }else if(trim($tel.val()) != ''){
+                reg = /^\d{11}$/;
+                if(!reg.test($tel.val())){
+                    $tel.next().addClass('xing');
+                    $tel.next().text('请输入真实的手机号');
+                    $tel.focus();
+                    a = false;
+                }else{
+                    $tel.next().text('*');
+                    $tel.next().removeClass('xing');
+                }
+            }
+            return a;
+        }
+    </script>
+
+
+    <!--网页底部-->
+    <include file="Public:footer"/>

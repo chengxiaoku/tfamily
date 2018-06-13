@@ -1,0 +1,121 @@
+<include file="Public:header"/>
+<div id="wrapper">
+    <!--头部-->
+    <div id="header">
+        <div class="pull-left">
+            <a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+        </div>
+
+        <div class="title">新闻详情</div>
+
+        <div class="pull-right map-marker">
+            <!--<a href=""><i class="icon ion-ios-location-outline size-21"></i> 全国</a>-->
+        </div>
+    </div>
+    <volist name="date" id="vo">
+
+    </volist>
+    <div class="container mb10 mt10">
+        <div class="row">
+            <article class="weui-article">
+                <h5 style="color:#00a0e9">类别->{$cat}</h5>
+                <h1>{$vo.title}</h1>
+                <section>
+                    <h2 class="title">{$vo.description}</h2>
+                    <section>
+                        <!--<h3>1.1 节标题</h3>-->
+                        <p>{$vo.content}</p>
+                        <h3> 以下内容为默认内容////仅供测试使用</h3>
+                        <p>
+                             摘要: 一句话答案：目前信息来看，毕业便落户了的，上选还是普宅，哪怕先入手一套老公房。
+
+上海的生活压力不言自明，但每年冲着魔都广阔的舞台而来的人潮不见怯步。2017年的毕业季左右不过还有半年，若想走出象牙塔之后在魔都扎根，相信绕不过“住”这个字。
+
+
+#租房的苦恼#
+
+
+诚然，租房是一个常见的解决方案，从内环到郊区，从老破小到大别墅，从单租到群租……租房这个具有普适性的办法，在网络信息相对透明的今天，越来越好用了。但不可否认，租房还是会有几点不足：
+
+1.如果运气不好可能要面对房东与租客甚至租客与租客之间的种种不愉快，比如一言不合涨租金、一周之内催搬走、维修拖拉扣押金、公共区域难清理、鸡毛蒜皮闹不清等等。
+
+2.尽管可以花心思装扮租处，但折腾了几次搬家之后便会明白还是“拎包入住”来得潇洒，租房的生活毕竟少了一份安定。
+
+
+所以，手里有一定积蓄的话，买房自然是一个更好的出路。
+						</p>
+
+
+                        <p>
+                            <img src="{$vo.thumb}"  width="80%" alt="文章插图">
+                        </p>
+                        <span>发布时间：{$vo.add_time}</span>
+                        <span class="pull-right">浏览量：{$vo.views}</span>
+                    </section>
+                </section>
+            </article>
+
+        </div>
+    </div>
+
+    <div class="weui-cells__title">联系我们<span>（点击直接拨打电话）</span></div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：400-123-456</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：400-123-456</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+    </div>
+
+    
+
+
+    
+
+
+
+    <div id="push"></div>
+</div>
+
+<!--加载更多-->
+<!--<div id="loading">
+    <img src="img/loading.gif">数据加载中...
+</div>-->
+
+<style type="text/css">
+    
+    .weui-cells::after {
+        border-bottom: 1px solid #d9d9d9;
+        top: 1;
+        transform: scaleY(0.5);
+        transform-origin: 0 0 0;
+    }
+    .weui-cell__bd p {
+        margin: 0px;
+    }
+    .weui-cell__hd .icon {
+        margin-right: 10px;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+
+    });
+
+
+</script>
+<include file="Public:footer"/>

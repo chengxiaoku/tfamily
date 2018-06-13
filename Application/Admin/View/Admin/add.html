@@ -1,0 +1,301 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+
+        <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-primary">
+
+                    <!-- form start -->
+                    <form role="form"  id="form" method="post" action="admin.php?m=Admin&c=admin&a=inset">
+
+                        <div class="box-body padding20">
+                            <div class="form-group ">
+                                <label for="">用户名<span class="required">*</span></label>
+                                <div>
+                                    <input type="text" name="name" placeholder="输入用户名称" id="name"class="form-control wp50 inline-block" onclick="remove (this)">
+                                    <label class="control-label hide" for="inputError"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">密码<span class="required">*</span></label>
+                                <div>
+                                    <input type="password" placeholder="输入密码" name="pwd" id="pwd"class="form-control wp50 inline-block" onclick="remove (this)">
+                                    <label class="control-label hide" for="inputError"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">确认密码<span class="required">*</span></label>
+                                <div>
+                                    <input type="password" placeholder="输入确认密码" id="pwd2" onclick="remove (this)"class="form-control wp50 inline-block">
+                                    <label class="control-label hide" for="inputError" ></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">昵称</label>
+                                <div>
+                                    <input type="text" placeholder="输入昵称" name="nickname"onclick="remove (this)" id="nickname"class="form-control wp50 inline-block">
+                                    <label class="control-label hide" for="inputError" ></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">邮箱</label>
+                                <div>
+                                    <input type="email" placeholder="输入邮箱" name="email" id="email"onclick="remove (this)"class="form-control wp50 inline-block">
+                                    <label class="control-label hide" for="inputError" "></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">真实姓名<span class="required">*</span></label>
+                                <div>
+                                    <input type="text" placeholder="真实姓名" name="realname" id="realname"onclick="remove (this)" class="form-control wp50 inline-block">
+                                    <label class="control-label hide" for="inputError" ></label>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="">所属角色</label>
+                                <div>
+                                    <select class="form-control wp50 inline-block" name="role_id" id="role_id">
+                                      <option value="0">≡ 请选择会员组 ≡</option>
+                                    <volist name="data" id="role">
+                                     <option value="{$role.id}">{$role.name}</option>
+                                    </volist>
+
+                                    </select>
+                                    <label class="control-label hide" for="inputError" ></label>
+
+
+                                </div>
+                            </div>
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" type="submit" onclick="return mySubmit()">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+
+            </div>
+
+        </div>
+
+
+    </section><!-- /.content -->
+
+    <!-- Content Header (Page header) -->
+
+
+</div><!-- /.content-wrapper -->
+
+
+<include file="Public:footer"/>
+<div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+
+<script type="text/javascript">
+
+
+    function update() {
+        var data = '{$data}';
+        var data = JSON.parse('{$data}');
+        if (data!== null) {
+
+            row=data[0];
+            document.getElementById("name").value = row.name;
+            document.getElementById("pwd").value = row.pwd;
+            document.getElementById("pwd2").value = row.pwd;
+            document.getElementById("nickname").value = row.nickname;
+            document.getElementById("realname").value = row.realname;
+            document.getElementById("email").value = row.email;
+            document.getElementById("form").action="admin.php?m=Admin&c=admin&a=save&id="+row.id;
+        }
+
+
+    }
+
+    function trim(str, charlist) {
+        //  discuss at: http://locutus.io/php/trim/
+        // original by: Kevin van Zonneveld (http://kvz.io)
+        // improved by: mdsjack (http://www.mdsjack.bo.it)
+        // improved by: Alexander Ermolaev (http://snippets.dzone.com/user/AlexanderErmolaev)
+        // improved by: Kevin van Zonneveld (http://kvz.io)
+        // improved by: Steven Levithan (http://blog.stevenlevithan.com)
+        // improved by: Jack
+        //    input by: Erkekjetter
+        //    input by: DxGx
+        // bugfixed by: Onno Marsman (https://twitter.com/onnomarsman)
+        //   example 1: trim('    Kevin van Zonneveld    ')
+        //   returns 1: 'Kevin van Zonneveld'
+        //   example 2: trim('Hello World', 'Hdle')
+        //   returns 2: 'o Wor'
+        //   example 3: trim(16, 1)
+        //   returns 3: '6'
+
+        var whitespace = [
+            ' ',
+            '\n',
+            '\r',
+            '\t',
+            '\f',
+            '\x0b',
+            '\xa0',
+            '\u2000',
+            '\u2001',
+            '\u2002',
+            '\u2003',
+            '\u2004',
+            '\u2005',
+            '\u2006',
+            '\u2007',
+            '\u2008',
+            '\u2009',
+            '\u200a',
+            '\u200b',
+            '\u2028',
+            '\u2029',
+            '\u3000'
+        ].join('')
+        var l = 0
+        var i = 0
+        str += ''
+
+        if (charlist) {
+            whitespace = (charlist + '').replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^:])/g, '$1')
+        }
+
+        l = str.length
+        for (i = 0; i < l; i++) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(i)
+                break
+            }
+        }
+
+        l = str.length
+        for (i = l - 1; i >= 0; i--) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(0, i + 1)
+                break
+            }
+        }
+
+        return whitespace.indexOf(str.charAt(0)) === -1 ? str : ''
+    }
+
+    function  remove(n) {
+
+        var labelname = $(n).next('label');
+
+        var label_text = '';
+        labelname.html(label_text);
+        labelname.addClass("hide");
+        $(n).parent().parent().removeClass("has-error");
+
+    }
+    function mySubmit() {
+        var name = $("#name").val()
+        name = trim(name);
+        var pwd = $("#pwd").val()
+        pwd = trim(pwd);
+        var pwd2 = $("#pwd2").val()
+        pwd2 = trim(pwd2);
+        var nickname = $("#nickname").val()
+        nickname = trim(nickname);
+        var email = $("#email").val()
+        email = trim(email);
+        var realname = $("#realname").val()
+        realname = trim(email);
+        var role = $("#role_id").val();
+
+
+        if (name == "") {
+            var inputname = $("#name");
+            var labelname = inputname.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i> 用户名不能为空';
+            labelname.html(label_text);
+            labelname.removeClass("hide");
+            inputname.parent().parent().addClass("has-error");
+            inputname.focus();
+            return false
+
+        }
+        if (pwd == "") {
+            var inputpwd = $("#pwd");
+            var labelpwd = inputpwd.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i> 密码不能为空';
+            labelpwd.html(label_text);
+            labelpwd.removeClass("hide");
+            inputpwd.parent().parent().addClass("has-error");
+            inputpwd.focus();
+            return false
+
+        }
+        if (pwd2 == "") {
+            var inputpwd2 = $("#pwd2");
+            var labelpwd2 = inputpwd2.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i> 请输入确认密码';
+            labelpwd2.html(label_text);
+            labelpwd2.removeClass("hide");
+            inputpwd2.parent().parent().addClass("has-error");
+            inputpwd2.focus();
+            return false
+
+        }
+        if (pwd2 == "") {
+            var inputreal= $("#realname");
+            var labelreal = inputreal.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i> 请输入真实姓名 ';
+            labelreal.html(label_text);
+            labelreal.removeClass("hide");
+            inputreal.parent().parent().addClass("has-error");
+            inputreal.focus();
+            return false
+        }
+        if(pwd!==pwd2){
+            var inputpwd2 = $("#pwd2");
+            var labelpwd2 = inputpwd2.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i>  两次密码不一致';
+            labelpwd2.html(label_text);
+            labelpwd2.removeClass("hide");
+            inputpwd2.parent().parent().addClass("has-error");
+            inputpwd2.focus();
+            return false
+        }
+        if(role==0){
+
+            var inputrole = $("#role_id");
+            var labelrole = inputrole.next();
+            var label_text = '<i class="fa fa-times-circle-o"></i>  请选择角色';
+            labelrole.html(label_text);
+            labelrole.removeClass("hide");
+            inputrole.parent().parent().addClass("has-error");
+            inputrole.focus();
+            return false
+        }
+
+
+    }
+    update();
+
+
+</script>

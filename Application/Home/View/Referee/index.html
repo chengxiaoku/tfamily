@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    <link href="{:ASSETS}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/fonts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/fonts/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/css/AdminLTE.css" rel="stylesheet" type="text/css"/>
+    <link href="{:ASSETS}/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{:ASSETS}/css/custom.css" rel="stylesheet" type="text/css"/>
+
+    <script src="{:ASSETS}/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/plugins/bootbox.js" type="text/javascript"></script>
+
+    <!-- form validate -->
+    <script src="{:ASSETS}/plugins/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="{:ASSETS}/plugins/jquery-validate/additional-methods.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .login-box, .register-box {
+
+        }
+        .text-align {
+            text-align: center;
+        }
+
+        .login-box-body .btn {
+            font-size: 16px;
+        }
+
+        #header {
+            height: 60px;
+            margin: 0 auto !important;
+            background: #00a65a none repeat scroll 0 0; /*#19b955 */
+            margin: 0 auto !important;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+        }
+
+        .header_title {
+            font-size: 21px;
+        }
+
+        .btn-social *:first-child {
+            font-size: 14px !important;
+        }
+
+        .login-page {
+            background: #ededed url("./Public/assets/img/login-bg.png") no-repeat scroll center top;
+        }
+
+        .my-tips {
+            color: #a8a8a8;
+        }
+
+        #verifyImg {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .footer {
+            text-align: center;
+
+            border-top: 1px solid #d2d6de;
+            color: #444;
+            padding: 20px;
+        }
+
+        .login-box, .register-box {
+            width: 460px;
+        }
+
+        .login-box-body {
+            padding: 30px;
+        }
+
+        .btn-primary {
+            background-color: #19b955;
+        }
+
+        .form-control {
+            height: 45px;
+            line-height: 45px;
+            padding: 0 15px;
+        }
+        .form-control-feedback {
+            height: 45px !important;
+            line-height: 45px !important;
+        }
+
+        .bg-image {
+            display: block;
+            height: 200%;
+            left: -50%;
+            position: fixed;
+            top: -50%;
+            width: 200%;
+            z-index: -1;
+        }
+
+        .bg-image img {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            min-height: 50%;
+            min-width: 50%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+
+<body class="login-page" onload="document.forms.loginform.nickname.focus()">
+
+
+<div class="bg-image">
+    <img src="{:ASSETS}/img/register-bg.jpg">
+</div>
+
+
+<div id="header">
+    <div class="header_title"><i class="fa fa-street-view"></i>&nbsp;&nbsp;{$site_title}</div>
+</div>
+
+
+<div class="login-box" style="">
+
+    <div class="login-box-body">
+
+        <!--<div class="login-logo"><i class="fa fa-street-view"></i>&nbsp;&nbsp;{$meta_title}</div>
+-->
+        <p class="login-box-msg"><span style="font-size:18px;">用户注册</span></p>
+
+
+        <form action="{:U('referee/index')}" method="post" name="loginform" id="myform">
+            <!--信息提示框-->
+            <!--
+            <div class="alert alert-warning alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <i class="icon fa fa-warning"></i> 登录失败!用户名或密码不正确
+            </div>
+
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <i class="icon fa fa-warning"></i> 登录失败!用户名或密码不正确
+            </div>
+            -->
+            <div id="no" class="alert alert-danger alert-dismissable" style="display: none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fa fa-warning"></i> 错误提示：该电话号码已注册
+            </div>
+
+            <if condition="$error neq ''">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <i class="icon fa fa-warning"></i> 登录失败:{$error}
+                </div>
+            </if>
+
+
+            <div class="form-group has-feedback">
+                <input id="tel" type="text" name="tel" class="form-control" placeholder="输入手机号码" tabindex="1"/>
+                <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" name="nickname" class="form-control" placeholder="输入昵称" tabindex="1"/>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input name="password" type="password"  class="form-control" placeholder="输入密码(长度不小于6)"/>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input name="password1" type="password" class="form-control" placeholder="请确认密码(长度不小于6)"/>
+                <span class="glyphicon glyphicon-repeat form-control-feedback"></span>
+            </div>
+
+
+            <div class="form-group" >
+                <div class="inline-block" id="region" >
+                    <select class="form-control inline-block province" style="width:120px;height: 45px;" id="province_id" name="province_id">
+                        <option value="">≡ 省 ≡</option>
+                    </select>
+                    <select class="form-control  inline-block city" style="width:120px;height: 45px; margin-left: 15px;"      id="city_id" name="city_id">
+                        <option value="">≡市≡</option>
+                    </select>
+                    <select class="form-control  inline-block district"  style="width:120px;height: 45px;margin-left:16px;" id="district_id" name="district_id">
+                        <option value="">≡区≡</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <br>
+                    <input type="hidden" name="http_referer" value="{$user}">
+                    <button  id="submit" type="submit" class="btn btn-success btn-block btn-flat" onclick="return login()" >立即注册</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <p style="padding:20px 0 10px;">
+                        Copyright &copy; 2016 <a href="#">T家园创业平台</a></strong> 版权所有.
+                    </p>
+                </div>
+            </div>
+
+            <!--推荐人ID-->
+            <input type="hidden" name="ref_id" value="{$user}">
+            <!--省市区-->
+            <input type="hidden" name="province" value="">
+
+        </form>
+
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+
+<!--判断手机号码-->
+<script type="text/javascript">
+    var Val = {
+        isMobile:function(s){return this.test(s,/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/)},
+        isNumber:function(s,d){return !isNaN(s.nodeType==1?s.value:s)&&(!d||!this.test(s,"^-?[0-9]*\\.[0-9]*$"))},
+        isEmpty:function(s){return !jQuery.isEmptyObject(s)},test:function(s,p){s=s.nodeType==1?s.value:s;return new RegExp(p).test(s)}};
+
+    $("#tel").blur(function(){
+        var v=$(this).val();
+        var n=$(this).next();
+        if(!Val.isMobile(v)){
+            alert('请输入正确的手机号码');
+        }
+    });
+</script>
+<script type="text/javascript">
+    function login() {
+        var tel=$("#tel").val();
+        var url= "{:U('Referee/q')}&tel="+tel;
+        $.getJSON(url,function (json){
+            if (json=='重复'){
+                $("#no").css('display','');
+                return false;
+            }else{
+                $("#no").css('display','none');
+
+            }
+        })
+    }
+</script>
+
+<!--省市区三级联动-->
+
+<script src="{:ASSETS}plugins/jquery.cityselect.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        //省市区三级联动
+        //注意三级联动结构：#region(自定义) > .province + .city + .district
+        $("#region").citySelect({
+            nodata: "none",
+            required: false,
+            province:null,
+            city: null,
+            district: null,
+            url: "{:U('home/referee/getCity')}"
+        });
+    });
+    function changeVerify() {
+        var timenow = new Date().getTime();
+        var url = "{:U('auth/verify')}" + '&t=' + timenow;
+        document.getElementById('verifyImg').src = url;
+    }
+
+
+
+    $(document).ready(function () {
+        //验证表单
+        $("#myform").validate({
+            rules: {
+                tel: "required",
+                nickname: "required",
+                password: {
+                    "required": true,
+                    "minlength": 6
+                },
+                password1: {
+                    "required": true,
+                    "minlength": 6
+                },
+                province_id: "required",
+                city_id: "required",
+                district_id: "required"
+            },
+            messages: {
+                tel: "请输入手机号码",
+                nickname: "用户名不能为空",
+                password: {
+                    required :"密码不能为空",
+                    minlength : "密码不能小于6位"
+                },
+                password1: {
+                    required :"确认密码不能为空",
+                    minlength : "密码不能小于6位"
+                },
+                province_id: "选择省",
+                city_id: "选择市",
+                district_id: "选择地区"
+            },
+            errorPlacement: function (error, element) {
+                element.parent().addClass('has-error');
+            },
+            onfocusout: function (element) {
+                //this.element(element);
+            },
+            success: function (label, element) {
+                $(element).parent().removeClass('has-error');
+            }
+        });
+
+    });
+</script>
+
+
+</body>
+</html>

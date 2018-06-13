@@ -1,0 +1,183 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+        <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-solid">
+
+                    <!-- form start -->
+                    <form role="form" id="form" action="admin.php?m=Admin&c=admin&a=role_add" method="post">
+
+                        <div class="box-body padding20">
+                            <div class="form-group ">
+                                <label for="">角色名<span class="required">*</span></label>
+                                <div>
+                                    <input type="text" name="name" placeholder="输入角色名称" id="name"
+                                           class="form-control wp50 inline-block">
+                                    <label class="control-label hide" for="inputError"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">状态</label>
+                                <div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input type="radio" checked="" value="1" id="Enabled" name="enabled">启用
+                                        </label>
+                                    </div>
+                                    <div class="radio inline-block margin0">
+                                        <label>
+                                            <input type="radio" value="0" id="Disable" name="enabled">禁用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">角色描述</label>
+                                <textarea placeholder="输入角色描述..." id="description" name="description" class="form-control"></textarea>
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" type="submit" onclick="return mySubmit()">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section><!-- /.content -->
+    <!-- /.content -->
+
+</div><!-- /.content-wrapper -->
+<include file="Public:footer"/>
+
+
+<div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+
+<script>
+    function update() {
+        var data = '{$data}';
+        var data = JSON.parse('{$data}');
+        if (data!== null) {
+            row=data[0];
+            document.getElementById("name").value = row.name;
+
+            if(row.enabled==0){
+                document.getElementById("Disable").checked=true;
+            }else{
+                document.getElementById("Disable").checked=false;
+            }
+
+            document.getElementById("description").innerText = row.description;
+            document.getElementById("form").action="admin.php?m=Admin&c=admin&a=role_save&id="+row.id;
+        }
+
+
+    }
+
+    function trim(str, charlist) {
+        //  discuss at: http://locutus.io/php/trim/
+        // original by: Kevin van Zonneveld (http://kvz.io)
+        // improved by: mdsjack (http://www.mdsjack.bo.it)
+        // improved by: Alexander Ermolaev (http://snippets.dzone.com/user/AlexanderErmolaev)
+        // improved by: Kevin van Zonneveld (http://kvz.io)
+        // improved by: Steven Levithan (http://blog.stevenlevithan.com)
+        // improved by: Jack
+        //    input by: Erkekjetter
+        //    input by: DxGx
+        // bugfixed by: Onno Marsman (https://twitter.com/onnomarsman)
+        //   example 1: trim('    Kevin van Zonneveld    ')
+        //   returns 1: 'Kevin van Zonneveld'
+        //   example 2: trim('Hello World', 'Hdle')
+        //   returns 2: 'o Wor'
+        //   example 3: trim(16, 1)
+        //   returns 3: '6'
+
+        var whitespace = [
+            ' ',
+            '\n',
+            '\r',
+            '\t',
+            '\f',
+            '\x0b',
+            '\xa0',
+            '\u2000',
+            '\u2001',
+            '\u2002',
+            '\u2003',
+            '\u2004',
+            '\u2005',
+            '\u2006',
+            '\u2007',
+            '\u2008',
+            '\u2009',
+            '\u200a',
+            '\u200b',
+            '\u2028',
+            '\u2029',
+            '\u3000'
+        ].join('')
+        var l = 0
+        var i = 0
+        str += ''
+
+        if (charlist) {
+            whitespace = (charlist + '').replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^:])/g, '$1')
+        }
+
+        l = str.length
+        for (i = 0; i < l; i++) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(i)
+                break
+            }
+        }
+
+        l = str.length
+        for (i = l - 1; i >= 0; i--) {
+            if (whitespace.indexOf(str.charAt(i)) === -1) {
+                str = str.substring(0, i + 1)
+                break
+            }
+        }
+
+        return whitespace.indexOf(str.charAt(0)) === -1 ? str : ''
+    }
+    function mySubmit() {
+        var name = $("#name").val()
+        name = trim(name);
+
+            if (name == "") {
+                var inputname = $("#name");
+                var labelname = inputname.next();
+                var label_text = '<i class="fa fa-times-circle-o"></i> 用户名不能为空';
+                labelname.html(label_text);
+                labelname.removeClass("hide");
+                inputname.parent().parent().addClass("has-error");
+                inputname.focus();
+                return false;
+            }
+            return true
+
+
+    }
+     update();
+
+</script>

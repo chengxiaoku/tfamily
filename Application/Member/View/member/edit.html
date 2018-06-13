@@ -1,0 +1,232 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header">
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form" id="loginForm" action="{:U('Member/member/edit')}"  method="post">
+                        <input type="hidden" name="id" value="{$data.id}">
+                        <div class="box-body padding20">
+                            <div class="form-group "><!--has-error-->
+                                <label for="">用户名</label>
+                                <input type="text" name="name" required placeholder="输入用户名称"
+                                       class="form-control wp50" value="{$data.name}" disabled="">
+                                <if condition="$error neq ''">
+                                    <label class="error">用户名已被注册</label>
+                                </if>
+                                <!-- <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> 用户名不能为空</label>-->
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input type="password" name="pwd" id="pwd" required placeholder="输入密码"
+                                       class="form-control wp50" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">再次输入密码</label>
+                                <input type="password" name="confirm_pwd" required placeholder="输入确认密码" id="confirm_pwd"
+                                       class="form-control wp50" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">真实姓名</label>
+                                <input type="text" name="id_name" required placeholder="输入真实姓名" id=""
+                                       class="form-control wp50" value="{$data.real_name}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">电话</label>
+                                <input type="text" name="tel" required placeholder="输入电话" id=""
+                                       class="form-control wp50" value="{$data.tel}">
+                                <if condition="$test_tel neq ''">
+                                    <label class="error">电话已被注册</label>
+                                </if>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">身份证</label>
+                                <input type="text" name="id" required placeholder="输入身份证" id=""
+                                       class="form-control wp50" value="{$data.identity}" disabled="">
+                                <if condition="$test_identity neq ''">
+                                    <label class="error">身份证已被注册</label>
+                                </if>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">年龄</label>
+                                <input type="text" name="age" required placeholder="输入年龄" id=""
+                                       class="form-control w100" value="{$data.age}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">性别</label>
+                                <div>
+                                        <div class="radio inline-block margin0">
+                                            <label>
+                                                <input checked="" value="man" id="" name="sex" type="radio">男
+                                            </label>
+                                        </div>
+                                        <div class="radio inline-block margin0">
+                                            <label>
+                                                <input value="female" id="" name="sex" type="radio" >女
+                                            </label>
+                                        </div>
+
+                                </div>
+                            </div>
+
+                            <!--省市区三级联动-->
+                            <div class="form-group">
+                                <label>选择地区<span class="required"></span></label>
+                                <div id="region">
+                                    <select class="form-control w150 inline-block province"
+                                            id="address" name="province_id">
+                                        <option value="0">≡ 请选择省 ≡</option>
+                                    </select>
+                                    <select class="form-control w150 inline-block city"
+                                            id="city_id" name="city_id">
+                                        <option value="0">≡ 请选择市 ≡</option>
+                                    </select>
+                                    <select class="form-control w150 inline-block district"
+                                            id="district_id" name="district_id">
+                                        <option value="0">≡ 请选择区 ≡</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                            </div>
+                            <div class="form-group">
+                                <label>会员级别</label>
+                                <select name="level_id" class="form-control w200">
+                                    <foreach name="m_level" item="m_level">
+                                        <option value="{$m_level.id}" <if condition="($data['level_id'] eq $m_level['id'])">selected</if>>{$m_level.name}</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">家庭住址</label>
+                                <input type="text" name="address_home" required placeholder="输入家庭住址" id="address_home"
+                                       class="form-control wp50" value="{$data.address}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>备注</label>
+                                <textarea name="remark" placeholder="Enter ..." rows="3" class="form-control">{$data.remark}</textarea>
+                            </div>
+
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20">
+                            <button class="btn btn-primary w100" type="submit" onclick="return login()">修改</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+</div>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<!--省市区三级联动-->
+<script src="{:ASSETS}plugins/jquery.cityselect.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    //省市区三级联动
+    $(function () {
+        //省市区三级联动
+        //注意三级联动结构：#region(自定义) > .province + .city + .district
+        $("#region").citySelect({
+            nodata: "none",
+            required: false,
+            province: "{$data.province_id}", //"河南省"
+            city: "{$data.city_id}",
+            district: "{$data.district_id}",
+            url: "{:U('agent/ui/getCity')}",
+        });
+
+    });
+
+    $("#expire-time").datepicker({
+        format: 'yyyy/mm/dd',
+        language: 'zh-CN'
+    }).on("changeDate", function (e) {
+        var me = e.target;
+        var timestamp = e.date.valueOf();
+        $("#hid_expire_time").val(timestamp);
+        $(this).datepicker('hide');
+    });
+    //空值提示
+    function login() {
+        $("#loginForm").validate({
+            rules: {
+                name: "alnum",
+                pwd: "required",
+                confirm_pwd: {
+                    required: true,
+                    equalTo: "#pwd"
+                },
+                real_name: "required",
+                identity: "digits",
+                tel: {
+                    required: true,
+                    digits: true,
+                    maxlength: 11
+                },
+                age: {
+                    required: true,
+                    digits: true,
+                    maxlength: 3
+                },
+                address: "required"
+            },
+            messages: {
+                name: "用户名只能为字母和数字",
+                pwd: "密码不能为空",
+                confirm_pwd: {
+                    required: "请输入密码",
+                    equalTo: "两次密码输入不一致"
+                },
+                real_name: "真实姓名不能为空",
+                identity: "请输入有效的身份证",
+                tel: {
+                    required: "电话不能为空",
+                    digits: "请输入有效的电话",
+                    maxlength: "请输入有效的电话"
+                },
+                age: {
+                    required: "年龄不能为空",
+                    digits: "请输入有效的年龄",
+                    maxlength: "请输入有效的年龄"
+                },
+                address: "家庭地址不能为空"
+            }
+        });
+        return true;
+    }
+
+
+</script>
+

@@ -1,0 +1,155 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <include file="Public:breadcrumb"/>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-solid">
+                    <!-- form start -->
+
+                    <div class="box-body">
+                        <div class="select pull-right">
+                            <div class="input-group" style="width:250px; margin-left: 5px;">
+                                <input type="text" name="" class="form-control " style="" placeholder="搜索..." id="ss">
+                                <div class="input-group-btn">
+                                    <a id="sou">
+                                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <form role="form">
+                            <a type="button" class="btn btn-primary" id="insert" href="{:U('News/add')}">添加新闻</a>
+                            <button type="button" class="btn btn-danger" id="delall">批量删除</button>
+                            <table class="table table-hover text-center" style="margin-top: 15px; text-align: center" id="table">
+                                <tbody>
+                                    <tr>
+                                        <th width="10%" class="tc">
+                                            <input id="selectAll" type="checkbox">全选
+                                        </th>
+                                        <th width="20%" class="tc">标题</th>
+                                        <th width="20%">阅读人数</th>
+                                        <th width="20%">发行日期</th>
+                                        <th width="20%">管理操作</th>
+                                    </tr>
+                                    <volist name="list" id="data">
+                                        <tr>
+                                            <td width="10%" class="tc">
+                                                <input type="checkbox" name="ckbox" value="{$data.id}">
+                                            </td>
+                                            <td>{$data.title}</td>
+                                            <td>{$data.views}</td>
+                                            <td>{$data.add_time}</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs"
+                                                   href="{:U('News/upd',array('id'=>$data['id']))}">修改</a>
+                                                <a href="#" class="btn  btn-default btn-xs"
+                                                   onclick="del(this,'{$data.id}')">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-sm-5"></div>
+                                    <div class=" col-sm-7 ">
+                                        <div class="text-right">
+                                            <ul class="pagination">
+                                                <li class="paginate_button previous" id="example2_previous">
+                                                    {$page}
+                                                </li>
+                                                <!-- <li class="paginate_button previous" id="example2_previous">
+                                                     <a aria-controls="example2" data-dt-idx="7" tabindex="0" onclick="return fetchDataPrev()">上一页</a>
+                                                 </li>
+                                                 <li>
+
+                                                     <a class="action" href="#" >{$page}</a>
+                                                 </li>
+                                                 <li class="paginate_button next" id="example2_next">
+                                                     <a aria-controls="example2" data-dt-idx="7" onclick="return fetchDataNext()" tabindex="0">下一页</a>
+                                                 </li>-->
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body text-center" id="myModalbody">
+                <i class="glyphicon glyphicon-info-sign fa-2x text-red " style="font-size: 18px;"></i>
+                <span class="text-red" style="font-size:18px;margin-left: 10px;"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="button1">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#sou").click(function () {
+            var keyword = $('#ss').val();
+            if (keyword) {
+                location.href = "admin.php?m=Admin&c=News&a=sel&keyword=" + keyword;
+            } else {
+                alert('无参数');
+                return false;
+            }
+        });
+    });
+
+
+    $(function () {
+        var boxs = document.getElementsByName('ckbox');
+        $('#selectAll').click(function () {
+            $('input[name=ckbox]').prop('checked', $(this).is(':checked'));
+        });
+        $('input[name=ckbox]').click(function () {
+            var len = $('input[name=ckbox]:checked').length;
+            if (len == boxs.length) {
+                $('#selectAll').prop('checked', true);
+            } else {
+                $('#selectAll').prop('checked', false);
+            }
+        });
+
+    });
+    /*控制模态框删除事件*/
+    var id = '';
+    function del(a, b) {
+        $('#myModalbody span').text('确定删除该数据？');
+        $('#myModal').modal();
+        id = b;
+        return false;
+    }
+    $('#button1').click(function () {
+        location.href = "admin.php?m=Admin&c=News&a=del&id=" + id;
+    });
+</script>
+<include file="Public:footer"/>

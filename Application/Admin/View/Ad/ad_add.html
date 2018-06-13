@@ -1,0 +1,487 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <!-- form start -->
+                    <form role="form" action="{:U('Ad/add_ad')}"  method="post">
+                        <div class="box-body padding20">
+
+                            <input type="hidden" value="{$list[0]['id']}" name="id">
+                            <div class="form-group" id="Name">
+                                <label for="">广告标题<span class="required">*</span></label>
+                                <div>
+
+                                    <input type="text" name="name" value="{$list[0]['title']}" placeholder="输入版位名称"
+                                           class="form-control wp50 inline-block">
+                                    <label class="control-label hidden" for="inputError"><i
+                                            class="fa fa-times-circle-o"></i> 版位名称不能为空</label>
+                                    <em class="help-block"></em>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>所属版位</label>
+                                <input type="text" class="form-control wp50" id="ads" disabled value="{$title}">
+                                <input type="hidden" class="form-control wp50" name="ads" value="{$title}">
+                            </div>
+                            <div class="form-group input-group wp50 " id="online-date">
+                                <label for="">上线日期<span class="required">*</span></label>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" value="{$list[0]['start_time']}" class="form-control" id="begin-time" name="begin-time"  placeholer="">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success btn-flat" type="button"
+                                                    onclick="return selectDate(this, 'begin-time')"><i
+                                                    class="fa fa-clock-o"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label hidden" for="inputError" id="online"><i
+                                    class="fa fa-times-circle-o"></i> 上线时间不能为空</label>
+                            <em class="help-block"></em>
+                            <div class="form-group input-group wp50" id="off-date">
+                                <label for="">下线日期<span class="required">*</span></label>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" value="{$list[0]['end_time']}"  class="form-control" id="end-time" name="end-time"  placeholder="">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success btn-flat" type="button"
+                                                    onclick="return selectDate(this, 'end-time')"><i
+                                                    class="fa fa-clock-o"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="control-label hidden" for="inputError" id="off"><i
+                                    class="fa fa-times-circle-o"></i> 下线时间不能为空</label>
+                            <div class="form-group" id="btc">
+                                <label for="">所属客户<span class="required">*</span></label>
+                                <div style="width: 100%;" class="clearfix">
+                                    <select class="pull-left form-control"  style="display: inline-block; width: 150px">
+                                        <option value="0">≡ 请选择客户 ≡</option>
+                                        <option value="2015001">客户A</option>
+                                        <option value="2015002">客户B</option>
+                                        <option value="2015003">客户C</option>
+                                        <option value="2015004">客户D</option>
+                                    </select>
+                                    <div class="pull-left">
+                                        <input type="text" placeholder="根据手机号码搜索"
+                                               class="pull-left form-control inline-block" style="width: 150px">
+                                        <a class="btn btn-primary pull-left">搜索</a>
+                                    </div>
+                                </div>
+                                <label class="control-label hidden" for="inputError" id="btc-error"><i
+                                        class="fa fa-times-circle-o"></i> 请选择所属客户</label>
+                            </div>
+
+                            <div class="form-group" id="money">
+                                <label for="">广告金额<span class="required">*</span></label>
+                                <div>
+                                    <input type="text" value="{$list[0]['money']}" class="form-control wp50 inline-block"  name="money"
+                                           placeholder="输入广告金额">
+                                    <label class="control-label hidden" for="inputError" id="" ><i
+                                            class="fa fa-times-circle-o"></i> 请输入广告金额</label>
+                                    <em class="help-block">备注：只能包含数字（单位是：元）</em>
+                                </div>
+                            </div>
+                            <!--选择不同的广告类型-->
+                            <div class="form-group" id="type">
+                                <label for="">广告类型<span class="required">*</span></label>
+                                <select class="form-control wp50" id="slt" onchange="return selectAdType(this)"  name="type">
+                                    <option value="0">≡ 选择广告类型 ≡</option>
+                                    <option value="pic">图片</option>
+                                    <option value="flash">动画</option>
+                                    <!--不同的广告位显示的广告类型也不一样-->
+                                    <option value="text">文字广告</option>
+                                    <option value="code">代码广告</option>
+                                </select>
+                               <label class="control-label hidden" for="inputError"><i
+                                    class="fa fa-times-circle-o"></i> 请选择广告类型</label>
+                            </div>
+
+                            <!--
+                            说明：选择不同类型的广告，显示不同的内容：图片或动画
+                                  增加下拉框的change事件，然后显示不同的DIV:#ad-image-wrapper或#ad-flash-wrapper
+                            -->
+
+                            <!--图片类型广告：上线时间+下线时间+图片设置-->
+                            <div id="ad-image-wrapper" style="display:none;" class="to-hidden">
+                                <div class="form-group">
+                                    <butten class="btn btn-default btn-flat btn-block wp50"
+                                            onclick="return addImageBox()">
+                                        <i class="fa fa-plus"></i>&nbsp;添加图片
+                                    </butten>
+                                </div>
+                            </div>
+
+
+                            <!--动画类型广告：上线时间+下线时间+上传动画-->
+                            <div id="ad-flash-wrapper" style="display:none;" class="to-hidden">
+                                <div class="form-group wp50">
+                                    <label for="">上传动画</label>
+                                    <div>
+                                        <div class="input-group">
+                                            <input type="text" placeholder="上传或粘贴动画地址 ..."
+                                                   class="form-control inline-block">
+                                            <div class="input-group-btn">
+                                                <button onclick="upload()" type="button"
+                                                        class="btn btn-success btn-flat"><i
+                                                        class="fa fw fa-caret-square-o-right"></i></button>
+                                            </div>
+                                        </div>
+                                        <em class="help-block">提示：上传或粘贴动画地址</em>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--文字广告：上下时间+连接+文本-->
+                            <div id="ad-text-wrapper" style="" class="to-hidden">
+                                <div class="form-group ">
+                                    <label for="">文字提示</label>
+                                    <div>
+                                        <input type="text" placeholder="输入图片文字提示" id=""
+                                               class="form-control  inline-block wp50">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="">连接地址</label>
+                                    <div>
+                                        <input type="text" placeholder="输入连接地址" id=""
+                                               class="form-control  inline-block wp50">
+                                    </div>
+                                    <em class="help-block">如：http://www.site.com</em>
+                                </div>
+                            </div>
+
+                            <div id="ad-code-wrapper" class="to-hidden">
+                                <div class="form-group ">
+                                    <label for="">代码广告内容</label>
+                                    <div>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                    <em class="help-block">如：http://www.site.com</em>
+                                </div>
+                            </div>
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" href="javascript:void(0)" onclick="return Submit()" type="submit">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+
+            </div>
+
+
+            <div class="col-md-4" id="ad_image_boxes">
+
+
+                <!--图片/幻灯片设置-->
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <i class=""></i>
+                        <h3 class="box-title">图片设置</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" onclick="return removeImageBox(this)"><i
+                                    class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="">图片连接地址</label>
+                            <div>
+                                <input type="text" placeholder="输入图片连接地址" id="" class="form-control  inline-block">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">图片文字提示</label>
+                            <div>
+                                <input type="text" placeholder="输入图片文字提示" id="" class="form-control  inline-block">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">广告图片</label>
+                            <div>
+                                <div class="input-group">
+                                    <input type="text" placeholder="上传缩略图 ..." class="form-control inline-block">
+                                    <div class="input-group-btn">
+                                        <button onclick="upload()" type="button" class="btn btn-success btn-flat"><i
+                                                class="fa fw fa-plus-circle"></i></button>
+                                    </div>
+                                </div>
+                                <em class="help-block"></em>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end图片/幻灯片设置-->
+            </div><!--/.col-md-4-->
+        </div>
+    </section>
+
+
+</div><!-- /.content-wrapper -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">上传图片</h4>
+            </div>
+
+            <div class="modal-body no-padding maxh500">
+
+                <div class="images-zone"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <div class="loading pull-left" style="">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">选择图片</button>
+                    <button type="button" class="btn btn-default ml20" data-dismiss="modal">上传图片</button>
+                    <i class="fa fa-refresh fa-spin"></i>&nbsp; 数据加载中...
+                </div>
+                <button type="button" class="btn btn-default ml20" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ad image box template-->
+<script type="text/x-tmpl" id="tmpl-image-box">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class=""></i>
+            <h3 class="box-title">图片设置</h3>
+            <div class="box-tools pull-right">
+              <button class="btn btn-box-tool" onclick="return removeImageBox(this)"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+
+          <div class="box-body">
+            <div class="form-group">
+                <label for="">图片连接地址</label>
+                <div>
+                  <input type="text" placeholder="输入图片连接地址" id="" class="form-control  inline-block">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">图片文字提示</label>
+                <div>
+                  <input type="text" placeholder="输入图片文字提示" id="" class="form-control  inline-block">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">广告图片</label>
+                <div>
+                    <div class="input-group">
+                      <input type="text" placeholder="上传缩略图 ..."  class="form-control inline-block">
+                      <div class="input-group-btn">
+                        <button onclick="upload()" type="button" class="btn btn-success btn-flat"><i class="fa fw fa-plus-circle"></i></button>
+                      </div>
+                    </div>
+                    <em class="help-block"></em>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+</script>
+
+<include file="Public:footer"/>
+
+<!--引入日期控件-->
+<link href="{:ASSETS}plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css">
+
+<script src="{:ASSETS}plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="{:ASSETS}plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="{:ASSETS}plugins/tmpl.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+    var val = "{$list[0]['content']}";
+    $("#slt option[value='"+val+"']").attr("selected",true);
+
+
+    function selectAdType(o) {
+        var me = $(o);
+        var _type = me.val();
+        switch (_type) {
+            case 'image':
+                $(".to-hidden").hide();
+                $("#ad-image-wrapper").show();
+                break;
+            case 'flash':
+                $(".to-hidden").hide();
+                $("#ad-flash-wrapper").show();
+                break;
+            case 'text':
+                $(".to-hidden").hide();
+                $("#ad-text-wrapper").show();
+                break;
+            case 'code':
+                $(".to-hidden").hide();
+                $("#ad-code-wrapper").show();
+                break;
+            default:
+                $(".to-hidden").hide();
+        }
+    }
+
+    //动态添加广告图片
+    function addImageBox() {
+        var box = tmpl("tmpl-image-box");
+        $("#ad_image_boxes").append(box);
+        return false;
+    }
+
+    //动态删除广告图片Box
+    function removeImageBox(o) {
+        bootbox.confirm("您确定要删除该图片吗？", function (data) {
+            if (data == false) {
+                return false;
+            } else {
+                $(o).parent().parent().parent().remove();
+            }
+        });
+        return false;
+    }
+
+    //上传图片
+    function upload() {
+        $('#myModal').modal({});
+    }
+
+
+    function selectDate(o, id) {
+        var _id = '#' + id;
+        $(_id).datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN'
+        }).on("changeDate", function (e) {
+            var me = e.target;
+            $(this).datepicker('hide');
+        });
+
+        $(_id).datepicker('show');
+
+    }
+
+
+    //删除所有
+    function delAll() {
+        bootbox.confirm("您确定要删除吗？", function (data) {
+            if (data == false) {
+                alert("取消");
+            } else {
+                alert("确定");
+            }
+        });
+    }
+
+    function del() {
+
+        //bootbox.alert(message, callback)
+        //bootbox.prompt(message, callback)
+        bootbox.confirm("确认要删除该会员组？", function (data) {
+            if (data == false) {
+                alert("取消");
+            } else {
+                alert("确定");
+            }
+        })
+    }
+    function Submit() {
+        if ($('#Name div input').val() == '' || $('#begin-time').val() == '' || $('#end-time').val() == ''|| $('#btc div select').val() == 0 || $('#money div input').val() == '' || $('#type select').val() == 0) {
+            if ($('#Name div input').val() == '') {
+                $('#Name').addClass('has-error');
+                $('#Name div label').removeClass('hidden');
+                $('#Name div input').focus();
+            }
+            else {
+                $('#Name').removeClass('has-error');
+                $('#Name div label').addClass('hidden');
+            }
+            if ($('#begin-time').val() == '') {
+                $('#online-date').addClass('has-error');
+                $('#online').removeClass('hidden');
+                $('#online').css('color', '#dd4b39');
+            }
+            else {
+                $('#online-date').removeClass('has-error');
+                $('#online').addClass('hidden');
+
+            }
+            if ($('#end-time').val() == '') {
+                $('#off-date').addClass('has-error');
+                $('#off').removeClass('hidden');
+                $('#off').css('color', '#dd4b39');
+            }
+            else {
+                $('#off-date').removeClass('has-error');
+                $('#off').addClass('hidden');
+
+            }
+            if ($('#btc div select').val() == 0) {
+                $('#btc').addClass('has-error');
+                $('#btc-error').removeClass('hidden');
+                $('#Name div input').focus();
+            }
+            else{
+                $('#btc').removeClass('has-error');
+                $('#btc-error').addClass('hidden');
+            }
+            if ($('#money div input').val() == '') {
+                $('#money').addClass('has-error');
+                $('#money div label').removeClass('hidden');
+                $('#money div input').focus();
+            }
+            else {
+                $('#money').removeClass('has-error');
+                $('#money div label').addClass('hidden');
+            }
+            if ($('#type select').val() == 0) {
+                $('#type').addClass('has-error');
+                $('#type label').removeClass('hidden');
+                $('#type select').focus();
+            }
+            else {
+                $('#type').removeClass('has-error');
+                $('#type label').addClass('hidden');
+            }
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+
+</script>

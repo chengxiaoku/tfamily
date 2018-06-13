@@ -1,0 +1,177 @@
+<include file="Public:header"/>
+<div id="wrapper">
+
+	<!--头部-->
+	<div id="header">
+		<div class="pull-left">
+			<a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+		</div>
+		<div class="title">{$page_title}</div>
+		<div class="pull-right user-center">
+			<a href="{:U('Auth/login')}"><i class="ion-android-contact size-18"></i></a>
+		</div>
+	</div>
+    <!-- 幻灯片 -->
+	<div id="" class="swiper-container" style="height: 300px;">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<volist name="img" id="hdp">
+				<foreach name="hdp" item="vo">
+					<div class="swiper-slide">
+						<img height="300" src="{$vo}">
+					</div>
+				</foreach>
+			</volist>
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<!--楼盘基础信息-->
+	<volist name="date" id="vo">
+	</volist>
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__bd">
+	            	<div class="weui-media-box weui-media-box_text">
+	                    <a href="javascript:void(0)">
+		                    <h4 class="weui-media-box__title">{$vo.title}</h4>
+		                    <p class="clearfix">
+									<if condition="$vo.is_sale == yes"><span class="pull-left label label-success">在售</span>
+										<elseif condition="$vo.is_sale == no"/><span class="pull-left label label-danger">售罄</span>
+										<elseif condition="$vo.is_sale == pedding"/><span class="pull-left label label-info">暂未开售</span>
+										<elseif condition="$vo.is_sale == all"/><span class="pull-left label label-info">不限</span>
+										<else/><span class="pull-left label label-default">未知</span>
+									</if>
+		                    	<span class="pull-right date_tag price_large">{$vo.price}元/㎡</span>
+		                    </p>
+	                    </a>
+	                </div>
+
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">地址：{$vo.address}</h4>
+	                </div>
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">开盘时间：{$vo.open_time|substr=0,11}</h4>
+	                </div>
+	                <!--<div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">最早交房：{$vo.add_time}</h4>
+	                </div>-->
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">产权年限：{$vo.cqnx}年</h4>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	
+	<!--楼盘详情-->
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__hd">楼盘详情</div>
+	            <div class="weui-panel__bd">
+	            	<div class="weui-media-box weui-media-box_text">
+	                    <p class="clearfix" style="font-size:16px;color:#666;">
+	                    	{$vo.summary}
+						</p>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+
+	<!--户型介绍-->
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__hd">楼盘户型</div>
+				<volist name="type" id="type">
+				<div class="weui-panel__hd">{$type.title}</div>
+				<div class="weui-panel__bd">
+					<div class="weui-media-box weui-media-box_text">
+						<p class="clearfix" style="font-size:16px;color:#666;">
+							<img src="{$type.thumb}" width="100%">
+						</p>
+						<p class="clearfix">
+							<span class="toutiao_tag">{$type.room}室{$type.hall}厅{$type.toilet}卫</span>
+							&nbsp;<span class="toutiao_tag">坐向：{$type.orientation}</span>
+							&nbsp;<span class="toutiao_tag">面积：{$type.area}㎡</span>
+						</p>
+					</div>
+				</div>
+				</volist>
+	        </div>
+		</div>
+	</div>
+	<div class="weui-msg__opr-area">
+		<p class="weui-btn-area">
+			<a href="{:U('House/details_order')}&id={$id}" class="weui-btn weui-btn_primary">我要参加团购</a>
+
+		</p>
+	</div>
+	<!--联系我们-->
+	<div class="weui-cells__title">联系我们<span>（点击直接拨打电话）</span></div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['0']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+				<p style="margin-left: 10px;margin-bottom: 0px">客服电话：{$tel['0']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['1']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+				<p style="margin-left: 10px;margin-bottom: 0px">客服电话：{$tel['1']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+    </div>
+	<div class="hr-title"></div>
+	<div id="push"></div>
+</div><!--/end wrapper-->
+
+<style>
+	.ion-location {
+		margin-right: 10px;
+	}
+</style>
+
+<link rel="stylesheet" href="{:WEIXIN_ASSETS}plugins/swiper/css/swiper.min.css" type="text/css">
+<script type="text/javascript" src="{:WEIXIN_ASSETS}plugins/swiper/js/swiper.jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+
+			$("#header").addClass("bordered-none");
+
+			//initialize swiper when document ready
+			var mySwiper = new Swiper('.swiper-container', {
+				// Optional parameters
+				//direction: 'vertical',
+				loop : true,
+				pagination : '.swiper-pagination',
+				paginationClickable : true,
+				height : 300,
+				lazyLoading : true,
+				preloadImages : ''
+			});
+
+
+			$(window).scroll(
+				function() {
+					if ($(window).scrollTop() == $(document).height()
+							- $(window).height()) {
+						// ajax call get data from server and append to the div
+						$("#loading").show();
+					}
+				});
+
+			});
+</script>
+<include file="Public:footer"/>

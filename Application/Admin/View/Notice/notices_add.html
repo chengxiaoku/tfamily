@@ -1,0 +1,241 @@
+<!--加载网页头部-->
+<include file="Public:header"/>
+<!--加载左侧菜单-->
+<include file="Public:menu"/>
+<!--发布公告页面-->
+    <div class="content-wrapper">
+       <include file="Public:breadcrumb"/>
+        <!--发布公告主体-->
+            <div class="content">
+                <div class="row" >
+                    <div class="col-md-8">
+                        <div class="box box-solid">
+                            <!-- 公告表格 -->
+                            <div class="box-body">
+                            <section class="content">
+                                <form name="myform" action="{:U('notice/add')}" method="post" class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="row form-group" id="noticemessage" style="margin-top: 20px;">
+                                            <div class="col-md-1 text-right" style="width: 115px;">
+                                                <label>公告内容：</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea id="message" name="message" class="form-control" rows="6" placeholder=""></textarea>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-1" style="width: 115px;">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="control-label messagehint hide">
+                                                        <i class="fa fa-times-circle-o"></i>
+                                                        公告内容不能为空
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col-md-1 text-right" style="width: 115px;">
+                                                <label>接收人：</label>
+
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <input type="radio" id="one" checked class="one hide" style="display: none" value="one" name="author"><span class="one">{$_GET[username]}</span>
+                                                <input type="radio" id="all" value="all" class="author" name="author"><span class="author">所有会员</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:12px;">
+                                            <div class="col-md-1" style="width: 115px;">
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="radio" id="range" value="range" class="author" name="author"><span class="author">指定会员范围</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col-md-1" style="width: 115px;">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div id="region">
+                                                    <select class="form-control inline-block province" id="province_id" name="province_id" style="width: 130px;">
+                                                        <option value="">≡ 请选择省 ≡</option>
+                                                    </select>
+                                                    <select class="form-control inline-block city" id="city_id" name="city_id" style="width: 130px;">
+                                                        <option value="">≡ 请选择市 ≡</option>
+                                                    </select>
+                                                    <select class="form-control inline-block district" id="district_id" name="district_id" style="width: 130px;">
+                                                        <option value="">≡ 请选择区 ≡</option>
+                                                    </select>
+                                                    <label class="control-label regionhint hide">
+                                                        <i class="fa fa-times-circle-o"></i>
+                                                        请选择省、市、区
+                                                    </label>
+                                               </div>
+                                            </div>
+                                        </div>
+
+                                        <div><input type="hidden" name="hiddens" value="{$data.id}"></div>
+
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col-md-1" style="width: 115px;">
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="javascript:void(0)" id="save" class="btn btn-block btn-primary btn-sm">保存</a>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a class="btn btn-block btn-info btn-sm" onclick="location.href='{:U(index)}';return false;">返回
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--提示模态框-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body text-center" id="myModalbody">
+                        <i class="glyphicon glyphicon-info-sign fa-2x text-red " style="font-size: 18px;"></i>
+                        <span class="text-red" style="font-size:18px;margin-left: 10px;">公告内容不能为空！</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div><!-- /.content-wrapper -->
+<!--省市区三级联动-->
+<script src="{:ASSETS}plugins/jquery.cityselect.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        /**
+         *修改个人公告
+         */
+        if ("{$data[userid]}"!=0) {
+            $('.author').remove();
+            $('#region').remove();
+            $('.one').removeClass('hide');
+        } else {
+            $('.one').remove();
+        }
+
+
+        /**
+         *修改公告
+         */
+        //编辑页面编辑数据
+        if("<?php echo $data['id'] ?>"!=""){
+            myform.action="{:U('notice/update')}";
+        }
+        //公告内容
+        $('#message').text("{$data['message']}");
+        //判断选择人范围
+        $("#<?php echo $data['type'] ?>").prop('checked',true);
+
+        /**
+        *编辑公告
+        */
+        //省市区默认参数
+        var province = "{$data[province_id]}";
+        var city = "{$data[city_id]}";
+        var district = "{$data[district_id]}";
+
+        //省市区三级联动
+        $("#region").citySelect({
+            nodata: "none",
+            required: false,
+            province: province==0 ? null : province ,
+            city: city==0 ? null : city,
+            district: district==0 ? null : district,
+            url: "{:U('admin/notice/getCity')}"
+        });
+
+        //公告得到焦点和失去焦点提示
+            $('#message').bind('blur',function () {
+                if ($.trim($('#message').val())=='') {
+                    $('#noticemessage').addClass('has-error');
+                    $('.messagehint').removeClass('hide');
+                }
+            });
+            $('#message').bind('focus',function () {
+                $('#noticemessage').removeClass('has-error');
+                $('.messagehint').addClass('hide');
+            });
+
+        //判断选择是所有人还是区域人数 （所有人不可选择区域）
+        if($('#all').prop('checked')==true) {
+            $('#region select').prop('disabled', true);
+        }
+        if($('#region').prop('checked')==true){
+            $('#region select').prop('disabled', false);
+        }
+
+        //点击区域选择人省市区显示
+        $('#range').click(function(){
+            $('#region select').prop('disabled',false);
+        });
+
+        //点击所有人省市区不可选并清除错误提示
+        $('#all').click(function(){
+            $('#region select').prop('disabled',true);
+            $('#region').removeClass('has-error');
+            $('.regionhint').addClass('hide');
+        });
+
+        //判断省市区是否选择，若选择去掉错误提示样式
+        $('#district_id').change(function(){
+            if($('#district_id').val() != ''){
+                $('#region').removeClass('has-error');
+                $('.regionhint').addClass('hide');
+            }
+        });
+
+
+        //提交时判断公告内容是否为空 是否选择省市区
+        $('#save').click( function () {
+            var value = $('#message').val();
+                value = $.trim(value);
+            if (value=='') {
+                //公告内容为空提示
+                $('#myModal').modal();
+                $('#myModal').on('hidden.bs.modal',function(){
+                    $('#message').focus();
+                })
+            } else if ($('#range').prop('checked')) {
+                //选择区域人数时未选择，加上错误提示
+                if ($('#district_id').val()==''){
+                    $('#region').addClass('has-error');
+                    $('.regionhint').removeClass('hide');
+                }else {
+                    myform.submit();
+                }
+            } else {
+                myform.submit();
+            }
+
+        });
+
+
+    });
+</script>
+
+<!--网页底部-->
+ <include file="Public:footer"/>

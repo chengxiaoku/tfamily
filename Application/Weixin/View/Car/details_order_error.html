@@ -1,0 +1,98 @@
+<include file="Public:header"/>
+<div id="wrapper">
+    <!--头部-->
+    <div id="header">
+        <div class="pull-left">
+            <a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+        </div>
+
+        <div class="title">报名失败</div>
+
+       <div class="pull-right user-center">
+			<a  href="{:U('Auth/login')}"><i class="ion-android-contact size-18"></i></a>
+		</div>
+    </div>
+
+    <div class="container mb10 mt10">
+        <div class="row">
+            <div class="weui-msg">
+                <div class="weui-msg__icon-area"><i class="weui-icon-warn weui-icon_msg"></i></div>
+                <div class="weui-msg__text-area">
+                    <h2 class="weui-msg__title">操作失败</h2>
+                    <p class="weui-msg__desc">内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现<a href="javascript:void(0);">文字链接</a></p>
+                </div>
+                <div class="weui-msg__opr-area">
+                    <p class="weui-btn-area">
+                        <a href="javascript:history.back();" class="weui-btn weui-btn_primary">推荐操作</a>
+                        <a href="javascript:history.back();" class="weui-btn weui-btn_default">辅助操作</a>
+                    </p>
+                </div>
+                <div class="weui-msg__extra-area">
+                    <div class="weui-footer">
+                        <p class="weui-footer__links">
+                            <a href="javascript:void(0);" class="weui-footer__link">底部链接文本</a>
+                        </p>
+                        <p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="weui-cells__title">联系我们<span>（点击直接拨打电话）</span></div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['0']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：{$tel['0']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['1']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：{$tel['1']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+    </div>
+
+
+
+    <div id="push"></div>
+</div>
+
+<!--加载更多-->
+<!--<div id="loading">
+    <img src="img/loading.gif">数据加载中...
+</div>-->
+
+<style type="text/css">
+    
+    .weui-cells::after {
+        border-bottom: 1px solid #d9d9d9;
+        top: 1;
+        transform: scaleY(0.5);
+        transform-origin: 0 0 0;
+    }
+    .weui-cell__bd p {
+        margin: 0px;
+    }
+    .weui-cell__hd .icon {
+        margin-right: 10px;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+
+    });
+
+
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,244 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+    <section class="content">
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <form action="{:U('comment/comment_select')}" method="post">
+                        <!--<a class="btn btn-primary" href="#">批量审核</a>-->
+                        <a class="btn  btn-danger inline-block" data-toggle="modal" data-target="#dellalltModal" onclick="return delAll()">批量删除</a>
+                        <div class="select pull-right">
+                            <!-- <i class="fa fa-fw  fa-reorder"></i> -->
+                            <!--  <span> &nbsp; 过滤区块：</span> -->
+                            <select id="audit" class="form-control w200 inline-block">
+                                <option value="all">所有评论</option>
+                                <option value="pending">待审核</option>
+                                <option value="success">已审核</option>
+                                <option value="reject">未通过</option>
+                            </select>
+                            <div style="width:250px; margin-left: 5px;" class="input-group fr">
+                                <input type="text" id="select" value="{$val}" placeholder="检索..." class="form-control" name="find">
+                                <div onclick="return select()" class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>
+                            </div>
+                        </div>
+                        </form>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                            <tr>
+                                <th width="10%" class="tc">
+                                    <input type="checkbox" id="checkbox">&nbsp;全选
+                                </th>
+                                <th width="10%">评论主题</th>
+                                <th width="15%">评论内容</th>
+                                <th width="5%">会员名</th>
+                                <th width="10%">IP地址</th>
+                                <th width="5%">状态</th>
+                                <th width="10%">时间</th>
+                                <th width="10%">管理</th>
+                            </tr>
+                            <form id="delform" action="{:U('comment/comment_delall')}" method="post">
+                                <volist name="date" id="vo">
+                                    <tr>
+                                        <td><input type="checkbox" value="{$vo.id}" name="checkbox[]"></td>
+                                        <td>{$vo.title}</td>
+                                        <td><a href="javascript:viod(0)">{$vo.content}</a></td>
+                                        <td>{$vo.name}</td>
+                                        <td>{$vo.ip}</td>
+                                        <td>
+                                            <if condition="$vo.status == success"><small class="label bg-green">已审核</small>
+                                                <elseif condition="$vo.status == reject"/><small class="label bg-red">未通过</small>
+                                                <else/><small class="label bg-gray">待审核</small>
+                                            </if>
+                                        </td>
+                                        <td>{$vo.add_time}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-default btn-xs" onclick="return audit('{$vo.id}','{$vo.status}')">审核</a>
+                                            <a class="btn btn-default btn-xs" href="{:U('comment/comment_edit')}&id={$vo.id}">编辑</a>
+                                            <a href="#" class="btn btn-default btn-xs"  onclick="return del('{$vo.id}')">删除</a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                            </form>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class=" col-sm-7 ">
+                                <div class="text-right">
+                                    {$page}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+        <!-- 审核模态框 -->
+        <div class="modal fade" id="auditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">审核：</h4>
+                    </div>
+                    <form action="{:U('comment/comment_audit')}" method="post">
+                        <div class="modal-body text-center">
+                            <label class="radio-inline">
+                                <input type="radio" name="audit" value="pending"> 待审核
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="audit" value="reject"> 未通过
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="audit" value="success"> 审核通过
+                            </label>
+                            <input type="hidden" id="auditid"  name="id">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">确定</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--删除模态框-->
+        <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">提示：</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <span style="font-size: 18px;" class="text-red glyphicon glyphicon-exclamation-sign"><span style=" margin-left: 10px">是否删除该数据？</span></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="truedel()">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--多选删除模态框-->
+        <div class="modal fade" id="dellalltModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">提示：</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <span style="font-size: 18px;" class="text-red glyphicon glyphicon-exclamation-sign"><span style="margin-left: 10px">是否删除选中数据？</span></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="dodel()" class="btn btn-primary">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.content -->
+</div>
+<script type="text/javascript">
+    //全选反选
+    $("#checkbox").click(function () {
+                $("input:checkbox").prop("checked", $("#checkbox").prop('checked'));
+            }
+    );
+    $("input[name='checkbox[]']").click(
+            function () {
+                if ($('input[name="checkbox[]"]:checked').length == $('input[name="checkbox[]"]').length) {
+                    $("#checkbox").prop("checked", true);
+                } else {
+                    $("#checkbox").prop("checked", false);
+                }
+            });
+    var delid ="";      //全局变量:需要删除数据的id
+    //删除弹框
+    function del(id) {
+        delid = id;
+        $("#delModal").modal();
+        return fasle;
+    }
+    //确认删除操作
+    function truedel() {
+        location.href = "{:U('comment/comment_del')}&id="+delid;
+    }
+    //多选删除弹框
+    function dellAll() {
+        $("#dellalltModal").modal()
+    }
+    //多选删除操作
+    function dodel(){
+        delform.submit();
+    }
+    //审核弹框
+    function audit(id,status) {
+        $("#auditModal").modal({});
+        $("#auditid").val(id);
+        $("input[value="+status+"]").prop("checked",true);
+    }
+
+    //下拉框筛选审核状态
+    $("#audit option").click(
+            function () {
+                var sta = $(this).val();
+                if(sta =="all"){
+                    location.href = "{:U('comment/index')}";
+                }else {
+                    location.href = "{:U('comment/audit')}&status=" + sta;
+                }
+            }
+    );
+    //根据审核筛选，，下拉框默认选中
+    $(function(){
+        var audit = "{$_GET['status']}";
+        if(audit == "pending"){
+            $("#audit option[value='pending']").attr("selected","selected")
+        }
+        if(audit == "reject"){
+            $("#audit option[value='reject']").attr("selected","selected")
+        }
+        if(audit == "success"){
+            $("#audit option[value='success']").attr("selected","selected")
+        }
+    });
+    //判断搜索框的输入内容是否为空
+    function select() {
+        var val = $("#select").val();
+        var vals = $.trim(val);
+        if(vals == ""){
+            location.href = "{:U('comment/index')}";
+            return false;
+        }
+    }
+    //显示未审核数量
+    $(function(){
+        var num = "<?php echo $num ?>";
+        if(num == 0){
+            $("span:contains('评论管理')").after("");
+        } else {
+            var text = "<small class='label pull-right bg-green'>"+num+"条</small>";
+            $("span:contains('评论管理')").after(text)
+        }
+    })
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,38 @@
+[ 2017-06-13T10:19:25+08:00 ] 127.0.0.1 /tfamily/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tf_options` [ RunTime:0.0750s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_status' )  [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'close_reason' )  [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_keywords' )  [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `tf_options` WHERE ( `key` = 'site_description' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tf_house` [ RunTime:0.0570s ]
+SQL: SELECT * FROM `tf_house` ORDER BY add_time asc LIMIT 4   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `tf_house` WHERE ( is_hot = 1 ) LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tf_ads` [ RunTime:0.0370s ]
+SQL: SELECT `ad_content` FROM `tf_ads` WHERE ( id=3 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0340s ]
+SQL: SELECT `region_name` FROM `tf_region` WHERE ( region_id=189 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant region - assumed 'region' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 250 行.
+NOTIC: [8] Use of undefined constant region - assumed 'region' E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+NOTIC: [8] Undefined index: user_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 329 行.
+NOTIC: [8] Undefined index: _member_user_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 329 行.
+NOTIC: [8] Undefined index: user_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 331 行.
+NOTIC: [8] Undefined index: _member_user_id E:\phpstudy\www\tfamily\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 333 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.113006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.113006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+

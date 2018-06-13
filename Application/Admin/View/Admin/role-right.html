@@ -1,0 +1,130 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<script src="{:ASSETS}plugins/jquery-treetable/jquery.treetable.js" type="text/javascript"></script>
+<link href="{:ASSETS}plugins/jquery-treetable/jquery.treetable.css" rel="stylesheet" type="text/css"/>
+<!--菜单-->
+<include file="Public:menu"/>
+
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+    <section class="content">
+        <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-8">
+                <!-- general form elements -->
+                <div class="box box-solid">
+                    <form action="{:U('admin/admin/right', array('id' => $id))}" method="post">
+
+                        <div class="box-body padding20">
+                            <table id="mytable" class="treetable table table-hover">
+                                <volist name="menu" id="vo">
+                                    <tr data-tt-id="node-{$i}">
+                                        <td><label><input name="rights[{$vo.m}|{$vo.c}]" type="checkbox" class="ckbox" value="{$vo.m}|{$vo.c}">&nbsp;{$vo.title}</label>
+                                        </td>
+                                    </tr>
+                                    <volist name="vo['children']" id="voo" key="k">
+                                        <tr data-tt-id="node-child-{$k}" data-tt-parent-id="node-{$i}">
+                                            <td><label><input type="checkbox" name="rights[{$voo.m}|{$voo.c}|{$voo.a}]" class="ckbox" value="{$voo.m}|{$voo.c}|{$voo.a}">&nbsp;{$voo.title}</label>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </volist>
+
+                            </table>
+
+                        </div><!-- /.box-body -->
+
+                        <div class="box-footer p20 ">
+                            <button class="btn btn-primary w100" type="submit">保存</button>
+                            <a onclick="history.go('-1')" class="btn btn-info w100 ml20" type="submit">返回</a>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section><!-- /.content -->
+
+</div><!-- /.content-wrapper -->
+<include file="Public:footer"/>
+
+
+<div class='control-sidebar-bg'></div>
+</div><!-- ./wrapper -->
+
+
+<style>
+    .table label {
+        color: #333;
+    }
+</style>
+
+<script type="text/javascript">
+
+    //树表
+    $(document).ready(function () {
+
+        $("#mytable").treetable({
+            indent: 20,
+            expandable: true
+        });
+
+    });
+    function selAll(ck) {
+
+
+        name = ck.className;
+
+
+        if (name == "ckbox set") {
+            var boxs = $(".set");
+        }
+        if (name == "ckbox admin") {
+            var boxs = $(".admin");
+        }
+        if (name == "ckbox house") {
+            var boxs = $(".house");
+        }
+
+        for (var i = 0; i < boxs.length; i++) {
+            var box = boxs[i];
+            if (ck.checked) {
+                box.checked = true;
+
+            } else {
+                box.checked = false;
+            }
+        }
+    }
+    function right() {
+        var boxs = document.getElementsByClassName("ckbox");
+
+        var len = boxs.length;
+        var get = ''
+
+        for (var i = 0; i < len; i++) {
+            var _checkbox = boxs[i];
+
+            if (_checkbox.checked == true) {
+
+                var array = _checkbox.value
+
+                get = get + '&mychk[' + i + ']' + array;
+
+            }
+        }
+
+        var url = 'admin.php?m=Admin&c=admin&a=right';
+
+        alert(get);
+
+        var url = url + get;
+        window.location.href = url;
+    }
+
+
+</script>
+

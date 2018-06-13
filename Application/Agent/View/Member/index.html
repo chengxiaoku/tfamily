@@ -1,0 +1,132 @@
+<!--公共头部-->
+<include file="Public:header"/>
+<!--菜单-->
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <!--页面导航/面包屑-->
+    <include file="Public:breadcrumb"/>
+    <!-- 主体内容 -->
+    <section class="content">
+        <!--表格-->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <form action="{:U('member/select')}" method="post">
+                            <a class="btn btn-primary" href="{:U('member/add')}">添加会员</a>
+                            <div class="select pull-right">
+                                <div style="width:250px; margin-left: 5px;" class="input-group fr">
+                                    <input type="text" id="select" placeholder="搜索..." class="form-control" name="find">
+                                    <div onclick="return select()" class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th width="10%" class="text-center">会员编号</th>
+                                <th width="15%">用户名</th>
+                                <th width="20%">电话</th>
+                                <th width="25%">注册时间</th>
+                                <th width="15%">实名认证状态</th>
+                                <th width="15%">管理</th>
+                            </tr>
+                            <if condition="empty($list)">
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="alert alert-danger text-center" role="alert">对不起，暂无数据<a
+                                                href="{:U('member/index')}" class="btn btn-warning btn-xs ml10"
+                                                style="text-decoration: none;">查看我的会员</a></div>
+                                    </td>
+                                </tr>
+                            </if>
+                            <foreach name="list" item="vo">
+                                <tr>
+                                    <td class="text-center">{$vo.id}</td>
+                                    <td>{$vo.name}</td>
+                                    <td>{$vo.tel}</td>
+                                    <td>{$vo.add_time}</td>
+                                    <td>
+                                        <if condition="$vo.is_validated ==  yes">
+                                            <small class="label bg-green">已认证</small>
+                                            <elseif condition="$vo.is_validated == no"/>
+                                            <small class="label bg-red">未认证</small>
+                                            <else/>
+                                            <small class="label bg-gray">审核中</small>
+                                        </if>
+                                        <!--bg-gray未认证 bg-red审核中-->
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-default btn-xs" href="{:U('member/edit')}&id={$vo.id}">修改</a>
+                                        <a href="#" class="btn btn-default btn-xs"
+                                           onclick="return del('{$vo.id}')">删除</a>
+                                    </td>
+                            </foreach>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class=" col-sm-7 ">
+                                <div class="text-right">
+                                    {$fenye}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!--删除弹出框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                <span class='glyphicon glyphicon-question-sign text-red' style='font-size: 18px;'></span>
+                <span style='font-size: 18px;' class="ml10 text-red">确认要删除该会员？</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="truedel()" class="btn btn-primary w100 ">确定</button>
+                <button type="button" class="btn btn-default w100 " data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var delid = "";
+    function del(id) {
+        delid = id;
+        $("#myModal").modal();
+        return fasle;
+    }
+    //确认删除操作
+    function truedel() {
+        location.href = "{:U('member/del')}&id=" + delid;
+    }
+    //判断搜索框的输入内容是否为空
+    function select() {
+        var val = $("#select").val();
+        var vals = $.trim(val);
+        if (vals == "") {
+            $("#select").val("");
+            $("#select").attr("placeholder", "请输入有效内容");
+            $("#select").focus();
+            return false;
+        }
+    }
+</script>
+<include file="Public:footer"/>

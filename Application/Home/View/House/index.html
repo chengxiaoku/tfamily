@@ -1,0 +1,315 @@
+<!--网页头部-->
+<include file="Public:header"/>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+
+    <!-- 面包屑 -->
+    <section class="news_bn wrapperi">
+        <ul class="clearfix">
+            <li><a href="{:U('Index/index')}">T家园首页</a><span> &gt; </span></li>
+            <li><a href="{:U('House/index')}">新房</a><span> &gt; </span></li>
+        </ul>
+    </section>
+   
+    <!-- 选项 -->
+    <div class="hoc_box1 wrapperi" id="options">
+                <!--区域-->
+                <div class="hoc_list1">
+                    <ul id="one1">
+                        <li>区域:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;" onclick='super_select("qy","不限",this)'>不限</a></li>
+                        <volist name="districe" id="row">
+                            <li tag="xg"><a href="javascript:;" onclick='super_select("qy","{$row[region_id]}",this)'>{$row.region_name}</a></li>
+                        </volist>
+                        <!--<li tag="jx"><a href="javascript:;">涧西区</a></li>
+                        <li tag="xg"><a href="javascript:;">西工区</a></li>
+                        <li tag="lc"><a href="javascript:;">老城区</a></li>
+                        <li tag="ll"><a href="javascript:;">洛龙区</a></li>
+                        <li tag="ch"><a href="javascript:;">瀍河区</a></li>
+                        <li tag="jl"><a href="javascript:;">吉利区</a></li>
+                        <li tag="gx"><a href="javascript:;">高新区</a></li>
+                        <li tag="yb"><a href="javascript:;">伊滨区</a></li>
+                        <li tag="jj"><a href="javascript:;">开发区</a></li>
+                        <li tag="qt"><a href="javascript:;">其他区县</a></li>-->
+                    </ul>
+                </div>
+              
+                <!--户型-->
+                <div class="hoc_list2">
+                    <ul id="two1">
+                        <li>户型:</li>
+                        <li tag="o" class="hoc_active"><a href="javascript:;" onclick='super_select("hx","不限",this)'>不限</a></li>
+                        <foreach name="house_type" item="value" key="key">
+                            <li tag="o"><a href="javascript:;" onclick='super_select("hx","{$key}",this)'>{$value}</a></li>
+                        </foreach>
+                        <!--<li tag="o" class="hoc_active"><a href="javascript:;" onclick='districe("hx","不限",this)'>不限</a></li>
+                        <li tag="one"><a href="javascript:;" onclick='districe("hx",1,this)'>一室</a></li>
+                        <li tag="two"><a href="javascript:;" onclick='districe("hx",2,this)'>二室</a></li>
+                        <li tag="three"><a href="javascript:;" onclick='districe("hx",3,this)'>三室</a></li>
+                        <li tag="four"><a href="javascript:;" onclick='districe("hx",4,this)'>四室</a></li>
+                        <li tag="five"><a href="javascript:;" onclick='districe("hx",5,this)'>五室以上</a></li>-->
+                    </ul>
+                </div>
+              
+              <!--价格-->
+              <div class="hoc_list3">
+                <ul id="three1">
+                    <li>价格:</li>
+                    <li class="hoc_active" tag="o"><a href="javascript:;" onclick='super_select("jg","不限",this)'>不限</a></li>
+                    <li class="" tag="3000"><a href="javascript:;" onclick='super_select("jg","3000-",this)'>3000以下</a></li>
+                    <li class="" tag="3000-4000"><a href="javascript:;" onclick='super_select("jg","3000-4000",this)'>3000-4000</a></li>
+                    <li class="" tag="4000-5000"><a href="javascript:;" onclick='super_select("jg","4000-5000",this)'>4000-5000</a></li>
+                    <li class="" tag="5000-6000"><a href="javascript:;" onclick='super_select("jg","5000-6000",this)'>5000-6000</a></li>
+                    <li class="" tag="6000"><a href="javascript:;" onclick='super_select("jg","6000+",this)'>6000以上</a></li>
+                </ul>
+            </div>
+              
+              <!--类型-->
+              <div class="hoc_list4">
+                  <ul id="four1">
+                      <li class="">类型:</li>
+                      <li tag="o" class="hoc_active"><a href="javascript:;"  onclick='super_select("lx","不限",this)'>不限</a></li>
+                      <foreach name="house_mold" item="value" key="key">
+                          <li tag="villa"><a href="javascript:;"  onclick='super_select("lx",{$key},this)'>{$value}</a></li>
+                      </foreach>
+                      <!--<li tag="grade"><a href="javascript:;"  onclick='districe("lx",2,this)'>住宅</a></li>
+                      <li tag="villa"><a href="javascript:;"  onclick='districe("lx",1,this)'>别墅</a></li>
+                      <li tag="indpark"><a href="javascript:;"  onclick='districe("lx",0,this)'>住宅小区</a></li>-->
+                  </ul>
+              </div>
+    </div>
+
+    <!-- 两种模式 -->
+
+    <ul class="hl_tabs wrapperi">
+         <li class="hl_tabs_cur">全部楼盘</li>
+                 <select name="rank" id="" value="按价格排序" class="fr">
+                     <option value="desc" onclick="super_select('px','desc','')">均价由高到低</option>
+                     <option value="asc" onclick="super_select('px','asc','')">均价由低到高</option>
+                 </select>
+            <button class="px_cur fr" onclick='location.href="{:U(House/index)}"'>默认排序</button>
+        <span class="fr">排序方式 : </span>
+    </ul>
+
+
+    <ul class="hl_con wrapperi">
+        <volist name="data" id="row">
+            <li style="position: relative;">
+                <section class="clearfix hl_con1" style="margin-bottom: 20px; padding-top: 20px;">
+                    <a href="{:U('House/house_detail')}&id={$row.id}" target="_blank" style="background:url({$row.thumb}) no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>
+                    <div class="hl_con02 fl">
+                        <h3 class="hl_con02_tit">
+                            <a href="{:U('House/house_detail')}&id={$row.id}" target="_blank" class="fl">{$row.title}</a>
+                            <div class="fl">
+                                <if condition="$row.promotion_msg neq null">
+                                {$row.promotion_msg}<span></span><span></span>
+                                </else>
+
+                                </if>
+                            </div>
+                        </h3>
+                        <p class="elli hl_con02_adr" title="{$row.address}">地址 ：{$row.address|my_substr=0,30}</p>
+                        <p class="elli hl_con02_squ" style="margin-bottom:10px;">户型 ：{$row.room}室{$row.hall}厅{$row.toilet}卫 - <span>{$row.min_area}～{$row.max_area}平米</span></p>
+                        <p class="elli hl_con02_adr">公司 ：{$row.builder_company}</p>
+                        <div class="hl_con02_tip">
+                            <span class="hlip01">
+                                <if condition="$row.is_sale eq yes">
+                                    在售
+                                    <elseif condition="$row.is_sale eq no" />
+                                    售罄
+                                    <elseif condition="$row.is_sale eq pedding" />
+                                    待售
+                                    <else/>
+                                    不限
+                                </if>
+                            </span>
+                            <span class="hlip02">
+                                <if condition="$row.jzlx eq 0">
+                                    普通住宅
+                                    <elseif condition="$row.jzlx eq 1" />
+                                    公寓
+                                    <elseif condition="$row.jzlx eq 2" />
+                                    花园式洋房
+                                    <elseif condition="$row.jzlx eq 3" />
+                                    别墅
+                                    <elseif condition="$row.jzlx eq 4" />
+                                    写字楼
+                                    <elseif condition="$row.jzlx eq 5" />
+                                    商铺
+                                    <elseif condition="$row.jzlx eq 6" />
+                                    商住两用
+                                    </else>
+                                    暂无数据
+                                </if>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hl_con03" style="position: absolute;right: 0;">
+                        价格 <span>{$row.price}</span> 元/平
+                    </div>
+                </section>
+            </li>
+        </volist>
+    </ul>
+    <div class="ra_det08_btn login" style="width: 1000px;" onclick="loading()">{$loading}</div>
+    <script type="text/javascript">
+        //输入框提示文字
+        $(function(){
+            $('#search').prev().attr('placeholder','请输入楼盘名称');
+        })
+        //li间距放大
+        $('#options li').css('margin-left','5px');
+
+        //搜索
+        $('#search').click(function(){
+            var searchs = $(this).prev().val();
+            super_select('ss',searchs,'');
+            return false;
+        });
+        //初始化加载条数
+        var endnum = 7;
+        //加载更多
+        function loading(){
+            //点击后显示出加载中
+            $(this).html('<img src="{:HOUSE}image/loading.gif" style="width: 20px;height: 20px;display: inline-block">加载中...');
+            //判断条数
+            super_select('jz',endnum,'');
+            //每次加载的数据
+            endnum += 2;
+        }
+
+    </script>
+
+<script type="text/javascript">
+    function super_select(select_type,select_condition,select_place){
+        //select_type搜索类型，判断是哪个搜索。select_condition搜索条件，根据这个条件搜索。select_place搜索位置，搜索哪一个；
+
+        //使用位置，房屋类型等时判断
+        if(select_place!=''){
+            //高亮切换
+            $(select_place).parent().parent().children().removeClass('hoc_active');
+            $(select_place).parent().addClass('hoc_active');
+        }
+
+        $.post("{:U('house/house_super_select')}", {types:select_type,condition:select_condition},function(data){
+                var htm = "";
+                $.each(data,function(i,row){
+                    //字段为null取空
+                    if(row.title==null){
+                        row.title='暂无数据';
+                    }
+                    if(row.address==null){
+                        row.address='暂无数据';
+                    }
+                    if(row.room==null){
+                        row.room='暂无数据';
+                    }
+                    if(row.hall==null){
+                        row.hall='暂无数据';
+                    }
+                    if(row.toilet==null){
+                        row.toilet='暂无数据';
+                    }
+                    if(row.min_area==null){
+                        row.min_area='暂无数据';
+                    }
+                    if(row.max_area==null){
+                        row.max_area='暂无数据';
+                    }
+                    if(row.builder_company==null){
+                        row.builder_company='暂无数据';
+                    }
+                    if(row.price==null){
+                        row.price='暂无数据';
+                    }
+
+                    if(row.jzlx ==null){
+                        row.jzlx='暂无数据';
+                    }
+                    if(row.promotion_msg==null){
+                        row.promotion_msg="";
+                    } else {
+                        row.promotion_msg= row.promotion_msg+'<span></span><span></span>';
+                    }
+
+                    //判断替换住宅类型
+                    if (row.jzlx == '0') {
+                        row.jzlx = '普通住宅';
+                    } else if (row.jzlx == '1') {
+                        row.jzlx = '公寓';
+                    } else if (row.jzlx == '2') {
+                        row.jzlx = '花园式洋房';
+                    } else if (row.jzlx == '3') {
+                        row.jzlx = '别墅';
+                    } else if (row.jzlx == '4') {
+                        row.jzlx = '写字楼';
+                    } else if (row.jzlx == '5') {
+                        row.jzlx = '商铺';
+                    } else if (row.jzlx == '6') {
+                        row.jzlx = '商住两用';
+                    }
+                    //判断替换是否在售
+                    if (row.is_sale == 'yes') {
+                        row.is_sale="在售";
+                    } else if (row.is_sale == 'on') {
+                        row.is_sale="售罄";
+                    } else if (row.is_sale == 'pedding') {
+                        row.is_sale="待售";
+                    } else {
+                        row.is_sale="不限";
+                    }
+                    htm+= '<li style="position: relative;">';
+                    htm+= '<section class="clearfix hl_con1" style="margin-bottom: 20px; padding-top: 20px;">';
+                    htm+= '<a href='+"{:U('House/house_detail')}&id="+row.id+""+' target="_blank" style="background:url('+row.thumb+') no-repeat center;background-size:cover;float:left;" class="hl_con01 fl"></a>';
+                    htm+= '<div class="hl_con02 fl">';
+                    htm+= '<h3 class="hl_con02_tit">';
+                    htm+= '<a href='+"{:U('House/house_detail')}&id="+row.id+""+' target="_blank" class="fl">'+row.title+'</a>';
+                    htm+= '<div class="fl">';
+                    htm+=  row.promotion_msg;
+                    htm+= '</div></h3>';
+                    htm+= '<p class="elli hl_con02_adr" title='+row.address+'>地址 ：'+row.address+'</p>';
+                    htm+= '<p class="elli hl_con02_squ" style="margin-bottom: 10px;">户型 ：'+row.room+'室'+row.hall+'厅'+row.toilet+' - <span>'+row.min_area+'～'+row.max_area+'平米</span></p>';
+                    htm+= '<p class="elli hl_con02_adr">公司 ：'+row.builder_company+'</p>';
+                    htm+= '<div class="hl_con02_tip">';
+                    htm+= '<span class="hlip01">';
+                    htm+=  row.is_sale;
+                    htm+= '</span>';
+                    htm+= '<span class="hlip02">';
+                    htm+=  row.jzlx;
+                    htm+= '</span>';
+                    htm+= '</div>';
+                    htm+= '</div>';
+                    htm+= '<div class="hl_con03" style="position: absolute;right: 0;;">';
+                    htm+= '价格 <span>'+row.price+'</span> 元/平';
+                    htm+= '</div>';
+                    htm+= '</section>';
+                    htm+= '</li>';
+                });
+                $('.hl_con').html(htm);
+
+            if (data.length!=endnum-2) {
+                $('.login').text('抱歉没有更多的数据了！/(ㄒoㄒ)/~~');
+            } else {
+                $('.login').text('加载更多');
+            }
+
+        })
+
+
+
+    }
+</script>
+
+<!--网页底部-->
+<include file="Public:footer"/>

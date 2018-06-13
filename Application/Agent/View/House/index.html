@@ -1,0 +1,224 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <include file="Public:breadcrumb"/>
+
+
+        <!-- Main content -->
+        <section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-solid">
+						<div class="box-header">
+							<div>
+								<a href="{:U(house_add)}" class="btn btn-primary">添加楼盘</a>
+								<button type="button" class="btn btn-danger" id="delAll">批量删除</button>
+								<form action="{:U('house/search')}" method="post">
+								<div class="input-group" style="width:250px; float: right">
+								<input type="text" name="search1" class="form-control  " style="" placeholder="输入要查询的内容...">
+								<div class="input-group-btn">
+									<button class="btn btn-default"><i class="fa fa-search"></i></button>
+								</div>
+								</div>
+								</form>
+							</div>
+						</div>
+						
+						<div class="box-body">
+							<table class="table table-hover" style="background-color: white">
+								<tbody>
+								<tr>
+									<th class="tc" width="5%">
+										<input type="checkbox" id="ChooseAll">全选
+									</th>
+									<th width="5%">图片</th>
+									<th width="10%">楼盘名称</th>
+									<th width="10%">均价</th>
+									<th width="10%">物业类型</th>
+									<th width="10%">开盘时间</th>
+									<th width="20%">管理</th>
+								</tr>
+							<volist name="row" id="row">
+								<tr>
+									<td class="tc"><input type="checkbox"name="ckbox" value="{$row.id}"></td>
+									<td><img src="{$row.thumb}"  alt="缩略图" class="img_style" style="height: 80px; width: 80px;"></td>
+									<td>{$row.title}</td>
+									<td>{$row.price}</td>
+									<td>{$row.property_type}</td>
+									<td><span class="label label-default">2015-06-10</span></td>
+									<td>
+										<a class="btn btn-default btn-xs"  onclick='return update("{$row.id}","{$row.title}","{$row.price}","{$row.property_type}")'>修改</a>
+										<a href="#" class="btn btn-default btn-xs" onclick="return del(this)" del_id="{$row.id}">删除</a>
+									</td>
+								</tr>
+							</volist>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="box-footer">
+							<div class="row">
+								<div class="col-sm-5"></div>
+								<div class=" col-sm-7 ">
+									<div class="text-right">
+										<ul class="pagination pager">
+
+											<li class="paginate_button previous disabled" id="example2_previous">
+												{$page}
+												</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        </section>
+        <!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+<!--模态框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">删除操作</h4>
+			</div>
+			<div class="modal-body">
+				<h5 style="color: red;"><span class="glyphicon glyphicon-exclamation-sign" style="margin-right:10px; "></span><span id="data_sum"></span></h5>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary" onclick="deled()"> 确认</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--修改楼盘模态框-->
+<form action="{:U('house/house_update')}" method="post" id="loginForm">
+<div class="modal fade" id="updateing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<input type="hidden" name="id" value="">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myMdalLabel">修改楼盘</h4>
+				<strong>提示：</strong> <span id="placeMessage"></span>
+				</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label class="label_mess">楼盘名称：</label>
+					<input placeholder="输入楼盘名称..." id="title" name="title" class="form-control wp50 inline-block" type="text">
+				</div>
+				<div class="form-group">
+					<label class="label_mess text-right" style="width: 70px;">均价：</label>
+					<input placeholder="均价..." id="price" name="price" class="form-control wp50 inline-block" type="text">
+				</div>
+				<div class="form-group">
+					<label class="label_mess">物业类型：</label>
+					<input placeholder="输入建筑类型..." id="property_type" name="property_type" class="form-control wp50 inline-block" type="text">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="submit" class="btn btn-primary" onclick="return sureupdate()">确定</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>
+<script type="text/javascript" src="{:ASSETS}plugins/jquery-validate/jquery.validate.min.js"></script>
+<script type="text/javascript">
+	//全选反选
+	$(function (){
+		var boxs = document.getElementsByName('ckbox');
+		$('#ChooseAll').click(function () {
+			$('input[name=ckbox]').prop('checked', $(this).is(':checked'));
+		});
+		$('input[name=ckbox]').click(function () {
+			var len = $('input[name=ckbox]:checked').length;
+			if (len == boxs.length) {
+				$('#ChooseAll').prop('checked', true);
+			} else {
+				$('#ChooseAll').prop('checked', false);
+			}
+		});
+		//批量删除提示操作
+
+		$("#delAll").click(function (){
+			var del_str = '';
+			var len = $('input[name=ckbox]:checked').length;
+			if(len>=1){
+				$('input[name=ckbox]:checked').each(function (){
+					//$(this).val();
+					del_str +=','+$(this).val();
+				});
+				del_str = del_str.substring(1);
+				del_id = del_str;
+				$("#data_sum").text("确认删除这"+len+'条数据？');
+			}else{
+				$("#data_sum").text('没有选择数据！！');
+			}
+
+			$('#myModal').modal('show');
+		})
+	});
+
+	//待删除数据的ID
+	var del_id = 0;
+	//单条数据的删除
+	function del(a){
+		del_id = $(a).attr("del_id");
+		$("#data_sum").text('确认删除这条数据？');
+		$('#myModal').modal('show');
+	}
+
+	//删除操作
+	function deled(){
+		location.href ='/tfamily/agent.php?m=Agent&c=house&a=house_del&del_id='+del_id;
+	}
+
+	function update(id,title,price,types) {
+		$('[name=id]').val(id);
+		$('#title').val(title);
+		$('#price').val(price);
+		$('#property_type').val(types);
+		$("#updateing").modal('show');
+	}
+
+	function sureupdate(){
+		$("#loginForm").validate({
+			rules: {
+				title: "required",
+				price: "required",
+				property_type: "required"
+
+			},
+			messages: {
+				title: "用户名不能为空",
+				price: "密码不能为空",
+				property_type: "类型不能为空"
+
+			}
+		});
+
+
+		return true;
+
+	}
+
+</script>
+
+<include file="Public:footer"/>
+
+
+
+

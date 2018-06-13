@@ -1,0 +1,67 @@
+<!--新房新车头部-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="<?php echo $_SESSION['site_description']; ?>">
+    <meta name="keywords" content="<?php echo $_SESSION['site_keywords']; ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{$page_title}</title>
+    <script type="text/javascript" src="{:HOUSE}js/jquery.min.js"></script>
+    <script type="text/javascript" src="{:HOUSE}layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/global_new.css" />
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/common_new.css" />
+    <link rel="stylesheet" type="text/css" href="{:HOUSE}css/style_v2.css" />
+</head>
+<body>
+<!-- 新闻头部与新房头部不同 -->
+<section class="topnav">
+    <section class="wrapperi clearfix navber_top">
+        <ul class="normal_nav clearfix fl">
+            <li class="fl"><a href="{:U('Index/index')}">首页</a></li>
+            <li class="fl"><a href="{:U('House/index')}">新房</a></li>
+            <li class="fl"><a href="{:U('Car/index')}">新车</a></li>
+            <li class="fl"><a href="{:U('news/index')}">资讯</a></li>
+        </ul>
+        <div class="normal_login fr normal_login01 ">
+            <a href="{:U('Auth/login')}"> 登陆</a>
+        </div>
+    </section>
+</section>
+
+<!-- 二级导航 -->
+<div class="news_top" style="background:#fff;">
+    <section class="nhnav wrapperi clearfix" style="border-bottom: 1px solid #ececec;">
+        <ul class="clearfix fl wrapperi" style="margin-top: 10px;">
+            <li class="nhnav01 fl">
+                <a href="javascript:;">
+                    <img src="{:HOUSE}image/normal-logo.png" width="100" alt="">
+                </a>
+            </li>
+            <li class="nhnav04 fl nhnav0402">
+                <a href="{:U('Index/index')}">首页</a>
+                <if condition="CONTROLLER_NAME == 'House'">
+                    <a href="{:U('House/index')}" class="nhnav04_cur">新房</a>
+                <else/>
+                    <a href="{:U('House/index')}" >新房</a>
+                 </if>
+                <if condition="CONTROLLER_NAME == 'Car'">
+                    <a href="{:U('Car/index')}"  class="nhnav04_cur">新车</a>
+                <else/>
+                    <a href="{:U('Car/index')}"  >新车</a>
+                </if>
+            </li>
+            <li class="nhnav05 fr">
+                <section class="hl01" style="margin-top: 8px;">
+                    <section>
+                        <form name="selects" id="selects"  class="fl" >
+                            <input type="text" name="house_name" style="background-color: #eee;" placeholder="请输入楼盘或车型">
+                            <input type="submit" value="&#xe60c;" id="search">
+                        </form>
+                    </section>
+                </section>
+            </li>
+        </ul>
+    </section>
+</div>

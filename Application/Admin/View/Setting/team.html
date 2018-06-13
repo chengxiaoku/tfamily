@@ -1,0 +1,129 @@
+<include file="Public:header"/>
+<include file="Public:menu"/>
+<div class="content-wrapper">
+    <include file="Public:breadcrumb"/>
+
+    <!-- 主体内容 -->
+        <section class="content">
+            <!--表格-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <a class="btn btn-primary" href="{:U('Setting/team_lv_add')}">添加会员级别</a>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <th width="10%">级别名称</th>
+                                    <th width="10%">积分奖励</th>
+                                    <th width="10%">年薪</th>
+                                    <th width="10%">粉丝奖励</th>
+                                    <th width="10%">直推奖励</th>
+                                    <th width="10%">组团奖励</th>
+                                    <th width="10%">分红奖励</th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                                <volist name="list" id="data">
+                                    <tr>
+                                        <td>{$data.name}</td>
+                                        <td>{$data.award_integral}</td>
+                                        <td>{$data.year_salary}</td>
+                                        <td>{$data.award_fans}</td>
+                                        <td>{$data.award_direct}</td>
+                                        <td>{$data.award_team}</td>
+                                        <td>{$data.award_year}</td>
+                                        <td>
+                                            <a class="btn btn-default btn-xs" href="{:U('Setting/team_lv_add',array('id'=>$data['id']))}">编辑</a>
+                                            <a href="#" onclick="del(this,'{$data.id}')" class="btn btn-default btn-xs del">删除</a>
+                                        </td>
+                                    </tr>
+                                </volist>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body text-center" id="myModalbody">
+                <i class="glyphicon glyphicon-info-sign fa-2x text-red " style="font-size: 18px;"></i>
+                <span class="text-red" style="font-size:18px;margin-left: 10px;"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="button1">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function() {
+        $("#myform").validate({
+            errorPlacement: function(error, element) {
+                // Append error within linked label
+                $( element )
+                        .closest( "form" )
+                        .find( "label[for='" + element.attr( "id" ) + "']" )
+                        .append( error );
+            },
+            errorElement: "span",
+            debug:true,
+            rules:{
+                title:"required",
+                date:{
+                    required:true
+                },
+                desc:{
+                    required:true,
+                    minlength:4
+                }
+            },
+            messages:{
+                title:"请输入标题",
+                date:{
+                    required:"请选择日期"
+                },
+                desc:{
+                    required:"请输入描述",
+                    minlength:"请至少输入4个字符"
+                }
+
+            }
+        })
+    });
+</script>
+<script type="text/javascript">
+    /*控制模态框删除事件*/
+    var id = '';
+    function del(a,b) {
+        $('#myModalbody span').text('确定删除此级别？');
+        $('#myModal').modal();
+        id = b;
+        return false;
+    }
+    $('#button1').click(function () {
+        location.href="{:U('Setting/team_lv_del')}&id="+id;
+    })
+</script>
+<include file="Public:footer"/>
+
+

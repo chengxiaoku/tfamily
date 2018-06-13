@@ -1,0 +1,153 @@
+<!-- 楼盘详情页 -->
+<include file="Public:header"/>
+
+   <!-- 面包屑 -->
+    <section class="news_bn wrapperi">
+        <ul class="clearfix">
+            <li><a href="javascript:;">新车</a><span> &gt; </span></li>
+            <li><a href="javascript:;">{$data.title}</a><span> &gt; </span></li>
+            <li><a href="javascript:;">相册</a><span> &gt; </span></li>
+        </ul>
+    </section>
+
+    <!-- 相册title -->
+    <h3 class="ph_tit wrapperi">{$data.title}</h3>
+
+    <!-- 相册分类tabs -->
+    <section class="ph_con wrapperi">
+        <section class="ph_cont">
+            <div class="ph_cont01">
+                <ul class="ph_cont02">
+                    <li class="ph_cont01_cur"><img height="578" src="{$images.0.images.0}" alt=""></li>
+                    <volist name="images" id="image">
+                        <if condition="$i eq 1">
+                            <li class="ph_cont01_cur" style="width: 578px;"><img height="578" src="{$image.images.0}" alt=""></li>
+                            <else/>
+                            <li><img height="578" src="{$image.images.0}" alt=""></li></if>
+                    </volist>
+                    <li></li>
+                </ul>
+                <span class="pht_r">&#xe678;</span>
+                <span class="pht_l">&#xe622;</span>
+            </div>
+            <div class="ph_cont03 wrapperi">
+                <div class="ph_cont035">
+                    <ul class="ph_cont04 clearfix">
+                        <volist name="images" id="image">
+                            <if condition="$i eq 1">
+                                <li class="ph_cont04p" style="width: 100px;"><img height="75" src="{$image.images.0}" alt=""></li>
+                                <else/>
+                                <li><img height="75" src="{$image.images.0}" alt=""></li>
+
+                            </if>
+                        </volist>
+                    </ul>
+                    <li></li>
+                </div>
+                <span class="pht_l">&#xe622;</span>
+                <span class="pht_r">&#xe678;</span>
+            </div>
+        </section>
+    </section>
+    <script>
+    $(function(){
+
+        // 点击'>'显示右边的照片
+        $(".ph_cont01 .pht_r").click(function(){
+            $(this).parents(".ph_cont").addClass("ph_cont_t").siblings(".ph_cont").removeClass("ph_cont_t");
+            var ty = $(".ph_cont_t li").length/2-2;
+            var ti = $(".ph_cont_t .ph_cont02 .ph_cont01_cur").index();
+            ti+=1;
+            if(ti>ty){
+                ti=len;
+            }else{
+                $(".ph_cont_t .ph_cont02 li").eq(ti-1).removeClass("ph_cont01_cur");
+                $(".ph_cont_t .ph_cont02 li").eq(ti).addClass("ph_cont01_cur");
+            }
+        })
+        // 点击'<'显示左边的照片
+        $(".ph_cont01 .pht_l").click(function(){
+            $(this).parents(".ph_cont").addClass("ph_cont_t").siblings(".ph_cont").removeClass("ph_cont_t");
+            var ti = $(".ph_cont_t .ph_cont02 .ph_cont01_cur").index();
+            ti-=1;
+            if(ti<1){
+                ti=1;
+            }else{
+                $(".ph_cont_t .ph_cont02 li").eq(ti+1).removeClass("ph_cont01_cur");
+                $(".ph_cont_t .ph_cont02 li").eq(ti).addClass("ph_cont01_cur");
+            }
+        })
+
+
+
+        // 下方缩略图组，左移动
+        $(".ph_cont03 .pht_r").click(function(){
+
+            // 得到缩略图组的实际宽度
+            $(this).parents(".ph_cont").addClass("ph_cont_t").siblings(".ph_cont").removeClass("ph_cont_t");
+            var ty = ($(".ph_cont_t li").length/2)*120;
+            $(".ph_cont04").css("width",ty);
+
+            var tys = -parseInt(ty);
+            var ll = parseInt($(".ph_cont04").css("left"));
+            ll-=840;
+            if(ll>tys){
+                $(".ph_cont04").stop().animate({"left":ll},500);
+            }else{
+                ll=tys;
+            }
+        })
+        // 下方缩略图组，右移动
+        $(".ph_cont03 .pht_l").click(function(){
+            var ll = parseInt($(".ph_cont04").css("left"));
+            ll+=840;
+            if(ll<=0){
+                $(".ph_cont04").stop().animate({"left":ll},500);
+            }else{
+                ll=0;
+            }
+        })
+        /*上下对照*/
+        $(".ph_cont04 li").click(function(){
+            // 得到缩略图组li的实际数量
+            $(this).parents(".ph_cont").addClass("ph_cont_t").siblings(".ph_cont").removeClass("ph_cont_t");
+            var tyi = parseInt($(".ph_cont_t li").length/2)-1;
+            var thi = $(this).index();
+            if(thi>0&&thi<tyi){
+            $(".ph_cont_t .ph_cont02 li").eq(thi).addClass("ph_cont01_cur").siblings("li").removeClass("ph_cont01_cur");
+            }
+        })
+
+        // tab切换
+        $(".ph_tabs li").click(function(){
+            var ert = $(this).index();
+            $(".ph_cont").eq(ert).css("display","block").siblings(".ph_cont").css("display","none");
+            $(this).addClass("ph_tabs_cur").siblings(".ph_tabs li").removeClass("ph_tabs_cur");
+        })
+
+        //上一个下一个分类
+        $(".ph_cont04n").click(function(){
+            var par = $(this).parents(".ph_cont").index()+1;
+            if(par<5){
+                $(".ph_cont").eq(par).css("display","block").siblings(".ph_cont").css("display","none");
+                $(".ph_cont").eq(par).children("li:first-child").css("display","block");
+                $(".ph_tabs li").eq(par).addClass("ph_tabs_cur").siblings(".ph_tabs li").removeClass("ph_tabs_cur");
+            }else{
+                par=0;
+            }
+        })
+        $(".ph_cont04p").click(function(){
+            var par = $(this).parents(".ph_cont").index()-1;
+            if(par>=0){
+                $(".ph_cont").eq(par).css("display","block").siblings(".ph_cont").css("display","none");
+                $(".ph_tabs li").eq(par).addClass("ph_tabs_cur").siblings(".ph_tabs li").removeClass("ph_tabs_cur");
+            }else{
+                par=0;
+            }
+        })
+ 
+    })
+    </script>
+
+<!--网页底部-->
+<include file="Public:footer"/>

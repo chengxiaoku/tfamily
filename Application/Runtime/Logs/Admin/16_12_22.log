@@ -1,0 +1,69 @@
+[ 2016-12-22T15:00:01+08:00 ] 127.0.0.1 /tfamily/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011778s ]
+NOTIC: [8] Undefined index: HTTP_REFERER E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `tf_admin_role` [ RunTime:0.0396s ]
+SQL: SELECT `rights` FROM `tf_admin_role` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+NOTIC: [8] Undefined index: actions E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 293 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'province_agent' or user_type = 'district_agent' or user_type = 'city_agent' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'member' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type = 'fan' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tf_house` [ RunTime:0.0166s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_house` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `tf_car` [ RunTime:0.0396s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_car` LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `tf_orders` [ RunTime:0.0354s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_orders` LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `tf_news` [ RunTime:0.0157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_news` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tf_adspace` [ RunTime:0.0274s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_adspace` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tf_money_details` [ RunTime:0.0085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tf_money_details` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 5 行.
+NOTIC: [8] Undefined variable: uname E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 58 行.
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 111 行.
+NOTIC: [8] Undefined variable: page_title E:\wamp\www\tfamily\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 114 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078063s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003592s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004478s ]
+

@@ -1,0 +1,135 @@
+<!-- 新闻详情页 -->
+<include file="Public:header"/>
+    <script>
+        $("#nhnav03").on('click',function(){
+            layer.open({
+              type: 1,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 0, //不显示关闭按钮
+              shift: 2,
+              area: ['300px', '170px'],
+              shadeClose: true, //开启遮罩关闭
+              content: '<div class="new_div">更多城市邀您加盟!</div><a href="http://layer.layui.com/" class="new_page">加 盟</a>'
+            });
+        })
+    </script>
+
+    <section class="news_bn wrapper" style="padding-top: 0; width: 1000px;">
+
+        <ul class="clearfix news_fld">
+            <li><a href="{:U('index/index')}">T家园首页</a><span> &gt; </span></li>
+
+            <li><a href="{:U('news/index')}">公告</a><span> &gt; </span></li>
+            <li><a href="javascript:;">正文</a><span> &gt; </span></li>    
+        </ul>
+    </section>
+
+
+
+    <section class="wrapper clearfix" style=" width: 1000px;">
+        <div class="fl news_fl" style="width: 700px;">
+            <h1 class="news_tit"><span></span>{$news.title}</h1>
+            <div class="clearfix news_det">
+                <div class="fl">
+                    <span>发布时间:</span>
+                    <span>{$news.add_time}</span>
+
+                </div>
+                <div class="fr">
+                    <span>来源:</span>
+                    <span>T家园</span>
+                </div>
+            </div>
+            <div class="news_zy">
+                <span>文章摘要:</span>
+                <span>{$news.description}</span>
+            </div>
+            <div class="news_con clearfix" >
+                <div class="fl news_con01" style="width: 700px;">
+                     <!-- 文章内容 -->
+                    <div>
+                        <p>{$news.content}</p>
+                        <img src="{$news.thumb}" style="width: 700px;" alt="">
+
+                        <div class="news_mz">
+                            免责声明：文中观点仅为个人建议，不代表T家园观点，仅供投资者参考。
+                        </div>
+                    </div>
+                    <!-- 标签 -->
+                    <div class="clearfix news_tips">
+                        <a href="index.html" target="_blank">二手房</a>
+                        <a href="index.html" target="_blank">房价</a>
+                    </div>
+                    <!--&lt;!&ndash; 赞 &ndash;&gt;
+                    <div class="news_zan">&#xe608;</div>
+                    <div class="news_zn">567人赞过</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="fr news_fr">
+            <div class="news02">
+                <div class="news_hots news_tits news_hotsi" >
+                    <h3 class="news_hots_tit">相关热点</h3>
+                    <volist name="hot" id="data">
+                    <ul>
+                        <li class="news_hots_tit_cur">
+                            <a href='{:U("News/news")}&id={$data.id}'>
+                                {$data.title}
+                                <p>{$data.description|my_substr=0,17}</p>
+                            </a>
+                            <span></span>
+                        </li>
+                    </ul>
+                    </volist>
+                </div>
+                <div class="news_hots news_tits news_knews">
+                    <h3 class="news_hots_tit">相关百科</h3>
+                    <volist name="baike" id="vo">
+                    <ol>
+                        <li class="news_hots_tit_cur">
+                            <div></div>
+                            <a href='{:U("News/news")}&id={$vo.id}'>
+                                {$vo.title}
+                                <p>{$vo.description|my_substr=0,17}</p>
+                            </a>
+                            <span></span>
+                    </ol>
+                    </volist>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(".news_tits li span").click(function(){
+            // 改变li中的p与span的样式
+            var par  =$(this).parent(".news_tits li");
+            $(par).toggleClass("news_hots_tit_cur").siblings('li').removeClass("news_hots_tit_cur");
+        });
+       /* var bot = $("body,html").height()-350;
+        var hei = $(".news02").height();
+        var too = parseInt(bot-hei);
+        $(window).scroll(function(){
+            // 页面滚动时，未出现顶部与底部，fixed
+            if($(window).scrollTop()>194&&$(window).scrollTop()<too){
+                $(".news02").removeClass("news_froo");
+                $(".news02").addClass("news_fro");
+                $(".news_hotsi li:gt(3)").stop().fadeOut(300);
+                $(".news_knews li:gt(3)").stop().fadeOut(300);
+            }
+            // 页面滚动时，出现底部，fixed且bottom=450
+            else if($(window).scrollTop()>too){
+                $(".news02").removeClass("news_fro");
+                $(".news02").addClass("news_froo");
+            }
+            // 页面滚动时，出现顶部，fixed取消
+            else{
+                $(".news02").removeClass("news_fro");
+                $(".news_hotsi li:gt()").stop().fadeIn(300);
+                $(".news_knews li:gt()").stop().fadeIn(300);
+                $(".news02").removeClass("news_froo");
+            }
+        })*/
+    </script>
+
+<!--网页底部-->
+<include file="Public:footer"/>

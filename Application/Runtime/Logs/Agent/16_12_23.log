@@ -1,0 +1,16 @@
+[ 2016-12-23T09:41:51+08:00 ] 127.0.0.1 /tfamily/agent.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+NOTIC: [8] Undefined index: HTTP_REFERER E:\wamp\www\tfamily\Application\Agent\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `tf_user` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `tf_user` WHERE ( id=547 )  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 E:\wamp\www\tfamily\Application\Agent\Controller\BaseController.class.php 第 162 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type='member' and parentid =  ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `tf_user` WHERE ( user_type='member' and parentid =  ) LIMIT 1  
+

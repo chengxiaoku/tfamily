@@ -1,0 +1,637 @@
+<include file="Public:head_house_two" />
+<link rel="stylesheet" type="text/css" href="{:MEMBER}/cssv2/latec.css">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=doD9xz6URLzP3i5qCNVnHfMl"></script>
+    <!-- 楼盘基本信息 -->
+    <section class="ec_box clearfix">
+      <div class="ec_img" style="background:url({$data.img}) no-repeat center;background-size:cover"></div>
+      <div class="ec_logo">
+            <h3>{$data.name}</h3>
+            <p class="ec_p1 elli" title="楼盘地址：{$data.geographic_location}">楼盘地址：{$data.geographic_location}</p>
+            <p class="elli" title="开发商：{$data.developers}">开发商：{$data.developers}</p>
+            <p class="elli" title="总建面积：{$data.total_area}万平方米">总建面积：{$data.total_area}万平方米</p>
+            <p class="elli" title="绿化率：{$data.greening_rate}">绿化率：{$data.greening_rate}</p>
+            <p class="elli" title="入住率：{$data.house_ratio}">入住率：{$data.house_ratio}</p>
+            <p class="elli" title="占地面积：{$data.floor_area}亩">占地面积：{$data.floor_area}亩</p>
+            <p class="elli" title="物业公司：{$data.property_company}">物业公司：{$data.property_company}</p>
+            <p class="elli" title="物业收费：{$data.property_charge}">物业收费：{$data.property_charge}</p> 
+        </div>
+        <div class="ec_text">
+            <p class="ec_p1 elli" title="产品形态：{$data.product_modality}">产品形态：{$data.product_modality}</p>
+            <p class="elli" title="容积率：{$data.plot_ratio}">容积率：{$data.plot_ratio}</p>
+            <p class="elli" title="总户数：{$data.house_num}">总户数：{$data.house_num}</p>
+            <p class="elli" title="交房时间：{$data.possession_time}">交房时间：{$data.possession_time}</p>
+            <p class="elli" title="社区配套：{$data.community_mating}">社区配套：{$data.community_mating}</p>
+            <p title="咨询电话：{$data.tel}">咨询电话：{$data.tel}</p>
+        </div>
+    </section>
+    
+    <!--地图-->
+    <section>
+    	<!--楼盘配套-->
+        <div class="cd01 wrapperi" id="house_5">
+            <div class="title_li">楼盘配套</div>
+            <div class="tab1 clearfix" id="tab1">
+              <div class="ra_det0601" id="con_remd_1" style="height: 100%;">
+                      <!-- 地图 -->
+                </div>
+                <ul>
+                  <li id="remd1" class="tab1_cur" name="reamd_on" onclick="sousuo('gj')"><a href="javascript:;">公交</a></li>
+                  <li id="remd3" class="on" name="reamd_on" onclick="sousuo('jy')"><a href="javascript:;">教育设施</a></li>
+                  <li id="remd4" class="on" name="reamd_on" onclick="sousuo('yy')"><a href="javascript:;">医院</a></li>
+                  <li id="remd5" class="on" name="reamd_on" onclick="sousuo('yh')"><a href="javascript:;">银行</a></li>
+                  <li id="remd6" class="on" name="reamd_on" onclick="sousuo('yl')"><a href="javascript:;">休闲娱乐</a></li>
+                  <li id="remd7" class="on" name="reamd_on" onclick="sousuo('gw')"><a href="javascript:;">购物</a></li>
+                  <li id="remd8" class="on" name="reamd_on" onclick="sousuo('cy')"><a href="javascript:;">餐饮</a></li>
+                  <li id="remd9" class="on" name="reamd_on" onclick="sousuo('js')"><a href="javascript:;">运动健身</a></li>
+              </ul>
+                <div class="cd02">
+                  <div class="cd03" id="remd_map2">公交</div>
+                  <div class="cd04" id="r-result"></div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <!-- 户型 -->
+    <section class="cd05 wrapperi">
+      <div class="title_li">楼盘配套</div>
+      <ul class="cd06 clearfix">
+        <li class="cd06_cur"> <a href="javascript:;">全部</a></li>
+        <li> <a href="javascript:;">两市</a></li>
+        <li> <a href="javascript:;">三室</a></li>
+        <li> <a href="javascript:;">四室</a></li>
+      </ul>
+      <div>
+        <ul class="cd07 wrapperi">
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+        </ul>
+        <ul class="cd07 wrapperi">
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+        </ul>
+        <ul class="cd07 wrapperi">
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+        </ul>
+        <ul class="cd07 wrapperi">
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+          <li class="clearfix cd08">
+            <div style="background:url({:MEMBER}/images/b_logo.png) no-repeat center;background-size:cover;" class="cd09 fl">
+            </div>
+            <div class="fl cd14">
+              <div class="cd10">
+                <p class="clearfix">
+                  <span class="cd18">龙泽苑西区两居室，商品房已经满五年，好户型</span>
+                  <span class="cd23">新上</span>
+                </p>
+              </div>
+              <div class="cd19 elli">
+                <span class="cd20"></span>
+                <a href="">龙泽苑西区</a>
+                 | 2室1厅 | 80.35平米 | 南 北 | 精装 | 无电梯
+              </div>
+              <div class="cd11 elli">
+                <span class=cd20></span>
+                低楼层(共6层) 2000年建板楼 - 
+                <span class="cd21">龙泽</span>
+              </div>
+              <div class="cd12 elli">
+                <span class="cd20"></span>
+                79人关注 / 共31次带看 / 5天以前发布
+              </div>
+              <div class="cd13 elli">
+                <span>距离13号线龙泽站428米</span>
+                <span>房本满两年</span>
+                <span>随时看房</span>
+              </div>
+            </div>
+            <div class="cd15 fr">
+                <p class="cd16">
+                  <span>460</span>
+                  万
+                </p>
+                <p class="cd17">单价5100元/平米</p>
+                <p class="clearfix cd24">
+                    <button>锁定房源</button>
+                    <a href="">查看详情</a>
+                </p>
+            </div>
+            <button class="cd22">关注</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      $(function(){
+        $(".cd06 li").click(function(){
+          $(this).addClass("cd06_cur").siblings("li").removeClass("cd06_cur");
+          var ind = $(this).index();
+          $(".cd07").eq(ind).css("display","block").siblings(".cd07").css("display","none");
+        })
+        
+      })
+    </script>
+
+    <!-- 楼盘相册  -->
+    <section class="ra_det03 ra_det01 ra_det01i wrapperi">
+            <div class="title_li">楼盘配套</div>
+                <ul class="ra_det0302 ra_det030201 clearfix">
+                    <volist name="imgs" id="vo">
+                    <if condition="$vo[num] neq '0'">
+                    <li class="fl">
+                        <a href="{:U('house/house_photo',array('id'=>$id,'p'=>$vo[0][catid],'type'=>'clear'))}" target="_blank">
+                            <div style="background:url({$vo[0].url}) no-repeat center;background-size:cover;"></div>
+                            <p>{$vo.catname}({$vo.num})</p>
+                        </a>
+                    </li>
+                    </if>
+                  </volist>
+                </ul>
+                <a href="{:U('house/house_photo',array('id'=>$id,'type'=>'clear'))}" target="_blank" class="ra_det0303">查看全部</a>
+            </section>
+
+    <script type="text/javascript">
+      <neq name="xia" value="1">
+      $(function(){
+          $('html, body').animate({scrollTop: 1220}, 1500);
+      });
+      </neq>
+    </script>
+    <script type="text/javascript"> 
+    var h_id = '';
+  function tua01(o){
+         h_id = o;
+          var html_1 = '<input class="qingtan01" id="name" />';
+          var html_2 = '<input class="qingtan01" id="username" />'; 
+                    layer.open({
+                          type: 1,
+                          area: ['400px', '230px'],
+                          title:'锁定房源',
+                          // skin: 'layui-layer-rim', //加上边框
+                          content: "<div style='overflow:hidden;width:80%;margin:30px auto;'><span class='qingtan02'>真实姓名：</span>"+html_1+"<span style='color:red;'>*</span>"+"<br/><span  class='qingtan02'>联系电话：</span>"+html_2+"<span style='color:red;'>*</span><br/><div style='width:100px;margin:0 auto;'><button  class='qingtan03' onclick='getcode()'>确 定</button></div></div>"
+                        });
+        }
+    function tua02(){
+                    layer.closeAll();
+                    layer.open({
+                          type: 1,
+                          area: ['400px', '291px'],
+                          title:'成功锁定',
+                          // skin: 'layui-layer-rim', //加上边框
+                          content: "<div style='overflow:hidden;width:80%;margin:30px auto;'><div class='qingtan04'>此房源已成功锁定</div><br/><div style='width:100px;margin:0 auto;'><button onclick='tua04()' class='qingtan03'>确 定</button></div></div>"
+                        });
+        }
+    function tua03(){
+                    layer.open({
+                          type: 1,
+                          area: ['400px', '200px'],
+                          title:'未登录',
+                          // skin: 'layui-layer-rim', //加上边框
+                          content: "<div style='overflow:hidden;width:80%;margin:30px auto;'><div class='qingtan05'>请先登录</div><br/><div style='width:100px;margin:0 auto;'><button class='qingtan03' onclick='tua04()'>确 定</button></div></div>"
+                        });
+        }
+         function tua04(){
+                    layer.closeAll();
+         }
+
+
+         function getcode(){
+              var name = $.trim($("#name").val());
+              var username = $.trim($("#username").val());
+              var reg=/^(13|15|17|18)[0-9]{9}$/;
+              if(name == ""){
+                layer.msg('请填写姓名！');
+                return false;  
+              }else if(!reg.test(username)){
+                  layer.msg('请填写正确的手机号！');
+                  return false;
+              }else if(username == ""){
+                  layer.msg('请填写手机号！');
+                  return false;
+              }
+              if ($.cookie('is_code')) {
+                $.getJSON('{:U('news/getsmscode')}', {username : username,name : name,h_id : h_id}, function(data){
+                  if (data.status == 1) {
+                    $.cookie('is_code', 1);
+                    $.cookie('sms_code', data.sms_code);
+                    location.reload();
+                  } else {
+                    layer.msg('发送失败，请重试！');
+                  }
+                });
+              } else {
+                layer.msg('你太急了，坐下喝杯咖啡吧。');
+              }
+
+          }
+
+    </script>
+    <script type="text/javascript">
+      var l = $(".qing01 li").length;
+      var lt = parseInt(l)*227;
+      $('.qing01').css('width',lt+'px');
+    </script>
+
+    
+<script type="text/javascript">
+  // 百度地图API功能
+    var map = new BMap.Map("con_remd_1",{minZoom:15,maxZoom:17});            // 创建Map实例
+    var mPoint = new BMap.Point({$api.longitude},{$api.latitude});  
+    map.enableScrollWheelZoom();
+    map.centerAndZoom(mPoint,16);
+
+    var top_left_control = new BMap.ScaleControl();// 左下角，添加比例尺
+    map.addControl(top_left_control);
+    var circle = new BMap.Circle(mPoint,1000,{fillColor:"#ffffff", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+      map.addOverlay(circle); 
+      var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, panel: "r-result"}});  
+      local.searchNearby('公交',mPoint,600);
+      document.getElementById("remd1").className ="tab1_cur";
+      
+    
+    function sousuo(o){
+      if(o=='gj'){
+        var on = '公交';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd1").className ="tab1_cur";
+        $('#remd_map2').text('公交');
+      }else if(o=='jy'){
+        var on = '学校';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd3").className ="tab1_cur";
+        $('#remd_map2').text('学校');
+      }else if(o=='yy'){
+        var on = '医院';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd4").className ="tab1_cur";
+        $('#remd_map2').text('医院');
+      }else if(o=='yh'){
+        var on = '银行';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd5").className ="tab1_cur";
+        $('#remd_map2').text('银行');
+      }else if(o=='yl'){
+        var on = '休闲娱乐';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd6").className ="tab1_cur";
+        $('#remd_map2').text('休闲娱乐');
+      }else if(o=='gw'){
+        var on = '购物';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd7").className ="tab1_cur";
+        $('#remd_map2').text('购物');
+      }else if(o=='cy'){
+        var on = '餐饮';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd8").className ="tab1_cur";
+        $('#remd_map2').text('餐饮');
+      }else if(o=='js'){
+        var on = '运动健身';
+        var inputs = document.getElementsByName("reamd_on");
+        for(var i=0;i<inputs.length;i++){
+          inputs[i].className="on";
+        }
+        document.getElementById("remd9").className ="tab1_cur";
+        $('#remd_map2').text('运动健身');
+      }
+      
+      map.clearOverlays();
+      var circle = new BMap.Circle(mPoint,1000,{fillColor:"#ffffff", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+        map.addOverlay(circle);
+        var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, panel: "r-result"}});  
+        local.searchNearby(on,mPoint,600);
+    }
+</script>  
+<div class="tanchutu" style="overflow:auto;;width:100%;height:100%;">
+    	<img src="" id="tanchutu">
+	</div>
+<script type="text/javascript"> 
+$(function(){
+$(".fancybox").fancybox({
+  openEffect  : 'none',
+  closeEffect : 'none'
+});
+$('.tabs li').click(function(){
+  $(this).addClass("on").siblings("li").removeClass("on");
+  $(".imgtab").eq($(this).index()).fadeIn(1).siblings(".imgtab").fadeOut(1);
+})
+})
+</script>
+
+<include file="Public:foot" />

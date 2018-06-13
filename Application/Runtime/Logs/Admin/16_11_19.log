@@ -1,0 +1,84 @@
+[ 2016-11-19T18:59:59+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=getCity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004064s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0465s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0399s ]
+
+[ 2016-11-19T19:00:01+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=getCity
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003249s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `tf_region` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `tf_region`  [ RunTime:0.0215s ]
+
+[ 2016-11-19T19:00:05+08:00 ] 127.0.0.1 /tfamily/admin.php?m=admin&c=house&a=jqueryFileUpload
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002698s ]
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 187 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 210 行.
+NOTIC: [8] Undefined index: children E:\wamp\www\tfamily\Application\Admin\Controller\BaseController.class.php 第 170 行.
+NOTIC: [8] Undefined index: _method E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 1143 行.
+NOTIC: [8] Undefined index: HTTP_CONTENT_DISPOSITION E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 1147 行.
+NOTIC: [8] Undefined index: HTTP_CONTENT_RANGE E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 1147 行.
+NOTIC: [8] Undefined index:  E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 418 行.
+NOTIC: [8] Undefined index: upload_dir E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 227 行.
+NOTIC: [8] Undefined index: upload_url E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 255 行.
+NOTIC: [8] Undefined index: redirect E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 1139 行.
+NOTIC: [8] Undefined index: HTTP_CONTENT_RANGE E:\wamp\www\tfamily\Application\Common\Util\UploadHandler.class.php 第 1147 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002207s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002435s ]
+

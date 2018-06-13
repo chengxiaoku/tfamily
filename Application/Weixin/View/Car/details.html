@@ -1,0 +1,219 @@
+<include file="Public:header"/>
+
+<div id="wrapper">
+
+	<!--头部-->
+	<div id="header">
+		<div class="pull-left">
+			<a href="javascript:history.go(-1)" class="arrow-back"><i class="icon ion-ios-arrow-back"></i></a>
+		</div>
+		<div class="title">汽车详情</div>
+        <div class="pull-right user-center">
+            <a href="{:U('Auth/login')}"><i class="ion-android-contact size-18"></i></a>
+        </div>
+	</div>
+
+
+	<!-- 幻灯片 -->
+	<div id="mo" class="swiper-container" style="height: 300px;display: none">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+
+			<volist name="imags" id="imag">
+				<div class="swiper-slide">
+				<img height="300" src="{$imag.img}">
+				</div>
+			</volist>
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<div id="moren" style="height: 300px;">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img height="300" src="{:WEIXIN_ASSETS}pics/s01.jpg">
+			</div>
+		</div>
+	</div>
+	<!--楼盘基础信息-->
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__bd">
+
+	            	<div class="weui-media-box weui-media-box_text">
+	                    <a href="#">
+		                    <h4 class="weui-media-box__title">{$list.title}</h4>
+		                    <p class="clearfix">
+		                    	<span class="pull-left toutiao_tag">
+								 <if condition="$list.is_sale == 'all'">不限
+                                            <elseif condition="$list.is_sale == 'no'"/>售完
+                                            <elseif condition="$moneys.status == 'pedding'"/>待售
+                                            <elseif condition="$list.is_sale == 'yes'"/>在售
+
+									 <else/>
+                                        </if>
+								</span>
+		                    	<span class="pull-right date_tag price_large">{$list.price_min}-{$list.price_max}万</span>
+		                    </p>
+	                    </a>
+	                </div>
+
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">4S店：{$list.company} </h4>
+                    </div>
+
+	                <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">地址：{$list.address} </h4>
+                    </div>
+                    <div class="weui-media-box weui-media-box_text">
+                        <h4 class="weui-media-box__title">发动机：{$list.emission}
+
+						</h4>
+	                </div>
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">驱动：
+							<if condition="$list.drive == 'front'">前驱
+							<elseif condition="$list.drive == 'back'"/>后驱
+							<elseif condition="$list.drive == 'four'"/>四驱
+							<else/>
+						    </if>
+						</h4>
+	                </div>
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">变速箱：
+							<if condition="$list.gearbox == 'manual'">手动
+								<elseif condition="$list.gearbox == 'auto'"/>自动
+								<else/>
+							</if>
+						</h4>
+	                </div>
+
+	                <div class="weui-media-box weui-media-box_text">
+		                <h4 class="weui-media-box__title">车身结构：
+							<if condition="$list.structure == 'two'">两箱
+								<elseif condition="$list.structure == 'three'"/>三厢
+								<elseif condition="$list.structure == 'hatchback'"/>掀背
+								<elseif condition="$list.structure == 'other'"/>其他
+								<else/>
+							</if></h4>
+	                </div>
+
+	            </div>
+
+	        </div>
+		</div>
+	</div>
+
+	<!--汽车详情-->
+	<div class="lastest-news container">
+		<div class="row">
+			<div class="weui-panel weui-panel_access">
+	            <div class="weui-panel__hd">汽车描述</div>
+	            <div class="weui-panel__bd">
+	            	<div class="weui-media-box weui-media-box_text">
+
+	                    <p class="clearfix" style="font-size:16px;color:#666;">
+							{$list.content}
+	                    </p>
+
+	                </div>
+
+	            </div>
+	        </div>
+		</div>
+	</div>
+
+    <div class="hr-title"></div>
+    <div class="weui-msg__opr-area">
+        <p class="weui-btn-area">
+            <a href="{:U('Car/details_order')}&id={$list.id}" class="weui-btn weui-btn_primary">我要参加团购</a>
+        </p>
+    </div>
+
+    <div class="hr-title"></div>
+
+	<!--联系我们-->
+	<div class="weui-cells__title">联系我们<span>（点击直接拨打电话）</span></div>
+    <div class="weui-cells">
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['0']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：{$tel['0']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="tel:{$tel['1']['value']}">
+            <div class="weui-cell__hd"><i class="icon ion-android-call normal-color"></i></div>
+            <div class="weui-cell__bd">
+                <p>客服电话：{$tel['1']['value']}</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </a>
+    </div>
+
+
+
+
+    <div id="push"></div>
+</div><!--/end wrapper-->
+
+<style>
+	.weui-cell__hd .icon {
+		margin-right: 10px;
+	}
+	.ion-location {
+		margin-right: 10px;
+	}
+	.weui-cell__bd p {
+		margin: 0 !important;
+	}
+</style>
+
+
+<link rel="stylesheet" href="{:WEIXIN_ASSETS}plugins/swiper/css/swiper.min.css" type="text/css">
+<script type="text/javascript" src="{:WEIXIN_ASSETS}plugins/swiper/js/swiper.jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+			var img='{$imags}';
+			if(img){
+				$("#moren").css("display",'none')
+				$("#mo").css("display",'')
+			}else{
+				$("#moren").css("display",'')
+				$("#mo").css("display",'none')
+			}
+
+			$("#header").addClass("bordered-none");
+
+			//initialize swiper when document ready
+			var mySwiper = new Swiper('.swiper-container', {
+				// Optional parameters
+				//direction: 'vertical',
+				loop : true,
+				pagination : '.swiper-pagination',
+				paginationClickable : true,
+				height : 300,
+				lazyLoading : true,
+				preloadImages : ''
+			});
+
+
+			$(window).scroll(
+				function() {
+					if ($(window).scrollTop() == $(document).height()
+							- $(window).height()) {
+						// ajax call get data from server and append to the div
+						$("#loading").show();
+					}
+				});
+
+			});
+</script>
+<include file="Public:footer"/>

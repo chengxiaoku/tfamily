@@ -1,0 +1,101 @@
+<!--尾部 -->
+<section class='footer'>
+    <section class="wrapper clearfix" style="padding-bottom: 10px;">
+        <p class="footer_fl">
+            <a href="{:U('Page/aboutus')}">
+                关于T家园
+            </a>
+
+            <a href="{:U('Page/help')}">
+                帮助中心
+            </a>
+            
+            <a href="{:U('Page/contactus')}">
+                联系我们
+            </a>
+            <a href="{:U('Page/joinus')}">
+                加入我们
+            </a>
+            <a href="{:U('Page/privacynotice')}">
+                隐私声明
+            </a>
+        </p>
+        <p class="copyright" style="margin-top: 10px;">
+            Copyright © 2016 tjiayuan.com 洛阳T家园科技股份有限公司 版权所有   网站备案/许可证号：豫TCP备16036410号-1
+        </p>
+
+    </section>
+
+</section>
+<!--判断登陆修改头部按钮-->
+<script type="text/javascript">
+    $(function(){
+        if ("<?php echo $_SESSION['user_id'] ?>" != '' || "<?php echo $_SESSION['_member_user_id'] ?>" != '') {
+            //判断个人中心往哪里跳转
+            if ("<?php echo $_SESSION['user_id'] ?>" != '') {
+                var url ="./agent.php"
+            } else if("<?php echo $_SESSION['_member_user_id'] ?>" != ''){
+                var url = "./member.php";
+            }
+
+            //首页头部更改
+            var indexs ='';
+            indexs += '<li class="fl login_box" style="padding: 3px 7px;">';
+            indexs += '<a href="'+url+'">个人中心</a>';
+            indexs += '</li>';
+            indexs += '<li class="fl login_box" style="padding: 3px 7px;">';
+            indexs += '<a href="{:U("Auth/logout")}&curl=<?php echo CONTROLLER_NAME ?>&aurl=<?php echo ACTION_NAME ?>">退出</a>';
+            indexs += '</li>';
+            $('.index_nav li:last').remove();
+            $('.index_nav').append(indexs);
+
+            //其他页面导航栏更改
+            var navber = '';
+            navber += '<div class="normal_login fr normal_login01 ">';
+            navber += '<a href="{:U("Auth/logout")}&curl=<?php echo CONTROLLER_NAME ?>&aurl=<?php echo ACTION_NAME ?>">退出</a>';
+            navber += '</div>';
+            navber += '<div class="normal_login fr normal_login01 ">';
+            navber += '<a href="'+url+'">个人中心</a>';
+            navber += '</div>';
+            $('.navber_top div').remove();
+            $('.navber_top').append(navber);
+
+        }
+    })
+</script>
+
+
+<!-- 返回顶部事件 -->
+<script type="text/javascript">
+    var hei = $(window).height();
+    $(window).scroll(function(){
+        var sr = $(window).scrollTop();
+        if(sr>hei){
+            $(".totop").stop().fadeIn(300);
+        }
+        if(sr<=hei){
+            $(".totop").stop().fadeOut(300);
+        }
+    })
+    $(".totop").click(function(){
+        $('html,body').stop().animate({"scrollTop":0},600);
+    })
+</script>
+<!-- 侧边栏事件 -->
+<script>
+    $(".sidebar li").hover(function(){
+        $(this).siblings("li").children("div").stop().toggleClass('sho');
+    })
+    $(".sidebar li a").mouseover(function(){
+        $(this).children("p.news_time").stop().slideDown(500);
+    })
+    $(".sidebar li a").mouseout(function(){
+        $(this).children("p.news_time").stop().slideUp(500);
+    })
+    $(".side07_tab div").click(function(){
+        $(this).addClass("side07_tab_cur").siblings("div").removeClass("side07_tab_cur");
+        $(".side07_contents div").eq($(this).index()).stop().show(500).siblings("div").stop().hide(500);
+    })
+</script>
+</body>
+</html>
